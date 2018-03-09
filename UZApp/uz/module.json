@@ -1,0 +1,17 @@
+[
+ {
+    "name":"moduleDemo",
+    "class":"UZModuleDemo",
+    "methods":["showAlert", "showSplash"]
+ },
+ {
+     "name":"moduleDemoSwift",
+     "class":"UZModuleDemoSwift",
+     "methods":["showAlert"]
+ },
+ {
+    "name":"adhub",
+    "class":"UZ_AdHubSDK",
+    "methods":["showSplashAd", "showBannerAd", "closeBannerAd", "showInsertAd", "showCustomAd", "closeCustomAd", "showRewardVideoAd", "showNativeAd", "sendTracker"]
+ }
+]
