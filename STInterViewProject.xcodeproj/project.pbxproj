@@ -1,0 +1,652 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E48EF5B724EE287E0018D0FD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E48EF5B624EE287E0018D0FD /* AppDelegate.m */; };
+		E48EF5BA24EE287E0018D0FD /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E48EF5B924EE287E0018D0FD /* SceneDelegate.m */; };
+		E48EF5BD24EE287E0018D0FD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E48EF5BC24EE287E0018D0FD /* ViewController.m */; };
+		E48EF5C024EE287E0018D0FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E48EF5BE24EE287E0018D0FD /* Main.storyboard */; };
+		E48EF5C224EE28830018D0FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E48EF5C124EE28830018D0FD /* Assets.xcassets */; };
+		E48EF5C524EE28830018D0FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E48EF5C324EE28830018D0FD /* LaunchScreen.storyboard */; };
+		E48EF5C824EE28830018D0FD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E48EF5C724EE28830018D0FD /* main.m */; };
+		E48EF5EC24EE4C700018D0FD /* STAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = E48EF5EB24EE4C700018D0FD /* STAnimation.m */; };
+		E48EF5EF24EE4C830018D0FD /* STAnimation+STPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = E48EF5EE24EE4C830018D0FD /* STAnimation+STPerson.m */; };
+		E48EF5F224EE4FDB0018D0FD /* STAnimation+STDog.m in Sources */ = {isa = PBXBuildFile; fileRef = E48EF5F124EE4FDB0018D0FD /* STAnimation+STDog.m */; };
+		E4C2B36726008DCA0082AEC4 /* STTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C2B36626008DCA0082AEC4 /* STTimer.m */; };
+		E4C2B375260090FA0082AEC4 /* STProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C2B374260090FA0082AEC4 /* STProxy.m */; };
+		E4C2B37B260093B00082AEC4 /* STNextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C2B37A260093B00082AEC4 /* STNextViewController.m */; };
+		E4C2B3842600A9790082AEC4 /* STMRCModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C2B3832600A9790082AEC4 /* STMRCModel.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		E4C2B3C626019E8E0082AEC4 /* STBlock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4C2B35D2600599D0082AEC4 /* STBlock.cpp */; };
+		E4C2B3CB26019EA20082AEC4 /* STTimer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4C2B36B26008E700082AEC4 /* STTimer.cpp */; };
+		E4FEB67E25A8519E0055D834 /* STBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = E4FEB67D25A8519E0055D834 /* STBlock.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E48EF5CE24EE28840018D0FD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E48EF5AA24EE287E0018D0FD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E48EF5B124EE287E0018D0FD;
+			remoteInfo = Category;
+		};
+		E48EF5D924EE28840018D0FD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E48EF5AA24EE287E0018D0FD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E48EF5B124EE287E0018D0FD;
+			remoteInfo = Category;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E48EF5B224EE287E0018D0FD /* STInterViewProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = STInterViewProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E48EF5B524EE287E0018D0FD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E48EF5B624EE287E0018D0FD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E48EF5B824EE287E0018D0FD /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		E48EF5B924EE287E0018D0FD /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		E48EF5BB24EE287E0018D0FD /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		E48EF5BC24EE287E0018D0FD /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		E48EF5BF24EE287E0018D0FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E48EF5C124EE28830018D0FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E48EF5C424EE28830018D0FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E48EF5C624EE28830018D0FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E48EF5C724EE28830018D0FD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E48EF5CD24EE28840018D0FD /* STInterViewProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = STInterViewProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E48EF5D824EE28840018D0FD /* STInterViewProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = STInterViewProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E48EF5EA24EE4C700018D0FD /* STAnimation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STAnimation.h; sourceTree = "<group>"; };
+		E48EF5EB24EE4C700018D0FD /* STAnimation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STAnimation.m; sourceTree = "<group>"; };
+		E48EF5ED24EE4C830018D0FD /* STAnimation+STPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "STAnimation+STPerson.h"; sourceTree = "<group>"; };
+		E48EF5EE24EE4C830018D0FD /* STAnimation+STPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "STAnimation+STPerson.m"; sourceTree = "<group>"; };
+		E48EF5F024EE4FDB0018D0FD /* STAnimation+STDog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "STAnimation+STDog.h"; sourceTree = "<group>"; };
+		E48EF5F124EE4FDB0018D0FD /* STAnimation+STDog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "STAnimation+STDog.m"; sourceTree = "<group>"; };
+		E4C2B35D2600599D0082AEC4 /* STBlock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = STBlock.cpp; sourceTree = "<group>"; };
+		E4C2B36526008DCA0082AEC4 /* STTimer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STTimer.h; sourceTree = "<group>"; };
+		E4C2B36626008DCA0082AEC4 /* STTimer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STTimer.m; sourceTree = "<group>"; };
+		E4C2B36B26008E700082AEC4 /* STTimer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = STTimer.cpp; sourceTree = "<group>"; };
+		E4C2B373260090FA0082AEC4 /* STProxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STProxy.h; sourceTree = "<group>"; };
+		E4C2B374260090FA0082AEC4 /* STProxy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STProxy.m; sourceTree = "<group>"; };
+		E4C2B379260093B00082AEC4 /* STNextViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STNextViewController.h; sourceTree = "<group>"; };
+		E4C2B37A260093B00082AEC4 /* STNextViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STNextViewController.m; sourceTree = "<group>"; };
+		E4C2B3822600A9790082AEC4 /* STMRCModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STMRCModel.h; sourceTree = "<group>"; };
+		E4C2B3832600A9790082AEC4 /* STMRCModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STMRCModel.m; sourceTree = "<group>"; };
+		E4C2B3912600A9EC0082AEC4 /* STMRCModel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = STMRCModel.cpp; sourceTree = "<group>"; };
+		E4FEB67C25A8519E0055D834 /* STBlock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STBlock.h; sourceTree = "<group>"; };
+		E4FEB67D25A8519E0055D834 /* STBlock.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STBlock.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E48EF5AF24EE287E0018D0FD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E48EF5CA24EE28840018D0FD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E48EF5D524EE28840018D0FD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E48EF5A924EE287E0018D0FD = {
+			isa = PBXGroup;
+			children = (
+				E48EF5B424EE287E0018D0FD /* STInterViewProject */,
+				E48EF5B324EE287E0018D0FD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E48EF5B324EE287E0018D0FD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E48EF5B224EE287E0018D0FD /* STInterViewProject.app */,
+				E48EF5CD24EE28840018D0FD /* STInterViewProjectTests.xctest */,
+				E48EF5D824EE28840018D0FD /* STInterViewProjectUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E48EF5B424EE287E0018D0FD /* STInterViewProject */ = {
+			isa = PBXGroup;
+			children = (
+				E48EF5B524EE287E0018D0FD /* AppDelegate.h */,
+				E48EF5B624EE287E0018D0FD /* AppDelegate.m */,
+				E48EF5B824EE287E0018D0FD /* SceneDelegate.h */,
+				E48EF5B924EE287E0018D0FD /* SceneDelegate.m */,
+				E48EF5BB24EE287E0018D0FD /* ViewController.h */,
+				E48EF5BC24EE287E0018D0FD /* ViewController.m */,
+				E4C2B379260093B00082AEC4 /* STNextViewController.h */,
+				E4C2B37A260093B00082AEC4 /* STNextViewController.m */,
+				E4C2B3C426019E750082AEC4 /* Category */,
+				E4C2B3C526019E840082AEC4 /* Block */,
+				E4C2B3CA26019E940082AEC4 /* Timer */,
+				E4C2B3992600CEAF0082AEC4 /* MRC */,
+				E48EF5BE24EE287E0018D0FD /* Main.storyboard */,
+				E48EF5C124EE28830018D0FD /* Assets.xcassets */,
+				E48EF5C324EE28830018D0FD /* LaunchScreen.storyboard */,
+				E48EF5C624EE28830018D0FD /* Info.plist */,
+				E48EF5C724EE28830018D0FD /* main.m */,
+			);
+			path = STInterViewProject;
+			sourceTree = "<group>";
+		};
+		E4C2B3992600CEAF0082AEC4 /* MRC */ = {
+			isa = PBXGroup;
+			children = (
+				E4C2B3822600A9790082AEC4 /* STMRCModel.h */,
+				E4C2B3832600A9790082AEC4 /* STMRCModel.m */,
+				E4C2B3912600A9EC0082AEC4 /* STMRCModel.cpp */,
+			);
+			path = MRC;
+			sourceTree = "<group>";
+		};
+		E4C2B3C426019E750082AEC4 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				E48EF5EA24EE4C700018D0FD /* STAnimation.h */,
+				E48EF5EB24EE4C700018D0FD /* STAnimation.m */,
+				E48EF5ED24EE4C830018D0FD /* STAnimation+STPerson.h */,
+				E48EF5EE24EE4C830018D0FD /* STAnimation+STPerson.m */,
+				E48EF5F024EE4FDB0018D0FD /* STAnimation+STDog.h */,
+				E48EF5F124EE4FDB0018D0FD /* STAnimation+STDog.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		E4C2B3C526019E840082AEC4 /* Block */ = {
+			isa = PBXGroup;
+			children = (
+				E4FEB67C25A8519E0055D834 /* STBlock.h */,
+				E4FEB67D25A8519E0055D834 /* STBlock.m */,
+				E4C2B35D2600599D0082AEC4 /* STBlock.cpp */,
+			);
+			path = Block;
+			sourceTree = "<group>";
+		};
+		E4C2B3CA26019E940082AEC4 /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				E4C2B373260090FA0082AEC4 /* STProxy.h */,
+				E4C2B374260090FA0082AEC4 /* STProxy.m */,
+				E4C2B36526008DCA0082AEC4 /* STTimer.h */,
+				E4C2B36626008DCA0082AEC4 /* STTimer.m */,
+				E4C2B36B26008E700082AEC4 /* STTimer.cpp */,
+			);
+			path = Timer;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E48EF5B124EE287E0018D0FD /* STInterViewProject */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E48EF5E124EE28840018D0FD /* Build configuration list for PBXNativeTarget "STInterViewProject" */;
+			buildPhases = (
+				E48EF5AE24EE287E0018D0FD /* Sources */,
+				E48EF5AF24EE287E0018D0FD /* Frameworks */,
+				E48EF5B024EE287E0018D0FD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = STInterViewProject;
+			productName = Category;
+			productReference = E48EF5B224EE287E0018D0FD /* STInterViewProject.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E48EF5CC24EE28840018D0FD /* STInterViewProjectTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E48EF5E424EE28840018D0FD /* Build configuration list for PBXNativeTarget "STInterViewProjectTests" */;
+			buildPhases = (
+				E48EF5C924EE28840018D0FD /* Sources */,
+				E48EF5CA24EE28840018D0FD /* Frameworks */,
+				E48EF5CB24EE28840018D0FD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E48EF5CF24EE28840018D0FD /* PBXTargetDependency */,
+			);
+			name = STInterViewProjectTests;
+			productName = CategoryTests;
+			productReference = E48EF5CD24EE28840018D0FD /* STInterViewProjectTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E48EF5D724EE28840018D0FD /* STInterViewProjectUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E48EF5E724EE28840018D0FD /* Build configuration list for PBXNativeTarget "STInterViewProjectUITests" */;
+			buildPhases = (
+				E48EF5D424EE28840018D0FD /* Sources */,
+				E48EF5D524EE28840018D0FD /* Frameworks */,
+				E48EF5D624EE28840018D0FD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E48EF5DA24EE28840018D0FD /* PBXTargetDependency */,
+			);
+			name = STInterViewProjectUITests;
+			productName = CategoryUITests;
+			productReference = E48EF5D824EE28840018D0FD /* STInterViewProjectUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E48EF5AA24EE287E0018D0FD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1160;
+				ORGANIZATIONNAME = Knowin;
+				TargetAttributes = {
+					E48EF5B124EE287E0018D0FD = {
+						CreatedOnToolsVersion = 11.6;
+					};
+					E48EF5CC24EE28840018D0FD = {
+						CreatedOnToolsVersion = 11.6;
+						TestTargetID = E48EF5B124EE287E0018D0FD;
+					};
+					E48EF5D724EE28840018D0FD = {
+						CreatedOnToolsVersion = 11.6;
+						TestTargetID = E48EF5B124EE287E0018D0FD;
+					};
+				};
+			};
+			buildConfigurationList = E48EF5AD24EE287E0018D0FD /* Build configuration list for PBXProject "STInterViewProject" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E48EF5A924EE287E0018D0FD;
+			productRefGroup = E48EF5B324EE287E0018D0FD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E48EF5B124EE287E0018D0FD /* STInterViewProject */,
+				E48EF5CC24EE28840018D0FD /* STInterViewProjectTests */,
+				E48EF5D724EE28840018D0FD /* STInterViewProjectUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E48EF5B024EE287E0018D0FD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E48EF5C524EE28830018D0FD /* LaunchScreen.storyboard in Resources */,
+				E48EF5C224EE28830018D0FD /* Assets.xcassets in Resources */,
+				E48EF5C024EE287E0018D0FD /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E48EF5CB24EE28840018D0FD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E48EF5D624EE28840018D0FD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E48EF5AE24EE287E0018D0FD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4C2B37B260093B00082AEC4 /* STNextViewController.m in Sources */,
+				E4C2B3C626019E8E0082AEC4 /* STBlock.cpp in Sources */,
+				E48EF5BD24EE287E0018D0FD /* ViewController.m in Sources */,
+				E48EF5B724EE287E0018D0FD /* AppDelegate.m in Sources */,
+				E48EF5C824EE28830018D0FD /* main.m in Sources */,
+				E4C2B375260090FA0082AEC4 /* STProxy.m in Sources */,
+				E4C2B3CB26019EA20082AEC4 /* STTimer.cpp in Sources */,
+				E4C2B3842600A9790082AEC4 /* STMRCModel.m in Sources */,
+				E48EF5BA24EE287E0018D0FD /* SceneDelegate.m in Sources */,
+				E48EF5EC24EE4C700018D0FD /* STAnimation.m in Sources */,
+				E48EF5EF24EE4C830018D0FD /* STAnimation+STPerson.m in Sources */,
+				E4C2B36726008DCA0082AEC4 /* STTimer.m in Sources */,
+				E4FEB67E25A8519E0055D834 /* STBlock.m in Sources */,
+				E48EF5F224EE4FDB0018D0FD /* STAnimation+STDog.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E48EF5C924EE28840018D0FD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E48EF5D424EE28840018D0FD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E48EF5CF24EE28840018D0FD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E48EF5B124EE287E0018D0FD /* STInterViewProject */;
+			targetProxy = E48EF5CE24EE28840018D0FD /* PBXContainerItemProxy */;
+		};
+		E48EF5DA24EE28840018D0FD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E48EF5B124EE287E0018D0FD /* STInterViewProject */;
+			targetProxy = E48EF5D924EE28840018D0FD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E48EF5BE24EE287E0018D0FD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E48EF5BF24EE287E0018D0FD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E48EF5C324EE28830018D0FD /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E48EF5C424EE28830018D0FD /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E48EF5DF24EE28840018D0FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		E48EF5E024EE28840018D0FD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E48EF5E224EE28840018D0FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8D4LL3H2G7;
+				INFOPLIST_FILE = "$(SRCROOT)/STInterViewProject/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.knowin.STInterViewProject;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E48EF5E324EE28840018D0FD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8D4LL3H2G7;
+				INFOPLIST_FILE = "$(SRCROOT)/STInterViewProject/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.knowin.STInterViewProject;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E48EF5E524EE28840018D0FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8D4LL3H2G7;
+				INFOPLIST_FILE = CategoryTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.knowin.CategoryTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/STInterViewProject.app/STInterViewProject";
+			};
+			name = Debug;
+		};
+		E48EF5E624EE28840018D0FD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8D4LL3H2G7;
+				INFOPLIST_FILE = CategoryTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.knowin.CategoryTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/STInterViewProject.app/STInterViewProject";
+			};
+			name = Release;
+		};
+		E48EF5E824EE28840018D0FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8D4LL3H2G7;
+				INFOPLIST_FILE = CategoryUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.knowin.CategoryUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Category;
+			};
+			name = Debug;
+		};
+		E48EF5E924EE28840018D0FD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8D4LL3H2G7;
+				INFOPLIST_FILE = CategoryUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.knowin.CategoryUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Category;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E48EF5AD24EE287E0018D0FD /* Build configuration list for PBXProject "STInterViewProject" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E48EF5DF24EE28840018D0FD /* Debug */,
+				E48EF5E024EE28840018D0FD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E48EF5E124EE28840018D0FD /* Build configuration list for PBXNativeTarget "STInterViewProject" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E48EF5E224EE28840018D0FD /* Debug */,
+				E48EF5E324EE28840018D0FD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E48EF5E424EE28840018D0FD /* Build configuration list for PBXNativeTarget "STInterViewProjectTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E48EF5E524EE28840018D0FD /* Debug */,
+				E48EF5E624EE28840018D0FD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E48EF5E724EE28840018D0FD /* Build configuration list for PBXNativeTarget "STInterViewProjectUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E48EF5E824EE28840018D0FD /* Debug */,
+				E48EF5E924EE28840018D0FD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E48EF5AA24EE287E0018D0FD /* Project object */;
+}
