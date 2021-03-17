@@ -21,8 +21,8 @@
 		E4C2B375260090FA0082AEC4 /* STProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C2B374260090FA0082AEC4 /* STProxy.m */; };
 		E4C2B37B260093B00082AEC4 /* STNextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C2B37A260093B00082AEC4 /* STNextViewController.m */; };
 		E4C2B3842600A9790082AEC4 /* STMRCModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C2B3832600A9790082AEC4 /* STMRCModel.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		E4C2B3C626019E8E0082AEC4 /* STBlock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4C2B35D2600599D0082AEC4 /* STBlock.cpp */; };
-		E4C2B3CB26019EA20082AEC4 /* STTimer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4C2B36B26008E700082AEC4 /* STTimer.cpp */; };
+		E4C2B3E82601E4EC0082AEC4 /* STBaseAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C2B3E72601E4EC0082AEC4 /* STBaseAnimation.m */; };
+		E4C2B3F52601F39A0082AEC4 /* STGCD.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C2B3F42601F39A0082AEC4 /* STGCD.m */; };
 		E4FEB67E25A8519E0055D834 /* STBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = E4FEB67D25A8519E0055D834 /* STBlock.m */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +75,11 @@
 		E4C2B3822600A9790082AEC4 /* STMRCModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STMRCModel.h; sourceTree = "<group>"; };
 		E4C2B3832600A9790082AEC4 /* STMRCModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STMRCModel.m; sourceTree = "<group>"; };
 		E4C2B3912600A9EC0082AEC4 /* STMRCModel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = STMRCModel.cpp; sourceTree = "<group>"; };
+		E4C2B3DB2601DEB10082AEC4 /* STAnimation+STPerson.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "STAnimation+STPerson.cpp"; sourceTree = "<group>"; };
+		E4C2B3E62601E4EC0082AEC4 /* STBaseAnimation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STBaseAnimation.h; sourceTree = "<group>"; };
+		E4C2B3E72601E4EC0082AEC4 /* STBaseAnimation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STBaseAnimation.m; sourceTree = "<group>"; };
+		E4C2B3F32601F39A0082AEC4 /* STGCD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STGCD.h; sourceTree = "<group>"; };
+		E4C2B3F42601F39A0082AEC4 /* STGCD.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STGCD.m; sourceTree = "<group>"; };
 		E4FEB67C25A8519E0055D834 /* STBlock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STBlock.h; sourceTree = "<group>"; };
 		E4FEB67D25A8519E0055D834 /* STBlock.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STBlock.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -133,6 +138,7 @@
 				E48EF5BC24EE287E0018D0FD /* ViewController.m */,
 				E4C2B379260093B00082AEC4 /* STNextViewController.h */,
 				E4C2B37A260093B00082AEC4 /* STNextViewController.m */,
+				E4C2B3F22601F37C0082AEC4 /* 多线程 */,
 				E4C2B3C426019E750082AEC4 /* Category */,
 				E4C2B3C526019E840082AEC4 /* Block */,
 				E4C2B3CA26019E940082AEC4 /* Timer */,
@@ -165,6 +171,9 @@
 				E48EF5EE24EE4C830018D0FD /* STAnimation+STPerson.m */,
 				E48EF5F024EE4FDB0018D0FD /* STAnimation+STDog.h */,
 				E48EF5F124EE4FDB0018D0FD /* STAnimation+STDog.m */,
+				E4C2B3DB2601DEB10082AEC4 /* STAnimation+STPerson.cpp */,
+				E4C2B3E62601E4EC0082AEC4 /* STBaseAnimation.h */,
+				E4C2B3E72601E4EC0082AEC4 /* STBaseAnimation.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -189,6 +198,15 @@
 				E4C2B36B26008E700082AEC4 /* STTimer.cpp */,
 			);
 			path = Timer;
+			sourceTree = "<group>";
+		};
+		E4C2B3F22601F37C0082AEC4 /* 多线程 */ = {
+			isa = PBXGroup;
+			children = (
+				E4C2B3F32601F39A0082AEC4 /* STGCD.h */,
+				E4C2B3F42601F39A0082AEC4 /* STGCD.m */,
+			);
+			path = "多线程";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -322,19 +340,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4C2B37B260093B00082AEC4 /* STNextViewController.m in Sources */,
-				E4C2B3C626019E8E0082AEC4 /* STBlock.cpp in Sources */,
 				E48EF5BD24EE287E0018D0FD /* ViewController.m in Sources */,
 				E48EF5B724EE287E0018D0FD /* AppDelegate.m in Sources */,
 				E48EF5C824EE28830018D0FD /* main.m in Sources */,
+				E4C2B3E82601E4EC0082AEC4 /* STBaseAnimation.m in Sources */,
 				E4C2B375260090FA0082AEC4 /* STProxy.m in Sources */,
-				E4C2B3CB26019EA20082AEC4 /* STTimer.cpp in Sources */,
 				E4C2B3842600A9790082AEC4 /* STMRCModel.m in Sources */,
 				E48EF5BA24EE287E0018D0FD /* SceneDelegate.m in Sources */,
-				E48EF5EC24EE4C700018D0FD /* STAnimation.m in Sources */,
-				E48EF5EF24EE4C830018D0FD /* STAnimation+STPerson.m in Sources */,
 				E4C2B36726008DCA0082AEC4 /* STTimer.m in Sources */,
 				E4FEB67E25A8519E0055D834 /* STBlock.m in Sources */,
+				E48EF5EF24EE4C830018D0FD /* STAnimation+STPerson.m in Sources */,
+				E4C2B3F52601F39A0082AEC4 /* STGCD.m in Sources */,
 				E48EF5F224EE4FDB0018D0FD /* STAnimation+STDog.m in Sources */,
+				E48EF5EC24EE4C700018D0FD /* STAnimation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

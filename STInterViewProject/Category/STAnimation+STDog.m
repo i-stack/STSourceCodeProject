@@ -10,14 +10,27 @@
 
 @implementation STAnimation (STDog)
 
-//+ (void)load
-//{
-//    NSLog(@"%@", @"STAnimation+STDog.load");
-//}
++ (void)load
+{
+    NSLog(@"STAnimation+STDog.load");
+}
 
-//- (void)printName
-//{
-//    NSLog(@"%@", @"STAnimation+STDog");
-//}
++ (void)initialize
+{
+    NSLog(@"STAnimation+STDog.initialize");
+}
+
+- (void)printName
+{
+    NSLog(@"STAnimation+STDog.printName");
+}
+
+- (void)setName:(NSString *)name {
+    
+}
+
+- (NSString *)name {
+    return self.name;
+}
 
 @end

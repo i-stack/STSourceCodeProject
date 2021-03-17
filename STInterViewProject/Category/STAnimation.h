@@ -7,13 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "STBaseAnimation.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface STAnimation : NSObject
+@interface STAnimation : STBaseAnimation
 
 - (void)printName;
-+ (void)printNameClass;
 
 @end
 

@@ -11,10 +11,20 @@
 
 @implementation STAnimation (STPerson)
 
-//+ (void)load
-//{
-//    NSLog(@"%@", @"STAnimation+STPerson.load");
-//}
++ (void)load
+{
+    NSLog(@"STAnimation+STPerson.load");
+}
+
++ (void)initialize
+{
+    NSLog(@"STAnimation+STPerson.initialize");
+}
+
+- (void)printName
+{
+    NSLog(@"STAnimation+STPerson.printName");
+}
 
 - (void)setName:(NSString *)name
 {

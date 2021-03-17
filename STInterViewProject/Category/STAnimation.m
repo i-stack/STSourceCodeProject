@@ -13,15 +13,20 @@
 
 @implementation STAnimation
 
-//+ (void)load
-//{
-//    NSLog(@"%@", @"STAnimation.load");
-//}
++ (void)load
+{
+    NSLog(@"STAnimation.load");
+}
 
-//- (void)printName
-//{
-//
-//}
++ (void)initialize
+{
+    NSLog(@"STAnimation.initialize");
+}
+
+- (void)printName
+{
+    NSLog(@"STAnimation.printName");
+}
 
 - (void)unrecognizedSelectorSentToInstance {
     NSLog(@"----unrecognizedSelectorSentToInstance----");
