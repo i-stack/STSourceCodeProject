@@ -21,7 +21,7 @@
     self = [super init];
     if (self) {
         self.tickets = 10;
-        [self saleTickets];
+        [self testPrintValue];
     }
     return self;
 }
@@ -39,6 +39,23 @@
             NSLog(@"%@ -- %d", [NSThread currentThread], i);
         }
     });
+    NSLog(@"end");
+}
+
+- (void)testSyncSerial {
+    dispatch_queue_t queue = dispatch_queue_create("testSyncSerial", DISPATCH_QUEUE_SERIAL);
+    dispatch_async(queue, ^{
+        for (int i = 0; i < 10; i++) {
+            NSLog(@"%@ -- %d", [NSThread currentThread], i);
+        }
+    });
+    
+    dispatch_async(queue, ^{
+        for (int i = 10; i < 20; i++) {
+            NSLog(@"%@ -- %d", [NSThread currentThread], i);
+        }
+    });
+    NSLog(@"end");
 }
 
 - (void)testAsync {
@@ -54,6 +71,7 @@
             NSLog(@"%@ -- %d", [NSThread currentThread], i);
         }
     });
+    NSLog(@"end");
 }
 
 - (void)testDeadLock {
@@ -92,6 +110,22 @@
     oldTicktes--;
     self.tickets = oldTicktes;
     NSLog(@"还剩下：%d", self.tickets);
+}
+
+- (void)testPrintValue {
+    __block int i = 10;
+    dispatch_queue_t queue = dispatch_queue_create("testDeadLock", DISPATCH_QUEUE_CONCURRENT);
+    dispatch_async(queue, ^{
+        NSLog(@"%d", i);
+    });
+    dispatch_async(queue, ^{
+        NSLog(@"2");
+    });
+    dispatch_async(queue, ^{
+        NSLog(@"3");
+    });
+    i = 20;
+    NSLog(@"end");
 }
 
 @end

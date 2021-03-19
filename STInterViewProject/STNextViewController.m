@@ -7,15 +7,16 @@
 //
 
 #import "STNextViewController.h"
-#import "STTimer.h"
+#import "STTimerTest.h"
 #import "STAnimation.h"
 #import <objc/runtime.h>
 #import "STGCD.h"
+#import "STKVCTest.h"
 
 @interface STNextViewController ()
 
 @property (nonatomic,strong)NSString *name;
-@property (nonatomic,strong)STTimer *timer;
+@property (nonatomic,strong)STTimerTest *timer;
 
 @end
 
@@ -32,12 +33,12 @@
 }
 
 - (void)testExample {
-    [self testGCD];
+    [self testKVC];
 }
 
 - (void)testTimer {
-    self.timer = [[STTimer alloc]init];
-    [self.timer testGCD];
+    self.timer = [[STTimerTest alloc]init];
+    [self.timer testTimerLocal];
 }
 
 - (void)testCategory {
@@ -56,6 +57,10 @@
 
 - (void)testGCD {
     STGCD *gcd = [[STGCD alloc]init];
+}
+
+- (void)testKVC {
+    STKVCTest *kvc = [[STKVCTest alloc]init];
 }
 
 - (void)dealloc

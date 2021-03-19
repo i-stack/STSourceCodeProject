@@ -1,5 +1,5 @@
 //
-//  STTimer.h
+//  STKVCTest.h
 //  STInterViewProject
 //
 //  Created by song on 2021/3/19.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface STTimer : NSTimer
+@interface STKVCTest : NSObject
 
 @end
 
