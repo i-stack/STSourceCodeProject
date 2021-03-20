@@ -7,10 +7,14 @@
 //
 
 #import "STGCD.h"
+#import <libkern/OSAtomic.h>
 
 @interface STGCD ()
 
-@property (nonatomic, assign)int tickets;
+@property (nonatomic,assign)int tickets;
+
+@property (nonatomic,strong)NSLock *lock;
+@property (nonatomic,assign)OSSpinLock spinLock;
 
 @end
 
@@ -20,6 +24,8 @@
 {
     self = [super init];
     if (self) {
+        self.lock = [[NSLock alloc]init];
+        self.spinLock = OS_SPINLOCK_INIT;
         self.tickets = 10;
         [self saleTickets];
     }
@@ -80,6 +86,12 @@
     });
     
     dispatch_async(queue, ^{
+        for (int i = 0; i < 10; i++) {
+            [self rebackTicket];
+        }
+    });
+    
+    dispatch_async(queue, ^{
         for (int i = 0; i < 5; i++) {
             [self saleTicket];
         }
@@ -87,11 +99,22 @@
 }
 
 - (void)saleTicket {
+//    OSSpinLockLock(&_spinLock);
+    [self.lock lock];
     int oldTicktes = self.tickets;
     sleep(1);
     oldTicktes--;
     self.tickets = oldTicktes;
-    NSLog(@"还剩下：%d", self.tickets);
+    NSLog(@"剩余票数：%d票", self.tickets);
+    [self.lock unlock];
+//    OSSpinLockUnlock(&_spinLock);
+}
+
+- (void)rebackTicket {
+    [self.lock lock];
+    self.tickets++;
+    NSLog(@"剩余票数：%d票", self.tickets);
+    [self.lock unlock];
 }
 
 @end
