@@ -1,8 +1,8 @@
 //
-//  STTimer.h
+//  STTimerTest.h
 //  STInterViewProject
 //
-//  Created by song on 2021/3/19.
+//  Created by song on 2021/3/16.
 //  Copyright © 2021 Knowin. All rights reserved.
 //
 
@@ -10,7 +10,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface STTimer : NSTimer
+@interface STTimerTest : NSObject
+
+- (void)testGCD;
+- (void)testTimer;
+- (void)testTimerLocal;
 
 @end
 
