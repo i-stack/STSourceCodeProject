@@ -37,7 +37,7 @@
 }
 
 - (void)testExample {
-    [self testMRC];
+    [self testTimer];
 }
 
 - (void)testTimer {

@@ -138,9 +138,9 @@
             filePath = "STInterViewProject/Timer/STTimerTest.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "-testTimerLocal"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "-timerPrint"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -198,9 +198,9 @@
             filePath = "STInterViewProject/Timer/STTimerTest.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "-timerPrintLocal"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "-testDisplayLink"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -329,22 +329,6 @@
             startingLineNumber = "227"
             endingLineNumber = "227"
             landmarkName = "-testPrintQueue"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "1DA6EF9D-B754-43D2-BCF1-F99BECAD7E80"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "STInterViewProject/STNextViewController.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
-            landmarkName = "-print:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

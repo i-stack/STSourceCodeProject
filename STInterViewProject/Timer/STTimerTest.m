@@ -21,6 +21,15 @@
 
 @implementation STTimerTest
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        [self testTimerLocal];
+    }
+    return self;
+}
+
 - (void)testTimer {
     self.timer = [NSTimer scheduledTimerWithTimeInterval:1 target:[STProxy proxyWithTarget:self] selector:@selector(timerPrint) userInfo:nil repeats:true];
 }
