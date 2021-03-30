@@ -10,8 +10,11 @@
 #import "STTimerTest.h"
 #import "STAnimation.h"
 #import <objc/runtime.h>
-#import "STGCD.h"
 #import "STKVCTest.h"
+#import "STKVOTest.h"
+#import "STMultiThreadTest.h"
+#import "STWeakTest.h"
+#import "STMRCTest.h"
 
 @interface STNextViewController ()
 
@@ -33,7 +36,7 @@
 }
 
 - (void)testExample {
-    [self testKVC];
+    [self testMultiThreadTest];
 }
 
 - (void)testTimer {
@@ -55,12 +58,24 @@
     }
 }
 
-- (void)testGCD {
-    STGCD *gcd = [[STGCD alloc]init];
+- (void)testMultiThreadTest {
+    STMultiThreadTest *multiThreadTest = [[STMultiThreadTest alloc]init];
 }
 
 - (void)testKVC {
     STKVCTest *kvc = [[STKVCTest alloc]init];
+}
+
+- (void)testKVO {
+    STKVOTest *kvo = [[STKVOTest alloc]init];
+}
+
+- (void)testWeak {
+    STWeakTest *weak = [[STWeakTest alloc]init];
+}
+
+- (void)testMRC {
+    STMRCTest *mrc = [[STMRCTest alloc]init];
 }
 
 - (void)dealloc

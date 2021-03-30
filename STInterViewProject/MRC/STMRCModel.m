@@ -10,6 +10,11 @@
 
 @implementation STMRCModel
 
+- (void)dealloc {
+    [super dealloc];
+    NSLog(@"%s", __func__);
+}
+
 - (instancetype)init
 {
     self = [super init];
