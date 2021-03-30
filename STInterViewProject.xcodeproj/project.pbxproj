@@ -33,6 +33,7 @@
 		E4C2B3FE260448240082AEC4 /* STTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C2B3FD260448240082AEC4 /* STTimer.m */; };
 		E4C2B4052604855F0082AEC4 /* STKVCTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C2B4042604855E0082AEC4 /* STKVCTest.m */; };
 		E4C2B40E260489730082AEC4 /* STKVCModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C2B40D260489730082AEC4 /* STKVCModel.m */; };
+		E4C800322612FC4A0088696E /* STMRCBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C800312612FC4A0088696E /* STMRCBaseModel.m */; };
 		E4FEB67E25A8519E0055D834 /* STBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = E4FEB67D25A8519E0055D834 /* STBlock.m */; };
 /* End PBXBuildFile section */
 
@@ -110,6 +111,8 @@
 		E4C2B4042604855E0082AEC4 /* STKVCTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STKVCTest.m; sourceTree = "<group>"; };
 		E4C2B40C260489730082AEC4 /* STKVCModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STKVCModel.h; sourceTree = "<group>"; };
 		E4C2B40D260489730082AEC4 /* STKVCModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STKVCModel.m; sourceTree = "<group>"; };
+		E4C800302612FC4A0088696E /* STMRCBaseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STMRCBaseModel.h; sourceTree = "<group>"; };
+		E4C800312612FC4A0088696E /* STMRCBaseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STMRCBaseModel.m; sourceTree = "<group>"; };
 		E4FEB67C25A8519E0055D834 /* STBlock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STBlock.h; sourceTree = "<group>"; };
 		E4FEB67D25A8519E0055D834 /* STBlock.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STBlock.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -210,6 +213,8 @@
 		E4C2B3992600CEAF0082AEC4 /* MRC */ = {
 			isa = PBXGroup;
 			children = (
+				E4C800302612FC4A0088696E /* STMRCBaseModel.h */,
+				E4C800312612FC4A0088696E /* STMRCBaseModel.m */,
 				E4C2B3822600A9790082AEC4 /* STMRCModel.h */,
 				E4C2B3832600A9790082AEC4 /* STMRCModel.m */,
 				E4C2B3912600A9EC0082AEC4 /* STMRCModel.cpp */,
@@ -430,6 +435,7 @@
 				E4FEB67E25A8519E0055D834 /* STBlock.m in Sources */,
 				E49A10D7260D87A4002C5C9C /* STMRCTest.m in Sources */,
 				E48EF5EF24EE4C830018D0FD /* STAnimation+STPerson.m in Sources */,
+				E4C800322612FC4A0088696E /* STMRCBaseModel.m in Sources */,
 				E4C2B3F52601F39A0082AEC4 /* STGCD.m in Sources */,
 				E4C2B3FE260448240082AEC4 /* STTimer.m in Sources */,
 				E49A10AF2609DBCB002C5C9C /* STKVOModel.m in Sources */,

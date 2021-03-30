@@ -29,6 +29,7 @@
     [super viewDidLoad];
     self.view.backgroundColor = UIColor.whiteColor;
     [self testExample];
+    [self print:80];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
@@ -36,7 +37,7 @@
 }
 
 - (void)testExample {
-    [self testMultiThreadTest];
+    [self testMRC];
 }
 
 - (void)testTimer {
@@ -76,6 +77,16 @@
 
 - (void)testMRC {
     STMRCTest *mrc = [[STMRCTest alloc]init];
+}
+
+- (void)print:(int)x {
+    int count = 0;
+    while (x) {
+        count++;
+        x = x & (x - 1);
+        NSLog(@"current x value :%d", x);
+    }
+    NSLog(@"%d", count);
 }
 
 - (void)dealloc

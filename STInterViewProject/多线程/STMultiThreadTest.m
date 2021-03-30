@@ -10,6 +10,10 @@
 #import "STGCD.h"
 #import "STOSSpinLock.h"
 
+@interface STMultiThreadTest()
+
+@end
+
 @implementation STMultiThreadTest
 
 - (instancetype)init

@@ -6,11 +6,11 @@
 //  Copyright © 2021 Knowin. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "STMRCBaseModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface STMRCModel : NSObject
+@interface STMRCModel : STMRCBaseModel
 
 @end
 

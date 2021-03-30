@@ -8,6 +8,8 @@
 
 #import "STMRCTest.h"
 #import "STMRCModel.h"
+#import <objc/runtime.h>
+#import <malloc/malloc.h>
 
 @implementation STMRCTest
 
@@ -16,11 +18,10 @@
     self = [super init];
     if (self) {
         NSLog(@"111");
-//        @autoreleasepool {
-//            STMRCModel *model = [[[STMRCModel alloc]init]autorelease];
-//        }
+
         STMRCModel *model = [[[STMRCModel alloc]init]autorelease];
-        NSLog(@"222");
+        NSLog(@"%zu", class_getInstanceSize(model.class));
+        NSLog(@"%zu", malloc_size(model));
     }
     return self;
 }

@@ -8,6 +8,13 @@
 
 #import "STMRCModel.h"
 
+@interface STMRCModel()
+
+@property (nonatomic,assign)NSInteger age;
+@property (nonatomic,strong)NSString *queueName;
+
+@end
+
 @implementation STMRCModel
 
 - (void)dealloc {
