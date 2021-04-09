@@ -1,8 +1,8 @@
 //
-//  STMRCBaseModel.h
+//  STBinaryTreeTest.h
 //  STInterViewProject
 //
-//  Created by song on 2021/3/30.
+//  Created by song on 2021/4/9.
 //  Copyright © 2021 Knowin. All rights reserved.
 //
 
@@ -10,9 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface STMRCBaseModel : NSObject
-
-- (void)baseModelInstanceMethod;
+@interface STBinaryTreeTest : NSObject
 
 @end
 

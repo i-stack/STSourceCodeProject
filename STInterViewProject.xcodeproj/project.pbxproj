@@ -24,6 +24,9 @@
 		E49A10C5260D787F002C5C9C /* STWeakTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E49A10C4260D787F002C5C9C /* STWeakTest.m */; };
 		E49A10CE260D7894002C5C9C /* STWeakModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E49A10CD260D7894002C5C9C /* STWeakModel.m */; };
 		E49A10D7260D87A4002C5C9C /* STMRCTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E49A10D6260D87A4002C5C9C /* STMRCTest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		E4C0C508261EFDD700223E8F /* NSObject+Test.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C0C507261EFDD700223E8F /* NSObject+Test.m */; };
+		E4C0C513261FEF8F00223E8F /* STBinaryTreeTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C0C512261FEF8E00223E8F /* STBinaryTreeTest.m */; };
+		E4C0C51C261FF06C00223E8F /* STBinaryTreeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C0C51B261FF06C00223E8F /* STBinaryTreeNode.m */; };
 		E4C2B36726008DCA0082AEC4 /* STTimerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C2B36626008DCA0082AEC4 /* STTimerTest.m */; };
 		E4C2B375260090FA0082AEC4 /* STProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C2B374260090FA0082AEC4 /* STProxy.m */; };
 		E4C2B37B260093B00082AEC4 /* STNextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C2B37A260093B00082AEC4 /* STNextViewController.m */; };
@@ -89,6 +92,13 @@
 		E49A10CD260D7894002C5C9C /* STWeakModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STWeakModel.m; sourceTree = "<group>"; };
 		E49A10D5260D87A4002C5C9C /* STMRCTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STMRCTest.h; sourceTree = "<group>"; };
 		E49A10D6260D87A4002C5C9C /* STMRCTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STMRCTest.m; sourceTree = "<group>"; };
+		E4C0C502261D561600223E8F /* STMRCTest.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = STMRCTest.cpp; sourceTree = "<group>"; };
+		E4C0C506261EFDD700223E8F /* NSObject+Test.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+Test.h"; sourceTree = "<group>"; };
+		E4C0C507261EFDD700223E8F /* NSObject+Test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Test.m"; sourceTree = "<group>"; };
+		E4C0C511261FEF8E00223E8F /* STBinaryTreeTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STBinaryTreeTest.h; sourceTree = "<group>"; };
+		E4C0C512261FEF8E00223E8F /* STBinaryTreeTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STBinaryTreeTest.m; sourceTree = "<group>"; };
+		E4C0C51A261FF06C00223E8F /* STBinaryTreeNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STBinaryTreeNode.h; sourceTree = "<group>"; };
+		E4C0C51B261FF06C00223E8F /* STBinaryTreeNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STBinaryTreeNode.m; sourceTree = "<group>"; };
 		E4C2B35D2600599D0082AEC4 /* STBlock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = STBlock.cpp; sourceTree = "<group>"; };
 		E4C2B36526008DCA0082AEC4 /* STTimerTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STTimerTest.h; sourceTree = "<group>"; };
 		E4C2B36626008DCA0082AEC4 /* STTimerTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STTimerTest.m; sourceTree = "<group>"; };
@@ -171,6 +181,7 @@
 				E48EF5BC24EE287E0018D0FD /* ViewController.m */,
 				E4C2B379260093B00082AEC4 /* STNextViewController.h */,
 				E4C2B37A260093B00082AEC4 /* STNextViewController.m */,
+				E4C0C510261FEF6900223E8F /* BinaryTree */,
 				E49A10C2260D7867002C5C9C /* Weak */,
 				E49A10A62609DBAB002C5C9C /* KVO */,
 				E4C2B402260485350082AEC4 /* KVC */,
@@ -210,6 +221,17 @@
 			path = Weak;
 			sourceTree = "<group>";
 		};
+		E4C0C510261FEF6900223E8F /* BinaryTree */ = {
+			isa = PBXGroup;
+			children = (
+				E4C0C511261FEF8E00223E8F /* STBinaryTreeTest.h */,
+				E4C0C512261FEF8E00223E8F /* STBinaryTreeTest.m */,
+				E4C0C51A261FF06C00223E8F /* STBinaryTreeNode.h */,
+				E4C0C51B261FF06C00223E8F /* STBinaryTreeNode.m */,
+			);
+			path = BinaryTree;
+			sourceTree = "<group>";
+		};
 		E4C2B3992600CEAF0082AEC4 /* MRC */ = {
 			isa = PBXGroup;
 			children = (
@@ -220,6 +242,9 @@
 				E4C2B3912600A9EC0082AEC4 /* STMRCModel.cpp */,
 				E49A10D5260D87A4002C5C9C /* STMRCTest.h */,
 				E49A10D6260D87A4002C5C9C /* STMRCTest.m */,
+				E4C0C502261D561600223E8F /* STMRCTest.cpp */,
+				E4C0C506261EFDD700223E8F /* NSObject+Test.h */,
+				E4C0C507261EFDD700223E8F /* NSObject+Test.m */,
 			);
 			path = MRC;
 			sourceTree = "<group>";
@@ -420,9 +445,12 @@
 			files = (
 				E4C2B37B260093B00082AEC4 /* STNextViewController.m in Sources */,
 				E49A10A92609DBBF002C5C9C /* STKVOTest.m in Sources */,
+				E4C0C508261EFDD700223E8F /* NSObject+Test.m in Sources */,
+				E4C0C513261FEF8F00223E8F /* STBinaryTreeTest.m in Sources */,
 				E4C2B4052604855F0082AEC4 /* STKVCTest.m in Sources */,
 				E48EF5BD24EE287E0018D0FD /* ViewController.m in Sources */,
 				E49A10B8260C8BF9002C5C9C /* STMultiThreadTest.m in Sources */,
+				E4C0C51C261FF06C00223E8F /* STBinaryTreeNode.m in Sources */,
 				E48EF5B724EE287E0018D0FD /* AppDelegate.m in Sources */,
 				E48EF5C824EE28830018D0FD /* main.m in Sources */,
 				E4C2B3E82601E4EC0082AEC4 /* STBaseAnimation.m in Sources */,
