@@ -13,9 +13,12 @@
 @property (nonatomic,strong)NSString *baseName;
 @property (nonatomic,strong)NSString *baseAddress;
 
-
 @end
 
 @implementation STMRCBaseModel
+
+- (void)baseModelInstanceMethod {
+    NSLog(@"baseModelInstanceMethod");
+}
 
 @end

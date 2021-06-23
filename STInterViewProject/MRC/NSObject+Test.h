@@ -1,8 +1,8 @@
 //
-//  STMRCBaseModel.h
+//  NSObject+Test.h
 //  STInterViewProject
 //
-//  Created by song on 2021/3/30.
+//  Created by song on 2021/4/8.
 //  Copyright © 2021 Knowin. All rights reserved.
 //
 
@@ -10,9 +10,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface STMRCBaseModel : NSObject
+@interface NSObject (Test)
 
-- (void)baseModelInstanceMethod;
+//+ (void)test;
 
 @end
 

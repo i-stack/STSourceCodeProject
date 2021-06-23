@@ -15,6 +15,8 @@
 #import "STMultiThreadTest.h"
 #import "STWeakTest.h"
 #import "STMRCTest.h"
+#import "STMRCModel.h"
+#import "STBinaryTreeTest.h"
 
 @interface STNextViewController ()
 
@@ -29,7 +31,10 @@
     [super viewDidLoad];
     self.view.backgroundColor = UIColor.whiteColor;
     [self testExample];
-    [self print:80];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
@@ -37,7 +42,7 @@
 }
 
 - (void)testExample {
-    [self testTimer];
+    [self testBinaryTree];
 }
 
 - (void)testTimer {
@@ -79,14 +84,8 @@
     STMRCTest *mrc = [[STMRCTest alloc]init];
 }
 
-- (void)print:(int)x {
-    int count = 0;
-    while (x) {
-        count++;
-        x = x & (x - 1);
-        NSLog(@"current x value :%d", x);
-    }
-    NSLog(@"%d", count);
+- (void)testBinaryTree {
+    STBinaryTreeTest *bt = [[STBinaryTreeTest alloc]init];
 }
 
 - (void)dealloc
