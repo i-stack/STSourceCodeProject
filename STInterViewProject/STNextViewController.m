@@ -42,7 +42,7 @@
 }
 
 - (void)testExample {
-    [self testBinaryTree];
+    [self testMultiThreadTest];
 }
 
 - (void)testTimer {
