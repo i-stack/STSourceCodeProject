@@ -37,7 +37,6 @@ void minStackPush(MinStack* obj, int val) {
     }
 }
 
-
 char * addBinary(char * a, char * b) {
     unsigned long aLength = strlen(a);
     unsigned long bLength = strlen(b);
