@@ -81,8 +81,7 @@ char * addBinary(char * a, char * b) {
         tempRes[index] = '1';
     }
     int resIndex = 0;
-    char res[index];
-//    char *res = (char *)malloc(sizeof(char) * index);
+    char *res = (char *)malloc(sizeof(char) * index);
     for (int i = index; i >= 0; i--) {
         res[resIndex] = tempRes[i];
         resIndex++;
