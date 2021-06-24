@@ -12,8 +12,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface STMRCBaseModel : NSObject
 
-- (void)baseModelInstanceMethod;
-
 @end
 
 NS_ASSUME_NONNULL_END

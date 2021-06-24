@@ -106,18 +106,6 @@ struct __AtAutoreleasePool {
 };
 
 #define __OFFSETOFIVAR__(TYPE, MEMBER) ((long long) &((TYPE *)0)->MEMBER)
-static __NSConstantStringImpl __NSConstantStringImpl__var_folders_j2_21mzpjf16h99f94kx_l5sg8r0000gn_T_STMRCModel_f4286a_mi_0 __attribute__ ((section ("__DATA, __cfstring"))) = {__CFConstantStringClassReference,0x000007c8,"%s",2};
-static __NSConstantStringImpl __NSConstantStringImpl__var_folders_j2_21mzpjf16h99f94kx_l5sg8r0000gn_T_STMRCModel_f4286a_mi_1 __attribute__ ((section ("__DATA, __cfstring"))) = {__CFConstantStringClassReference,0x000007c8,"current queue name is: %@",25};
-static __NSConstantStringImpl __NSConstantStringImpl__var_folders_j2_21mzpjf16h99f94kx_l5sg8r0000gn_T_STMRCModel_f4286a_mi_2 __attribute__ ((section ("__DATA, __cfstring"))) = {__CFConstantStringClassReference,0x000007c8,"instanceMethod",14};
-static __NSConstantStringImpl __NSConstantStringImpl__var_folders_j2_21mzpjf16h99f94kx_l5sg8r0000gn_T_STMRCModel_f4286a_mi_3 __attribute__ ((section ("__DATA, __cfstring"))) = {__CFConstantStringClassReference,0x000007c8,"classMethod",11};
-
-
-
-
-
-
-
-
 
 
 
@@ -34215,99 +34203,37 @@ struct NSUUID_IMPL {
 #pragma clang assume_nonnull begin
 
 
-#ifndef _REWRITER_typedef_STMRCBaseModel
-#define _REWRITER_typedef_STMRCBaseModel
-typedef struct objc_object STMRCBaseModel;
-typedef struct {} _objc_exc_STMRCBaseModel;
-#endif
-
-struct STMRCBaseModel_IMPL {
-	struct NSObject_IMPL NSObject_IVARS;
-};
-
-
-/* @end */
-
-#pragma clang assume_nonnull end
-
-#pragma clang assume_nonnull begin
-
-
 #ifndef _REWRITER_typedef_STMRCModel
 #define _REWRITER_typedef_STMRCModel
 typedef struct objc_object STMRCModel;
 typedef struct {} _objc_exc_STMRCModel;
 #endif
 
-extern "C" unsigned long OBJC_IVAR_$_STMRCModel$_age;
-extern "C" unsigned long OBJC_IVAR_$_STMRCModel$_queueName;
+extern "C" unsigned long OBJC_IVAR_$_STMRCModel$_mrcModel;
 struct STMRCModel_IMPL {
-	struct STMRCBaseModel_IMPL STMRCBaseModel_IVARS;
-	NSInteger _age;
-	NSString * _Nonnull _queueName;
+	struct NSObject_IMPL NSObject_IVARS;
+	NSString * _Nonnull _mrcModel;
 };
 
 
-// @property (nonatomic,assign)NSInteger age;
-// @property (nonatomic,strong)NSString *queueName;
-
-// - (void)printQueueName;
-// - (void)instanceMethod;
-// + (void)classMethod;
+// @property (nonatomic,strong)NSString *mrcModel;
 
 /* @end */
 
 #pragma clang assume_nonnull end
 
-// @interface STMRCModel()
-
-/* @end */
-
-
 // @implementation STMRCModel
 
 
-static void _I_STMRCModel_dealloc(STMRCModel * self, SEL _cmd) {
-    ((void (*)(__rw_objc_super *, SEL))(void *)objc_msgSendSuper)((__rw_objc_super){(id)self, (id)class_getSuperclass(objc_getClass("STMRCModel"))}, sel_registerName("dealloc"));
-    NSLog((NSString *)&__NSConstantStringImpl__var_folders_j2_21mzpjf16h99f94kx_l5sg8r0000gn_T_STMRCModel_f4286a_mi_0, __func__);
-}
-
-
-static instancetype _I_STMRCModel_init(STMRCModel * self, SEL _cmd) {
-    self = ((STMRCModel *(*)(__rw_objc_super *, SEL))(void *)objc_msgSendSuper)((__rw_objc_super){(id)self, (id)class_getSuperclass(objc_getClass("STMRCModel"))}, sel_registerName("init"));
-    if (self) {
-
-
-
-
-
-
+static void _I_STMRCModel_setMrcModel_(STMRCModel * self, SEL _cmd, NSString * _Nonnull mrcModel) {
+    if ((*(NSString * _Nonnull *)((char *)self + OBJC_IVAR_$_STMRCModel$_mrcModel)) != mrcModel) {
+        ((void (*)(id, SEL))(void *)objc_msgSend)((id)(*(NSString * _Nonnull *)((char *)self + OBJC_IVAR_$_STMRCModel$_mrcModel)), sel_registerName("release"));
+        (*(NSString * _Nonnull *)((char *)self + OBJC_IVAR_$_STMRCModel$_mrcModel)) = ((NSString * _Nonnull (*)(id, SEL))(void *)objc_msgSend)((id)mrcModel, sel_registerName("retain"));
     }
-    return self;
 }
 
 
-static void _I_STMRCModel_printQueueName(STMRCModel * self, SEL _cmd) {
-    NSLog((NSString *)&__NSConstantStringImpl__var_folders_j2_21mzpjf16h99f94kx_l5sg8r0000gn_T_STMRCModel_f4286a_mi_1, ((NSString *(*)(id, SEL))(void *)objc_msgSend)((id)self, sel_registerName("queueName")));
-}
-
-
-static void _I_STMRCModel_instanceMethod(STMRCModel * self, SEL _cmd) {
-    NSLog((NSString *)&__NSConstantStringImpl__var_folders_j2_21mzpjf16h99f94kx_l5sg8r0000gn_T_STMRCModel_f4286a_mi_2);
-}
-
-
-static void _C_STMRCModel_classMethod(Class self, SEL _cmd) {
-    NSLog((NSString *)&__NSConstantStringImpl__var_folders_j2_21mzpjf16h99f94kx_l5sg8r0000gn_T_STMRCModel_f4286a_mi_3);
-}
-
-
-static NSInteger _I_STMRCModel_age(STMRCModel * self, SEL _cmd) { return (*(NSInteger *)((char *)self + OBJC_IVAR_$_STMRCModel$_age)); }
-static void _I_STMRCModel_setAge_(STMRCModel * self, SEL _cmd, NSInteger age) { (*(NSInteger *)((char *)self + OBJC_IVAR_$_STMRCModel$_age)) = age; }
-
-static NSString * _Nonnull _I_STMRCModel_queueName(STMRCModel * self, SEL _cmd) { return (*(NSString * _Nonnull *)((char *)self + OBJC_IVAR_$_STMRCModel$_queueName)); }
-static void _I_STMRCModel_setQueueName_(STMRCModel * self, SEL _cmd, NSString * _Nonnull queueName) { (*(NSString * _Nonnull *)((char *)self + OBJC_IVAR_$_STMRCModel$_queueName)) = queueName; }
-// @end
+static NSString * _Nonnull _I_STMRCModel_mrcModel(STMRCModel * self, SEL _cmd) { return (*(NSString * _Nonnull *)((char *)self + OBJC_IVAR_$_STMRCModel$_mrcModel)); }// @end
 
 struct _prop_t {
 	const char *name;
@@ -34376,67 +34302,45 @@ struct _category_t {
 extern "C" __declspec(dllimport) struct objc_cache _objc_empty_cache;
 #pragma warning(disable:4273)
 
-extern "C" unsigned long int OBJC_IVAR_$_STMRCModel$_age __attribute__ ((used, section ("__DATA,__objc_ivar"))) = __OFFSETOFIVAR__(struct STMRCModel, _age);
-extern "C" unsigned long int OBJC_IVAR_$_STMRCModel$_queueName __attribute__ ((used, section ("__DATA,__objc_ivar"))) = __OFFSETOFIVAR__(struct STMRCModel, _queueName);
+extern "C" unsigned long int OBJC_IVAR_$_STMRCModel$_mrcModel __attribute__ ((used, section ("__DATA,__objc_ivar"))) = __OFFSETOFIVAR__(struct STMRCModel, _mrcModel);
 
 static struct /*_ivar_list_t*/ {
 	unsigned int entsize;  // sizeof(struct _prop_t)
 	unsigned int count;
-	struct _ivar_t ivar_list[2];
+	struct _ivar_t ivar_list[1];
 } _OBJC_$_INSTANCE_VARIABLES_STMRCModel __attribute__ ((used, section ("__DATA,__objc_const"))) = {
 	sizeof(_ivar_t),
-	2,
-	{{(unsigned long int *)&OBJC_IVAR_$_STMRCModel$_age, "_age", "q", 3, 8},
-	 {(unsigned long int *)&OBJC_IVAR_$_STMRCModel$_queueName, "_queueName", "@\"NSString\"", 3, 8}}
+	1,
+	{{(unsigned long int *)&OBJC_IVAR_$_STMRCModel$_mrcModel, "_mrcModel", "@\"NSString\"", 3, 8}}
 };
 
 static struct /*_method_list_t*/ {
 	unsigned int entsize;  // sizeof(struct _objc_method)
 	unsigned int method_count;
-	struct _objc_method method_list[12];
+	struct _objc_method method_list[3];
 } _OBJC_$_INSTANCE_METHODS_STMRCModel __attribute__ ((used, section ("__DATA,__objc_const"))) = {
 	sizeof(_objc_method),
-	12,
-	{{(struct objc_selector *)"dealloc", "v16@0:8", (void *)_I_STMRCModel_dealloc},
-	{(struct objc_selector *)"init", "@16@0:8", (void *)_I_STMRCModel_init},
-	{(struct objc_selector *)"printQueueName", "v16@0:8", (void *)_I_STMRCModel_printQueueName},
-	{(struct objc_selector *)"instanceMethod", "v16@0:8", (void *)_I_STMRCModel_instanceMethod},
-	{(struct objc_selector *)"age", "q16@0:8", (void *)_I_STMRCModel_age},
-	{(struct objc_selector *)"setAge:", "v24@0:8q16", (void *)_I_STMRCModel_setAge_},
-	{(struct objc_selector *)"queueName", "@16@0:8", (void *)_I_STMRCModel_queueName},
-	{(struct objc_selector *)"setQueueName:", "v24@0:8@16", (void *)_I_STMRCModel_setQueueName_},
-	{(struct objc_selector *)"age", "q16@0:8", (void *)_I_STMRCModel_age},
-	{(struct objc_selector *)"setAge:", "v24@0:8q16", (void *)_I_STMRCModel_setAge_},
-	{(struct objc_selector *)"queueName", "@16@0:8", (void *)_I_STMRCModel_queueName},
-	{(struct objc_selector *)"setQueueName:", "v24@0:8@16", (void *)_I_STMRCModel_setQueueName_}}
-};
-
-static struct /*_method_list_t*/ {
-	unsigned int entsize;  // sizeof(struct _objc_method)
-	unsigned int method_count;
-	struct _objc_method method_list[1];
-} _OBJC_$_CLASS_METHODS_STMRCModel __attribute__ ((used, section ("__DATA,__objc_const"))) = {
-	sizeof(_objc_method),
-	1,
-	{{(struct objc_selector *)"classMethod", "v16@0:8", (void *)_C_STMRCModel_classMethod}}
+	3,
+	{{(struct objc_selector *)"setMrcModel:", "v24@0:8@16", (void *)_I_STMRCModel_setMrcModel_},
+	{(struct objc_selector *)"mrcModel", "@16@0:8", (void *)_I_STMRCModel_mrcModel},
+	{(struct objc_selector *)"mrcModel", "@16@0:8", (void *)_I_STMRCModel_mrcModel}}
 };
 
 static struct /*_prop_list_t*/ {
 	unsigned int entsize;  // sizeof(struct _prop_t)
 	unsigned int count_of_properties;
-	struct _prop_t prop_list[2];
+	struct _prop_t prop_list[1];
 } _OBJC_$_PROP_LIST_STMRCModel __attribute__ ((used, section ("__DATA,__objc_const"))) = {
 	sizeof(_prop_t),
-	2,
-	{{"age","Tq,N,V_age"},
-	{"queueName","T@\"NSString\",&,N,V_queueName"}}
+	1,
+	{{"mrcModel","T@\"NSString\",&,N,V_mrcModel"}}
 };
 
 static struct _class_ro_t _OBJC_METACLASS_RO_$_STMRCModel __attribute__ ((used, section ("__DATA,__objc_const"))) = {
 	1, sizeof(struct _class_t), sizeof(struct _class_t), 
 	0, 
 	"STMRCModel",
-	(const struct _method_list_t *)&_OBJC_$_CLASS_METHODS_STMRCModel,
+	0, 
 	0, 
 	0, 
 	0, 
@@ -34444,7 +34348,7 @@ static struct _class_ro_t _OBJC_METACLASS_RO_$_STMRCModel __attribute__ ((used, 
 };
 
 static struct _class_ro_t _OBJC_CLASS_RO_$_STMRCModel __attribute__ ((used, section ("__DATA,__objc_const"))) = {
-	0, __OFFSETOFIVAR__(struct STMRCModel, _age), sizeof(struct STMRCModel_IMPL), 
+	0, __OFFSETOFIVAR__(struct STMRCModel, _mrcModel), sizeof(struct STMRCModel_IMPL), 
 	0, 
 	"STMRCModel",
 	(const struct _method_list_t *)&_OBJC_$_INSTANCE_METHODS_STMRCModel,
@@ -34454,32 +34358,31 @@ static struct _class_ro_t _OBJC_CLASS_RO_$_STMRCModel __attribute__ ((used, sect
 	(const struct _prop_list_t *)&_OBJC_$_PROP_LIST_STMRCModel,
 };
 
-extern "C" __declspec(dllimport) struct _class_t OBJC_METACLASS_$_STMRCBaseModel;
 extern "C" __declspec(dllimport) struct _class_t OBJC_METACLASS_$_NSObject;
 
 extern "C" __declspec(dllexport) struct _class_t OBJC_METACLASS_$_STMRCModel __attribute__ ((used, section ("__DATA,__objc_data"))) = {
 	0, // &OBJC_METACLASS_$_NSObject,
-	0, // &OBJC_METACLASS_$_STMRCBaseModel,
+	0, // &OBJC_METACLASS_$_NSObject,
 	0, // (void *)&_objc_empty_cache,
 	0, // unused, was (void *)&_objc_empty_vtable,
 	&_OBJC_METACLASS_RO_$_STMRCModel,
 };
 
-extern "C" __declspec(dllimport) struct _class_t OBJC_CLASS_$_STMRCBaseModel;
+extern "C" __declspec(dllimport) struct _class_t OBJC_CLASS_$_NSObject;
 
 extern "C" __declspec(dllexport) struct _class_t OBJC_CLASS_$_STMRCModel __attribute__ ((used, section ("__DATA,__objc_data"))) = {
 	0, // &OBJC_METACLASS_$_STMRCModel,
-	0, // &OBJC_CLASS_$_STMRCBaseModel,
+	0, // &OBJC_CLASS_$_NSObject,
 	0, // (void *)&_objc_empty_cache,
 	0, // unused, was (void *)&_objc_empty_vtable,
 	&_OBJC_CLASS_RO_$_STMRCModel,
 };
 static void OBJC_CLASS_SETUP_$_STMRCModel(void ) {
 	OBJC_METACLASS_$_STMRCModel.isa = &OBJC_METACLASS_$_NSObject;
-	OBJC_METACLASS_$_STMRCModel.superclass = &OBJC_METACLASS_$_STMRCBaseModel;
+	OBJC_METACLASS_$_STMRCModel.superclass = &OBJC_METACLASS_$_NSObject;
 	OBJC_METACLASS_$_STMRCModel.cache = &_objc_empty_cache;
 	OBJC_CLASS_$_STMRCModel.isa = &OBJC_METACLASS_$_STMRCModel;
-	OBJC_CLASS_$_STMRCModel.superclass = &OBJC_CLASS_$_STMRCBaseModel;
+	OBJC_CLASS_$_STMRCModel.superclass = &OBJC_CLASS_$_NSObject;
 	OBJC_CLASS_$_STMRCModel.cache = &_objc_empty_cache;
 }
 #pragma section(".objc_inithooks$B", long, read, write)

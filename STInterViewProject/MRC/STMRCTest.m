@@ -10,7 +10,6 @@
 #import "STMRCModel.h"
 #import <objc/runtime.h>
 #import <malloc/malloc.h>
-#import <objc/message.h>
 
 @interface STMRCTest()
 
@@ -116,6 +115,11 @@ struct objc_super2 {
                 self.name = [NSString stringWithFormat:@"abcde%d", i];
             });
         }
+        NSLog(@"111");
+
+        STMRCModel *model = [[[STMRCModel alloc]init]autorelease];
+        NSLog(@"%zu", class_getInstanceSize(model.class));
+        NSLog(@"%zu", malloc_size(model));
     }
     return self;
 }
