@@ -10,6 +10,7 @@
 #import "STMRCModel.h"
 #import <objc/runtime.h>
 #import <malloc/malloc.h>
+#import <objc/message.h>
 
 @implementation STMRCTest
 
