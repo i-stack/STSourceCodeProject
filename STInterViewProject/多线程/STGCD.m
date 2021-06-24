@@ -33,7 +33,7 @@
         self.tickets = 10;
         _dataDict = [NSMutableDictionary dictionary];
         concurrentQueue = dispatch_queue_create("testBarrier", DISPATCH_QUEUE_CONCURRENT);
-        [self testMultiSync];
+        [self testSemaphore];
     }
     return self;
 }
@@ -252,22 +252,6 @@
         dispatch_semaphore_signal(semaphore);
     });
     NSLog(@"%d", number);
-}
-
-- (void)testMultiSync {
-    dispatch_queue_t queue = dispatch_queue_create("testPrintQueue", DISPATCH_QUEUE_CONCURRENT);
-    for (int i = 0; i < 10; i++) {
-        dispatch_sync(queue, ^{
-            NSLog(@"A");
-        });
-        dispatch_sync(queue, ^{
-            NSLog(@"B");
-        });
-        dispatch_sync(queue, ^{
-            NSLog(@"C");
-        });
-        NSLog(@"----次数：%d----", i);
-    }
 }
 
 @end
