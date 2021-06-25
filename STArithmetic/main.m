@@ -20,6 +20,100 @@ char * addBinary(char * a, char * b);
 MinStack* minStackCreate(void);
 void minStackPush(MinStack* obj, int val);
 
+char* join(char *s1, char *s2)
+{
+    unsigned long s1Length = 0;
+    if (s1 != NULL) {
+        s1Length = strlen(s1);
+    }
+    unsigned long s2Length = 0;
+    if (s2 != NULL) {
+        s2Length = strlen(s2);
+    }
+    char *result = malloc(s1Length + s2Length + 1);
+    if (result == NULL) exit (1);
+    if (s1 != NULL) {
+        strcpy(result, s1);
+    }
+    if (s2 != NULL) {
+        strcat(result, s2);
+    }
+    return result;
+}
+
+char * intToRoman(int num){
+    char *res = "";
+    char *tempRes = "";
+    while (num != 0) {
+        if (num >= 1000) {
+            num -= 1000;
+            tempRes = "M";
+            res = join(res, tempRes);
+        } else if (num >= 900) {
+            num -= 900;
+            tempRes = "C";
+            res = join(res, tempRes);
+            tempRes = "M";
+            res = join(res, tempRes);
+        } else if (num >= 500) {
+            num -= 500;
+            tempRes = "D";
+            res = join(res, tempRes);
+        } else if (num >= 400) {
+            num -= 400;
+            tempRes = "C";
+            res = join(res, tempRes);
+            tempRes = "D";
+            res = join(res, tempRes);
+        } else if (num >= 100) {
+            num -= 100;
+            tempRes = "C";
+            res = join(res, tempRes);
+        } else if (num >= 90) {
+            num -= 90;
+            tempRes = "X";
+            res = join(res, tempRes);
+            tempRes = "C";
+            res = join(res, tempRes);
+        } else if (num >= 50) {
+            num -= 50;
+            tempRes = "L";
+            res = join(res, tempRes);
+        } else if (num >= 40) {
+            num -= 40;
+            tempRes = "X";
+            res = join(res, tempRes);
+            tempRes = "L";
+            res = join(res, tempRes);
+        } else if (num >= 10) {
+            num -= 10;
+            tempRes = "X";
+            res = join(res, tempRes);
+        } else if (num == 9) {
+            num -= 9;
+            tempRes = "I";
+            res = join(res, tempRes);
+            tempRes = "X";
+            res = join(res, tempRes);
+        } else if (num >= 5) {
+            num -= 5;
+            tempRes = "V";
+            res = join(res, tempRes);
+        } else if (num == 4) {
+            num -= 4;
+            tempRes = "I";
+            res = join(res, tempRes);
+            tempRes = "V";
+            res = join(res, tempRes);
+        } else if (num <= 3) {
+            num -= 1;
+            tempRes = "I";
+            res = join(res, tempRes);
+        }
+    }
+    return res;
+}
+
 /** initialize your data structure here. */
 MinStack* minStackCreate(void) {
     MinStack *minStack = (MinStack *)malloc(sizeof(MinStack));
@@ -124,10 +218,12 @@ int main(int argc, const char * argv[]) {
 //        char *q = b;
 //        addBinary(p, q);
         
-        MinStack* obj = minStackCreate();
-        minStackPush(obj, -2);
-        minStackPush(obj, -4);
-        minStackPush(obj, -0);
+//        MinStack* obj = minStackCreate();
+//        minStackPush(obj, -2);
+//        minStackPush(obj, -4);
+//        minStackPush(obj, -0);
+        
+        intToRoman(1994);
     }
     return 0;
 }
