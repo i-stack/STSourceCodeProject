@@ -39,6 +39,7 @@
 		E4C2B4052604855F0082AEC4 /* STKVCTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C2B4042604855E0082AEC4 /* STKVCTest.m */; };
 		E4C2B40E260489730082AEC4 /* STKVCModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C2B40D260489730082AEC4 /* STKVCModel.m */; };
 		E4C800322612FC4A0088696E /* STMRCBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C800312612FC4A0088696E /* STMRCBaseModel.m */; };
+		E4CBCBE5268DB3A0004F13AC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E4CBCBE4268DB3A0004F13AC /* main.m */; };
 		E4FEB67E25A8519E0055D834 /* STBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = E4FEB67D25A8519E0055D834 /* STBlock.m */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +71,15 @@
 			runOnlyForDeploymentPostprocessing = 1;
 		};
 		E46216AE268181840048C004 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		E4CBCBE0268DB3A0004F13AC /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -150,6 +160,9 @@
 		E4C2B40D260489730082AEC4 /* STKVCModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STKVCModel.m; sourceTree = "<group>"; };
 		E4C800302612FC4A0088696E /* STMRCBaseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STMRCBaseModel.h; sourceTree = "<group>"; };
 		E4C800312612FC4A0088696E /* STMRCBaseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STMRCBaseModel.m; sourceTree = "<group>"; };
+		E4CBCBE2268DB3A0004F13AC /* OC对象本质 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "OC对象本质"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4CBCBE4268DB3A0004F13AC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E4CBCBEF268DBB76004F13AC /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		E4FEB67C25A8519E0055D834 /* STBlock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STBlock.h; sourceTree = "<group>"; };
 		E4FEB67D25A8519E0055D834 /* STBlock.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STBlock.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -190,6 +203,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E4CBCBDF268DB3A0004F13AC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -215,6 +235,7 @@
 				E48EF5B424EE287E0018D0FD /* STInterViewProject */,
 				E46216B1268181840048C004 /* STArithmetic */,
 				E44F58DB268578B100B3CE33 /* STSort */,
+				E4CBCBE3268DB3A0004F13AC /* OC对象本质 */,
 				E48EF5B324EE287E0018D0FD /* Products */,
 			);
 			sourceTree = "<group>";
@@ -227,6 +248,7 @@
 				E48EF5D824EE28840018D0FD /* STInterViewProjectUITests.xctest */,
 				E46216B0268181840048C004 /* STArithmetic */,
 				E44F58DA268578B100B3CE33 /* STSort */,
+				E4CBCBE2268DB3A0004F13AC /* OC对象本质 */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -374,6 +396,15 @@
 			path = KVC;
 			sourceTree = "<group>";
 		};
+		E4CBCBE3268DB3A0004F13AC /* OC对象本质 */ = {
+			isa = PBXGroup;
+			children = (
+				E4CBCBE4268DB3A0004F13AC /* main.m */,
+				E4CBCBEF268DBB76004F13AC /* main.cpp */,
+			);
+			path = "OC对象本质";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -464,6 +495,23 @@
 			productReference = E48EF5D824EE28840018D0FD /* STInterViewProjectUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		E4CBCBE1268DB3A0004F13AC /* OC对象本质 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E4CBCBE8268DB3A0004F13AC /* Build configuration list for PBXNativeTarget "OC对象本质" */;
+			buildPhases = (
+				E4CBCBDE268DB3A0004F13AC /* Sources */,
+				E4CBCBDF268DB3A0004F13AC /* Frameworks */,
+				E4CBCBE0268DB3A0004F13AC /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "OC对象本质";
+			productName = "OC对象本质";
+			productReference = E4CBCBE2268DB3A0004F13AC /* OC对象本质 */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -490,6 +538,9 @@
 						CreatedOnToolsVersion = 11.6;
 						TestTargetID = E48EF5B124EE287E0018D0FD;
 					};
+					E4CBCBE1268DB3A0004F13AC = {
+						CreatedOnToolsVersion = 12.4;
+					};
 				};
 			};
 			buildConfigurationList = E48EF5AD24EE287E0018D0FD /* Build configuration list for PBXProject "STInterViewProject" */;
@@ -510,6 +561,7 @@
 				E48EF5D724EE28840018D0FD /* STInterViewProjectUITests */,
 				E46216AF268181840048C004 /* STArithmetic */,
 				E44F58D9268578B100B3CE33 /* STSort */,
+				E4CBCBE1268DB3A0004F13AC /* OC对象本质 */,
 			);
 		};
 /* End PBXProject section */
@@ -604,6 +656,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4CBCBDE268DB3A0004F13AC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4CBCBE5268DB3A0004F13AC /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -920,6 +980,32 @@
 			};
 			name = Release;
 		};
+		E4CBCBE6268DB3A0004F13AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8D4LL3H2G7;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		E4CBCBE7268DB3A0004F13AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8D4LL3H2G7;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -973,6 +1059,15 @@
 			buildConfigurations = (
 				E48EF5E824EE28840018D0FD /* Debug */,
 				E48EF5E924EE28840018D0FD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E4CBCBE8268DB3A0004F13AC /* Build configuration list for PBXNativeTarget "OC对象本质" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4CBCBE6268DB3A0004F13AC /* Debug */,
+				E4CBCBE7268DB3A0004F13AC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

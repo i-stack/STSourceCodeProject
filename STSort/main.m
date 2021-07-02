@@ -45,12 +45,31 @@ void merge_sort(int arr[], const int len) {
     merge_sort_recursive(arr, reg, 0, len - 1);
 }
 
+void quickSoct(int *arr, int begin, int end);
+
+void quickSoct(int *arr, int begin, int end) {
+    if (begin < end) {
+        int i = begin;
+        int j = end;
+        int k = arr[begin];
+        while (i < j) {
+            while (i < j && arr[j] >= k) j--;
+            if (i < j) arr[i++] = arr[j];
+            while (i < j && arr[i] < k) i++;
+            if (i < j) arr[j--] = arr[i];
+        }
+        arr[i] = k;
+        quickSoct(arr, begin, i - 1);
+        quickSoct(arr, i + 1, end);
+    }
+}
+
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         int nums[] = {5, 1, 8, 4, 7, 2, 3, 9, 0, 6};
-        int *p = nums;
         int length = sizeof(nums) / sizeof(int);
-        merge_sort(nums, length);
+//        merge_sort(nums, length);
+        quickSoct(nums, 0, length - 1);
         printf ("\n 排序后 \n");
         for(int i = 0; i < length; i++) {
             printf("%d\t", nums[i]);

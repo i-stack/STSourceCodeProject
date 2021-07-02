@@ -20,6 +20,8 @@ char * addBinary(char * a, char * b);
 MinStack* minStackCreate(void);
 void minStackPush(MinStack* obj, int val);
 
+int* getMaximumXor(int* nums, int numsSize, int maximumBit, int* returnSize);
+
 char* join(char *s1, char *s2)
 {
     unsigned long s1Length = 0;
@@ -205,6 +207,37 @@ void merge(int* nums1, int nums1Size, int m, int* nums2, int nums2Size, int n){
     }
 }
 
+int* getMaximumXor(int* nums, int numsSize, int maximumBit, int* returnSize){
+    *returnSize = 0;
+    int *answer = (int *)malloc(sizeof(int) * (numsSize));
+    int lastIndex = numsSize - 1;
+    int k = 0, value = 0, maxValue = 0;
+    int maxBit = pow(2, maximumBit);
+    while(lastIndex >= 0) {
+        for (int i = lastIndex; i >= 0; i--) {
+            value ^= nums[i];
+        }
+        for (int i = 0; i < maxBit; i++) {
+            if ((value ^ i) > maxValue) {
+                k = i;
+                maxValue = value ^ i;
+            }
+        }
+        answer[*returnSize] = k;
+        k = 0;
+        value = 0;
+        maxValue = 0;
+        lastIndex--;
+        (*returnSize) += 1;
+    }
+    for (int i = 0; i < *returnSize; i++) {
+        printf("begin ---\n");
+        printf("%d\n", answer[i]);
+        printf("end ---\n");
+    }
+    return answer;
+}
+
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
 //        int num1[6] = {6,7,9,0,0,0};
@@ -223,7 +256,13 @@ int main(int argc, const char * argv[]) {
 //        minStackPush(obj, -4);
 //        minStackPush(obj, -0);
         
-        intToRoman(1994);
+//        intToRoman(1994);
+        
+        int num[4] = {0,1,1,3};
+        int numSize = 0;
+        int *p = num;
+        int *q = &numSize;
+        getMaximumXor(p, 4, 2, q);
     }
     return 0;
 }
