@@ -238,6 +238,34 @@ int* getMaximumXor(int* nums, int numsSize, int maximumBit, int* returnSize){
     return answer;
 }
 
+int searchInsert(int* nums, int numsSize, int target);
+
+int searchInsert(int* nums, int numsSize, int target){
+    if (numsSize < 1) return 0;
+    int begin = 0;
+    int end = numsSize - 1;
+    if (nums[begin] >= target) return begin;
+    if (nums[end] == target) return end;
+    if (nums[end] < target) return numsSize;
+    int mid = begin + ((numsSize - begin) >> 1);
+    int res = -1;
+    while (begin < end) {
+        if (nums[mid] > target) {
+            end = mid;
+        } else if (nums[mid] < target) {
+            begin = mid + 1;
+        } else {
+            res = mid;
+            break;
+        }
+        mid = begin + ((end - begin) >> 1);
+    }
+    if (res == -1) {
+        res = begin;
+    }
+    return res;
+}
+
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
 //        int num1[6] = {6,7,9,0,0,0};
@@ -258,11 +286,12 @@ int main(int argc, const char * argv[]) {
         
 //        intToRoman(1994);
         
-        int num[4] = {0,1,1,3};
-        int numSize = 0;
-        int *p = num;
-        int *q = &numSize;
-        getMaximumXor(p, 4, 2, q);
+        int num[4] = {1,3,5,6};
+//        int numSize = 0;
+//        int *p = num;
+//        int *q = &numSize;
+//        getMaximumXor(p, 4, 2, q);
+        searchInsert(num, 4, 4);
     }
     return 0;
 }
