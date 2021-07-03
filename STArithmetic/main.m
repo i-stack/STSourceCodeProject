@@ -20,6 +20,8 @@ char * addBinary(char * a, char * b);
 MinStack* minStackCreate(void);
 void minStackPush(MinStack* obj, int val);
 
+int* getMaximumXor(int* nums, int numsSize, int maximumBit, int* returnSize);
+
 char* join(char *s1, char *s2)
 {
     unsigned long s1Length = 0;
@@ -205,6 +207,65 @@ void merge(int* nums1, int nums1Size, int m, int* nums2, int nums2Size, int n){
     }
 }
 
+int* getMaximumXor(int* nums, int numsSize, int maximumBit, int* returnSize){
+    *returnSize = 0;
+    int *answer = (int *)malloc(sizeof(int) * (numsSize));
+    int lastIndex = numsSize - 1;
+    int k = 0, value = 0, maxValue = 0;
+    int maxBit = pow(2, maximumBit);
+    while(lastIndex >= 0) {
+        for (int i = lastIndex; i >= 0; i--) {
+            value ^= nums[i];
+        }
+        for (int i = 0; i < maxBit; i++) {
+            if ((value ^ i) > maxValue) {
+                k = i;
+                maxValue = value ^ i;
+            }
+        }
+        answer[*returnSize] = k;
+        k = 0;
+        value = 0;
+        maxValue = 0;
+        lastIndex--;
+        (*returnSize) += 1;
+    }
+    for (int i = 0; i < *returnSize; i++) {
+        printf("begin ---\n");
+        printf("%d\n", answer[i]);
+        printf("end ---\n");
+    }
+    return answer;
+}
+
+int searchInsert(int* nums, int numsSize, int target);
+
+int searchInsert(int* nums, int numsSize, int target){
+    if (numsSize < 1) return 0;
+    int begin = 0;
+    int end = numsSize - 1;
+    if (nums[begin] >= target) return begin;
+    if (nums[end] == target) return end;
+    if (nums[end] < target) return numsSize;
+    int mid = begin + ((numsSize - begin) >> 1);
+    int res = -1;
+    while (begin < end) {
+        if (nums[mid] > target) {
+            end = mid;
+        } else if (nums[mid] < target) {
+            begin = mid + 1;
+        } else {
+            res = mid;
+            break;
+        }
+        mid = begin + ((end - begin) >> 1);
+    }
+    if (res == -1) {
+        res = begin;
+    }
+    return res;
+}
+
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
 //        int num1[6] = {6,7,9,0,0,0};
@@ -223,7 +284,14 @@ int main(int argc, const char * argv[]) {
 //        minStackPush(obj, -4);
 //        minStackPush(obj, -0);
         
-        intToRoman(1994);
+//        intToRoman(1994);
+        
+        int num[4] = {1,3,5,6};
+//        int numSize = 0;
+//        int *p = num;
+//        int *q = &numSize;
+//        getMaximumXor(p, 4, 2, q);
+        searchInsert(num, 4, 4);
     }
     return 0;
 }
