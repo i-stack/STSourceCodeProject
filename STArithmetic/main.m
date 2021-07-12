@@ -341,14 +341,14 @@ int main(int argc, const char * argv[]) {
         
 //        intToRoman(1994);
         
-        int num[4] = {1,2,2,4};
+//        int num[4] = {1,2,2,4};
 //        int num[4] = {1,3,5,6};
 //        int numSize = 0;
 //        int *p = num;
 //        int *q = &numSize;
 //        getMaximumXor(p, 4, 2, q);
 //        searchInsert(num, 4, 4);
-        findErrorNums(num, 4, 2);
+//        findErrorNums(num, 4, 2);
         
         struct ListNode *head = (struct ListNode *)malloc(sizeof(struct ListNode));
         struct ListNode *headPtr;
