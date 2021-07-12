@@ -14,6 +14,11 @@ typedef struct {
     int minVal;
 } MinStack;
 
+struct ListNode {
+    int val;
+    struct ListNode *next;
+};
+
 void merge(int* nums1, int nums1Size, int m, int* nums2, int nums2Size, int n);
 char * addBinary(char * a, char * b);
 
@@ -280,6 +285,42 @@ int* findErrorNums(int* nums, int numsSize, int* returnSize){
     return res;
 }
 
+bool isPalindrome(struct ListNode* head);
+struct ListNode * revertNode(struct ListNode *node);
+
+struct ListNode * revertNode(struct ListNode *node) {
+    if (node == NULL || node -> next == NULL) return node;
+    struct ListNode *preNode = NULL;
+    struct ListNode *tempNode = NULL;
+    while (node != NULL) {
+        tempNode = node -> next;
+        node -> next = preNode;
+        preNode = node;
+        node = tempNode;
+    }
+    return preNode;
+}
+
+bool isPalindrome(struct ListNode* head){
+    if (head == NULL || head -> next == NULL) return head;
+    struct ListNode *slow = head;
+    struct ListNode *fast = head;
+    while (fast != NULL && fast -> next != NULL) {
+       slow = slow -> next;
+       fast = fast -> next -> next;
+    }
+    struct ListNode *newHead = slow;
+    if (slow -> next != NULL) {
+        newHead = revertNode(slow -> next);
+    }
+    while (head != NULL && newHead != NULL) {
+        if (head -> val != newHead -> val) return false;
+        head = head -> next;
+        newHead = newHead -> next;
+    }
+    return true;
+}
+
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
 //        int num1[6] = {6,7,9,0,0,0};
@@ -301,12 +342,39 @@ int main(int argc, const char * argv[]) {
 //        intToRoman(1994);
         
         int num[4] = {1,2,2,4};
+//        int num[4] = {1,3,5,6};
 //        int numSize = 0;
 //        int *p = num;
 //        int *q = &numSize;
 //        getMaximumXor(p, 4, 2, q);
 //        searchInsert(num, 4, 4);
         findErrorNums(num, 4, 2);
+        
+        struct ListNode *head = (struct ListNode *)malloc(sizeof(struct ListNode));
+        struct ListNode *headPtr;
+        head -> val = 1;
+        head -> next = NULL;
+        headPtr = head;
+        
+        struct ListNode *node1 = (struct ListNode *)malloc(sizeof(struct ListNode));;
+        node1 -> val = 1;
+        node1 -> next = NULL;
+        headPtr -> next = node1;
+        headPtr = node1;
+        
+        struct ListNode *node2 = (struct ListNode *)malloc(sizeof(struct ListNode));;
+        node2 -> val = 2;
+        node2 -> next = NULL;
+        headPtr -> next = node2;
+        headPtr = node2;
+
+        struct ListNode *node3 = (struct ListNode *)malloc(sizeof(struct ListNode));;
+        node3 -> val = 1;
+        node3 -> next = NULL;
+        headPtr -> next = node3;
+        headPtr = node3;
+        
+        isPalindrome(head);
     }
     return 0;
 }
