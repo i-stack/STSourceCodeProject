@@ -321,6 +321,139 @@ bool isPalindrome(struct ListNode* head){
     return true;
 }
 
+void reorderList(struct ListNode* head);
+void reorderList(struct ListNode* head){
+    if (head == NULL || head -> next == NULL) return;
+    struct ListNode *node1 = head;
+    struct ListNode *node2 = head;
+    while (node2 -> next != NULL && node2 -> next -> next != NULL) {
+        node1 = node1 -> next;
+        node2 = node2 -> next -> next;
+    }
+    node2 = node1 -> next;
+    node1 -> next = NULL;
+    node2 = revertNode(node2);
+    struct ListNode *tmpNode = NULL;
+    struct ListNode *curNode = head;
+    struct ListNode *nextNode = head -> next;
+    while (node2 != NULL) {
+        tmpNode = node2 -> next;
+        curNode -> next = node2;
+        node2 -> next = nextNode;
+        curNode = nextNode;
+        nextNode = nextNode -> next;
+        node2 = tmpNode;
+    }
+    
+    while (head != NULL) {
+        printf("--------\n");
+        printf("%d", head -> val);
+        printf("--------\n");
+        head = head -> next;
+    }
+}
+
+struct LRUKeys {
+    int key;
+    int value;
+    int useCount;
+    bool hasValue;
+};
+
+typedef struct {
+    int capacity;
+    int occupied;
+    int useLessKey;
+    struct LRUKeys *keys;
+} LRUCache;
+
+LRUCache* lRUCacheCreate(int capacity) {
+    LRUCache *cache = (LRUCache *)malloc(sizeof(LRUCache));
+    cache -> occupied = 0;
+    cache -> useLessKey = 0;
+    cache -> capacity = capacity;
+    cache -> keys = (struct LRUKeys *)malloc(sizeof(struct LRUKeys) * (capacity + 1));
+    for (int i = 0; i <= capacity; i++) {
+        struct LRUKeys *key = (struct LRUKeys *)malloc(sizeof(struct LRUKeys));
+        key -> key = -1;
+        key -> value = -1;
+        key -> useCount = 0;
+        key -> hasValue = false;
+        cache -> keys[i] = *key;
+    }
+    return cache;
+}
+
+bool cacheIsFull(LRUCache* obj) {
+    if (obj == NULL) return false;
+    return obj -> occupied >= obj -> capacity;
+}
+
+int cacheUseLessKey(LRUCache* obj) {
+    if (obj == NULL) return -1;
+    int useLessKey = 0;
+    struct LRUKeys *firstKey = &obj -> keys[0];
+    int count = firstKey -> useCount;
+    for (int i = 1; i <= obj -> capacity; i++) {
+        struct LRUKeys *keys = &obj -> keys[i];
+        if (keys -> useCount < count && keys -> hasValue) {
+            count = keys -> useCount;
+            useLessKey = i;
+        }
+    }
+    return useLessKey;
+}
+
+int lRUCacheGet(LRUCache* obj, int key);
+int lRUCacheGet(LRUCache* obj, int key) {
+    if (obj == NULL) return -1;
+    int mask = key & obj -> capacity;
+    struct LRUKeys *keys = &obj -> keys[mask];
+    if (!keys -> hasValue) return -1;
+    if (keys -> key != key) return -1;
+    keys -> useCount++;
+    obj -> keys[mask] = *keys;
+    return keys -> value;
+}
+
+void lRUCachePut(LRUCache* obj, int key, int value);
+void lRUCachePut(LRUCache* obj, int key, int value) {
+    if (obj == NULL) return;
+    int mask = key & obj -> capacity;
+    if (cacheIsFull(obj)) {
+        int useLessKey = cacheUseLessKey(obj);
+        struct LRUKeys *keys = &obj -> keys[useLessKey];
+        keys -> key = -1;
+        keys -> value = -1;
+        keys -> useCount = 0;
+        keys -> hasValue = false;
+        obj -> keys[mask] = *keys;
+        obj -> occupied--;
+    }
+    struct LRUKeys *keys = &obj -> keys[mask];
+    if (mask == key && lRUCacheGet(obj, key) != -1) {
+        int newKey = key - 1;
+        while (newKey >= 0) {
+            if (lRUCacheGet(obj, newKey & obj -> capacity) == -1) {
+                mask = newKey & obj -> capacity;
+                break;
+            }
+            newKey--;
+        }
+    }
+    
+    keys -> key = key;
+    keys -> value = value;
+    keys -> useCount++;
+    keys -> hasValue = true;
+    obj -> keys[mask] = *keys;
+    obj -> occupied++;
+}
+
+void lRUCacheFree(LRUCache* obj) {
+    free(obj);
+}
+
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
 //        int num1[6] = {6,7,9,0,0,0};
@@ -357,24 +490,53 @@ int main(int argc, const char * argv[]) {
         headPtr = head;
         
         struct ListNode *node1 = (struct ListNode *)malloc(sizeof(struct ListNode));;
-        node1 -> val = 1;
+        node1 -> val = 2;
         node1 -> next = NULL;
         headPtr -> next = node1;
         headPtr = node1;
         
         struct ListNode *node2 = (struct ListNode *)malloc(sizeof(struct ListNode));;
-        node2 -> val = 2;
+        node2 -> val = 3;
         node2 -> next = NULL;
         headPtr -> next = node2;
         headPtr = node2;
 
         struct ListNode *node3 = (struct ListNode *)malloc(sizeof(struct ListNode));;
-        node3 -> val = 1;
+        node3 -> val = 4;
         node3 -> next = NULL;
         headPtr -> next = node3;
         headPtr = node3;
         
-        isPalindrome(head);
+        struct ListNode *node4 = (struct ListNode *)malloc(sizeof(struct ListNode));;
+        node4 -> val = 5;
+        node4 -> next = NULL;
+        headPtr -> next = node4;
+        headPtr = node4;
+        
+//        isPalindrome(head);
+        
+        //reorderList(head);
+        
+//        ["LRUCache","put","put","get","put","get","put","get","get","get"]
+//        [[2],[1,1],[2,2],[1],[3,3],[2],[4,4],[1],[3],[4]]
+//        [null,null,null,1,null,-1,null,-1,3,4]
+//        ["LRUCache","put","get","put","get","get"]
+//        [[1],[2,1],[2],[3,2],[2],[3]]
+        
+//        ["LRUCache","put","put","get","put","put","get"]
+//        [[2],[2,1],[2,2],[2],[1,1],[4,1],[2]]
+        LRUCache *cache = lRUCacheCreate(2);
+        lRUCachePut(cache, 2, 1);
+        lRUCachePut(cache, 2, 2);
+        printf("\nget(2)%d\n", lRUCacheGet(cache, 2));
+        lRUCachePut(cache, 1, 1);
+        lRUCachePut(cache, 4, 1);
+        printf("\nget(2)%d\n", lRUCacheGet(cache, 2));
+//        lRUCachePut(cache, 4, 4);
+//        printf("\nget(2)%d\n", lRUCacheGet(cache, 2));
+//        printf("\nget(2)%d\n", lRUCacheGet(cache, 3));
+//        printf("\nget(2)%d\n", lRUCacheGet(cache, 4));
+        
     }
     return 0;
 }
