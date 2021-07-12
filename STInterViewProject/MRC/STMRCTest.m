@@ -43,26 +43,6 @@ struct objc_super2 {
         
         struct STMRCModel_IMPL *impl = (__bridge struct STMRCModel_IMPL *)model;
         NSLog(@"age is: %ld, name is: %@", (long)impl->_age, impl->_queueName);
-        
-        dispatch_queue_t queue = dispatch_queue_create("tagged point", DISPATCH_QUEUE_CONCURRENT);
-        for (int i = 0; i < 10000; i++) {
-            dispatch_async(queue, ^{
-                self.name = [NSString stringWithFormat:@"abcde%d", i];
-            });
-        }
-        NSLog(@"111");
-
-        STMRCModel *model = [[[STMRCModel alloc]init]autorelease];
-        NSLog(@"%zu", class_getInstanceSize(model.class));
-        NSLog(@"%zu", malloc_size(model));
-        struct objc_super2 *super2 = (__bridge struct objc_super2 *)([super class]);
-        NSLog(@"%@", NSStringFromClass(self.class));
-        NSLog(@"%@", NSStringFromClass([super class]));//(id)class_getSuperclass(objc_getClass("STMRCTest"))
-        
-        NSString *test = @"124";
-        id cls = [STMRCModel class];
-        void *obj = &cls;
-        [(__bridge id)obj printQueueName];
     }
     return self;
 }

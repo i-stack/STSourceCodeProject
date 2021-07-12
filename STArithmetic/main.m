@@ -266,6 +266,20 @@ int searchInsert(int* nums, int numsSize, int target){
     return res;
 }
 
+int* findErrorNums(int* nums, int numsSize, int* returnSize){
+    //*returnSize = 2;
+    int *res = (int *)malloc(sizeof(int) * 2);
+    int value = numsSize;
+    int repeatNum = 0;
+    for (int i = 0; i < numsSize; i++) {
+        repeatNum ^= nums[i];
+        value ^= nums[i] ^ i;
+    }
+    res[0] = repeatNum;
+    res[1] = value;
+    return res;
+}
+
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
 //        int num1[6] = {6,7,9,0,0,0};
@@ -286,12 +300,13 @@ int main(int argc, const char * argv[]) {
         
 //        intToRoman(1994);
         
-        int num[4] = {1,3,5,6};
+        int num[4] = {1,2,2,4};
 //        int numSize = 0;
 //        int *p = num;
 //        int *q = &numSize;
 //        getMaximumXor(p, 4, 2, q);
-        searchInsert(num, 4, 4);
+//        searchInsert(num, 4, 4);
+        findErrorNums(num, 4, 2);
     }
     return 0;
 }
