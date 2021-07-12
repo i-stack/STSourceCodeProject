@@ -93,10 +93,6 @@ struct Student_IMPL {
     return [NSString stringWithFormat:@"%@ --- %@", self.name, self.name1];
 }
 
-+ (NSUInteger)hash {
-    return 
-}
-
 @end
 
 @interface Student : Person {
@@ -131,6 +127,18 @@ int main(int argc, const char * argv[]) {
         
         struct Student_IMPL *impl = (__bridge struct Student_IMPL *)(student);
         NSLog(@"no=%d-year=%d-age=%d-weight=%d-name=%@-name1=%@-name2=%@-height=%d", impl -> Person_IVARS._no, impl -> Person_IVARS._year, impl -> Person_IVARS._age, impl -> Person_IVARS._weight, impl -> Person_IVARS._name, impl -> Person_IVARS._name1, impl -> Person_IVARS._name2, impl -> Person_IVARS._weight);
+        
+        BOOL re1 = [(id)[NSObject class] isKindOfClass:[NSObject class]];
+        BOOL re2 = [(id)[NSObject class] isMemberOfClass:[NSObject class]];
+        BOOL re3 = [(id)[Student class] isKindOfClass:[Student class]];
+        BOOL re4 = [(id)[Student class] isMemberOfClass:[Student class]];
+        NSLog(@" re1 :%hhd\n re2 :%hhd\n re3 :%hhd\n re4 :%hhd\n",re1,re2,re3,re4);
+
+        BOOL re5 = [(id)[NSObject alloc] isKindOfClass:[NSObject class]];
+        BOOL re6 = [(id)[NSObject alloc] isMemberOfClass:[NSObject class]];
+        BOOL re7 = [(id)[Student alloc] isKindOfClass:[Student class]];
+        BOOL re8 = [(id)[Student alloc] isMemberOfClass:[Student class]];
+        NSLog(@" re5 :%hhd\n re6 :%hhd\n re7 :%hhd\n re8 :%hhd\n",re5,re6,re7,re8);
     }
     return 0;
 }
