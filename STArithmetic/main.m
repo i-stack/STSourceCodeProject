@@ -454,6 +454,95 @@ void lRUCacheFree(LRUCache* obj) {
     free(obj);
 }
 
+bool checkInclusion(char * s1, char * s2);
+bool checkInclusion(char * s1, char * s2){
+    int s1Length = strlen(s1);
+    int s2Length = strlen(s2);
+    if (s1Length > s2Length) return false;
+    int value = 0, tempValue = 0;
+    for (int i = 0; i < s1Length; i++) {
+        value += s1[i] - 'a';
+    }
+    bool hasFind = false;
+    for (int i = 0; i + s1Length <= s2Length; i++) {
+        tempValue = 0;
+        for (int j = i; j < s1Length + i; j++) {
+            tempValue += s2[j] - 'a';
+        }
+        if (value == tempValue) {
+            hasFind = true;
+            break;
+        }
+    }
+    return hasFind;
+}
+
+int firstUniqChar(char * s);
+int firstUniqChar(char * s){
+    int res = -1;
+    unsigned long length = strlen(s);
+    if (length < 1) return res;
+    if (length == 1) return 0;
+    char max = 'a', min = 'a';
+    for (int i = 0; i < length; i++) {
+        if (s[i] > max) max = s[i];
+        if (s[i] < min) min = s[i];
+    }
+    int count = max - 'a' + min - 'a' + 1;
+    int *maps = (int *)malloc(sizeof(int) * count);
+    for (int i = 0; i < count; i++) {
+        maps[i] = -1;
+    }
+    for (int i = 0; i < length; i++) {
+        if (maps[s[i] - 'a'] == 1) continue;
+        bool isSignle = true;
+        for (int j = i + 1; j < length; j++) {
+            if ((s[i] ^ s[j]) == 0) {
+                isSignle = false;
+                break;
+            }
+        }
+        if (isSignle) {
+            res = i;
+            break;
+        }
+        maps[s[i] - 'a'] = 1;
+    }
+    return res;
+}
+
+bool isAnagram(char * s, char * t);
+bool isAnagram(char * s, char * t){
+    unsigned long sLength = strlen(s);
+    unsigned long tLength = strlen(t);
+    if (tLength != sLength) return false;
+    char max = 'a', min = 'a';
+    for (int i = 0; i < tLength; i++) {
+        if (t[i] > max) max = t[i];
+        if (t[i] < min) min = t[i];
+        if (s[i] > max) max = s[i];
+        if (s[i] < min) min = s[i];
+    }
+    int mapCount = max - 'a' + min - 'a' + 1;
+    int *maps = (int *)malloc(sizeof(int) * mapCount);
+    for (int i = 0; i < mapCount; i++) {
+        maps[i] = 0;
+    }
+    for (int i = 0; i < tLength; i++) {
+        if (maps[t[i] - 'a'] == 0) {
+            maps[t[i] - 'a'] = 1;
+        } else {
+            maps[t[i] - 'a'] += 1;
+        }
+    }
+    int count = 0;
+    for (int i = 0; i < sLength; i++) {
+        if (maps[s[i] - 'a'] != 0) count++;
+        maps[s[i] - 'a'] -= 1;
+    }
+    return count == sLength ? true : false;
+}
+
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
 //        int num1[6] = {6,7,9,0,0,0};
@@ -506,6 +595,15 @@ int main(int argc, const char * argv[]) {
         node3 -> next = NULL;
         headPtr -> next = node3;
         headPtr = node3;
+//        "kitten"
+//        "sitting"
+//        isPalindrome(head);
+//        char *s1 = "kitten";
+//        char *s2 = "sitting";
+        //checkInclusion(s1, s2);
+        
+//        char *s = "loveleetcode";
+//        firstUniqChar(s);
         
         struct ListNode *node4 = (struct ListNode *)malloc(sizeof(struct ListNode));;
         node4 -> val = 5;
@@ -536,7 +634,6 @@ int main(int argc, const char * argv[]) {
 //        printf("\nget(2)%d\n", lRUCacheGet(cache, 2));
 //        printf("\nget(2)%d\n", lRUCacheGet(cache, 3));
 //        printf("\nget(2)%d\n", lRUCacheGet(cache, 4));
-        
     }
     return 0;
 }
