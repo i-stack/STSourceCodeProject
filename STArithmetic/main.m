@@ -456,8 +456,8 @@ void lRUCacheFree(LRUCache* obj) {
 
 bool checkInclusion(char * s1, char * s2);
 bool checkInclusion(char * s1, char * s2){
-    int s1Length = strlen(s1);
-    int s2Length = strlen(s2);
+    unsigned long s1Length = strlen(s1);
+    unsigned long s2Length = strlen(s2);
     if (s1Length > s2Length) return false;
     int value = 0, tempValue = 0;
     for (int i = 0; i < s1Length; i++) {
@@ -543,6 +543,145 @@ bool isAnagram(char * s, char * t){
     return count == sLength ? true : false;
 }
 
+
+typedef struct myQueue {
+    int val;
+    int queueCount;
+    struct myQueue *next;
+} MyQueue;
+
+/** Initialize your data structure here. */
+
+MyQueue* myQueuePtr = NULL;
+MyQueue* myQueueCreate() {
+    MyQueue *queue = (MyQueue *)malloc(sizeof(MyQueue));
+    queue -> queueCount = 0;
+    queue -> next = NULL;
+    myQueuePtr = queue;
+    return queue;
+}
+
+/** Push element x to the back of queue. */
+void myQueuePush(MyQueue* obj, int x) {
+    if (obj == NULL) return;
+    if (obj -> queueCount < 1) {
+        obj -> val = x;
+        obj -> queueCount++;
+        obj -> next = NULL;
+        myQueuePtr = obj;
+    } else {
+        MyQueue *newQueue = (MyQueue *)malloc(sizeof(MyQueue));
+        newQueue -> val = x;
+        newQueue -> next = NULL;
+        myQueuePtr -> next = newQueue;
+        obj -> queueCount++;
+        myQueuePtr = newQueue;
+    }
+}
+
+/** Removes the element from in front of queue and returns that element. */
+int myQueuePop(MyQueue* obj) {
+    if (obj == NULL) return -1;
+    if (obj -> queueCount > 0) {
+        int queueCount = obj -> queueCount - 1;
+        int val = obj -> val;
+        MyQueue *nextObj = obj -> next;
+        if (nextObj != NULL) {
+            *obj = *nextObj;
+        }
+        obj -> queueCount = queueCount;
+        MyQueue *tmpQueue = obj;
+        while (tmpQueue != NULL) {
+            if (tmpQueue -> next == NULL) {
+                myQueuePtr = tmpQueue;
+            }
+            tmpQueue = tmpQueue -> next;
+        }
+        return val;
+    }
+    return -1;
+}
+
+/** Get the front element. */
+int myQueuePeek(MyQueue* obj) {
+    if (obj == NULL) return -1;
+    if (obj -> queueCount > 0) {
+        return obj -> val;
+    }
+    return -1;
+}
+
+/** Returns whether the queue is empty. */
+bool myQueueEmpty(MyQueue* obj) {
+    if (obj == NULL) return true;
+    return obj -> queueCount < 1;
+}
+
+void myQueueFree(MyQueue* obj) {
+    MyQueue *p;
+    while(obj != NULL) {
+        p = obj;
+        obj = obj -> next;
+        free(p);
+    }
+}
+
+bool canPermutePalindrome(char* s){
+    if (s == NULL) return false;
+    unsigned long length = strlen(s);
+    int *map = (int *)malloc(sizeof(int) * length);
+    printf("\n---\n");
+    for (int i = 0; i < length; i++) {
+        if (map[(s[i] - 'a') & length] >= 1) {
+            map[(s[i] - 'a') & length]++;
+        } else {
+            map[(s[i] - 'a') & length] = 1;
+        }
+        printf("cur str value --%d\n --- mask: %lu\n", s[i], (s[i] - 'a') & length);
+    }
+    printf("\n---\n");
+    for (int i = 0; i < length; i++) {
+        printf("cur map value --%d\n", map[i]);
+    }
+    printf("\n---");
+    int singleCount = 0;
+    for (int i = 0; i < length; i++) {
+        if ((map[s[i] - 'a' ] & 1) != 0) {
+            singleCount++;
+            if (singleCount > 1) {
+                return false;
+            }
+        }
+    }
+    return true;
+}
+
+int maxRepeating(char * sequence, char * word);
+int maxRepeating(char * sequence, char * word){
+    int count = strlen(sequence);
+    int wordCount = strlen(word);
+    if (wordCount > count) return 0;
+    int maxRepeatCount = 0;
+    int repeatCount = 0;
+    for (int i = 0; i <= count - wordCount;) {
+        int sameCount = 0;
+        for (int j = 0; j < wordCount; j++) {
+            if (sequence[i + j] != word[j]) break;
+            sameCount++;
+        }
+        if (sameCount == wordCount) {
+            i += wordCount;
+            repeatCount++;
+        } else {
+            i++;
+            if (repeatCount > maxRepeatCount) maxRepeatCount = repeatCount;
+            repeatCount = 0;
+        }
+    }
+    if (repeatCount > maxRepeatCount) maxRepeatCount = repeatCount;
+    return maxRepeatCount;
+}
+
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
 //        int num1[6] = {6,7,9,0,0,0};
@@ -598,9 +737,9 @@ int main(int argc, const char * argv[]) {
 //        "kitten"
 //        "sitting"
 //        isPalindrome(head);
-//        char *s1 = "kitten";
-//        char *s2 = "sitting";
-        //checkInclusion(s1, s2);
+        char *s1 = "kitten";
+        char *s2 = "sitting";
+        checkInclusion(s1, s2);
         
 //        char *s = "loveleetcode";
 //        firstUniqChar(s);
@@ -634,6 +773,25 @@ int main(int argc, const char * argv[]) {
 //        printf("\nget(2)%d\n", lRUCacheGet(cache, 2));
 //        printf("\nget(2)%d\n", lRUCacheGet(cache, 3));
 //        printf("\nget(2)%d\n", lRUCacheGet(cache, 4));
+        
+        MyQueue *obj = myQueueCreate();
+        myQueuePush(obj, 1);
+        myQueuePush(obj, 2);
+        
+        myQueuePop(obj);
+        myQueuePush(obj, 3);
+        myQueuePush(obj, 4);
+        myQueuePop(obj);
+
+//        myQueueEmpty(obj);
+        myQueuePeek(obj);
+//        myQueueFree(obj);
+        
+        canPermutePalindrome("tacocat");
+        
+//        char *p = "aaabaaaabaaabaaaabaaaabaaaabaaaaba";
+//        char *q = "aaaba";
+//        maxRepeating(p, q);
     }
     return 0;
 }
