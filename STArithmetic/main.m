@@ -543,6 +543,66 @@ bool isAnagram(char * s, char * t){
     return count == sLength ? true : false;
 }
 
+bool isUnique(char* astr) {
+    int length = strlen(astr);
+    if (length < 1) return false;
+    for (int i = 0; i < length - 1; i++) {
+        for (int j = i + 1; j < length; j++) {
+            if (astr[i] == astr[j]) {
+                return false;
+            }
+        }
+    }
+    return true;
+}
+
+bool canPermutePalindrome(char* s);
+bool canPermutePalindrome(char* s){
+    int length = strlen(s);
+    if (length < 1) return false;
+    int max = s[0] - 'a', min = s[0] - 'a';
+    for (int i = 1; i < length; i++) {
+        if (s[i] < min) min = s[i] - 'a';
+        if (s[i] > max) min = s[i] - 'a';
+    }
+    int mapCount = max - min + 1;
+    int *map = (int *)malloc(sizeof(int) * mapCount);
+    for (int i = 0; i < mapCount; i++) {
+        map[i] = 0;
+    }
+    for (int i = 0; i < length; i++) {
+        if (map[s[i] - 'a'] >= 1) {
+            map[s[i] - 'a'] += 1;
+        } else {
+            map[s[i] - 'a'] = 1;
+        }
+    }
+    bool ans = true;
+    bool isEven = false;
+    bool isFlag = false;
+    if ((length & 1) == 0) isEven = true;
+    for (int i = 0; i < length; i++) {
+        int count = map[s[i] - 'a'];
+        if (isEven) {
+            if ((count & 1) != 0) {
+                ans = false;
+                break;
+            }
+        } else {
+            if (count != length) {
+                if ((count & 1) != 0) {
+                    if (isFlag) {
+                        ans = false;
+                        break;
+                    }
+                    isFlag = true;
+                }
+            }
+        }
+    }
+    return ans;
+}
+
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
 //        int num1[6] = {6,7,9,0,0,0};
@@ -623,17 +683,19 @@ int main(int argc, const char * argv[]) {
         
 //        ["LRUCache","put","put","get","put","put","get"]
 //        [[2],[2,1],[2,2],[2],[1,1],[4,1],[2]]
-        LRUCache *cache = lRUCacheCreate(2);
-        lRUCachePut(cache, 2, 1);
-        lRUCachePut(cache, 2, 2);
-        printf("\nget(2)%d\n", lRUCacheGet(cache, 2));
-        lRUCachePut(cache, 1, 1);
-        lRUCachePut(cache, 4, 1);
-        printf("\nget(2)%d\n", lRUCacheGet(cache, 2));
+//        LRUCache *cache = lRUCacheCreate(2);
+//        lRUCachePut(cache, 2, 1);
+//        lRUCachePut(cache, 2, 2);
+//        printf("\nget(2)%d\n", lRUCacheGet(cache, 2));
+//        lRUCachePut(cache, 1, 1);
+//        lRUCachePut(cache, 4, 1);
+//        printf("\nget(2)%d\n", lRUCacheGet(cache, 2));
 //        lRUCachePut(cache, 4, 4);
 //        printf("\nget(2)%d\n", lRUCacheGet(cache, 2));
 //        printf("\nget(2)%d\n", lRUCacheGet(cache, 3));
 //        printf("\nget(2)%d\n", lRUCacheGet(cache, 4));
+        char *s = "tactcoa";
+        canPermutePalindrome(s);
     }
     return 0;
 }
