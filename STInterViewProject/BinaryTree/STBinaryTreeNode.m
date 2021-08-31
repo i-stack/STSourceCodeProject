@@ -18,25 +18,7 @@
 {
     self = [super init];
     if (self) {
-        @property(atomic, strong)NSString *stringA;
-
-        //thread A
-        for (int i = 0; i < 100000; i ++) {
-            if (i % 2 == 0) {
-                self.stringA = @"a very long string";
-            } else {
-                self.stringA = @"string";
-            }
-            NSLog(@"Thread A: %@\n", self.stringA);
-        }
-
-        //thread B
-        for (int i = 0; i < 100000; i ++) {
-            if (self.stringA.length >= 10) {
-                NSString* subStr = [self.stringA substringWithRange:NSMakeRange(0, 10)];
-            }
-            NSLog(@"Thread B: %@\n", self.stringA);
-        }
+        
     }
     return self;
 }
