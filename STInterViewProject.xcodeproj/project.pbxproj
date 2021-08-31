@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E44F58DD268578B100B3CE33 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E44F58DC268578B100B3CE33 /* main.m */; };
 		E46216B3268181840048C004 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E46216B2268181840048C004 /* main.m */; };
 		E48EF5B724EE287E0018D0FD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E48EF5B624EE287E0018D0FD /* AppDelegate.m */; };
 		E48EF5BA24EE287E0018D0FD /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E48EF5B924EE287E0018D0FD /* SceneDelegate.m */; };
@@ -43,33 +42,7 @@
 		E4FEB67E25A8519E0055D834 /* STBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = E4FEB67D25A8519E0055D834 /* STBlock.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		E48EF5CE24EE28840018D0FD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E48EF5AA24EE287E0018D0FD /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E48EF5B124EE287E0018D0FD;
-			remoteInfo = Category;
-		};
-		E48EF5D924EE28840018D0FD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E48EF5AA24EE287E0018D0FD /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E48EF5B124EE287E0018D0FD;
-			remoteInfo = Category;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
-		E44F58D8268578B100B3CE33 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-		};
 		E46216AE268181840048C004 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -91,8 +64,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		E44F58DA268578B100B3CE33 /* STSort */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = STSort; sourceTree = BUILT_PRODUCTS_DIR; };
-		E44F58DC268578B100B3CE33 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E46216B0268181840048C004 /* STArithmetic */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = STArithmetic; sourceTree = BUILT_PRODUCTS_DIR; };
 		E46216B2268181840048C004 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E48EF5B224EE287E0018D0FD /* STInterViewProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = STInterViewProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -107,8 +78,6 @@
 		E48EF5C424EE28830018D0FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E48EF5C624EE28830018D0FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E48EF5C724EE28830018D0FD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		E48EF5CD24EE28840018D0FD /* STInterViewProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = STInterViewProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E48EF5D824EE28840018D0FD /* STInterViewProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = STInterViewProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E48EF5EA24EE4C700018D0FD /* STAnimation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STAnimation.h; sourceTree = "<group>"; };
 		E48EF5EB24EE4C700018D0FD /* STAnimation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STAnimation.m; sourceTree = "<group>"; };
 		E48EF5ED24EE4C830018D0FD /* STAnimation+STPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "STAnimation+STPerson.h"; sourceTree = "<group>"; };
@@ -168,13 +137,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		E44F58D7268578B100B3CE33 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		E46216AD268181840048C004 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -183,20 +145,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		E48EF5AF24EE287E0018D0FD /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E48EF5CA24EE28840018D0FD /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E48EF5D524EE28840018D0FD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -213,14 +161,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E44F58DB268578B100B3CE33 /* STSort */ = {
-			isa = PBXGroup;
-			children = (
-				E44F58DC268578B100B3CE33 /* main.m */,
-			);
-			path = STSort;
-			sourceTree = "<group>";
-		};
 		E46216B1268181840048C004 /* STArithmetic */ = {
 			isa = PBXGroup;
 			children = (
@@ -234,7 +174,6 @@
 			children = (
 				E48EF5B424EE287E0018D0FD /* STInterViewProject */,
 				E46216B1268181840048C004 /* STArithmetic */,
-				E44F58DB268578B100B3CE33 /* STSort */,
 				E4CBCBE3268DB3A0004F13AC /* OC对象本质 */,
 				E48EF5B324EE287E0018D0FD /* Products */,
 			);
@@ -244,10 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				E48EF5B224EE287E0018D0FD /* STInterViewProject.app */,
-				E48EF5CD24EE28840018D0FD /* STInterViewProjectTests.xctest */,
-				E48EF5D824EE28840018D0FD /* STInterViewProjectUITests.xctest */,
 				E46216B0268181840048C004 /* STArithmetic */,
-				E44F58DA268578B100B3CE33 /* STSort */,
 				E4CBCBE2268DB3A0004F13AC /* OC对象本质 */,
 			);
 			name = Products;
@@ -408,23 +344,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E44F58D9268578B100B3CE33 /* STSort */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E44F58DE268578B100B3CE33 /* Build configuration list for PBXNativeTarget "STSort" */;
-			buildPhases = (
-				E44F58D6268578B100B3CE33 /* Sources */,
-				E44F58D7268578B100B3CE33 /* Frameworks */,
-				E44F58D8268578B100B3CE33 /* CopyFiles */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = STSort;
-			productName = STSort;
-			productReference = E44F58DA268578B100B3CE33 /* STSort */;
-			productType = "com.apple.product-type.tool";
-		};
 		E46216AF268181840048C004 /* STArithmetic */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E46216B6268181840048C004 /* Build configuration list for PBXNativeTarget "STArithmetic" */;
@@ -459,42 +378,6 @@
 			productReference = E48EF5B224EE287E0018D0FD /* STInterViewProject.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E48EF5CC24EE28840018D0FD /* STInterViewProjectTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E48EF5E424EE28840018D0FD /* Build configuration list for PBXNativeTarget "STInterViewProjectTests" */;
-			buildPhases = (
-				E48EF5C924EE28840018D0FD /* Sources */,
-				E48EF5CA24EE28840018D0FD /* Frameworks */,
-				E48EF5CB24EE28840018D0FD /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				E48EF5CF24EE28840018D0FD /* PBXTargetDependency */,
-			);
-			name = STInterViewProjectTests;
-			productName = CategoryTests;
-			productReference = E48EF5CD24EE28840018D0FD /* STInterViewProjectTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		E48EF5D724EE28840018D0FD /* STInterViewProjectUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E48EF5E724EE28840018D0FD /* Build configuration list for PBXNativeTarget "STInterViewProjectUITests" */;
-			buildPhases = (
-				E48EF5D424EE28840018D0FD /* Sources */,
-				E48EF5D524EE28840018D0FD /* Frameworks */,
-				E48EF5D624EE28840018D0FD /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				E48EF5DA24EE28840018D0FD /* PBXTargetDependency */,
-			);
-			name = STInterViewProjectUITests;
-			productName = CategoryUITests;
-			productReference = E48EF5D824EE28840018D0FD /* STInterViewProjectUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 		E4CBCBE1268DB3A0004F13AC /* OC对象本质 */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E4CBCBE8268DB3A0004F13AC /* Build configuration list for PBXNativeTarget "OC对象本质" */;
@@ -521,22 +404,11 @@
 				LastUpgradeCheck = 1250;
 				ORGANIZATIONNAME = Knowin;
 				TargetAttributes = {
-					E44F58D9268578B100B3CE33 = {
-						CreatedOnToolsVersion = 12.4;
-					};
 					E46216AF268181840048C004 = {
 						CreatedOnToolsVersion = 12.5;
 					};
 					E48EF5B124EE287E0018D0FD = {
 						CreatedOnToolsVersion = 11.6;
-					};
-					E48EF5CC24EE28840018D0FD = {
-						CreatedOnToolsVersion = 11.6;
-						TestTargetID = E48EF5B124EE287E0018D0FD;
-					};
-					E48EF5D724EE28840018D0FD = {
-						CreatedOnToolsVersion = 11.6;
-						TestTargetID = E48EF5B124EE287E0018D0FD;
 					};
 					E4CBCBE1268DB3A0004F13AC = {
 						CreatedOnToolsVersion = 12.4;
@@ -557,10 +429,7 @@
 			projectRoot = "";
 			targets = (
 				E48EF5B124EE287E0018D0FD /* STInterViewProject */,
-				E48EF5CC24EE28840018D0FD /* STInterViewProjectTests */,
-				E48EF5D724EE28840018D0FD /* STInterViewProjectUITests */,
 				E46216AF268181840048C004 /* STArithmetic */,
-				E44F58D9268578B100B3CE33 /* STSort */,
 				E4CBCBE1268DB3A0004F13AC /* OC对象本质 */,
 			);
 		};
@@ -577,31 +446,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E48EF5CB24EE28840018D0FD /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E48EF5D624EE28840018D0FD /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		E44F58D6268578B100B3CE33 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E44F58DD268578B100B3CE33 /* main.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		E46216AC268181840048C004 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -645,20 +492,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E48EF5C924EE28840018D0FD /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E48EF5D424EE28840018D0FD /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		E4CBCBDE268DB3A0004F13AC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -668,19 +501,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		E48EF5CF24EE28840018D0FD /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E48EF5B124EE287E0018D0FD /* STInterViewProject */;
-			targetProxy = E48EF5CE24EE28840018D0FD /* PBXContainerItemProxy */;
-		};
-		E48EF5DA24EE28840018D0FD /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E48EF5B124EE287E0018D0FD /* STInterViewProject */;
-			targetProxy = E48EF5D924EE28840018D0FD /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		E48EF5BE24EE287E0018D0FD /* Main.storyboard */ = {
@@ -702,34 +522,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		E44F58DF268578B100B3CE33 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CODE_SIGN_IDENTITY = "-";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8D4LL3H2G7;
-				ENABLE_HARDENED_RUNTIME = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-			};
-			name = Debug;
-		};
-		E44F58E0268578B100B3CE33 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CODE_SIGN_IDENTITY = "-";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8D4LL3H2G7;
-				ENABLE_HARDENED_RUNTIME = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-			};
-			name = Release;
-		};
 		E46216B4268181840048C004 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -908,82 +700,6 @@
 			};
 			name = Release;
 		};
-		E48EF5E524EE28840018D0FD /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8D4LL3H2G7;
-				INFOPLIST_FILE = CategoryTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.knowin.CategoryTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/STInterViewProject.app/STInterViewProject";
-			};
-			name = Debug;
-		};
-		E48EF5E624EE28840018D0FD /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8D4LL3H2G7;
-				INFOPLIST_FILE = CategoryTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.knowin.CategoryTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/STInterViewProject.app/STInterViewProject";
-			};
-			name = Release;
-		};
-		E48EF5E824EE28840018D0FD /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8D4LL3H2G7;
-				INFOPLIST_FILE = CategoryUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.knowin.CategoryUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Category;
-			};
-			name = Debug;
-		};
-		E48EF5E924EE28840018D0FD /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8D4LL3H2G7;
-				INFOPLIST_FILE = CategoryUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.knowin.CategoryUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Category;
-			};
-			name = Release;
-		};
 		E4CBCBE6268DB3A0004F13AC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1015,15 +731,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E44F58DE268578B100B3CE33 /* Build configuration list for PBXNativeTarget "STSort" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E44F58DF268578B100B3CE33 /* Debug */,
-				E44F58E0268578B100B3CE33 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		E46216B6268181840048C004 /* Build configuration list for PBXNativeTarget "STArithmetic" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1047,24 +754,6 @@
 			buildConfigurations = (
 				E48EF5E224EE28840018D0FD /* Debug */,
 				E48EF5E324EE28840018D0FD /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E48EF5E424EE28840018D0FD /* Build configuration list for PBXNativeTarget "STInterViewProjectTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E48EF5E524EE28840018D0FD /* Debug */,
-				E48EF5E624EE28840018D0FD /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E48EF5E724EE28840018D0FD /* Build configuration list for PBXNativeTarget "STInterViewProjectUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E48EF5E824EE28840018D0FD /* Debug */,
-				E48EF5E924EE28840018D0FD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
