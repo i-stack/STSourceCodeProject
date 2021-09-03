@@ -33,7 +33,10 @@
         self.tickets = 10;
         _dataDict = [NSMutableDictionary dictionary];
         concurrentQueue = dispatch_queue_create("testBarrier", DISPATCH_QUEUE_CONCURRENT);
-        [self testSemaphore];
+        [self testSync];
+        @synchronized (self.lock) {
+            NSLog(@"");
+        }
     }
     return self;
 }
