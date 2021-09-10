@@ -139,6 +139,11 @@ int main(int argc, const char * argv[]) {
         BOOL re7 = [(id)[Student alloc] isKindOfClass:[Student class]];
         BOOL re8 = [(id)[Student alloc] isMemberOfClass:[Student class]];
         NSLog(@" re5 :%hhd\n re6 :%hhd\n re7 :%hhd\n re8 :%hhd\n",re5,re6,re7,re8);
+        
+        int a = 10, b = 20;
+        int *const p = &a;
+        *p = 30;
+        p = &b;
     }
     return 0;
 }

@@ -7,11 +7,46 @@
 //
 
 #import "STAnimation.h"
-#import "STBlock.h"
 #import "STAnimation+STPerson.h"
 #import <objc/runtime.h>
+#import <objc/message.h>
 
 @implementation STAnimation
+
+//+ (Class)class {
+//    return self;
+//}
+//
+//- (Class)class {
+//    return objc_getClass([NSStringFromClass(self) UTF8String]);
+//}
+
+//struct objc_object {
+//    Class _Nonnull isa  OBJC_ISA_AVAILABILITY;
+//};
+
+struct __rw_objc_super {
+    id object;
+    Class superClass;
+};
+
+- (instancetype)init {
+    if (self = [super init]) {
+//        NSLog(@"%@ - %@", [self class], [super class]);
+        
+        struct __rw_objc_super objcSuper;
+        objcSuper.object = self;
+        objcSuper.superClass = [self superclass];
+        
+        struct objc_object object;
+        object.isa = objc_getClass([NSStringFromClass(self.class) UTF8String]);
+        
+        NSLog(@"%@ - %@", objc_msgSend((__bridge id)(&object), sel_registerName("class")), objc_msgSendSuper(&objcSuper, sel_registerName("class")));
+        NSLog(@"%@ - %@", objc_msgSendSuper(&objcSuper, sel_registerName("init")), self);
+    }
+    
+    return self;
+}
 
 + (void)load
 {
@@ -25,7 +60,9 @@
 
 - (void)printName
 {
-    NSLog(@"STAnimation.printName");
+    @synchronized (self) {
+        NSLog(@"STAnimation.printName");
+    }
 }
 
 - (void)unrecognizedSelectorSentToInstance {

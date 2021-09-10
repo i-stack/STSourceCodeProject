@@ -31,6 +31,34 @@
     [super viewDidLoad];
     self.view.backgroundColor = UIColor.whiteColor;
     [self testExample];
+    
+    Class cls = [STAnimation class];
+    void *kc = &cls;
+    [(__bridge id)kc printName];
+    
+    NSObject *objc = [NSObject new];
+    NSLog(@"%ld",CFGetRetainCount((__bridge CFTypeRef)(objc)));
+
+    void(^block1)(void) = ^{
+        NSLog(@"---%ld",CFGetRetainCount((__bridge CFTypeRef)(objc)));
+    };
+    block1();
+
+    void(^__weak block2)(void) = ^{
+        NSLog(@"---%ld",CFGetRetainCount((__bridge CFTypeRef)(objc)));
+    };
+    block2();
+
+    void(^block3)(void) = [block2 copy];
+    block3();
+
+    __block NSObject *obj = [NSObject new];
+    void(^block4)(void) = ^{
+        NSLog(@"---%ld",CFGetRetainCount((__bridge CFTypeRef)(obj)));
+    };
+    block4();
+
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -42,7 +70,7 @@
 }
 
 - (void)testExample {
-    [self testMultiThreadTest];
+    [self testCategory];
 }
 
 - (void)testTimer {
