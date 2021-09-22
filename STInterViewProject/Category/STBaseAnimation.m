@@ -10,14 +10,8 @@
 
 @implementation STBaseAnimation
 
-//+ (void)load
-//{
-//    NSLog(@"STBaseAnimation.load");
-//}
-
-+ (void)initialize
-{
-    NSLog(@"STBaseAnimation.initialize");
++ (id)printBaseAnimation {
+    NSLog(@"%s", __func__);
+    return self;
 }
-
 @end

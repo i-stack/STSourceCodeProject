@@ -32,14 +32,14 @@ struct Student_IMPL {
 };
 
 @interface Person : NSObject {
-//    int _age;
-//    NSString *_name;
-//    int _no;
-//    double _height;
-//    int _year;
-//    NSString *_name1;
-//    int _weight;
-//    NSString *_name2;
+    int _age;
+    NSString *_name;
+    int _no;
+    double _height;
+    int _year;
+    NSString *_name1;
+    int _weight;
+    NSString *_name2;
     
 //    int _age;
 //    int _no;
@@ -59,14 +59,14 @@ struct Student_IMPL {
 //@property(nonatomic, assign) int year;
 //@property(nonatomic, assign) double height;
 
-@property(nonatomic, assign) int no;
-@property(nonatomic, assign) int year;
-@property(nonatomic, assign) int age;
-@property(nonatomic, assign) int weight;
-@property(nonatomic, strong) NSString *name;
-@property(nonatomic, strong) NSString *name1;
-@property(nonatomic, strong) NSString *name2;
-@property(nonatomic, assign) double height;
+//@property(nonatomic, assign) int no;
+//@property(nonatomic, assign) int year;
+//@property(nonatomic, assign) int age;
+//@property(nonatomic, assign) int weight;
+//@property(nonatomic, strong) NSString *name;
+//@property(nonatomic, strong) NSString *name1;
+//@property(nonatomic, strong) NSString *name2;
+//@property(nonatomic, assign) double height;
 
 @end
 
@@ -76,22 +76,22 @@ struct Student_IMPL {
 {
     self = [super init];
     if (self) {
-        self.no = 10;
-        self.year = 2021;
-        self.age = 20;
-        self.weight = 130;
-        self.name = @"name";
-        self.name1 = @"name1";
-        self.name2 = @"name2";
-        self.height = 170;
+//        self.no = 10;
+//        self.year = 2021;
+//        self.age = 20;
+//        self.weight = 130;
+//        self.name = @"name";
+//        self.name1 = @"name1";
+//        self.name2 = @"name2";
+//        self.height = 170;
     }
     return self;
 }
 
-- (NSString *)description
-{
-    return [NSString stringWithFormat:@"%@ --- %@", self.name, self.name1];
-}
+//- (NSString *)description
+//{
+//    return [NSString stringWithFormat:@"%@ --- %@", self.name, self.name1];
+//}
 
 @end
 
@@ -116,7 +116,6 @@ int main(int argc, const char * argv[]) {
     @autoreleasepool {
         Person *model = [[Person alloc]init];
         
-        NSLog(@"%@", model.description);
         NSLog(@"%zu", class_getInstanceSize(model.class));
         NSLog(@"%zu", malloc_size(CFBridgingRetain(model)));
         
@@ -139,11 +138,6 @@ int main(int argc, const char * argv[]) {
         BOOL re7 = [(id)[Student alloc] isKindOfClass:[Student class]];
         BOOL re8 = [(id)[Student alloc] isMemberOfClass:[Student class]];
         NSLog(@" re5 :%hhd\n re6 :%hhd\n re7 :%hhd\n re8 :%hhd\n",re5,re6,re7,re8);
-        
-        int a = 10, b = 20;
-        int *const p = &a;
-        *p = 30;
-        p = &b;
     }
     return 0;
 }

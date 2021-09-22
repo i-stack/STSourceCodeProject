@@ -41,19 +41,11 @@
 		E4C2B40E260489730082AEC4 /* STKVCModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C2B40D260489730082AEC4 /* STKVCModel.m */; };
 		E4C800322612FC4A0088696E /* STMRCBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C800312612FC4A0088696E /* STMRCBaseModel.m */; };
 		E4CBCBE5268DB3A0004F13AC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E4CBCBE4268DB3A0004F13AC /* main.m */; };
+		E4EDE8AB26F08FFE004ECB81 /* STCommonC.c in Sources */ = {isa = PBXBuildFile; fileRef = E4EDE8AA26F08FFE004ECB81 /* STCommonC.c */; };
 		E4FEB67E25A8519E0055D834 /* STBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = E4FEB67D25A8519E0055D834 /* STBlock.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		E43B7C8A26EA00B70029AF20 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-		};
 		E43B7C9D26EA01080029AF20 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -85,7 +77,6 @@
 
 /* Begin PBXFileReference section */
 		E43B7C7626E5C0780029AF20 /* STAnimation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = STAnimation.cpp; sourceTree = "<group>"; };
-		E43B7C8C26EA00B70029AF20 /* LRUCache */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LRUCache; sourceTree = BUILT_PRODUCTS_DIR; };
 		E43B7C9F26EA01080029AF20 /* STLRUCache */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = STLRUCache; sourceTree = BUILT_PRODUCTS_DIR; };
 		E43B7CA126EA01080029AF20 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E43B7CAB26EA01660029AF20 /* STLRUCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STLRUCache.h; sourceTree = "<group>"; };
@@ -158,18 +149,13 @@
 		E4CBCBE2268DB3A0004F13AC /* OC对象本质 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "OC对象本质"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4CBCBE4268DB3A0004F13AC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E4CBCBEF268DBB76004F13AC /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		E4EDE8A926F08FFE004ECB81 /* STCommonC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STCommonC.h; sourceTree = "<group>"; };
+		E4EDE8AA26F08FFE004ECB81 /* STCommonC.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = STCommonC.c; sourceTree = "<group>"; };
 		E4FEB67C25A8519E0055D834 /* STBlock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STBlock.h; sourceTree = "<group>"; };
 		E4FEB67D25A8519E0055D834 /* STBlock.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STBlock.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		E43B7C8926EA00B70029AF20 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		E43B7C9C26EA01080029AF20 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -215,6 +201,8 @@
 			isa = PBXGroup;
 			children = (
 				E46216B2268181840048C004 /* main.m */,
+				E4EDE8A926F08FFE004ECB81 /* STCommonC.h */,
+				E4EDE8AA26F08FFE004ECB81 /* STCommonC.c */,
 			);
 			path = STArithmetic;
 			sourceTree = "<group>";
@@ -236,7 +224,6 @@
 				E48EF5B224EE287E0018D0FD /* STInterViewProject.app */,
 				E46216B0268181840048C004 /* STArithmetic */,
 				E4CBCBE2268DB3A0004F13AC /* OC对象本质 */,
-				E43B7C8C26EA00B70029AF20 /* LRUCache */,
 				E43B7C9F26EA01080029AF20 /* STLRUCache */,
 			);
 			name = Products;
@@ -398,23 +385,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E43B7C8B26EA00B70029AF20 /* LRUCache */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E43B7C9026EA00B80029AF20 /* Build configuration list for PBXNativeTarget "LRUCache" */;
-			buildPhases = (
-				E43B7C8826EA00B70029AF20 /* Sources */,
-				E43B7C8926EA00B70029AF20 /* Frameworks */,
-				E43B7C8A26EA00B70029AF20 /* CopyFiles */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = LRUCache;
-			productName = LRUCache;
-			productReference = E43B7C8C26EA00B70029AF20 /* LRUCache */;
-			productType = "com.apple.product-type.tool";
-		};
 		E43B7C9E26EA01080029AF20 /* STLRUCache */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E43B7CA326EA01080029AF20 /* Build configuration list for PBXNativeTarget "STLRUCache" */;
@@ -492,9 +462,6 @@
 				LastUpgradeCheck = 1250;
 				ORGANIZATIONNAME = Knowin;
 				TargetAttributes = {
-					E43B7C8B26EA00B70029AF20 = {
-						CreatedOnToolsVersion = 12.4;
-					};
 					E43B7C9E26EA01080029AF20 = {
 						CreatedOnToolsVersion = 12.4;
 					};
@@ -525,7 +492,6 @@
 				E48EF5B124EE287E0018D0FD /* STInterViewProject */,
 				E46216AF268181840048C004 /* STArithmetic */,
 				E4CBCBE1268DB3A0004F13AC /* OC对象本质 */,
-				E43B7C8B26EA00B70029AF20 /* LRUCache */,
 				E43B7C9E26EA01080029AF20 /* STLRUCache */,
 			);
 		};
@@ -545,13 +511,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		E43B7C8826EA00B70029AF20 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		E43B7C9B26EA01080029AF20 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -566,6 +525,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E46216B3268181840048C004 /* main.m in Sources */,
+				E4EDE8AB26F08FFE004ECB81 /* STCommonC.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -634,30 +594,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		E43B7C9126EA00B80029AF20 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8D4LL3H2G7;
-				ENABLE_HARDENED_RUNTIME = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-			};
-			name = Debug;
-		};
-		E43B7C9226EA00B80029AF20 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8D4LL3H2G7;
-				ENABLE_HARDENED_RUNTIME = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-			};
-			name = Release;
-		};
 		E43B7CA426EA01080029AF20 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -895,15 +831,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E43B7C9026EA00B80029AF20 /* Build configuration list for PBXNativeTarget "LRUCache" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E43B7C9126EA00B80029AF20 /* Debug */,
-				E43B7C9226EA00B80029AF20 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		E43B7CA326EA01080029AF20 /* Build configuration list for PBXNativeTarget "STLRUCache" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

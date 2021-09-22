@@ -32,19 +32,22 @@ struct __rw_objc_super {
 
 - (instancetype)init {
     if (self = [super init]) {
-//        NSLog(@"%@ - %@", [self class], [super class]);
         
-        struct __rw_objc_super objcSuper;
-        objcSuper.object = self;
-        objcSuper.superClass = [self superclass];
+//        struct __rw_objc_super objcSuper;
+//        objcSuper.object = self;
+//        objcSuper.superClass = [self superclass];
+//
+//        struct objc_object object;
+//        object.isa = objc_getClass([NSStringFromClass(self.class) UTF8String]);
+//
+//        NSLog(@"%@ - %@", objc_msgSend((__bridge id)(&object), sel_registerName("class")), objc_msgSendSuper(&objcSuper, sel_registerName("class")));
+//        NSLog(@"%@ - %@", objc_msgSendSuper(&objcSuper, sel_registerName("init")), self);
+//
+//        NSLog(@"%lu-%lu", sizeof(struct1), sizeof(struct3));
+
         
-        struct objc_object object;
-        object.isa = objc_getClass([NSStringFromClass(self.class) UTF8String]);
-        
-        NSLog(@"%@ - %@", objc_msgSend((__bridge id)(&object), sel_registerName("class")), objc_msgSendSuper(&objcSuper, sel_registerName("class")));
-        NSLog(@"%@ - %@", objc_msgSendSuper(&objcSuper, sel_registerName("init")), self);
+//        }
     }
-    
     return self;
 }
 
@@ -58,11 +61,26 @@ struct __rw_objc_super {
     NSLog(@"STAnimation.initialize");
 }
 
++ (void)print {
+//    NSLog(@"%@---%@", [self printBaseAnimation]);
+//    NSLog(@"%@", [super printBaseAnimation]);
+    
+    struct __rw_objc_super objcSuper;
+    objcSuper.object = objc_getMetaClass([NSStringFromClass(self.class) UTF8String]);
+    objcSuper.superClass = class_getSuperclass(self);//[self superclass];
+    
+    struct objc_object object;
+    object.isa = objc_getMetaClass([NSStringFromClass(self.class) UTF8String]);
+//    NSLog(@"%@", objc_msgSend((__bridge id)(&object), sel_registerName("printBaseAnimation")));
+    NSLog(@"%@", [self printBaseAnimation]);
+
+    NSLog(@"%@", [super printBaseAnimation]);
+//    NSLog(@"%@ - %@", objc_msgSendSuper(&objcSuper, sel_registerName("printBaseAnimation")), self);
+}
+
 - (void)printName
 {
-    @synchronized (self) {
-        NSLog(@"STAnimation.printName");
-    }
+    NSLog(@"Handle notification--current thread: %@", [NSThread currentThread]);
 }
 
 - (void)unrecognizedSelectorSentToInstance {

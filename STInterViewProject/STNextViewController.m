@@ -32,33 +32,9 @@
     self.view.backgroundColor = UIColor.whiteColor;
     [self testExample];
     
-    Class cls = [STAnimation class];
-    void *kc = &cls;
-    [(__bridge id)kc printName];
-    
-    NSObject *objc = [NSObject new];
-    NSLog(@"%ld",CFGetRetainCount((__bridge CFTypeRef)(objc)));
-
-    void(^block1)(void) = ^{
-        NSLog(@"---%ld",CFGetRetainCount((__bridge CFTypeRef)(objc)));
-    };
-    block1();
-
-    void(^__weak block2)(void) = ^{
-        NSLog(@"---%ld",CFGetRetainCount((__bridge CFTypeRef)(objc)));
-    };
-    block2();
-
-    void(^block3)(void) = [block2 copy];
-    block3();
-
-    __block NSObject *obj = [NSObject new];
-    void(^block4)(void) = ^{
-        NSLog(@"---%ld",CFGetRetainCount((__bridge CFTypeRef)(obj)));
-    };
-    block4();
-
-    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(printName:) name:@"" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notificationNameAndObject:) name:nil object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(printName:) name:@"NotificationName" object:nil];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -67,6 +43,24 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [super touchesBegan:touches withEvent:event];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"NotificationName" object:@1];
+
+//    dispatch_queue_t queue = dispatch_queue_create("test.queue", DISPATCH_QUEUE_CONCURRENT);
+//    dispatch_async(queue, ^{
+//        NSLog(@"Begin post notification--current thread1: %@", [NSThread currentThread]);
+//        [[NSNotificationCenter defaultCenter] postNotificationName:@"NotificationName" object:@1];
+//        NSLog(@"End post notification--current thread1: %@", [NSThread currentThread]);
+//    });
+//    dispatch_async(queue, ^{
+//        NSLog(@"Begin post notification--current thread2: %@", [NSThread currentThread]);
+//        [[NSNotificationCenter defaultCenter] postNotificationName:@"NotificationName" object:@2];
+//        NSLog(@"End post notification--current thread2: %@", [NSThread currentThread]);
+//    });
+//    dispatch_async(queue, ^{
+//        NSLog(@"Begin post notification--current thread3: %@", [NSThread currentThread]);
+//        [[NSNotificationCenter defaultCenter] postNotificationName:@"NotificationName" object:@3];
+//        NSLog(@"End post notification--current thread3: %@", [NSThread currentThread]);
+//    });
 }
 
 - (void)testExample {
@@ -114,6 +108,18 @@
 
 - (void)testBinaryTree {
     STBinaryTreeTest *bt = [[STBinaryTreeTest alloc]init];
+}
+
+- (void)printName:(NSNotification *)info {
+    NSLog(@"Handle notification info = %@--current thread: %@", info.object, [NSThread currentThread]);
+}
+
+- (void)notificationName {
+    NSLog(@"notificationName is nil");
+}
+
+- (void)notificationNameAndObject:(NSNotification *)info {
+    NSLog(@"notificationName and object are both nil --- %@", info);
 }
 
 - (void)dealloc
