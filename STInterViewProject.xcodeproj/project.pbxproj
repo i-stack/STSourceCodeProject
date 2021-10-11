@@ -20,6 +20,7 @@
 		E48EF5EC24EE4C700018D0FD /* STAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = E48EF5EB24EE4C700018D0FD /* STAnimation.m */; };
 		E48EF5EF24EE4C830018D0FD /* STAnimation+STPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = E48EF5EE24EE4C830018D0FD /* STAnimation+STPerson.m */; };
 		E48EF5F224EE4FDB0018D0FD /* STAnimation+STDog.m in Sources */ = {isa = PBXBuildFile; fileRef = E48EF5F124EE4FDB0018D0FD /* STAnimation+STDog.m */; };
+		E491157E271482EB00851F43 /* STSaleTickets.m in Sources */ = {isa = PBXBuildFile; fileRef = E491157D271482EB00851F43 /* STSaleTickets.m */; };
 		E49A10A92609DBBF002C5C9C /* STKVOTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E49A10A82609DBBF002C5C9C /* STKVOTest.m */; };
 		E49A10AF2609DBCB002C5C9C /* STKVOModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E49A10AE2609DBCB002C5C9C /* STKVOModel.m */; };
 		E49A10B8260C8BF9002C5C9C /* STMultiThreadTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E49A10B7260C8BF9002C5C9C /* STMultiThreadTest.m */; };
@@ -101,6 +102,8 @@
 		E48EF5EE24EE4C830018D0FD /* STAnimation+STPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "STAnimation+STPerson.m"; sourceTree = "<group>"; };
 		E48EF5F024EE4FDB0018D0FD /* STAnimation+STDog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "STAnimation+STDog.h"; sourceTree = "<group>"; };
 		E48EF5F124EE4FDB0018D0FD /* STAnimation+STDog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "STAnimation+STDog.m"; sourceTree = "<group>"; };
+		E491157C271482EB00851F43 /* STSaleTickets.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STSaleTickets.h; sourceTree = "<group>"; };
+		E491157D271482EB00851F43 /* STSaleTickets.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STSaleTickets.m; sourceTree = "<group>"; };
 		E49A10A72609DBBF002C5C9C /* STKVOTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STKVOTest.h; sourceTree = "<group>"; };
 		E49A10A82609DBBF002C5C9C /* STKVOTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STKVOTest.m; sourceTree = "<group>"; };
 		E49A10AD2609DBCB002C5C9C /* STKVOModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STKVOModel.h; sourceTree = "<group>"; };
@@ -358,6 +361,8 @@
 				E49A10B7260C8BF9002C5C9C /* STMultiThreadTest.m */,
 				E49A10BC260C8C7D002C5C9C /* STOSSpinLock.h */,
 				E49A10BD260C8C7D002C5C9C /* STOSSpinLock.m */,
+				E491157C271482EB00851F43 /* STSaleTickets.h */,
+				E491157D271482EB00851F43 /* STSaleTickets.m */,
 			);
 			path = "多线程";
 			sourceTree = "<group>";
@@ -546,6 +551,7 @@
 				E4C2B3E82601E4EC0082AEC4 /* STBaseAnimation.m in Sources */,
 				E4C2B375260090FA0082AEC4 /* STProxy.m in Sources */,
 				E4C2B3842600A9790082AEC4 /* STMRCModel.m in Sources */,
+				E491157E271482EB00851F43 /* STSaleTickets.m in Sources */,
 				E48EF5BA24EE287E0018D0FD /* SceneDelegate.m in Sources */,
 				E4C2B36726008DCA0082AEC4 /* STTimerTest.m in Sources */,
 				E4C2B40E260489730082AEC4 /* STKVCModel.m in Sources */,

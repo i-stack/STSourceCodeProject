@@ -9,6 +9,7 @@
 #import "STMultiThreadTest.h"
 #import "STGCD.h"
 #import "STOSSpinLock.h"
+#import "STSaleTickets.h"
 
 @interface STMultiThreadTest()
 
@@ -20,7 +21,7 @@
 {
     self = [super init];
     if (self) {
-        [self testGCD];
+        [self testSaleTickets];
     }
     return self;
 }
@@ -31,6 +32,10 @@
 
 - (void)testOSSpinLock {
     STOSSpinLock *lock = [[STOSSpinLock alloc]init];
+}
+
+- (void)testSaleTickets {
+    STSaleTickets *ticket = [[STSaleTickets alloc]init];
 }
 
 @end

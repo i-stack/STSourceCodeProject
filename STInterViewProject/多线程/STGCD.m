@@ -15,11 +15,6 @@
     NSMutableDictionary *_dataDict;
 }
 
-@property (nonatomic,assign)int tickets;
-
-@property (nonatomic,strong)NSLock *lock;
-@property (nonatomic,assign)OSSpinLock spinLock;
-
 @end
 
 @implementation STGCD
@@ -28,15 +23,9 @@
 {
     self = [super init];
     if (self) {
-        self.lock = [[NSLock alloc]init];
-        self.spinLock = OS_SPINLOCK_INIT;
-        self.tickets = 10;
         _dataDict = [NSMutableDictionary dictionary];
         concurrentQueue = dispatch_queue_create("testBarrier", DISPATCH_QUEUE_CONCURRENT);
         [self testSync];
-        @synchronized (self.lock) {
-            NSLog(@"");
-        }
     }
     return self;
 }
@@ -121,52 +110,6 @@
         NSLog(@"2");
     });
     NSLog(@"3");
-}
-
-- (void)saleTickets {
-    dispatch_queue_t queue = dispatch_get_global_queue(0, 0);
-    dispatch_async(queue, ^{
-        for (int i = 0; i < 5; i++) {
-            [self saleTicket];
-        }
-    });
-    
-    dispatch_async(queue, ^{
-        for (int i = 0; i < 5; i++) {
-            [self saleTicket];
-        }
-    });
-    
-    dispatch_async(queue, ^{
-        for (int i = 0; i < 10; i++) {
-            [self rebackTicket];
-        }
-    });
-    
-    dispatch_async(queue, ^{
-        for (int i = 0; i < 5; i++) {
-            [self saleTicket];
-        }
-    });
-}
-
-- (void)saleTicket {
-//    OSSpinLockLock(&_spinLock);
-    [self.lock lock];
-    int oldTicktes = self.tickets;
-    sleep(1);
-    oldTicktes--;
-    self.tickets = oldTicktes;
-    NSLog(@"剩余票数：%d票", self.tickets);
-    [self.lock unlock];
-//    OSSpinLockUnlock(&_spinLock);
-}
-
-- (void)rebackTicket {
-    [self.lock lock];
-    self.tickets++;
-    NSLog(@"剩余票数：%d票", self.tickets);
-    [self.lock unlock];
 }
 
 - (void)testPrintValue {
