@@ -10,7 +10,8 @@
 
 @interface STBlock ()
 
-@property (nonatomic,assign) int propertyAge;
+@property (nonatomic,assign)int propertyAge;
+@property (nonatomic,strong)NSString *name;
 
 @end
 
@@ -28,9 +29,32 @@ static int globalStaticVarHight = 80;
     return self;
 }
 
+- (void)globleBlock {
+    void(^block)(void) = ^(){
+        
+    };
+    block();
+    
+//    void(^block1)(void) = ^(){
+//        globalVarAge = 40;
+//        globalStaticVarHight = 800;
+//    };
+//    block1();
+}
+
+- (void)stackBlock {
+    
+}
+
+- (void)heapBlock {
+    
+}
+
 - (void)testBlock {
     int localVarAge = 10;
     self.block = ^{
+        self.name = @"zhangsan";
+        self.propertyAge = 20;
         globalVarAge = 40;
         globalStaticVarHight = 800;
         NSLog(@"%d", localVarAge);
