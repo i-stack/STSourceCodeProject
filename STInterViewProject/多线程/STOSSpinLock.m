@@ -65,13 +65,13 @@
 }
 
 - (void)saleTicket {
-//    OSSpinLockLock(&_lock);
+    OSSpinLockLock(&_lock);
     int oldTicktes = self.tickets;
     sleep(.2);
     oldTicktes--;
     self.tickets = oldTicktes;
     NSLog(@"还剩下：%d--%@", self.tickets, [NSThread currentThread]);
-//    OSSpinLockUnlock(&_lock);
+    OSSpinLockUnlock(&_lock);
 }
 
 @end
