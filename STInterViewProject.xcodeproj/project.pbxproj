@@ -104,6 +104,7 @@
 		E48EF5F124EE4FDB0018D0FD /* STAnimation+STDog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "STAnimation+STDog.m"; sourceTree = "<group>"; };
 		E491157C271482EB00851F43 /* STSaleTickets.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STSaleTickets.h; sourceTree = "<group>"; };
 		E491157D271482EB00851F43 /* STSaleTickets.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STSaleTickets.m; sourceTree = "<group>"; };
+		E491157F27263FAB00851F43 /* STKVOTest.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = STKVOTest.cpp; sourceTree = "<group>"; };
 		E49A10A72609DBBF002C5C9C /* STKVOTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STKVOTest.h; sourceTree = "<group>"; };
 		E49A10A82609DBBF002C5C9C /* STKVOTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STKVOTest.m; sourceTree = "<group>"; };
 		E49A10AD2609DBCB002C5C9C /* STKVOModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STKVOModel.h; sourceTree = "<group>"; };
@@ -264,6 +265,7 @@
 		E49A10A62609DBAB002C5C9C /* KVO */ = {
 			isa = PBXGroup;
 			children = (
+				E491157F27263FAB00851F43 /* STKVOTest.cpp */,
 				E49A10A72609DBBF002C5C9C /* STKVOTest.h */,
 				E49A10A82609DBBF002C5C9C /* STKVOTest.m */,
 				E49A10AD2609DBCB002C5C9C /* STKVOModel.h */,

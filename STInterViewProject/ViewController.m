@@ -19,7 +19,9 @@
     [super viewDidLoad];
     self.view.backgroundColor = UIColor.whiteColor;
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    button.frame = CGRectMake(200, 300, 100, 40);
+    button.frame = CGRectMake(0, 0, 200, 100);
+    button.center = self.view.center;
+    [button setTitle:@"Click" forState:UIControlStateNormal];
     [button setBackgroundColor:UIColor.orangeColor];
     [button addTarget:self action:@selector(buttonClick) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button];

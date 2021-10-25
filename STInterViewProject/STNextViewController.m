@@ -64,7 +64,7 @@
 }
 
 - (void)testExample {
-    [self testCategory];
+    [self testKVO];
 }
 
 - (void)testTimer {

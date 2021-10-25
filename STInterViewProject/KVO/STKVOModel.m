@@ -13,12 +13,12 @@
 //+ (BOOL)automaticallyNotifiesObserversOfName {
 //    return NO;
 //}
-//
-- (void)setName:(NSString *)name {
-//    [self willChangeValueForKey:@"name"];
-    _name = name;
-//    [self didChangeValueForKey:@"name"];
-    NSLog(@"setName");
+
+- (void)setAge:(int)age
+{
+    [super willChangeValueForKey:@"_age"];
+    _age = age;
+    [super didChangeValueForKey:@"_age"];
 }
 
 - (void)willChangeValueForKey:(NSString *)key
@@ -27,9 +27,20 @@
     NSLog(@"willChangeValueForKey");
 }
 
+- (void)setName:(NSString *)name
+{
+    [super willChangeValueForKey:@"name"];
+    NSLog(@"setName");
+    if (![_name isEqualToString:name]) {
+        _name = name;
+    }
+    [super didChangeValueForKey:@"name"];
+}
+
 - (void)didChangeValueForKey:(NSString *)key
 {
     [super didChangeValueForKey:key];
     NSLog(@"didChangeValueForKey");
 }
+
 @end
