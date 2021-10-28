@@ -23,6 +23,11 @@ void testSelectSort(STRandomArrayInfo *randomInfo) {
 //    printSortResult(randomInfo);
 }
 
+void testBubbleSort(STRandomArrayInfo *randomInfo) {
+    bubbleSort(randomInfo -> randomArray, randomInfo -> randomCount);
+//    printSortResult(randomInfo);
+}
+
 void testQuickSort(STRandomArrayInfo *randomInfo) {
     quickSort(randomInfo -> randomArray, 0, randomInfo -> randomCount - 1);
 //    printSortResult(randomInfo);
@@ -46,8 +51,9 @@ void testSort(void) {
             }
             return NSOrderedDescending;
         }];
-        testQuickSort(randomInfo);
+//        testQuickSort(randomInfo);
 //        testSelectSort(randomInfo);
+        testBubbleSort(randomInfo);
         int compareSuccessCount = 0;
         for (int i = 0; i < randomInfo -> randomCount; i++) {
             if ([newArray[i] intValue] != randomInfo -> randomArray[i]) {

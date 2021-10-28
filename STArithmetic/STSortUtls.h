@@ -11,6 +11,7 @@
 
 #include <stdio.h>
 
+void bubbleSort(int *nums, int numsSize);
 void selectSort(int *nums, int numsSize);
 void quickSort(int *nums, int begin, int end);
 

@@ -44,3 +44,21 @@ void selectSort(int *nums, int numsSize) {
         }
     }
 }
+
+/// 冒泡排序 从小到大
+/// @param nums 排序数组
+/// @param numsSize 排序数组长度
+void bubbleSort(int *nums, int numsSize) {
+    bool hasExchange = true;
+    for (int i = 0; i < numsSize - 1 && hasExchange; i++) {
+        hasExchange = false;
+        for (int j = 0; j < numsSize - 1 - i; j++) {
+            if (nums[j] > nums[j + 1]) {
+                hasExchange = true;
+                swap(&nums[j], &nums[j + 1]);
+            }
+        }
+    }
+}
+
+
