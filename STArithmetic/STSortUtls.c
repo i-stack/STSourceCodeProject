@@ -9,7 +9,7 @@
 #include "STSortUtls.h"
 #include "STUtls.h"
 
-/// 快速排序
+/// 快速排序 从小到大
 /// @param nums 排序数组
 /// @param begin 起始位置
 /// @param end 结束位置
