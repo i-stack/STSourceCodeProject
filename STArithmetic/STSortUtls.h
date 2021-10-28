@@ -13,6 +13,6 @@
 
 void bubbleSort(int *nums, int numsSize);
 void selectSort(int *nums, int numsSize);
+void countingSort(int *nums, int numsSize);
 void quickSort(int *nums, int begin, int end);
-
 #endif /* STSortUtls_h */

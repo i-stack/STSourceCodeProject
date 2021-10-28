@@ -63,7 +63,6 @@ STRandomArrayInfo* generateRandomArray(int from, int to) {
         i++;
         randomArrayInfo -> randomCount = i;
     }
-    
     return randomArrayInfo;
 }
 

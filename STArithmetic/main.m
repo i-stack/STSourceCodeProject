@@ -33,15 +33,20 @@ void testQuickSort(STRandomArrayInfo *randomInfo) {
 //    printSortResult(randomInfo);
 }
 
+void testCountingSort(STRandomArrayInfo *randomInfo) {
+    countingSort(randomInfo -> randomArray, randomInfo -> randomCount);
+//    printSortResult(randomInfo);
+}
+
 void testSort(void) {
-    int loopCount = 100;
+    NSLog(@"开始排序:\n");
+    int loopCount = 900;
     int totalSuccessCount = 0;
     for (int i = 0; i < loopCount; i++) {
-        STRandomArrayInfo *randomInfo = generateRandomNoRepeatArray(0, 10000);
-        testQuickSort(randomInfo);
+        STRandomArrayInfo *randomInfo = generateRandomArray(1500, 2000);//generateRandomNoRepeatArray(0, 10000);
         NSMutableArray *array = [NSMutableArray array];
-        for (int i = 0; i < randomInfo -> randomCount; i++) {
-            array[i] = @(randomInfo -> randomArray[i]);
+        for (int k = 0; k < randomInfo -> randomCount; k++) {
+            array[k] = @(randomInfo -> randomArray[k]);
         }
         NSArray *newArray = [array sortedArrayUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
             NSNumber *tNumber1 = (NSNumber *)obj1;
@@ -53,11 +58,12 @@ void testSort(void) {
         }];
 //        testQuickSort(randomInfo);
 //        testSelectSort(randomInfo);
-        testBubbleSort(randomInfo);
+//        testBubbleSort(randomInfo);
+        testCountingSort(randomInfo);
         int compareSuccessCount = 0;
-        for (int i = 0; i < randomInfo -> randomCount; i++) {
-            if ([newArray[i] intValue] != randomInfo -> randomArray[i]) {
-                NSLog(@"sort error: index = %d -- newArray value = %d -- randomInfo value = %d\n", i, [newArray[i] intValue], randomInfo -> randomArray[i]);
+        for (int k = 0; k < randomInfo -> randomCount; k++) {
+            if ([newArray[k] intValue] != randomInfo -> randomArray[k]) {
+                NSLog(@"sort error: index = %d -- newArray value = %d -- randomInfo value = %d\n", k, [newArray[k] intValue], randomInfo -> randomArray[k]);
                 break;
             }
             compareSuccessCount++;
@@ -66,11 +72,11 @@ void testSort(void) {
             totalSuccessCount++;
         }
     }
-    NSLog(@"排序完成结果:\n");
+    NSLog(@"排序完成:\n");
     if (totalSuccessCount == loopCount) {
-        NSLog(@"success: totalSuccessCount is same loopCount\n");
+        NSLog(@"success: totalSuccessCount is same loopCount = %d次", loopCount);
     } else {
-        NSLog(@"error: totalSuccessCount = %d\n", totalSuccessCount);
+        NSLog(@"error: totalSuccessCount = %d次", totalSuccessCount);
     }
 }
 

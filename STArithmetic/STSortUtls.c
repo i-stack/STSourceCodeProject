@@ -9,6 +9,34 @@
 #include "STSortUtls.h"
 #include "STUtls.h"
 
+/// 计数排序 从小到大
+/// @param nums 排序数组
+/// @param numsSize 排序数组长度
+void countingSort(int *nums, int numsSize) {
+    if (numsSize <= 1) return;
+    int minValue = nums[0], maxValue = nums[0];
+    for (int i = 1; i < numsSize; i++) {
+        if (nums[i] < minValue) minValue = nums[i];
+        if (nums[i] > maxValue) maxValue = nums[i];
+    }
+    int bucketCount = maxValue - minValue + 1;
+    int *bucket = (int *)malloc(sizeof(int) * bucketCount);
+    for (int i = 0; i < bucketCount; i++) {
+        bucket[i] = 0;
+    }
+    for (int i = 0; i < numsSize; i++) {
+        bucket[nums[i] - minValue]++;
+    }
+    int j = 0;
+    for (int i = 0; i < bucketCount; i++) {
+        while (bucket[i] > 0 && j < numsSize) {
+            nums[j++] = i + minValue;
+            bucket[i]--;
+        }
+    }
+    free(bucket);
+}
+
 /// 快速排序 从小到大
 /// @param nums 排序数组
 /// @param begin 起始位置
@@ -30,7 +58,7 @@ void quickSort(int *nums, int begin, int end) {
     }
 }
 
-/// 选择排序
+/// 选择排序 从小到大
 /// @param nums 排序数组
 /// @param numsSize 排序数组长度
 void selectSort(int *nums, int numsSize) {
