@@ -7,31 +7,70 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "STCommonC.h"
+#import "STUtls.h"
+#import "STSortUtls.h"
 
+void printSortResult(STRandomArrayInfo *randomInfo) {
+    printf("排序后:\n");
+    for (int i = 0; i < randomInfo -> randomCount; i++) {
+        printf("%d\n", randomInfo -> randomArray[i]);
+    }
+    printf("\n");
+}
+
+void testSelectSort(STRandomArrayInfo *randomInfo) {
+    selectSort(randomInfo -> randomArray, randomInfo -> randomCount);
+//    printSortResult(randomInfo);
+}
+
+void testQuickSort(STRandomArrayInfo *randomInfo) {
+    quickSort(randomInfo -> randomArray, 0, randomInfo -> randomCount - 1);
+//    printSortResult(randomInfo);
+}
+
+void testSort(void) {
+    int loopCount = 100;
+    int totalSuccessCount = 0;
+    for (int i = 0; i < loopCount; i++) {
+        STRandomArrayInfo *randomInfo = generateRandomNoRepeatArray(0, 10000);
+        testQuickSort(randomInfo);
+        NSMutableArray *array = [NSMutableArray array];
+        for (int i = 0; i < randomInfo -> randomCount; i++) {
+            array[i] = @(randomInfo -> randomArray[i]);
+        }
+        NSArray *newArray = [array sortedArrayUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
+            NSNumber *tNumber1 = (NSNumber *)obj1;
+            NSNumber *tNumber2 = (NSNumber *)obj2;
+            if ([tNumber1 integerValue] < [tNumber2 integerValue]) {
+                return NSOrderedAscending;
+            }
+            return NSOrderedDescending;
+        }];
+        testQuickSort(randomInfo);
+//        testSelectSort(randomInfo);
+        int compareSuccessCount = 0;
+        for (int i = 0; i < randomInfo -> randomCount; i++) {
+            if ([newArray[i] intValue] != randomInfo -> randomArray[i]) {
+                NSLog(@"sort error: index = %d -- newArray value = %d -- randomInfo value = %d\n", i, [newArray[i] intValue], randomInfo -> randomArray[i]);
+                break;
+            }
+            compareSuccessCount++;
+        }
+        if (compareSuccessCount == randomInfo -> randomCount) {
+            totalSuccessCount++;
+        }
+    }
+    NSLog(@"排序完成结果:\n");
+    if (totalSuccessCount == loopCount) {
+        NSLog(@"success: totalSuccessCount is same loopCount\n");
+    } else {
+        NSLog(@"error: totalSuccessCount = %d\n", totalSuccessCount);
+    }
+}
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
+        testSort();
     }
     return 0;
-}
-
-/*
- * leetcode 633
- * 给定一个非负整数 c ，你要判断是否存在两个整数 a 和 b，使得 a^2 + b^2 = c 。
- */
-bool judgeSquareSum(int c) {
-    if (c == 1) return true;
-    int left = 0, right = c >> 1;
-    while (left <= right) {
-        int mid = left + ((right - left) >> 1);
-        if (mid > c / mid) {
-            right--;
-        } else if (mid * mid < c) {
-            left++;
-        } else {
-            return true;
-        }
-    }
-    return false;
 }

@@ -13,17 +13,17 @@
 
 + (void)load
 {
-    NSLog(@"STAnimation+STPerson.load");
+    NSLog(@"%s", __func__);
 }
 
-+ (void)initialize
-{
-    NSLog(@"STAnimation+STPerson.initialize");
-}
+//+ (void)initialize
+//{
+//    NSLog(@"%s", __func__);
+//}
 
 - (void)printName
 {
-    NSLog(@"STAnimation+STPerson.printName");
+    NSLog(@"%s", __func__);
 }
 
 - (void)setName:(NSString *)name
@@ -36,14 +36,9 @@
     return objc_getAssociatedObject(self, @selector(name));
 }
 
-//- (void)printName
-//{
-//    NSLog(@"%@", @"STAnimation+STPerson");
-//}
-
 + (void)printAge
 {
-    NSLog(@"%@", @"STAnimation+STPerson.age");
+    NSLog(@"%s", __func__);
 }
 
 @end

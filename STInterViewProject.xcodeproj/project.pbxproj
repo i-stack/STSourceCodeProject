@@ -42,7 +42,8 @@
 		E4C2B40E260489730082AEC4 /* STKVCModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C2B40D260489730082AEC4 /* STKVCModel.m */; };
 		E4C800322612FC4A0088696E /* STMRCBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C800312612FC4A0088696E /* STMRCBaseModel.m */; };
 		E4CBCBE5268DB3A0004F13AC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E4CBCBE4268DB3A0004F13AC /* main.m */; };
-		E4EDE8AB26F08FFE004ECB81 /* STCommonC.c in Sources */ = {isa = PBXBuildFile; fileRef = E4EDE8AA26F08FFE004ECB81 /* STCommonC.c */; };
+		E4EDE8AB26F08FFE004ECB81 /* STUtls.c in Sources */ = {isa = PBXBuildFile; fileRef = E4EDE8AA26F08FFE004ECB81 /* STUtls.c */; };
+		E4F4FC20272A540500002257 /* STSortUtls.c in Sources */ = {isa = PBXBuildFile; fileRef = E4F4FC1F272A540500002257 /* STSortUtls.c */; };
 		E4FEB67E25A8519E0055D834 /* STBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = E4FEB67D25A8519E0055D834 /* STBlock.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
@@ -153,8 +154,10 @@
 		E4CBCBE2268DB3A0004F13AC /* OC对象本质 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "OC对象本质"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4CBCBE4268DB3A0004F13AC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E4CBCBEF268DBB76004F13AC /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		E4EDE8A926F08FFE004ECB81 /* STCommonC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STCommonC.h; sourceTree = "<group>"; };
-		E4EDE8AA26F08FFE004ECB81 /* STCommonC.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = STCommonC.c; sourceTree = "<group>"; };
+		E4EDE8A926F08FFE004ECB81 /* STUtls.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STUtls.h; sourceTree = "<group>"; };
+		E4EDE8AA26F08FFE004ECB81 /* STUtls.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = STUtls.c; sourceTree = "<group>"; };
+		E4F4FC1E272A540500002257 /* STSortUtls.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STSortUtls.h; sourceTree = "<group>"; };
+		E4F4FC1F272A540500002257 /* STSortUtls.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = STSortUtls.c; sourceTree = "<group>"; };
 		E4FEB67C25A8519E0055D834 /* STBlock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STBlock.h; sourceTree = "<group>"; };
 		E4FEB67D25A8519E0055D834 /* STBlock.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STBlock.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -205,8 +208,10 @@
 			isa = PBXGroup;
 			children = (
 				E46216B2268181840048C004 /* main.m */,
-				E4EDE8A926F08FFE004ECB81 /* STCommonC.h */,
-				E4EDE8AA26F08FFE004ECB81 /* STCommonC.c */,
+				E4EDE8A926F08FFE004ECB81 /* STUtls.h */,
+				E4EDE8AA26F08FFE004ECB81 /* STUtls.c */,
+				E4F4FC1E272A540500002257 /* STSortUtls.h */,
+				E4F4FC1F272A540500002257 /* STSortUtls.c */,
 			);
 			path = STArithmetic;
 			sourceTree = "<group>";
@@ -531,8 +536,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4F4FC20272A540500002257 /* STSortUtls.c in Sources */,
 				E46216B3268181840048C004 /* main.m in Sources */,
-				E4EDE8AB26F08FFE004ECB81 /* STCommonC.c in Sources */,
+				E4EDE8AB26F08FFE004ECB81 /* STUtls.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -560,13 +566,13 @@
 				E49A10BE260C8C7D002C5C9C /* STOSSpinLock.m in Sources */,
 				E4FEB67E25A8519E0055D834 /* STBlock.m in Sources */,
 				E49A10D7260D87A4002C5C9C /* STMRCTest.m in Sources */,
-				E48EF5EF24EE4C830018D0FD /* STAnimation+STPerson.m in Sources */,
 				E4C800322612FC4A0088696E /* STMRCBaseModel.m in Sources */,
 				E4C2B3F52601F39A0082AEC4 /* STGCD.m in Sources */,
 				E4C2B3FE260448240082AEC4 /* STTimer.m in Sources */,
 				E49A10AF2609DBCB002C5C9C /* STKVOModel.m in Sources */,
 				E49A10CE260D7894002C5C9C /* STWeakModel.m in Sources */,
 				E48EF5F224EE4FDB0018D0FD /* STAnimation+STDog.m in Sources */,
+				E48EF5EF24EE4C830018D0FD /* STAnimation+STPerson.m in Sources */,
 				E49A10C5260D787F002C5C9C /* STWeakTest.m in Sources */,
 				E48EF5EC24EE4C700018D0FD /* STAnimation.m in Sources */,
 			);

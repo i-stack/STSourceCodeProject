@@ -12,8 +12,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface STAnimation (STDog)
 
-@property (nonatomic,strong)NSString *name;
-
 - (void)printName;
 
 @end

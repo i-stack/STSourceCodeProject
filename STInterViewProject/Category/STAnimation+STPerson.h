@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong)NSString *name;
 
 - (void)printName;
++ (void)printAge;
 
 @end
 
