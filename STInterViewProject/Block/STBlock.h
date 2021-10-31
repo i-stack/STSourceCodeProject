@@ -12,9 +12,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface STBlock : NSObject
 
-- (void)testBlock;
-@property (nonatomic,strong) void(^block)(void);
-
 @end
 
 NS_ASSUME_NONNULL_END

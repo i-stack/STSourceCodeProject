@@ -17,6 +17,7 @@
 #import "STMRCTest.h"
 #import "STMRCModel.h"
 #import "STBinaryTreeTest.h"
+#import "STBlock.h"
 
 @interface STNextViewController ()
 
@@ -42,7 +43,7 @@
 }
 
 - (void)testExample {
-    [self testCategory];
+    [self testBlock];
 }
 
 - (void)testTimer {
@@ -86,6 +87,10 @@
 
 - (void)testBinaryTree {
     STBinaryTreeTest *bt = [[STBinaryTreeTest alloc]init];
+}
+
+- (void)testBlock {
+    STBlock *block = [[STBlock alloc]init];
 }
 
 - (void)dealloc

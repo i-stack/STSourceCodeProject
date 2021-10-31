@@ -18,22 +18,30 @@
 
 @implementation STKVOTest
 
+- (void)dealloc {
+//    [self removeObserver:self.model forKeyPath:@"_age"];
+//    [self removeObserver:self.model forKeyPath:@"_age"];
+
+}
+
 - (instancetype)init
 {
     self = [super init];
     if (self) {
         self.model = [[STKVOModel alloc]init];
-        self.model.address = @"故宫博物院";
-        self.model.observer = self;
-        [self printClassMethon:self.model.class];
-        NSLog(@"初始化完成后类对象：model.isa指向：%@", object_getClass(self.model)); // model.isa指向：STKVOModel
+//        self.model.address = @"故宫博物院";
+//        self.model.observer = self;
+//        [self printClassMethon:self.model.class];
+//        NSLog(@"初始化完成后类对象：model.isa指向：%@", object_getClass(self.model)); // model.isa指向：STKVOModel
+//        [self.model addObserver:self forKeyPath:@"name" options:NSKeyValueObservingOptionNew context:nil];
+//        self.model.name = @"model";
+//        NSLog(@"注册KVO后类对象：model.isa指向：%@", object_getClass(self.model)); // model.isa指向：NSKVONotifying_STKVOModel
+//        [self printClassMethon:object_getClass(self.model)];
         [self.model addObserver:self forKeyPath:@"name" options:NSKeyValueObservingOptionNew context:nil];
-        self.model.name = @"model";
-        NSLog(@"注册KVO后类对象：model.isa指向：%@", object_getClass(self.model)); // model.isa指向：NSKVONotifying_STKVOModel
-        [self printClassMethon:object_getClass(self.model)];
-        
-        [self.model addObserver:self forKeyPath:@"_age" options:NSKeyValueObservingOptionNew context:nil];
-        [self.model setAge:20];
+        [self.model addObserver:self forKeyPath:@"name" options:NSKeyValueObservingOptionNew context:nil];
+        self.model.name = @"bj";
+//        [self printClassMethon:self.model.class];
+        [self printClasses:self.model.class];
     }
     return self;
 }
@@ -50,6 +58,24 @@
         Method method = methodList[i];
         NSLog(@"method name: %@", NSStringFromSelector(method_getName(method)));
     }
+}
+
+- (void)printClasses:(Class)cls {
+    
+    // 注册类的总数
+    int count = objc_getClassList(NULL, 0);
+    // 创建一个数组， 其中包含给定对象
+    NSMutableArray *mArray = [NSMutableArray arrayWithObject:cls];
+    // 获取所有已注册的类
+    Class* classes = (Class*)malloc(sizeof(Class)*count);
+    objc_getClassList(classes, count);
+    for (int i = 0; i<count; i++) {
+        if (cls == class_getSuperclass(classes[i])) {
+            [mArray addObject:classes[i]];
+        }
+    }
+    free(classes);
+    NSLog(@"classes = %@", mArray);
 }
 
 @end

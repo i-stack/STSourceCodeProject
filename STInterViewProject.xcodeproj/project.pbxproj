@@ -127,7 +127,6 @@
 		E4C0C512261FEF8E00223E8F /* STBinaryTreeTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STBinaryTreeTest.m; sourceTree = "<group>"; };
 		E4C0C51A261FF06C00223E8F /* STBinaryTreeNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STBinaryTreeNode.h; sourceTree = "<group>"; };
 		E4C0C51B261FF06C00223E8F /* STBinaryTreeNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STBinaryTreeNode.m; sourceTree = "<group>"; };
-		E4C2B35D2600599D0082AEC4 /* STBlock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = STBlock.cpp; sourceTree = "<group>"; };
 		E4C2B36526008DCA0082AEC4 /* STTimerTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STTimerTest.h; sourceTree = "<group>"; };
 		E4C2B36626008DCA0082AEC4 /* STTimerTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STTimerTest.m; sourceTree = "<group>"; };
 		E4C2B36B26008E700082AEC4 /* STTimer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = STTimer.cpp; sourceTree = "<group>"; };
@@ -158,6 +157,7 @@
 		E4EDE8AA26F08FFE004ECB81 /* STUtls.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = STUtls.c; sourceTree = "<group>"; };
 		E4F4FC1E272A540500002257 /* STSortUtls.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STSortUtls.h; sourceTree = "<group>"; };
 		E4F4FC1F272A540500002257 /* STSortUtls.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = STSortUtls.c; sourceTree = "<group>"; };
+		E4F4FC25272BF46600002257 /* STBlock.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = STBlock.cpp; sourceTree = "<group>"; };
 		E4FEB67C25A8519E0055D834 /* STBlock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STBlock.h; sourceTree = "<group>"; };
 		E4FEB67D25A8519E0055D834 /* STBlock.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STBlock.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -340,7 +340,7 @@
 			children = (
 				E4FEB67C25A8519E0055D834 /* STBlock.h */,
 				E4FEB67D25A8519E0055D834 /* STBlock.m */,
-				E4C2B35D2600599D0082AEC4 /* STBlock.cpp */,
+				E4F4FC25272BF46600002257 /* STBlock.cpp */,
 			);
 			path = Block;
 			sourceTree = "<group>";
@@ -471,7 +471,7 @@
 		E48EF5AA24EE287E0018D0FD /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1250;
+				LastUpgradeCheck = 1310;
 				ORGANIZATIONNAME = Knowin;
 				TargetAttributes = {
 					E43B7C9E26EA01080029AF20 = {
@@ -611,6 +611,7 @@
 		E43B7CA426EA01080029AF20 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8D4LL3H2G7;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -623,6 +624,7 @@
 		E43B7CA526EA01080029AF20 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8D4LL3H2G7;
 				ENABLE_HARDENED_RUNTIME = YES;

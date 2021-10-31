@@ -80,9 +80,35 @@ void testSort(void) {
     }
 }
 
+void merge(int* A, int ALen, int m, int* B, int BLen, int n) {
+    if (ALen != m + n) return;
+    if (BLen < 1 || ALen < 1) return;
+    int i = m - 1;
+    int j = n - 1;
+    int k = m + n - 1;
+    while (i >= 0 && j >= 0) {
+        if (A[i] >= B[j]) {
+            A[k--] = A[i--];
+        } else {
+            A[k--] = B[j--];
+        }
+    }
+    while (i >= 0) {
+        A[k--] = A[i--];
+    }
+    while (j >= 0) {
+        A[k--] = B[j--];
+    }
+}
+
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         testSort();
+        int num1[6] = {1, 2, 3, 0, 0, 0};
+        int num2[3] = {2, 5, 7};
+        int *p1 = num1;
+        int *p2 = num2;
+        merge(p1, 6, 3, p2, 3, 3);
     }
     return 0;
 }

@@ -9,6 +9,14 @@
 #include "STSortUtls.h"
 #include "STUtls.h"
 
+/// 归并排序 从小到大
+/// @param nums 排序数组
+/// @param begin 起始位置
+/// @param end 结束位置
+void mergeSort(int *nums, int begin, int end) {
+    
+}
+
 /// 计数排序 从小到大
 /// @param nums 排序数组
 /// @param numsSize 排序数组长度
@@ -88,5 +96,3 @@ void bubbleSort(int *nums, int numsSize) {
         }
     }
 }
-
-
