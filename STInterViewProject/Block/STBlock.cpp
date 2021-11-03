@@ -106,8 +106,14 @@ struct __AtAutoreleasePool {
 };
 
 #define __OFFSETOFIVAR__(TYPE, MEMBER) ((long long) &((TYPE *)0)->MEMBER)
-static __NSConstantStringImpl __NSConstantStringImpl__var_folders_hy_0qcq_mzj3m16fpqw1wdkxjy00000gn_T_STBlock_9a0258_mi_0 __attribute__ ((section ("__DATA, __cfstring"))) = {__CFConstantStringClassReference,0x000007c8,"%d",2};
-static __NSConstantStringImpl __NSConstantStringImpl__var_folders_hy_0qcq_mzj3m16fpqw1wdkxjy00000gn_T_STBlock_9a0258_mi_1 __attribute__ ((section ("__DATA, __cfstring"))) = {__CFConstantStringClassReference,0x000007c8,"%@",2};
+static void __Block_byref_id_object_copy_131(void *dst, void *src) {
+ _Block_object_assign((char*)dst + 40, *(void * *) ((char*)src + 40), 131);
+}
+static void __Block_byref_id_object_dispose_131(void *src) {
+ _Block_object_dispose(*(void * *) ((char*)src + 40), 131);
+}
+static __NSConstantStringImpl __NSConstantStringImpl__var_folders_hy_0qcq_mzj3m16fpqw1wdkxjy00000gn_T_STBlock_097518_mi_0 __attribute__ ((section ("__DATA, __cfstring"))) = {__CFConstantStringClassReference,0x000007c8,"%@",2};
+static __NSConstantStringImpl __NSConstantStringImpl__var_folders_hy_0qcq_mzj3m16fpqw1wdkxjy00000gn_T_STBlock_097518_mi_1 __attribute__ ((section ("__DATA, __cfstring"))) = {__CFConstantStringClassReference,0x000007c8,"%@",2};
 
 
 
@@ -34835,10 +34841,12 @@ typedef struct {} _objc_exc_STBlock;
 #endif
 
 extern "C" unsigned long OBJC_IVAR_$_STBlock$_name;
+extern "C" unsigned long OBJC_IVAR_$_STBlock$_block;
 struct STBlock_IMPL {
 	struct NSObject_IMPL NSObject_IVARS;
 	NSString *__strong _address;
 	NSString *__strong _name;
+	void (*_block)();
 };
 
 
@@ -35395,24 +35403,27 @@ struct __STBlock__init_block_desc_0 {
 **/ 
 
 // @property (nonatomic, strong)NSString *name;
+// @property (nonatomic, strong)void(^block)(void);
 
 /* @end */
 
 
 // @implementation STBlock
-struct __Block_byref_age_0 {
+struct __Block_byref_weakSelf_0 {
   void *__isa;
-__Block_byref_age_0 *__forwarding;
+__Block_byref_weakSelf_0 *__forwarding;
  int __flags;
  int __size;
- int age;
+ void (*__Block_byref_id_object_copy)(void*, void*);
+ void (*__Block_byref_id_object_dispose)(void*);
+ __strong id weakSelf;
 };
 
 struct __STBlock__init_block_impl_0 {
   struct __block_impl impl;
   struct __STBlock__init_block_desc_0* Desc;
-  __Block_byref_age_0 *age; // by ref
-  __STBlock__init_block_impl_0(void *fp, struct __STBlock__init_block_desc_0 *desc, __Block_byref_age_0 *_age, int flags=0) : age(_age->__forwarding) {
+  __Block_byref_weakSelf_0 *weakSelf; // by ref
+  __STBlock__init_block_impl_0(void *fp, struct __STBlock__init_block_desc_0 *desc, __Block_byref_weakSelf_0 *_weakSelf, int flags=0) : weakSelf(_weakSelf->__forwarding) {
     impl.isa = &_NSConcreteStackBlock;
     impl.Flags = flags;
     impl.FuncPtr = fp;
@@ -35420,14 +35431,13 @@ struct __STBlock__init_block_impl_0 {
   }
 };
 static void __STBlock__init_block_func_0(struct __STBlock__init_block_impl_0 *__cself) {
-  __Block_byref_age_0 *age = __cself->age; // bound by ref
+  __Block_byref_weakSelf_0 *weakSelf = __cself->weakSelf; // bound by ref
 
-            (age->__forwarding->age) = 20;
-            NSLog((NSString *)&__NSConstantStringImpl__var_folders_hy_0qcq_mzj3m16fpqw1wdkxjy00000gn_T_STBlock_9a0258_mi_0, (age->__forwarding->age));
+            NSLog((NSString *)&__NSConstantStringImpl__var_folders_hy_0qcq_mzj3m16fpqw1wdkxjy00000gn_T_STBlock_097518_mi_0, (weakSelf->__forwarding->weakSelf));
         }
-static void __STBlock__init_block_copy_0(struct __STBlock__init_block_impl_0*dst, struct __STBlock__init_block_impl_0*src) {_Block_object_assign((void*)&dst->age, (void*)src->age, 8/*BLOCK_FIELD_IS_BYREF*/);}
+static void __STBlock__init_block_copy_0(struct __STBlock__init_block_impl_0*dst, struct __STBlock__init_block_impl_0*src) {_Block_object_assign((void*)&dst->weakSelf, (void*)src->weakSelf, 8/*BLOCK_FIELD_IS_BYREF*/);}
 
-static void __STBlock__init_block_dispose_0(struct __STBlock__init_block_impl_0*src) {_Block_object_dispose((void*)src->age, 8/*BLOCK_FIELD_IS_BYREF*/);}
+static void __STBlock__init_block_dispose_0(struct __STBlock__init_block_impl_0*src) {_Block_object_dispose((void*)src->weakSelf, 8/*BLOCK_FIELD_IS_BYREF*/);}
 
 static struct __STBlock__init_block_desc_0 {
   size_t reserved;
@@ -35439,17 +35449,21 @@ static struct __STBlock__init_block_desc_0 {
 static instancetype _I_STBlock_init(STBlock * self, SEL _cmd) {
     self = ((STBlock *(*)(__rw_objc_super *, SEL))(void *)objc_msgSendSuper)((__rw_objc_super){(id)self, (id)class_getSuperclass(objc_getClass("STBlock"))}, sel_registerName("init"));
     if (self) {
-        __attribute__((__blocks__(byref))) __Block_byref_age_0 age = {(void*)0,(__Block_byref_age_0 *)&age, 0, sizeof(__Block_byref_age_0), 10};
-        void(*block)(void) = ((void (*)())&__STBlock__init_block_impl_0((void *)__STBlock__init_block_func_0, &__STBlock__init_block_desc_0_DATA, (__Block_byref_age_0 *)&age, 570425344));
-        struct __STBlock__init_block_impl_0 *impl = (__bridge struct __STBlock__init_block_impl_0 *)block;
-        NSLog((NSString *)&__NSConstantStringImpl__var_folders_hy_0qcq_mzj3m16fpqw1wdkxjy00000gn_T_STBlock_9a0258_mi_1, impl -> impl.isa);
-        ((void (*)(__block_impl *))((__block_impl *)block)->FuncPtr)((__block_impl *)block);
+
+        __attribute__((__blocks__(byref))) __Block_byref_weakSelf_0 weakSelf = {(void*)0,(__Block_byref_weakSelf_0 *)&weakSelf, 33554432, sizeof(__Block_byref_weakSelf_0), __Block_byref_id_object_copy_131, __Block_byref_id_object_dispose_131, self};
+        ((void (*)(id, SEL, void (*)()))(void *)objc_msgSend)((id)self, sel_registerName("setBlock:"), ((void (*)())&__STBlock__init_block_impl_0((void *)__STBlock__init_block_func_0, &__STBlock__init_block_desc_0_DATA, (__Block_byref_weakSelf_0 *)&weakSelf, 570425344)));
+        struct __STBlock__init_block_impl_0 *impl = (__bridge struct __STBlock__init_block_impl_0 *)((void (*(*)(id, SEL))())(void *)objc_msgSend)((id)self, sel_registerName("block"));
+        NSLog((NSString *)&__NSConstantStringImpl__var_folders_hy_0qcq_mzj3m16fpqw1wdkxjy00000gn_T_STBlock_097518_mi_1, impl -> impl.isa);
+        ((void (*(*)(id, SEL))())(void *)objc_msgSend)((id)self, sel_registerName("block"))();
     }
     return self;
 }
 
 static NSString * _I_STBlock_name(STBlock * self, SEL _cmd) { return (*(NSString *__strong *)((char *)self + OBJC_IVAR_$_STBlock$_name)); }
 static void _I_STBlock_setName_(STBlock * self, SEL _cmd, NSString *name) { (*(NSString *__strong *)((char *)self + OBJC_IVAR_$_STBlock$_name)) = name; }
+
+static void(* _I_STBlock_block(STBlock * self, SEL _cmd) )(){ return (*(void (**)())((char *)self + OBJC_IVAR_$_STBlock$_block)); }
+static void _I_STBlock_setBlock_(STBlock * self, SEL _cmd, void (*block)()) { (*(void (**)())((char *)self + OBJC_IVAR_$_STBlock$_block)) = block; }
 // @end
 
 struct _prop_t {
@@ -35521,30 +35535,36 @@ extern "C" __declspec(dllimport) struct objc_cache _objc_empty_cache;
 
 extern "C" unsigned long int OBJC_IVAR_$_STBlock$_address __attribute__ ((used, section ("__DATA,__objc_ivar"))) = __OFFSETOFIVAR__(struct STBlock, _address);
 extern "C" unsigned long int OBJC_IVAR_$_STBlock$_name __attribute__ ((used, section ("__DATA,__objc_ivar"))) = __OFFSETOFIVAR__(struct STBlock, _name);
+extern "C" unsigned long int OBJC_IVAR_$_STBlock$_block __attribute__ ((used, section ("__DATA,__objc_ivar"))) = __OFFSETOFIVAR__(struct STBlock, _block);
 
 static struct /*_ivar_list_t*/ {
 	unsigned int entsize;  // sizeof(struct _prop_t)
 	unsigned int count;
-	struct _ivar_t ivar_list[2];
+	struct _ivar_t ivar_list[3];
 } _OBJC_$_INSTANCE_VARIABLES_STBlock __attribute__ ((used, section ("__DATA,__objc_const"))) = {
 	sizeof(_ivar_t),
-	2,
+	3,
 	{{(unsigned long int *)&OBJC_IVAR_$_STBlock$_address, "_address", "@\"NSString\"", 3, 8},
-	 {(unsigned long int *)&OBJC_IVAR_$_STBlock$_name, "_name", "@\"NSString\"", 3, 8}}
+	 {(unsigned long int *)&OBJC_IVAR_$_STBlock$_name, "_name", "@\"NSString\"", 3, 8},
+	 {(unsigned long int *)&OBJC_IVAR_$_STBlock$_block, "_block", "@?", 3, 8}}
 };
 
 static struct /*_method_list_t*/ {
 	unsigned int entsize;  // sizeof(struct _objc_method)
 	unsigned int method_count;
-	struct _objc_method method_list[5];
+	struct _objc_method method_list[9];
 } _OBJC_$_INSTANCE_METHODS_STBlock __attribute__ ((used, section ("__DATA,__objc_const"))) = {
 	sizeof(_objc_method),
-	5,
+	9,
 	{{(struct objc_selector *)"init", "@16@0:8", (void *)_I_STBlock_init},
 	{(struct objc_selector *)"name", "@16@0:8", (void *)_I_STBlock_name},
 	{(struct objc_selector *)"setName:", "v24@0:8@16", (void *)_I_STBlock_setName_},
+	{(struct objc_selector *)"block", "@?16@0:8", (void *)_I_STBlock_block},
+	{(struct objc_selector *)"setBlock:", "v24@0:8@?16", (void *)_I_STBlock_setBlock_},
 	{(struct objc_selector *)"name", "@16@0:8", (void *)_I_STBlock_name},
-	{(struct objc_selector *)"setName:", "v24@0:8@16", (void *)_I_STBlock_setName_}}
+	{(struct objc_selector *)"setName:", "v24@0:8@16", (void *)_I_STBlock_setName_},
+	{(struct objc_selector *)"block", "@?16@0:8", (void *)_I_STBlock_block},
+	{(struct objc_selector *)"setBlock:", "v24@0:8@?16", (void *)_I_STBlock_setBlock_}}
 };
 
 static struct _class_ro_t _OBJC_METACLASS_RO_$_STBlock __attribute__ ((used, section ("__DATA,__objc_const"))) = {

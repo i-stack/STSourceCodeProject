@@ -44,7 +44,7 @@
 		E4CBCBE5268DB3A0004F13AC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E4CBCBE4268DB3A0004F13AC /* main.m */; };
 		E4EDE8AB26F08FFE004ECB81 /* STUtls.c in Sources */ = {isa = PBXBuildFile; fileRef = E4EDE8AA26F08FFE004ECB81 /* STUtls.c */; };
 		E4F4FC20272A540500002257 /* STSortUtls.c in Sources */ = {isa = PBXBuildFile; fileRef = E4F4FC1F272A540500002257 /* STSortUtls.c */; };
-		E4FEB67E25A8519E0055D834 /* STBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = E4FEB67D25A8519E0055D834 /* STBlock.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		E4FEB67E25A8519E0055D834 /* STBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = E4FEB67D25A8519E0055D834 /* STBlock.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
