@@ -27,6 +27,10 @@
 //    return self;
 //}
 
+//+ (NSTimer *)scheduledTimerWithTimeInterval:(NSTimeInterval)ti target:(id)aTarget selector:(SEL)aSelector userInfo:(id)userInfo repeats:(BOOL)yesOrNo {
+//    return [super scheduledTimerWithTimeInterval:ti target:aTarget selector:aSelector userInfo:userInfo repeats:yesOrNo];
+//}
+
 - (void)dealloc
 {
     NSLog(@"%@-%s", NSStringFromClass(self.class), __func__);

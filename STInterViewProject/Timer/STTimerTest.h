@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface STTimerTest : NSObject
 
+- (void)invalidate;
+
 - (void)testGCD;
 - (void)testTimer;
 - (void)testTimerLocal;

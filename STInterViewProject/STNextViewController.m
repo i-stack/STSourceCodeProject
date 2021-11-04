@@ -43,12 +43,11 @@
 }
 
 - (void)testExample {
-    [self testBlock];
+    [self testTimer];
 }
 
 - (void)testTimer {
     self.timer = [[STTimerTest alloc]init];
-    [self.timer testTimerLocal];
 }
 
 - (void)testCategory {
@@ -93,8 +92,8 @@
     STBlock *block = [[STBlock alloc]init];
 }
 
-- (void)dealloc
-{
+- (void)dealloc {
+//    [self.timer invalidate];
     NSLog(@"%@ dealloc", NSStringFromClass([self class]));
 }
 
