@@ -24,12 +24,11 @@
 {
     self = [super init];
     if (self) {
-//        NSString *str1 = @"123";
-//        NSLog(@"%lu - %p", (unsigned long)str1.retainCount, str1);
-//        NSString *str2 = [str1 copy];
-//        NSLog(@"%lu - %p", (unsigned long)str1.retainCount, str2);
-//        NSMutableString *str3 = [str1 mutableCopy];
-//        NSLog(@"%lu - %p", (unsigned long)str1.retainCount, str3);
+        NSLog(@"self class: %@", [self class]);
+        NSLog(@"self superclass: %@", [self superclass]);
+        NSLog(@"super class: %p", [super class]);
+        NSLog(@"super superclass: %p", [super superclass]);
+
     }
     return self;
 }

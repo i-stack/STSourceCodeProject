@@ -1,8 +1,8 @@
 //
-//  STMRCTest.h
+//  STPerson.h
 //  STInterViewProject
 //
-//  Created by song on 2021/3/26.
+//  Created by song on 2021/11/9.
 //  Copyright © 2021 Knowin. All rights reserved.
 //
 
@@ -10,9 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface STMRCTest : NSObject
-
-@property (nonatomic,copy)NSString *name;
+@interface STPerson : NSObject
 
 @end
 

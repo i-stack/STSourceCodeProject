@@ -44,6 +44,8 @@
 		E4CBCBE5268DB3A0004F13AC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E4CBCBE4268DB3A0004F13AC /* main.m */; };
 		E4EDE8AB26F08FFE004ECB81 /* STUtls.c in Sources */ = {isa = PBXBuildFile; fileRef = E4EDE8AA26F08FFE004ECB81 /* STUtls.c */; };
 		E4F4FC20272A540500002257 /* STSortUtls.c in Sources */ = {isa = PBXBuildFile; fileRef = E4F4FC1F272A540500002257 /* STSortUtls.c */; };
+		E4F4FC282739F6A300002257 /* STPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = E4F4FC272739F6A300002257 /* STPerson.m */; };
+		E4F4FC2C2739F6D000002257 /* STStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = E4F4FC2B2739F6D000002257 /* STStudent.m */; };
 		E4FEB67E25A8519E0055D834 /* STBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = E4FEB67D25A8519E0055D834 /* STBlock.m */; };
 /* End PBXBuildFile section */
 
@@ -158,6 +160,10 @@
 		E4F4FC1E272A540500002257 /* STSortUtls.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STSortUtls.h; sourceTree = "<group>"; };
 		E4F4FC1F272A540500002257 /* STSortUtls.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = STSortUtls.c; sourceTree = "<group>"; };
 		E4F4FC25272BF46600002257 /* STBlock.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = STBlock.cpp; sourceTree = "<group>"; };
+		E4F4FC262739F6A300002257 /* STPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STPerson.h; sourceTree = "<group>"; };
+		E4F4FC272739F6A300002257 /* STPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STPerson.m; sourceTree = "<group>"; };
+		E4F4FC2A2739F6D000002257 /* STStudent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STStudent.h; sourceTree = "<group>"; };
+		E4F4FC2B2739F6D000002257 /* STStudent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STStudent.m; sourceTree = "<group>"; };
 		E4FEB67C25A8519E0055D834 /* STBlock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STBlock.h; sourceTree = "<group>"; };
 		E4FEB67D25A8519E0055D834 /* STBlock.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STBlock.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -249,6 +255,7 @@
 				E48EF5BC24EE287E0018D0FD /* ViewController.m */,
 				E4C2B379260093B00082AEC4 /* STNextViewController.h */,
 				E4C2B37A260093B00082AEC4 /* STNextViewController.m */,
+				E4F4FC292739F6A700002257 /* Runtime */,
 				E4C0C510261FEF6900223E8F /* BinaryTree */,
 				E49A10C2260D7867002C5C9C /* Weak */,
 				E49A10A62609DBAB002C5C9C /* KVO */,
@@ -392,6 +399,17 @@
 				E4CBCBEF268DBB76004F13AC /* main.cpp */,
 			);
 			path = "OC对象本质";
+			sourceTree = "<group>";
+		};
+		E4F4FC292739F6A700002257 /* Runtime */ = {
+			isa = PBXGroup;
+			children = (
+				E4F4FC262739F6A300002257 /* STPerson.h */,
+				E4F4FC272739F6A300002257 /* STPerson.m */,
+				E4F4FC2A2739F6D000002257 /* STStudent.h */,
+				E4F4FC2B2739F6D000002257 /* STStudent.m */,
+			);
+			path = Runtime;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -560,9 +578,11 @@
 				E4C2B375260090FA0082AEC4 /* STProxy.m in Sources */,
 				E4C2B3842600A9790082AEC4 /* STMRCModel.m in Sources */,
 				E491157E271482EB00851F43 /* STSaleTickets.m in Sources */,
+				E4F4FC2C2739F6D000002257 /* STStudent.m in Sources */,
 				E48EF5BA24EE287E0018D0FD /* SceneDelegate.m in Sources */,
 				E4C2B36726008DCA0082AEC4 /* STTimerTest.m in Sources */,
 				E4C2B40E260489730082AEC4 /* STKVCModel.m in Sources */,
+				E4F4FC282739F6A300002257 /* STPerson.m in Sources */,
 				E49A10BE260C8C7D002C5C9C /* STOSSpinLock.m in Sources */,
 				E4FEB67E25A8519E0055D834 /* STBlock.m in Sources */,
 				E49A10D7260D87A4002C5C9C /* STMRCTest.m in Sources */,

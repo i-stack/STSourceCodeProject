@@ -18,6 +18,8 @@
 #import "STMRCModel.h"
 #import "STBinaryTreeTest.h"
 #import "STBlock.h"
+#import "STPerson.h"
+#import "STStudent.h"
 
 @interface STNextViewController ()
 
@@ -43,7 +45,7 @@
 }
 
 - (void)testExample {
-    [self testTimer];
+    [self testRuntime];
 }
 
 - (void)testTimer {
@@ -82,6 +84,11 @@
 
 - (void)testMRC {
     STMRCTest *mrc = [[STMRCTest alloc]init];
+//    NSMutableString *str = [NSMutableString stringWithFormat:@"123"];
+//    mrc.name = str;
+//    NSLog(@"name=%@", mrc.name);
+//    [str appendString:@"abc"];
+//    NSLog(@"name=%@", mrc.name);
 }
 
 - (void)testBinaryTree {
@@ -92,9 +99,19 @@
     STBlock *block = [[STBlock alloc]init];
 }
 
+- (void)testRuntime {
+    STStudent *student = [[STStudent alloc]init];
+    [student printIsMemberOfClassClassMethod];
+    [student printIsMemberOfClassInstanceMethod];
+    [student printIsKindOfClassClassMethod];
+    [student printIsKindOfClassInstanceMethod];
+}
+
+
 - (void)dealloc {
 //    [self.timer invalidate];
     NSLog(@"%@ dealloc", NSStringFromClass([self class]));
+    [[NSNotificationCenter defaultCenter]removeObserver:self];
 }
 
 @end
