@@ -8,6 +8,7 @@
 
 #import "STStudent.h"
 #import <objc/runtime.h>
+#import "NSObject+STRuntime.h"
 
 @implementation STStudent
 
@@ -15,9 +16,21 @@
 {
     self = [super init];
     if (self) {
-        
+        NSDictionary *json = @{@"name":@"张三", @"address":@"bj", @"count":@"bj"};
+        STPerson *person = [STPerson st_jsonToModel:json];
+        NSLog(@"%@", person);
     }
     return self;
+}
+
+- (void)getAllInstance {
+    unsigned int count;
+    Ivar *valList = class_copyIvarList([STPerson class], &count);
+    for (int i = 0; i < count; i++) {
+        Ivar var = valList[i];
+        NSLog(@"%s - %s", ivar_getName(var), ivar_getTypeEncoding(var));
+    }
+    
 }
 
 - (void)printIsKindOfClassClassMethod {

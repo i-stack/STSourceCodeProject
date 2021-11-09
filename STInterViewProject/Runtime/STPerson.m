@@ -8,7 +8,17 @@
 
 #import "STPerson.h"
 
+@interface STPerson () {
+    int _age;
+}
+
+@end
+
 @implementation STPerson
+
+- (void)print {
+    NSLog(@"%@", self.name);
+}
 
 + (BOOL)resolveClassMethod:(SEL)sel {
     return [super resolveClassMethod:sel];

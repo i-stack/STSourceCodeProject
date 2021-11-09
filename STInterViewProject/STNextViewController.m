@@ -101,10 +101,14 @@
 
 - (void)testRuntime {
     STStudent *student = [[STStudent alloc]init];
-    [student printIsMemberOfClassClassMethod];
-    [student printIsMemberOfClassInstanceMethod];
-    [student printIsKindOfClassClassMethod];
-    [student printIsKindOfClassInstanceMethod];
+//    [student printIsMemberOfClassClassMethod];
+//    [student printIsMemberOfClassInstanceMethod];
+//    [student printIsKindOfClassClassMethod];
+//    [student printIsKindOfClassInstanceMethod];
+//    NSString *name = @"124";
+//    id person = [STPerson class];
+//    void *cls = &person;
+//    [(__bridge id)cls print];
 }
 
 

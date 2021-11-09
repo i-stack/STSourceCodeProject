@@ -1,5 +1,5 @@
 //
-//  STPerson.h
+//  NSObject+STRuntime.h
 //  STInterViewProject
 //
 //  Created by song on 2021/11/9.
@@ -10,14 +10,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface STPerson : NSObject
+@interface NSObject (STRuntime)
 
-- (void)print;
+- (void)printIvarList:(Class)cls;
 
-@property (nonatomic,copy)NSString *name;
-@property (nonatomic,copy)NSString *address;
-@property (nonatomic,assign)int count;
-
++ (instancetype)st_jsonToModel:(NSDictionary *)json;
 
 @end
 

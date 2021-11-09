@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "STNextViewController.h"
+#import "NSObject+STRuntime.h"
 
 @interface ViewController ()
 
@@ -33,14 +34,12 @@
     [ncBtn addTarget:self action:@selector(ncClick) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:ncBtn];
     
-//    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(testNC) name:@"name" object:nil];
-    
-//    NSLog(@"%@", [NSOperationQueue currentQueue]);
-//    [[NSNotificationCenter defaultCenter]addObserverForName:@"name" object:nil queue:[NSOperationQueue currentQueue] usingBlock:^(NSNotification * _Nonnull note) {
-//        NSLog(@"%@", [NSThread currentThread]);
-//    }];
-//    [[NSRunLoop currentRunLoop]run];
-//    NSNotificationQueue *queue=
+    UITextField *textField = [[UITextField alloc]init];
+    textField.placeholder = @"124";
+    textField.backgroundColor = UIColor.orangeColor;
+    textField.frame = CGRectMake(button.frame.origin.x, CGRectGetMaxY(ncBtn.frame) + 20, 200, 100);
+    [self.view addSubview:textField];
+
 }
 
 - (void)testNC {
