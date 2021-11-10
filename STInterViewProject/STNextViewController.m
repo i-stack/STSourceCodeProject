@@ -45,7 +45,7 @@
 }
 
 - (void)testExample {
-    [self testRuntime];
+    [self testBlock];
 }
 
 - (void)testTimer {
@@ -57,11 +57,22 @@
     [animation printName];
 }
 
+/// 重写setter方法
+- (void)setName:(NSString *)name {
+    @synchronized (self) {
+        if(_name != name) {
+            [_name release];
+            _name = [name retain];
+        }
+    }
+}
+
 - (void)testTaggedPoint {
-    dispatch_queue_t queue = dispatch_queue_create("testTaggedPoint", DISPATCH_QUEUE_CONCURRENT);
+    dispatch_queue_t queue = dispatch_queue_create("TaggedPoint", DISPATCH_QUEUE_CONCURRENT);
     for (int i = 0; i < 10000; i++) {
         dispatch_async(queue, ^{
-            self.name = [NSString stringWithFormat:@"abcdefghi"];
+            self.name = [NSString stringWithFormat:@"0abcdefghi"];
+            NSLog(@"%@",[self.name class]); // NSTaggedPointerString
         });
     }
 }

@@ -35,21 +35,4 @@
     NSLog(@"%s", __func__);
 }
 
-typedef struct cache_t {
-    
-}cache_t;
-
-typedef struct class_data_bits_t {
-    
-}class_data_bits_t;
-
-struct objc_class {
-    Class ISA;
-    Class superclass;
-    cache_t cache;             // formerly cache pointer and vtable
-    class_data_bits_t bits;    // class_rw_t * plus custom rr/alloc flags
-};
-
-
-
 @end

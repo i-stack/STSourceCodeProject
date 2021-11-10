@@ -38,13 +38,6 @@ struct __STBlock__init_block_desc_0 {
 
 @implementation STBlock
 
-//- (void(^)(void))block {
-//    void(^STBlock)(void) = ^{
-//        NSLog(@"1111");
-//    };
-//    return STBlock;
-//}
-
 - (instancetype)init
 {
     self = [super init];
@@ -57,8 +50,35 @@ struct __STBlock__init_block_desc_0 {
         struct __STBlock__init_block_impl_0 *impl = (__bridge struct __STBlock__init_block_impl_0 *)self.block;
         NSLog(@"%@", impl -> impl.isa); // __NSMallocBlock__
         self.block();
+        
+        [self test];
     }
     return self;
+}
+
+- (void)test {
+    NSObject *objc = [NSObject new]; // 1
+    NSLog(@"%ld",CFGetRetainCount((__bridge CFTypeRef)(objc)));
+
+    void(^block1)(void) = ^{// MallocBlock
+        NSLog(@"---%ld",CFGetRetainCount((__bridge CFTypeRef)(objc)));//2
+    };
+    block1();
+
+    void(^__weak block2)(void) = ^{// StackBlock
+        NSLog(@"---%ld",CFGetRetainCount((__bridge CFTypeRef)(objc))); // 3
+    };
+    block2();
+
+    void(^block3)(void) = [block2 copy]; // 4
+    block3();
+
+    __block NSObject *obj = [NSObject new];
+    void(^block4)(void) = ^{//1
+        NSLog(@"---%ld",CFGetRetainCount((__bridge CFTypeRef)(obj)));
+    };
+    block4();
+
 }
 
 /**
