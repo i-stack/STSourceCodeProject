@@ -2,3 +2,4 @@
 *.xcuserstate
 *.xcbkptlist
 STInterViewProject.xcodeproj/xcuserdata/song.xcuserdatad/xcschemes/xcschememanagement.plist
+.DS_Store
