@@ -21,7 +21,7 @@
 {
     self = [super init];
     if (self) {
-        [self testSaleTickets];
+        [self testGCD];
     }
     return self;
 }

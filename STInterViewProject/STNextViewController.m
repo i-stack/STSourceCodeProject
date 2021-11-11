@@ -20,6 +20,9 @@
 #import "STBlock.h"
 #import "STPerson.h"
 #import "STStudent.h"
+#import "STView.h"
+#import "STRootView.h"
+#import "STButton.h"
 
 @interface STNextViewController ()
 
@@ -33,7 +36,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = UIColor.whiteColor;
-    [self testExample];
+//    [self testExample];
+    
+    STRootView *rootView = [[STRootView alloc]initWithFrame:self.view.bounds];
+    [self.view addSubview:rootView];
+    STView *view = [[STView alloc]initWithFrame:CGRectMake(0, 0, 400, 200)];
+    view.center = rootView.center;
+    [rootView addSubview:view];
+    STButton *btn = [STButton buttonWithType:UIButtonTypeSystem];
+    btn.backgroundColor = UIColor.redColor;
+    btn.frame = CGRectMake(150, 80, 100, 40);
+    [btn addTarget:self action:@selector(btnClick) forControlEvents:UIControlEventTouchUpInside];
+    [view addSubview:btn];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -122,6 +136,9 @@
 //    [(__bridge id)cls print];
 }
 
+- (void)btnClick {
+    NSLog(@"btnClick");
+}
 
 - (void)dealloc {
 //    [self.timer invalidate];

@@ -10,6 +10,137 @@
 #import "STUtls.h"
 #import "STSortUtls.h"
 
+typedef struct LRUItem {
+    int val;
+    int key;
+    struct LRUItem *next;
+} LRUItem;
+
+typedef struct LRUCache {
+    int count;
+    int capacity;
+    LRUItem *cache;
+    LRUItem *head;
+} LRUCache;
+
+LRUCache* lRUCacheCreate(int capacity) {
+    LRUCache *cache = (LRUCache *)malloc(sizeof(LRUCache));
+    cache->capacity = capacity;
+    cache->cache = (LRUItem *)malloc(sizeof(LRUItem) * capacity);
+     for (int i = 0; i < capacity; i++) {
+         LRUItem *item = NULL;
+         cache->cache[i] = *item;
+     }
+    cache->head = NULL;
+    cache->count = 0;
+    return cache;
+}
+
+int lRUCacheGet(LRUCache* obj, int key) {
+    int value = -1;
+    if (obj == NULL) return value;
+    int pos = key % obj->capacity;
+    if (&obj->cache[pos] != NULL) {
+        LRUItem *item = &obj->cache[pos];
+        if (item != NULL && item->key == key) {
+            value = item->val;
+        } else {
+            LRUItem *tempItem = item;
+            LRUItem *preItem = item;
+            while (tempItem != NULL) {
+                if (tempItem->key == key) {
+                    value = tempItem->val;
+                    preItem->next = tempItem->next;
+                    tempItem->next = item;
+                    item = tempItem;
+                    obj->cache[pos] = *item;
+                    break;
+                }
+                preItem = tempItem;
+                tempItem = tempItem->next;
+            }
+            tempItem = obj->head;
+            if (tempItem != NULL && tempItem->key != key) {
+                preItem = obj->head;
+                while(tempItem != NULL) {
+                    if (tempItem->key == key) {
+                        preItem->next = tempItem->next;
+                        tempItem->next = obj->head;
+                        obj->head = tempItem;
+                        break;
+                    }
+                    preItem = tempItem;
+                    tempItem = tempItem->next;
+                }
+            }
+        }
+    }
+    return value;
+}
+
+void lRUCachePut(LRUCache* obj, int key, int value) {
+    if (obj == NULL) return;
+    if (obj->count == obj->capacity) {
+        // 删除链表的尾节点
+        int delKey = 0;
+        LRUItem *preItem = obj->head;
+        LRUItem *tempItem = obj->head;
+        while(tempItem != NULL) {
+            if (tempItem->next == NULL) {
+                delKey = tempItem->key;
+                preItem->next = NULL;
+                break;
+            }
+            preItem = tempItem;
+            tempItem = tempItem->next;
+        }
+        // 删除map中key
+        int pos = delKey % obj->capacity;
+        LRUItem *item = &obj->cache[pos];
+        if (item != NULL && item->next == NULL) {
+            item = NULL;
+            obj->cache[pos] = *item;
+        } else {
+            if (item->key == delKey) {
+                item = item->next;
+                obj->cache[pos] = *item;
+            } else {
+                LRUItem *tItem = item;
+                LRUItem *pItem = item;
+                while (tItem != NULL) {
+                    if(tItem->key == delKey) {
+                        pItem->next = tItem->next;
+                        obj->cache[pos] = *item;
+                        break;
+                    }
+                    pItem = tItem;
+                    tItem = tItem->next;
+                }
+            }
+        }
+    }
+    LRUItem *newNode = (LRUItem *)malloc(sizeof(LRUItem));
+    newNode->val = value;
+    newNode->key = key;
+    int pos = key % obj->capacity;
+    // 查询当前map中pos是否有值
+    LRUItem *item = &obj->cache[pos];
+    if (item != NULL) {
+        LRUItem *item = &obj->cache[pos];
+        if(item->key == key) { // key相同更新val
+            item->val = value;
+            obj->cache[pos] = *item;
+        } else {
+            newNode->next = item;
+            item = newNode;
+        }
+    } else {
+        newNode->next = obj->head;
+        obj->head = newNode;
+        obj->cache[pos] = *newNode;
+    }
+}
+
 void printSortResult(STRandomArrayInfo *randomInfo) {
     printf("排序后:\n");
     for (int i = 0; i < randomInfo -> randomCount; i++) {
