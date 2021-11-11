@@ -15,6 +15,8 @@
     NSMutableDictionary *_dataDict;
 }
 
+@property(assign,nonatomic)int num;
+
 @end
 
 @implementation STGCD
@@ -26,8 +28,40 @@
         _dataDict = [NSMutableDictionary dictionary];
         concurrentQueue = dispatch_queue_create("testBarrier", DISPATCH_QUEUE_CONCURRENT);
         [self testSync];
+        
+        [self textDemo2];
+
     }
     return self;
+}
+
+- (void)textDemo1 {
+    dispatch_queue_t queue = dispatch_queue_create("cooci", NULL);
+    NSLog(@"1");
+    dispatch_async(queue, ^{
+        NSLog(@"2");
+        dispatch_sync(queue, ^{
+            NSLog(@"3");
+        });
+        NSLog(@"4");
+    });
+    NSLog(@"5");
+    
+    // 1 5 2 crash
+}
+
+- (void)textDemo2{
+    dispatch_queue_t queue = dispatch_queue_create("cooci", DISPATCH_QUEUE_CONCURRENT);
+    NSLog(@"1");
+    dispatch_async(queue, ^{
+        NSLog(@"2");
+        dispatch_sync(queue, ^{
+            NSLog(@"3");
+        });
+        NSLog(@"4");
+    });
+    NSLog(@"5");
+    // 1 5 2 3 4
 }
 
 - (void)testSync {

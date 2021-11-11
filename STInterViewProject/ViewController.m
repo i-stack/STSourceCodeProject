@@ -33,13 +33,6 @@
     [ncBtn setBackgroundColor:UIColor.orangeColor];
     [ncBtn addTarget:self action:@selector(ncClick) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:ncBtn];
-    
-    UITextField *textField = [[UITextField alloc]init];
-    textField.placeholder = @"124";
-    textField.backgroundColor = UIColor.orangeColor;
-    textField.frame = CGRectMake(button.frame.origin.x, CGRectGetMaxY(ncBtn.frame) + 20, 200, 100);
-    [self.view addSubview:textField];
-
 }
 
 - (void)testNC {

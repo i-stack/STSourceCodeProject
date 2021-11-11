@@ -266,51 +266,6 @@ int main(int argc, const char * argv[]) {
 //        BOOL re8 = [(id)[Student alloc] isMemberOfClass:[Student class]];
 //        NSLog(@" re5 :%hhd\n re6 :%hhd\n re7 :%hhd\n re8 :%hhd\n",re5,re6,re7,re8);
         
-        Person *model = [[Person alloc]init];
-        NSLog(@"%d", [model isMemberOfClass:[model class]]);
-
-        等价于：[model class] == [model class]； 输出1
-
-        NSLog(@"%d", [model isMemberOfClass:[STMRCModel class]]);
-
-        等价于：([model class] == STMRCModel)== STMRCModel；输出1
-
-        NSLog(@"%d", [model isMemberOfClass:[STMRCBaseModel class]]);
-
-        等价于：([model class] == STMRCModel) != STMRCBaseModel；输出0
-
-        NSLog(@"%d", [model isMemberOfClass:[NSObject class]]);
-
-        等价于：([model class] == STMRCModel) != NSObject；输出0
-
-        NSLog(@"%d", [model isMemberOfClass:object_getClass(model)]);
-
-        等价于：([model class] == STMRCModel) != STMRCModel； 输出1
-
-        NSLog(@"%d", [model isMemberOfClass:object_getClass([model class])]);
-
-        等价于：([model class] == STMRCModel) != STMRCModel的元类； 输出0
-
-        NSLog(@"%d", [model isMemberOfClass:object_getClass([STMRCModel class])]);
-
-        等价于：([model class] == STMRCModel) != STMRCModel的元类； 输出0
-
-        NSLog(@"%d", [model isMemberOfClass:object_getClass([STMRCBaseModel class])]);
-
-        等价于：([model class] == STMRCModel) != STMRCBaseModel的元类； 输出0
-
-        NSLog(@"%d", [model isMemberOfClass:object_getClass([NSObject class])]);
-
-        等价于：([model class] == STMRCModel) != NSObject的元类； 输出0
-
-        
-        
-        
-        
-        
-        
-        
-        
     }
     return 0;
 }

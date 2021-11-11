@@ -36,7 +36,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = UIColor.whiteColor;
-//    [self testExample];
+    [self testExample];
     
     STRootView *rootView = [[STRootView alloc]initWithFrame:self.view.bounds];
     [self.view addSubview:rootView];
