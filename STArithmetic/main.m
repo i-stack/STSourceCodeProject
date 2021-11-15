@@ -141,6 +141,74 @@ void lRUCachePut(LRUCache* obj, int key, int value) {
     }
 }
 
+void quickSortBig(int *nums, int begin, int end) {
+    if (begin < end) {
+        int i = begin;
+        int j = end;
+        int k = nums[begin];
+        while (i < j) {
+            while (i < j && nums[j] < k) j--;
+            if (i < j) nums[i++] = nums[j];
+            while (i < j && nums[i] > k) i++;
+            if (i < j) nums[j--] = nums[i];
+        }
+        nums[i] = k;
+        quickSortBig(nums, begin, i - 1);
+        quickSortBig(nums, i + 1, end);
+    }
+}
+
+int findKth(int* a, int aLen, int n, int K ) {
+    // write code here
+    if (aLen < 1 || aLen < K) return 0;
+    quickSortBig(a, 0, aLen - 1);
+    //quickSort(a, 0, aLen - 1);
+    for (int i = 0; i < aLen; i++) {
+        printf("\n%d\n", a[i]);
+    }
+    return a[K - 1];
+}
+
+char* solve(char* s, char* t ) {
+    // write code here
+    int sLength = (int)strlen(s);
+    int tLength = (int)strlen(t);
+    if (sLength < 1) return t;
+    if (tLength < 1) return s;
+    int count = sLength > tLength ? sLength : tLength;
+    char *res = (char *)malloc(sizeof(char) * (count + 1));
+    int index = count + 1;
+    int sEnd = sLength - 1;
+    int tEnd = tLength - 1;
+    int carry = 0;
+    bool sHasValue = true;
+    bool tHasValue = true;
+    while (sHasValue || tHasValue) {
+        int sValue = 0, tValue = 0;
+        if (sEnd < sLength && sEnd >= 0) {
+            sValue = s[sEnd--] - '0';
+        } else {
+            sHasValue = false;
+        }
+        if (tEnd < tLength && tEnd >= 0) {
+            tValue = t[tEnd--] - '0';
+        } else {
+            tHasValue = false;
+        }
+        int sum = sValue + tValue + carry;
+        carry = 0;
+        if (sum >= 0) {
+            sum -= 10;
+            carry = 1;
+        }
+        res[index--] = sum + '0';
+    }
+    if (carry != 0) {
+        res[0] = '1';
+    }
+    return res;
+}
+
 void printSortResult(STRandomArrayInfo *randomInfo) {
     printf("排序后:\n");
     for (int i = 0; i < randomInfo -> randomCount; i++) {
@@ -232,14 +300,48 @@ void merge(int* A, int ALen, int m, int* B, int BLen, int n) {
     }
 }
 
+int lengthOfLIS(int* nums, int numsSize){
+    if (numsSize < 1) return 0;
+    int dp[numsSize];
+    for (int i = 0; i < numsSize; i++) {
+        dp[i] = INT_MIN;
+    }
+    int index = 0;
+    for (int i = 0; i < numsSize; i++) {
+        int left = 0;
+        int right = index;
+        while (left < right) {
+            int mid = left + ((right - left) >> 1);
+            if (dp[mid] < nums[i]) {
+                left = mid + 1;
+            } else {
+                right = mid;
+            }
+        }
+        dp[left] = nums[i];
+        if(index == right) index++;
+    }
+    return index;
+}
+
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        testSort();
-        int num1[6] = {1, 2, 3, 0, 0, 0};
-        int num2[3] = {2, 5, 7};
-        int *p1 = num1;
-        int *p2 = num2;
-        merge(p1, 6, 3, p2, 3, 3);
+//        testSort();
+//        int num1[6] = {1, 2, 3, 0, 0, 0};
+//        int num2[3] = {2, 5, 7};
+//        int *p1 = num1;
+//        int *p2 = num2;
+//        merge(p1, 6, 3, p2, 3, 3);
+//        int num[49] = {1332802,1177178,1514891,871248,753214,123866,1615405,328656,1540395,968891,1884022,252932,1034406,1455178,821713,486232,860175,1896237,852300,566715,1285209,1845742,883142,259266,520911,1844960,218188,1528217,332380,261485,1111670,16920,1249664,1199799,1959818,1546744,1904944,51047,1176397,190970,48715,349690,673887,1648782,1010556,1165786,937247,986578,798663};
+//        int *p = num;
+//        findKth(p, 49, 49, 24);
+//
+//        solve("1", "99");
+                int num1[8] = {10,9,2,5,3,7,101,18};
+        int *p = num1;
+        lengthOfLIS(p, 8);
+        //        int num2[3] = {2, 5, 7};
+        
     }
     return 0;
 }

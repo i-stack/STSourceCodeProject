@@ -23,6 +23,7 @@
 #import "STView.h"
 #import "STRootView.h"
 #import "STButton.h"
+#import "STNextViewController.h"
 
 @interface STNextViewController ()
 
