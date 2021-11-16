@@ -23,7 +23,7 @@
 #import "STView.h"
 #import "STRootView.h"
 #import "STButton.h"
-#import "STNextViewController.h"
+#import "STRunloopViewController.h"
 
 @interface STNextViewController ()
 
@@ -60,7 +60,7 @@
 }
 
 - (void)testExample {
-    [self testBlock];
+    [self testRunloop];
 }
 
 - (void)testTimer {
@@ -135,6 +135,11 @@
 //    id person = [STPerson class];
 //    void *cls = &person;
 //    [(__bridge id)cls print];
+}
+
+- (void)testRunloop {
+    STRunloopViewController *vc = [[STRunloopViewController alloc]initWithNibName:@"STRunloopViewController" bundle:nil];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)btnClick {

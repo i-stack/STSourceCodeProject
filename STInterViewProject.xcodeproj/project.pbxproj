@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6FA713B188915215BF82C9C2 /* Pods_STInterViewProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 126C176B0DA1969935C02C65 /* Pods_STInterViewProject.framework */; };
 		E4042190273F504400E5C924 /* STFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E404218F273F504400E5C924 /* STFileManager.m */; };
 		E43B7CA226EA01080029AF20 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E43B7CA126EA01080029AF20 /* main.m */; };
 		E43B7CAD26EA01670029AF20 /* STLRUCache.c in Sources */ = {isa = PBXBuildFile; fileRef = E43B7CAC26EA01670029AF20 /* STLRUCache.c */; };
@@ -89,6 +90,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		126C176B0DA1969935C02C65 /* Pods_STInterViewProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_STInterViewProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E491E532D48F327EEEF6E13 /* Pods-STInterViewProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STInterViewProject.debug.xcconfig"; path = "Target Support Files/Pods-STInterViewProject/Pods-STInterViewProject.debug.xcconfig"; sourceTree = "<group>"; };
+		AAEEF9C29FE9DC5232C8C12D /* Pods-STInterViewProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STInterViewProject.release.xcconfig"; path = "Target Support Files/Pods-STInterViewProject/Pods-STInterViewProject.release.xcconfig"; sourceTree = "<group>"; };
 		E404218E273F504400E5C924 /* STFileManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STFileManager.h; sourceTree = "<group>"; };
 		E404218F273F504400E5C924 /* STFileManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STFileManager.m; sourceTree = "<group>"; };
 		E43B7C7626E5C0780029AF20 /* STAnimation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = STAnimation.cpp; sourceTree = "<group>"; };
@@ -212,6 +216,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6FA713B188915215BF82C9C2 /* Pods_STInterViewProject.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,6 +230,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B021CEA00537FB9191D7724 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				126C176B0DA1969935C02C65 /* Pods_STInterViewProject.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3A2FB3E4190D74B9A742D6F3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6E491E532D48F327EEEF6E13 /* Pods-STInterViewProject.debug.xcconfig */,
+				AAEEF9C29FE9DC5232C8C12D /* Pods-STInterViewProject.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		E404218D273F502700E5C924 /* FileManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -277,6 +300,8 @@
 				E4CBCBE3268DB3A0004F13AC /* OC对象本质 */,
 				E43B7CA026EA01080029AF20 /* STLRUCache */,
 				E48EF5B324EE287E0018D0FD /* Products */,
+				3A2FB3E4190D74B9A742D6F3 /* Pods */,
+				1B021CEA00537FB9191D7724 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -518,9 +543,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E48EF5E124EE28840018D0FD /* Build configuration list for PBXNativeTarget "STInterViewProject" */;
 			buildPhases = (
+				D9DF4E7A4936BCE1E856B4F8 /* [CP] Check Pods Manifest.lock */,
 				E48EF5AE24EE287E0018D0FD /* Sources */,
 				E48EF5AF24EE287E0018D0FD /* Frameworks */,
 				E48EF5B024EE287E0018D0FD /* Resources */,
+				231C88FF9D47FD2139CC0A5B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -606,6 +633,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		231C88FF9D47FD2139CC0A5B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-STInterViewProject/Pods-STInterViewProject-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-STInterViewProject/Pods-STInterViewProject-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-STInterViewProject/Pods-STInterViewProject-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D9DF4E7A4936BCE1E856B4F8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-STInterViewProject-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E43B7C9B26EA01080029AF20 /* Sources */ = {
@@ -874,6 +943,7 @@
 		};
 		E48EF5E224EE28840018D0FD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6E491E532D48F327EEEF6E13 /* Pods-STInterViewProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = NO;
@@ -895,6 +965,7 @@
 		};
 		E48EF5E324EE28840018D0FD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AAEEF9C29FE9DC5232C8C12D /* Pods-STInterViewProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = NO;
