@@ -24,6 +24,7 @@
 #import "STRootView.h"
 #import "STButton.h"
 #import "STRunloopViewController.h"
+#import "STWebViewViewController.h"
 
 @interface STNextViewController ()
 
@@ -37,7 +38,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = UIColor.whiteColor;
-    [self testExample];
     
     STRootView *rootView = [[STRootView alloc]initWithFrame:self.view.bounds];
     [self.view addSubview:rootView];
@@ -60,7 +60,7 @@
 }
 
 - (void)testExample {
-    [self testRunloop];
+    [self testWebkit];
 }
 
 - (void)testTimer {
@@ -142,8 +142,14 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
+- (void)testWebkit {
+    STWebViewViewController *vc = [[STWebViewViewController alloc]initWithNibName:@"STWebViewViewController" bundle:nil];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
 - (void)btnClick {
     NSLog(@"btnClick");
+    [self testExample];
 }
 
 - (void)dealloc {

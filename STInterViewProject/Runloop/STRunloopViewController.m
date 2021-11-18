@@ -8,6 +8,7 @@
 
 #import "STRunloopViewController.h"
 #import "STRunloopTableViewCell.h"
+#import "SDWebImage.h"
 
 @interface STRunloopViewController ()<UITableViewDelegate, UITableViewDataSource>
 {
@@ -55,20 +56,23 @@
 
 - (void)addImage1ToCell:(UITableViewCell*)cell{
     UIImageView* cellImageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 5, ImageWidth, ImageHeight)];
-    cellImageView.image = [UIImage imageNamed:@"Image-1"];
+    // cellImageView.image = [UIImage imageNamed:@"Image-1"];
+    [cellImageView sd_setImageWithURL:[NSURL URLWithString:@"https://raw.githubusercontent.com/i-stack/ServerData/master/images/timg-6.jpeg"] placeholderImage:[UIImage imageNamed:@"Image-6"]];
     [cell.contentView addSubview:cellImageView];
 }
 
 - (void)addImage2ToCell:(UITableViewCell*)cell{
     UIImageView* cellImageView = [[UIImageView alloc]initWithFrame:CGRectMake(1*(ImageWidth+5), 5, ImageWidth, ImageHeight)];
-    cellImageView.image = [UIImage imageNamed:@"Image-2"];
+//    cellImageView.image = [UIImage imageNamed:@"Image-2"];
+    [cellImageView sd_setImageWithURL:[NSURL URLWithString:@"https://raw.githubusercontent.com/i-stack/ServerData/master/images/timg-6.jpeg"] placeholderImage:[UIImage imageNamed:@"Image-6"]];
     [cell.contentView addSubview:cellImageView];
 }
 
 
 - (void)addImage3ToCell:(UITableViewCell*)cell{
     UIImageView* cellImageView = [[UIImageView alloc]initWithFrame:CGRectMake(2*(ImageWidth+5), 5, ImageWidth, ImageHeight)];
-    cellImageView.image = [UIImage imageNamed:@"Image-3"];
+//    cellImageView.image = [UIImage imageNamed:@"Image-3"];
+    [cellImageView sd_setImageWithURL:[NSURL URLWithString:@"https://raw.githubusercontent.com/i-stack/ServerData/master/images/timg-6.jpeg"] placeholderImage:[UIImage imageNamed:@"Image-6"]];
     [cell.contentView addSubview:cellImageView];
 }
 
