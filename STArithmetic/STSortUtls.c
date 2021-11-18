@@ -96,3 +96,21 @@ void bubbleSort(int *nums, int numsSize) {
         }
     }
 }
+
+/// 插入排序 从小到大
+/// @param nums 排序数组
+/// @param numsSize 排序数组长度
+void insertSort(int *nums, int numsSize) {
+    /**
+     * 0 ~ 0 是否有序，只有一个数，是有序，从1开始
+     * 0 ~ 1 是否有序，比较0和1位置大小
+     * 0 ~ 2 是否有序，从 i - 1 位置倒序与之前的数进行比较
+     */
+    for (int i = 1; i < numsSize; i++) {
+        for (int j = i - 1; j >= 0; j--) {
+            if (nums[j] > nums[j + 1]) {
+                swap(&nums[j], &nums[j + 1]);
+            }
+        }
+    }
+}

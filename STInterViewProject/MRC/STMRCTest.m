@@ -22,13 +22,28 @@
 {
     self = [super init];
     if (self) {
-        STMRCModel *model = [[STMRCModel alloc]init];
+        [self testRefCount];
     }
     return self;
 }
 
-- (void)testCopy {
-    
+- (void)testRefCount {
+    //    NSString *s = @"Testing567";
+    //    NSLog(@"%@", [s substringToIndex:5]);
+    //    NSLog(@"%@", [s substringWithRange:NSMakeRange(2, 5)]);
+        
+    NSMutableArray* ary = [[NSMutableArray array] retain];
+    NSString *str = [[NSString alloc]initWithString:@"test"];//[NSString stringWithFormat:@"test"];
+    NSLog(@"---%ld--%@",CFGetRetainCount((__bridge CFTypeRef)(str)), str);//1
+    [str retain];
+    [ary addObject:str];
+    NSLog(@"---%ld--%@",CFGetRetainCount((__bridge CFTypeRef)(str)), str);//1
+    [str retain];
+    [str release];
+    [str release];
+    NSLog(@"---%ld--%@",CFGetRetainCount((__bridge CFTypeRef)(str)), str);//1
+    [ary removeAllObjects];
+    NSLog(@"---%ld--%@",CFGetRetainCount((__bridge CFTypeRef)(str)), str);//1
 }
 
 @end
