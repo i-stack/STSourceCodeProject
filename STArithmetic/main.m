@@ -331,7 +331,7 @@ int main(int argc, const char * argv[]) {
         insertSort(p, 13);
         for (int i = 0; i < 13; i++) {
             NSLog(@"%d", num[i]);
-        }        
+        }
     }
     return 0;
 }
