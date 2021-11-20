@@ -110,6 +110,8 @@ void insertSort(int *nums, int numsSize) {
         for (int j = i - 1; j >= 0; j--) {
             if (nums[j] > nums[j + 1]) {
                 swap(&nums[j], &nums[j + 1]);
+            } else {
+                break;
             }
         }
     }

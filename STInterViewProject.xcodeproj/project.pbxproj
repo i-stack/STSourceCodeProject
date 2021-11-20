@@ -36,6 +36,8 @@
 		E49A10C5260D787F002C5C9C /* STWeakTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E49A10C4260D787F002C5C9C /* STWeakTest.m */; };
 		E49A10CE260D7894002C5C9C /* STWeakModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E49A10CD260D7894002C5C9C /* STWeakModel.m */; };
 		E49A10D7260D87A4002C5C9C /* STMRCTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E49A10D6260D87A4002C5C9C /* STMRCTest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		E4B627E727493B2500C4F02D /* STPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B627E627493B2500C4F02D /* STPerson.m */; };
+		E4B627EA27493B3E00C4F02D /* STStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B627E927493B3E00C4F02D /* STStudent.m */; };
 		E4C0C508261EFDD700223E8F /* NSObject+Test.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C0C507261EFDD700223E8F /* NSObject+Test.m */; };
 		E4C0C513261FEF8F00223E8F /* STBinaryTreeTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C0C512261FEF8E00223E8F /* STBinaryTreeTest.m */; };
 		E4C0C51C261FF06C00223E8F /* STBinaryTreeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C0C51B261FF06C00223E8F /* STBinaryTreeNode.m */; };
@@ -148,6 +150,11 @@
 		E49A10CD260D7894002C5C9C /* STWeakModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STWeakModel.m; sourceTree = "<group>"; };
 		E49A10D5260D87A4002C5C9C /* STMRCTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STMRCTest.h; sourceTree = "<group>"; };
 		E49A10D6260D87A4002C5C9C /* STMRCTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STMRCTest.m; sourceTree = "<group>"; };
+		E4B627E527493B2500C4F02D /* STPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STPerson.h; sourceTree = "<group>"; };
+		E4B627E627493B2500C4F02D /* STPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STPerson.m; sourceTree = "<group>"; };
+		E4B627E827493B3E00C4F02D /* STStudent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STStudent.h; sourceTree = "<group>"; };
+		E4B627E927493B3E00C4F02D /* STStudent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STStudent.m; sourceTree = "<group>"; };
+		E4B627EB27493F7E00C4F02D /* MJClassInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJClassInfo.h; sourceTree = "<group>"; };
 		E4C0C502261D561600223E8F /* STMRCTest.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = STMRCTest.cpp; sourceTree = "<group>"; };
 		E4C0C506261EFDD700223E8F /* NSObject+Test.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+Test.h"; sourceTree = "<group>"; };
 		E4C0C507261EFDD700223E8F /* NSObject+Test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Test.m"; sourceTree = "<group>"; };
@@ -485,7 +492,12 @@
 		E4CBCBE3268DB3A0004F13AC /* OC对象本质 */ = {
 			isa = PBXGroup;
 			children = (
+				E4B627EB27493F7E00C4F02D /* MJClassInfo.h */,
 				E4CBCBE4268DB3A0004F13AC /* main.m */,
+				E4B627E827493B3E00C4F02D /* STStudent.h */,
+				E4B627E927493B3E00C4F02D /* STStudent.m */,
+				E4B627E527493B2500C4F02D /* STPerson.h */,
+				E4B627E627493B2500C4F02D /* STPerson.m */,
 				E4CBCBEF268DBB76004F13AC /* main.cpp */,
 			);
 			path = "OC对象本质";
@@ -763,6 +775,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4CBCBE5268DB3A0004F13AC /* main.m in Sources */,
+				E4B627E727493B2500C4F02D /* STPerson.m in Sources */,
+				E4B627EA27493B3E00C4F02D /* STStudent.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
