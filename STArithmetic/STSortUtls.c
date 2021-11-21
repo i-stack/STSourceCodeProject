@@ -116,3 +116,101 @@ void insertSort(int *nums, int numsSize) {
         }
     }
 }
+
+/// 二分查找
+/// @param nums 已排序数组
+/// @param numsSize 已排序数组长度
+/// @param target 查询target在已排序中是否存在
+/// @return 返回target所在下标
+int binarySearch(int *nums, int numsSize, int target) {
+    int left = 0, mid = 0;
+    int right = numsSize - 1;
+    while (left < right) {
+        mid = left + ((right - left) >> 1);
+        if (nums[mid] > target) {
+            right = mid;
+        } else if (nums[mid] < target) {
+            left = mid + 1;
+        } else {
+            return mid;
+        }
+    }
+    return -1;
+}
+
+/// 二分查找
+/// @param nums 已排序数组
+/// @param numsSize 已排序数组长度
+/// @param target 查询target在已排序中开始和出现的位置
+/// @return 返回target所在下标集合
+int* binarySearchRange(int *nums, int numsSize, int target) {
+    int *res = (int *)malloc(sizeof(int) * 2);
+    int firstPosition = findBinarySearchFirstPosition(nums, numsSize, target);
+    if (firstPosition == -1) {
+        res[0] = -1;
+        res[1] = -1;
+        return res;
+    }
+    res[0] = firstPosition;
+    int lastPosition = findBinarySearchLastPosition(nums, numsSize, target);
+    res[1] = lastPosition;
+    return res;
+}
+
+/// 二分查找
+/// @param nums 已排序数组
+/// @param numsSize 已排序数组长度
+/// @param target 查询target在已排序中第一次出现的位置
+/// @return 返回target所在下标
+int findBinarySearchFirstPosition(int* nums, int numsSize, int target) {
+    if (numsSize < 1) return -1;
+    int left = 0, mid = 0;
+    int right = numsSize - 1;
+    while (left < right) {
+        mid = left + ((right - left) >> 1);
+        if (nums[mid] < target) {
+            // 说明mid左边的元素都比target小
+            // 下一轮的搜索范围为 [mid + 1, right]
+            left = mid + 1;
+        } else if (nums[mid] == target) {
+            // 说明mid右边的元素不可能是第一次出现的元素
+            // 下一轮的搜索范围为 [left, mid]
+            right = mid;
+        } else {
+            // 说明mid右边的元素都比target大
+            // 下一轮的搜索范围为 [left, mid - 1]
+            right = mid - 1;
+        }
+    }
+    if (left < numsSize && nums[left] == target) return left;
+    return -1;
+}
+
+/// 二分查找
+/// @param nums 已排序数组
+/// @param numsSize 已排序数组长度
+/// @param target 查询target在已排序中最后出现的位置
+/// @return 返回target所在下标
+int findBinarySearchLastPosition(int* nums, int numsSize, int target) {
+    if (numsSize < 1) return -1;
+    int left = 0, mid = 0;
+    int right = numsSize - 1;
+    while (left < right) {
+        mid = left + ((right - left) >> 1) + 1;
+        if (nums[mid] < target) {
+            // 说明mid左边的元素都比target小
+            // 下一轮的搜索范围为 [mid + 1, right]
+            left = mid + 1;
+        } else if (nums[mid] == target) {
+            // 说明mid左边的元素不可能是最后一次出现的元素
+            // 下一轮的搜索范围为 [mid, right]
+            left = mid;
+        } else {
+            // 说明mid右边的元素都比target大
+            // 下一轮的搜索范围为 [left, mid - 1]
+            right = mid - 1;
+        }
+    }
+    if (right >= 0 && nums[right] == target) return right;
+    return -1;
+}

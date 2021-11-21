@@ -46,6 +46,12 @@ bool checkRandomIsRepeat(STRandomArrayInfo *info, int randomValue) {
     return false;
 }
 
+/// 生成随机数
+/// @param seed 随机数范围
+int generateRandom(int seed) {
+    return arc4random() % seed;
+}
+
 /// 生成随机数 [from, to] 左闭右闭，即包含a和b
 /// @param from begin
 /// @param to end

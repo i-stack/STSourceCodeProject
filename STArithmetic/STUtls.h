@@ -26,6 +26,7 @@ int minIntValue(void);
 int minValue(int a, int b);
 int maxValue(int a, int b);
 void swap(int *a, int *b);
+int generateRandom(int seed);
 STRandomArrayInfo* generateRandomArray(int from, int to);
 STRandomArrayInfo* generateRandomNoRepeatArray(int from, int to);
 

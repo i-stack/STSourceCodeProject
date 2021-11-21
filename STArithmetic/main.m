@@ -10,6 +10,14 @@
 #import "STUtls.h"
 #import "STSortUtls.h"
 
+enum SortType {
+    QuickSort = 0,
+    SelectSort,
+    BubbleSort,
+    CountingSort,
+    InsertSort
+} type;
+
 typedef struct LRUItem {
     int val;
     int key;
@@ -211,33 +219,61 @@ char* solve(char* s, char* t ) {
 
 void printSortResult(STRandomArrayInfo *randomInfo) {
     printf("排序后:\n");
-    for (int i = 0; i < randomInfo -> randomCount; i++) {
-        printf("%d\n", randomInfo -> randomArray[i]);
+    for (int i = 0; i < randomInfo->randomCount; i++) {
+        printf("%d\n", randomInfo->randomArray[i]);
     }
     printf("\n");
 }
 
 void testSelectSort(STRandomArrayInfo *randomInfo) {
-    selectSort(randomInfo -> randomArray, randomInfo -> randomCount);
+    selectSort(randomInfo->randomArray, randomInfo->randomCount);
 //    printSortResult(randomInfo);
 }
 
 void testBubbleSort(STRandomArrayInfo *randomInfo) {
-    bubbleSort(randomInfo -> randomArray, randomInfo -> randomCount);
+    bubbleSort(randomInfo->randomArray, randomInfo->randomCount);
 //    printSortResult(randomInfo);
 }
 
 void testQuickSort(STRandomArrayInfo *randomInfo) {
-    quickSort(randomInfo -> randomArray, 0, randomInfo -> randomCount - 1);
+    quickSort(randomInfo->randomArray, 0, randomInfo->randomCount - 1);
 //    printSortResult(randomInfo);
 }
 
 void testCountingSort(STRandomArrayInfo *randomInfo) {
-    countingSort(randomInfo -> randomArray, randomInfo -> randomCount);
+    countingSort(randomInfo->randomArray, randomInfo->randomCount);
 //    printSortResult(randomInfo);
 }
 
-void testSort(void) {
+void testInsertSort(STRandomArrayInfo *randomInfo) {
+    insertSort(randomInfo->randomArray, randomInfo->randomCount);
+    //    printSortResult(randomInfo);
+}
+
+void testBinarySearch(STRandomArrayInfo *randomInfo) {
+    quickSort(randomInfo->randomArray, 0, randomInfo->randomCount - 1);
+    printSortResult(randomInfo);
+    int target = generateRandom(100);
+    int pos = binarySearch(randomInfo->randomArray, randomInfo->randomCount, target);
+    printf("\n");
+    NSLog(@"binary search result: pos = %d -- value = %d -- target = %d", pos, randomInfo->randomArray[pos], target);
+    printf("\n");
+}
+
+void testBinarySearchRange(STRandomArrayInfo *randomInfo) {
+    quickSort(randomInfo->randomArray, 0, randomInfo->randomCount - 1);
+    int target = generateRandom(100);
+    int *res = binarySearchRange(randomInfo->randomArray, randomInfo->randomCount, target);
+    NSLog(@"binary search range pos[0] = %d -- pos[1] = %d -- target = %d", res[0], res[1], target);
+    for (int i = 0; i < randomInfo->randomCount; i++) {
+        if (randomInfo->randomArray[i] == target) {
+            NSLog(@"randomInfo->randomArray contains target");
+            break;
+        }
+    }
+}
+
+void testSort(enum SortType type) {
     NSLog(@"开始排序:\n");
     int loopCount = 900;
     int totalSuccessCount = 0;
@@ -255,10 +291,25 @@ void testSort(void) {
             }
             return NSOrderedDescending;
         }];
-//        testQuickSort(randomInfo);
-//        testSelectSort(randomInfo);
-//        testBubbleSort(randomInfo);
-        testCountingSort(randomInfo);
+        switch (type) {
+            case QuickSort:
+                testQuickSort(randomInfo);
+                break;
+            case SelectSort:
+                testSelectSort(randomInfo);
+                break;
+            case BubbleSort:
+                testBubbleSort(randomInfo);
+                break;
+            case InsertSort:
+                testInsertSort(randomInfo);
+                break;
+            case CountingSort:
+                testCountingSort(randomInfo);
+                break;
+            default:
+                break;
+        }
         int compareSuccessCount = 0;
         for (int k = 0; k < randomInfo -> randomCount; k++) {
             if ([newArray[k] intValue] != randomInfo -> randomArray[k]) {
@@ -326,12 +377,16 @@ int lengthOfLIS(int* nums, int numsSize){
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        int num[13] = {9,8,7,6,5,4,3,2,1,2,3,4,5};
-        int *p = num;
-        insertSort(p, 13);
-        for (int i = 0; i < 13; i++) {
-            NSLog(@"%d", num[i]);
-        }
+        /* 排序测试 */
+        enum SortType type;
+        type = InsertSort;
+        testSort(type);
+        
+        /* 二分查找 */
+        STRandomArrayInfo *info = generateRandomArray(0, 100);
+        testBinarySearch(info);
+        testBinarySearchRange(info);
+       
     }
     return 0;
 }
