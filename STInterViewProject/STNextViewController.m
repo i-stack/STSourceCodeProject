@@ -40,15 +40,48 @@
     self.view.backgroundColor = UIColor.whiteColor;
     
     STRootView *rootView = [[STRootView alloc]initWithFrame:self.view.bounds];
+    rootView.layer.cornerRadius = 20;
     [self.view addSubview:rootView];
-    STView *view = [[STView alloc]initWithFrame:CGRectMake(0, 0, 400, 200)];
+    
+    STView *view = [[STView alloc]initWithFrame:CGRectMake(20, 0, 380, 200)];
     view.center = rootView.center;
+    
+    // 设置mask 会造成离屏渲染
+//    CALayer *ly = [CALayer layer];
+//    ly.frame = CGRectMake(0, 0, 380, 200);
+//    view.layer.mask = ly;
+    
+    // 光栅化会造成离屏渲染
+//    view.layer.shouldRasterize = YES;
+    
+//    view.backgroundColor = UIColor.blueColor;
+    
+    // 设置cornerRadius和masksToBounds 会造成离屏渲染
+//    view.layer.cornerRadius = 10;
+    view.layer.masksToBounds = YES;
+    
+    // 设置阴影的不透明度,shadowOpacity大于0时会造成离屏渲染
+//    view.layer.shadowOpacity = 0.1;
+    // 同时设置shadowPath，不会造成离屏渲染
+//    CGPathRef ref = CGPathCreateWithRoundedRect(view.bounds, 1, 1, NULL);
+//    view.layer.shadowPath = ref;
+
+    // opacity = 1, 不透明
+    // opacity = 0, 透明
+    // opacity = (0, 1), 会造成离屏渲染
+//    view.layer.opacity = 0.2;
     [rootView addSubview:view];
+    
     STButton *btn = [STButton buttonWithType:UIButtonTypeSystem];
     btn.backgroundColor = UIColor.redColor;
     btn.frame = CGRectMake(150, 80, 100, 40);
     [btn addTarget:self action:@selector(btnClick) forControlEvents:UIControlEventTouchUpInside];
     [view addSubview:btn];
+    
+    // 设置圆角和设置裁剪 不会造成离屏渲染
+    //
+    btn.imageView.layer.cornerRadius = 100.0;
+    btn.imageView.layer.masksToBounds = YES;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -75,10 +108,10 @@
 /// 重写setter方法
 - (void)setName:(NSString *)name {
     @synchronized (self) {
-        if(_name != name) {
-            [_name release];
-            _name = [name retain];
-        }
+//        if(_name != name) {
+//            [_name release];
+//            _name = [name retain];
+//        }
     }
 }
 

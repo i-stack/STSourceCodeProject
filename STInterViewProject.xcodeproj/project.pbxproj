@@ -52,6 +52,7 @@
 		E4C2B40E260489730082AEC4 /* STKVCModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C2B40D260489730082AEC4 /* STKVCModel.m */; };
 		E4C800322612FC4A0088696E /* STMRCBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C800312612FC4A0088696E /* STMRCBaseModel.m */; };
 		E4CBCBE5268DB3A0004F13AC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E4CBCBE4268DB3A0004F13AC /* main.m */; };
+		E4D65425274CB0C30003DC11 /* STFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E404218F273F504400E5C924 /* STFileManager.m */; };
 		E4EDE8AB26F08FFE004ECB81 /* STUtls.c in Sources */ = {isa = PBXBuildFile; fileRef = E4EDE8AA26F08FFE004ECB81 /* STUtls.c */; };
 		E4F4FC20272A540500002257 /* STSortUtls.c in Sources */ = {isa = PBXBuildFile; fileRef = E4F4FC1F272A540500002257 /* STSortUtls.c */; };
 		E4F4FC282739F6A300002257 /* STPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = E4F4FC272739F6A300002257 /* STPerson.m */; };
@@ -718,6 +719,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4D65425274CB0C30003DC11 /* STFileManager.m in Sources */,
 				E4F4FC20272A540500002257 /* STSortUtls.c in Sources */,
 				E46216B3268181840048C004 /* main.m in Sources */,
 				E4EDE8AB26F08FFE004ECB81 /* STUtls.c in Sources */,

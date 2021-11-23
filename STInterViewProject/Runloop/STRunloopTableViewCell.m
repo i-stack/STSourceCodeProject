@@ -33,9 +33,9 @@
 }
 
 - (void)dealloc {
-    [_titleLabel release];
-    [_iconImageView release];
-    [super dealloc];
+//    [_titleLabel release];
+//    [_iconImageView release];
+//    [super dealloc];
 }
 
 @end

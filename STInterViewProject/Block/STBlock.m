@@ -9,22 +9,22 @@
 #import "STBlock.h"
 #import <objc/runtime.h>
 
-struct __block_impl {
-    void *isa;
-    int Flags;
-    int Reserved;
-    void *FuncPtr;
-};
-
-struct __STBlock__init_block_impl_0 {
-    struct __block_impl impl;
-    struct __STBlock__init_block_desc_0* Desc;
-};
-
-struct __STBlock__init_block_desc_0 {
-    size_t reserved;
-    size_t Block_size;
-};
+//struct __block_impl {
+//    void *isa;
+//    int Flags;
+//    int Reserved;
+//    void *FuncPtr;
+//};
+//
+//struct __STBlock__init_block_impl_0 {
+//    struct __block_impl impl;
+//    struct __STBlock__init_block_desc_0* Desc;
+//};
+//
+//struct __STBlock__init_block_desc_0 {
+//    size_t reserved;
+//    size_t Block_size;
+//};
 
 @interface STBlock ()
 {
@@ -44,20 +44,25 @@ struct __STBlock__init_block_desc_0 {
 {
     self = [super init];
     if (self) {
-        __weak typeof(self) weakSelf = self;
-        self.block = ^{
-            __strong typeof(self) strongSelf = weakSelf;
-            weakSelf.block1 = ^{
-                NSLog(@"%@", strongSelf);
-            };
-            weakSelf.block1();
-            NSLog(@"%@", weakSelf);
+//        __weak typeof(self) weakSelf = self;
+//        self.block = ^{
+//            __strong typeof(self) strongSelf = weakSelf;
+//            weakSelf.block1 = ^{
+//                NSLog(@"%@", strongSelf);
+//            };
+//            weakSelf.block1();
+//            NSLog(@"%@", weakSelf);
+//        };
+//        struct __STBlock__init_block_impl_0 *impl = (__bridge struct __STBlock__init_block_impl_0 *)self.block;
+//        NSLog(@"%@", impl -> impl.isa); // __NSMallocBlock__
+//        self.block();
+//
+//        [self test];
+        __block int m = 123;
+        self.block1 = ^{
+            NSLog(@"%d", m);
         };
-        struct __STBlock__init_block_impl_0 *impl = (__bridge struct __STBlock__init_block_impl_0 *)self.block;
-        NSLog(@"%@", impl -> impl.isa); // __NSMallocBlock__
-        self.block();
-        
-        [self test];
+        self.block1();
     }
     return self;
 }

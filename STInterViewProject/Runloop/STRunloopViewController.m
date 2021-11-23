@@ -76,8 +76,8 @@
     [cell.contentView addSubview:cellImageView];
 }
 
-- (void)dealloc {
-    [_tableView release];
-    [super dealloc];
-}
+//- (void)dealloc {
+//    [_tableView release];
+//    [super dealloc];
+//}
 @end

@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "STUtls.h"
 #import "STSortUtls.h"
+#import "STFileManager.h"
 
 enum SortType {
     QuickSort = 0,
@@ -375,6 +376,19 @@ int lengthOfLIS(int* nums, int numsSize){
     return index;
 }
 
+// 辗转相处求最大公约数
+int testGCD(int a, int b) {
+    if (b == 0) return a;
+    return testGCD(b, a % b);
+//    int t = 1;
+//    while (t != 0) {
+//        t = a % b;
+//        a = b;
+//        b = t;
+//    }
+//    return a;
+}
+
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         /* 排序测试 */
@@ -387,6 +401,11 @@ int main(int argc, const char * argv[]) {
         testBinarySearch(info);
         testBinarySearchRange(info);
        
+        /* 求最大公约数 */
+        printf("gcd(a, b) = %d\n", testGCD(22, 888));
+        
+        NSLog(@"%p --- %p", [[STFileManager alloc]init], [STFileManager sharedInstance]);
+
     }
     return 0;
 }

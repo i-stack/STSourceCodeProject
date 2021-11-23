@@ -31,9 +31,9 @@
     return [[self class] sharedInstance];
 }
 
-- (instancetype)retain {
-    return [[self class] sharedInstance];
-}
+//- (instancetype)retain {
+//    return [[self class] sharedInstance];
+//}
 
 //- (oneway void)release {
 //    return;

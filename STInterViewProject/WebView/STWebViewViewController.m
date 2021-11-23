@@ -42,8 +42,8 @@
     
 }
 
-- (void)dealloc {
-    [_webView release];
-    [super dealloc];
-}
+//- (void)dealloc {
+//    [_webView release];
+//    [super dealloc];
+//}
 @end
