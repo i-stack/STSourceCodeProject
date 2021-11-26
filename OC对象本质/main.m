@@ -12,27 +12,35 @@
 #import "STPerson.h"
 #import "STStudent.h"
 
+extern _objc_autoreleasePoolPrint(void);
+
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         
-        struct NSObject_IMPL {
-            Class isa;
-        };
-
-        struct Person_IMPL {
-            struct NSObject_IMPL NSObject_IVARS;
-        };
+        _objc_autoreleasePoolPrint();
+        @autoreleasepool {
+            for (int i = 0; i < 10; i++) {
+                STPerson *model = [[[STPerson alloc]init]autorelease];
+            }
+            _objc_autoreleasePoolPrint();
+        }
+        _objc_autoreleasePoolPrint();
         
-        struct Student_IMPL {
-            struct Person_IMPL Person_IVARS;
-        };
+        @autoreleasepool {
+            for (int i = 0; i < 2; i++) {
+                STStudent *model = [[[STStudent alloc]init]autorelease];
+            }
+            _objc_autoreleasePoolPrint();
+        }
+        _objc_autoreleasePoolPrint();
         
-        STStudent *object = [[STStudent alloc]init];
-        NSLog(@"%zu", class_getInstanceSize(object.class));
-        NSLog(@"%zu", malloc_size((__bridge const void *)(object)));
-
-        struct NSObject_IMPL *impl = (__bridge struct NSObject_IMPL *)object;
-        NSLog(@"%@", impl);
+        @autoreleasepool {
+            for (int i = 0; i < 4; i++) {
+                STPerson *model = [[[STPerson alloc]init]autorelease];
+            }
+            _objc_autoreleasePoolPrint();
+        }
     }
+    _objc_autoreleasePoolPrint();
     return 0;
 }

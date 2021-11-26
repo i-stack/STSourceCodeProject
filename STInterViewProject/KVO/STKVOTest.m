@@ -19,9 +19,7 @@
 @implementation STKVOTest
 
 - (void)dealloc {
-//    [self removeObserver:self.model forKeyPath:@"_age"];
-//    [self removeObserver:self.model forKeyPath:@"_age"];
-
+    [self removeObserver:self.model forKeyPath:@"name"];
 }
 
 - (instancetype)init
@@ -37,8 +35,12 @@
 //        self.model.name = @"model";
 //        NSLog(@"注册KVO后类对象：model.isa指向：%@", object_getClass(self.model)); // model.isa指向：NSKVONotifying_STKVOModel
 //        [self printClassMethon:object_getClass(self.model)];
+//        [self.model addObserver:self forKeyPath:@"name" options:NSKeyValueObservingOptionNew context:nil];
+//        [self.model addObserver:self forKeyPath:@"name" options:NSKeyValueObservingOptionNew context:nil];
+//        [self.model addObserver:self forKeyPath:@"name" options:NSKeyValueObservingOptionNew context:nil];
+        
         [self.model addObserver:self forKeyPath:@"name" options:NSKeyValueObservingOptionNew context:nil];
-        [self.model addObserver:self forKeyPath:@"name" options:NSKeyValueObservingOptionNew context:nil];
+
         self.model.name = @"bj";
 //        [self printClassMethon:self.model.class];
         [self printClasses:self.model.class];

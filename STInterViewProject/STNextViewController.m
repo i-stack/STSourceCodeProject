@@ -93,7 +93,7 @@
 }
 
 - (void)testExample {
-    [self testWebkit];
+    [self testRunloop];
 }
 
 - (void)testTimer {

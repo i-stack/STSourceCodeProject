@@ -24,10 +24,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-//    [self.tableView registerNib:[UINib nibWithNibName:@"STRunloopTableViewCell" bundle:nil] forCellReuseIdentifier:@"STRunloopTableViewCell"];
-//    [self.tableView registerNib:[UINib nibWithNibName:@"STRunloopTableViewCell" bundle:nil] forCellReuseIdentifier:@"STRunloopTableViewCell"];
     ImageWidth = ImageHeight = [UIScreen mainScreen].bounds.size.width / 3;
+    [self printRunloopMode];
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [super touchesBegan:touches withEvent:event];
+    
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -76,8 +79,34 @@
     [cell.contentView addSubview:cellImageView];
 }
 
-//- (void)dealloc {
-//    [_tableView release];
-//    [super dealloc];
-//}
+- (void)printRunloopMode {
+    CFRunLoopObserverRef observer = CFRunLoopObserverCreateWithHandler(kCFAllocatorDefault, kCFRunLoopAllActivities, YES, 0, ^(CFRunLoopObserverRef observer, CFRunLoopActivity activity) {
+        CFRunLoopMode mode = CFRunLoopCopyCurrentMode(CFRunLoopGetCurrent());
+        switch (activity) {
+            case kCFRunLoopExit:
+                NSLog(@"kCFRunLoopExit - %@", mode);
+                break;
+            case kCFRunLoopEntry:
+                NSLog(@"kCFRunLoopAfterWaiting - %@", mode);
+                break;
+            case kCFRunLoopAfterWaiting:
+                NSLog(@"kCFRunLoopAfterWaiting - %@", mode);
+                break;
+            case kCFRunLoopBeforeTimers:
+                NSLog(@"kCFRunLoopBeforeTimers - %@", mode);
+                break;
+            case kCFRunLoopBeforeSources:
+                NSLog(@"kCFRunLoopBeforeSources - %@", mode);
+                break;
+            case kCFRunLoopBeforeWaiting:
+                NSLog(@"kCFRunLoopBeforeWaiting - %@", mode);
+                break;
+            default:
+                break;
+        }
+        CFRetain(mode);
+    });
+    CFRunLoopAddObserver(CFRunLoopGetMain(), observer, kCFRunLoopCommonModes);
+    CFRelease(observer);
+}
 @end

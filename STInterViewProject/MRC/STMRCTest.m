@@ -12,6 +12,8 @@
 #import <malloc/malloc.h>
 #import <objc/message.h>
 
+extern void _objc_autoreleasePoolPrint(void);
+
 @interface STMRCTest ()
 
 @end
@@ -28,22 +30,31 @@
 }
 
 - (void)testRefCount {
-    //    NSString *s = @"Testing567";
-    //    NSLog(@"%@", [s substringToIndex:5]);
-    //    NSLog(@"%@", [s substringWithRange:NSMakeRange(2, 5)]);
-        
-    NSMutableArray* ary = [[NSMutableArray array] retain];
-    NSString *str = [[NSString alloc]initWithString:@"test"];//[NSString stringWithFormat:@"test"];
-    NSLog(@"---%ld--%@",CFGetRetainCount((__bridge CFTypeRef)(str)), str);//1
-    [str retain];
-    [ary addObject:str];
-    NSLog(@"---%ld--%@",CFGetRetainCount((__bridge CFTypeRef)(str)), str);//1
-    [str retain];
-    [str release];
-    [str release];
-    NSLog(@"---%ld--%@",CFGetRetainCount((__bridge CFTypeRef)(str)), str);//1
-    [ary removeAllObjects];
-    NSLog(@"---%ld--%@",CFGetRetainCount((__bridge CFTypeRef)(str)), str);//1
+//    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc]init];
+//    STMRCModel *model = [[STMRCModel alloc]init];//[[[STMRCModel alloc]init]autorelease];
+//    [pool addObject:model];
+//    [pool drain];
+    
+//    _objc_autoreleasePoolPrint();
+    @autoreleasepool {
+        for (int i = 0; i < 10; i++) {
+            STMRCModel *model = [[[STMRCModel alloc]init]autorelease];
+        }
+        _objc_autoreleasePoolPrint();
+        @autoreleasepool {
+            for (int i = 0; i < 2; i++) {
+                STMRCModel *model = [[[STMRCModel alloc]init]autorelease];
+            }
+        }
+//        _objc_autoreleasePoolPrint();
+        @autoreleasepool {
+            for (int i = 0; i < 4; i++) {
+                STMRCModel *model = [[[STMRCModel alloc]init]autorelease];
+            }
+        }
+//        _objc_autoreleasePoolPrint();
+    }
+//    _objc_autoreleasePoolPrint();
 }
 
 @end
