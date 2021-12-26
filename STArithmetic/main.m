@@ -389,6 +389,34 @@ int testGCD(int a, int b) {
 //    return a;
 }
 
+void resetMap(int res[], int length) {
+    for (int i = 0; i < length; i++) {
+        res[i] = -1;
+    }
+}
+
+int lengthOfLongestSubstring(char * s){
+    int length = (int)strlen(s);
+    if (length < 1) return 0;
+    int maxLength = 1;
+    int map[128] = {0};
+    resetMap(map, 128);
+    for (int i = 0; i < length - 1; i++) {
+        int sLength = 1;
+        resetMap(map, 128);
+        int iIndex = s[i] - 'a';
+        map[iIndex] = iIndex;
+        for (int j = i + 1; j < length; j++) {
+            int jIndex = s[j] - 'a';
+            if (map[jIndex] != -1) break;
+            sLength++;
+            map[jIndex] = jIndex;
+        }
+        if (sLength > maxLength) maxLength = sLength;
+    }
+    return maxLength;
+}
+
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         /* 排序测试 */
@@ -401,10 +429,7 @@ int main(int argc, const char * argv[]) {
         testBinarySearch(info);
         testBinarySearchRange(info);
        
-        /* 求最大公约数 */
-        printf("gcd(a, b) = %d\n", testGCD(22, 888));
-        
-        NSLog(@"%p --- %p", [[STFileManager alloc]init], [STFileManager sharedInstance]);
+        lengthOfLongestSubstring("abcabcccb");
 
     }
     return 0;
