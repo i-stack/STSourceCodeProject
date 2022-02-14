@@ -28,7 +28,7 @@
 		6293659327BA090F0003A4E8 /* STMRCArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 6293653727BA090F0003A4E8 /* STMRCArray.m */; };
 		6293659427BA090F0003A4E8 /* STBinaryTreeTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6293653827BA090F0003A4E8 /* STBinaryTreeTest.m */; };
 		6293659527BA090F0003A4E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6293653927BA090F0003A4E8 /* Assets.xcassets */; };
-		6293659827BA090F0003A4E8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6293653C27BA090F0003A4E8 /* ViewController.m */; };
+		6293659827BA090F0003A4E8 /* STEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6293653C27BA090F0003A4E8 /* STEntryViewController.m */; };
 		6293659927BA090F0003A4E8 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6293653D27BA090F0003A4E8 /* SceneDelegate.m */; };
 		6293659A27BA090F0003A4E8 /* STBinaryTreeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 6293653F27BA090F0003A4E8 /* STBinaryTreeNode.m */; };
 		6293659B27BA090F0003A4E8 /* STMRCBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6293654027BA090F0003A4E8 /* STMRCBaseModel.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -58,6 +58,11 @@
 		629365E527BA2EE50003A4E8 /* STLRUCache.c in Sources */ = {isa = PBXBuildFile; fileRef = 629365E427BA2EE50003A4E8 /* STLRUCache.c */; };
 		629365EB27BA2F5C0003A4E8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 629365EA27BA2F5C0003A4E8 /* main.m */; };
 		629365ED27BA2F8C0003A4E8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 629365EC27BA2F8C0003A4E8 /* main.m */; };
+		629365EF27BA32A60003A4E8 /* STEntryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 629365EE27BA32A60003A4E8 /* STEntryViewController.xib */; };
+		629365F227BA36050003A4E8 /* STEntryData.m in Sources */ = {isa = PBXBuildFile; fileRef = 629365F127BA36050003A4E8 /* STEntryData.m */; };
+		629365F527BA3B2F0003A4E8 /* STBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 629365F427BA3B2F0003A4E8 /* STBaseViewController.m */; };
+		629365FA27BA3BD20003A4E8 /* STObjectEssenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 629365F827BA3BD20003A4E8 /* STObjectEssenceViewController.m */; };
+		629365FB27BA3BD20003A4E8 /* STObjectEssenceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 629365F927BA3BD20003A4E8 /* STObjectEssenceViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -116,7 +121,7 @@
 		6293653827BA090F0003A4E8 /* STBinaryTreeTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STBinaryTreeTest.m; sourceTree = "<group>"; };
 		6293653927BA090F0003A4E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6293653B27BA090F0003A4E8 /* STBlock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = STBlock.cpp; sourceTree = "<group>"; };
-		6293653C27BA090F0003A4E8 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		6293653C27BA090F0003A4E8 /* STEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STEntryViewController.m; sourceTree = "<group>"; };
 		6293653D27BA090F0003A4E8 /* SceneDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
 		6293653E27BA090F0003A4E8 /* STAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STAnimation.h; sourceTree = "<group>"; };
 		6293653F27BA090F0003A4E8 /* STBinaryTreeNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STBinaryTreeNode.m; sourceTree = "<group>"; };
@@ -171,7 +176,7 @@
 		6293657927BA090F0003A4E8 /* STMRCBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STMRCBaseModel.h; sourceTree = "<group>"; };
 		6293657A27BA090F0003A4E8 /* STBinaryTreeNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STBinaryTreeNode.h; sourceTree = "<group>"; };
 		6293657B27BA090F0003A4E8 /* STKVOTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STKVOTest.h; sourceTree = "<group>"; };
-		6293657C27BA090F0003A4E8 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		6293657C27BA090F0003A4E8 /* STEntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STEntryViewController.h; sourceTree = "<group>"; };
 		6293657D27BA090F0003A4E8 /* SceneDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		629365CB27BA2E7A0003A4E8 /* STArithmetic */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = STArithmetic; sourceTree = BUILT_PRODUCTS_DIR; };
 		629365D227BA2EAF0003A4E8 /* STSortUtls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STSortUtls.h; sourceTree = "<group>"; };
@@ -183,6 +188,14 @@
 		629365E427BA2EE50003A4E8 /* STLRUCache.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = STLRUCache.c; sourceTree = "<group>"; };
 		629365EA27BA2F5C0003A4E8 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		629365EC27BA2F8C0003A4E8 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		629365EE27BA32A60003A4E8 /* STEntryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = STEntryViewController.xib; sourceTree = "<group>"; };
+		629365F027BA36050003A4E8 /* STEntryData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STEntryData.h; sourceTree = "<group>"; };
+		629365F127BA36050003A4E8 /* STEntryData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STEntryData.m; sourceTree = "<group>"; };
+		629365F327BA3B2F0003A4E8 /* STBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STBaseViewController.h; sourceTree = "<group>"; };
+		629365F427BA3B2F0003A4E8 /* STBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STBaseViewController.m; sourceTree = "<group>"; };
+		629365F727BA3BD20003A4E8 /* STObjectEssenceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STObjectEssenceViewController.h; sourceTree = "<group>"; };
+		629365F827BA3BD20003A4E8 /* STObjectEssenceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STObjectEssenceViewController.m; sourceTree = "<group>"; };
+		629365F927BA3BD20003A4E8 /* STObjectEssenceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = STObjectEssenceViewController.xib; sourceTree = "<group>"; };
 		9DA106113BCD54A5646995B4 /* Pods_STPrincipleProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_STPrincipleProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEBD9619FA56F0EE4AE92784 /* Pods-STPrincipleProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STPrincipleProject.release.xcconfig"; path = "Target Support Files/Pods-STPrincipleProject/Pods-STPrincipleProject.release.xcconfig"; sourceTree = "<group>"; };
 		E48EF5B224EE287E0018D0FD /* STPrincipleProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = STPrincipleProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -257,19 +270,8 @@
 		6293652A27BA090F0003A4E8 /* ObjectEssence  */ = {
 			isa = PBXGroup;
 			children = (
-				6293655F27BA090F0003A4E8 /* MJClassInfo.h */,
-				6293651727BA090F0003A4E8 /* NSObject+STRuntime.h */,
-				6293654C27BA090F0003A4E8 /* NSObject+STRuntime.m */,
-				6293651327BA090F0003A4E8 /* NSObject+Test.h */,
-				6293654F27BA090F0003A4E8 /* NSObject+Test.m */,
-				6293653E27BA090F0003A4E8 /* STAnimation.h */,
-				6293657827BA090F0003A4E8 /* STAnimation.m */,
-				6293653527BA090F0003A4E8 /* STAnimation+STDog.h */,
-				6293656327BA090F0003A4E8 /* STAnimation+STDog.m */,
-				6293651C27BA090F0003A4E8 /* STAnimation+STPerson.h */,
-				6293654A27BA090F0003A4E8 /* STAnimation+STPerson.m */,
-				6293651527BA090F0003A4E8 /* STBaseAnimation.h */,
-				6293655027BA090F0003A4E8 /* STBaseAnimation.m */,
+				629365FC27BA3BD60003A4E8 /* Model */,
+				629365F627BA3BB90003A4E8 /* ViewController */,
 			);
 			path = "ObjectEssence ";
 			sourceTree = "<group>";
@@ -294,10 +296,13 @@
 				6293654827BA090F0003A4E8 /* Main.storyboard */,
 				6293657D27BA090F0003A4E8 /* SceneDelegate.h */,
 				6293653D27BA090F0003A4E8 /* SceneDelegate.m */,
-				6293657C27BA090F0003A4E8 /* ViewController.h */,
-				6293653C27BA090F0003A4E8 /* ViewController.m */,
+				6293657C27BA090F0003A4E8 /* STEntryViewController.h */,
+				6293653C27BA090F0003A4E8 /* STEntryViewController.m */,
+				629365EE27BA32A60003A4E8 /* STEntryViewController.xib */,
 				6293655C27BA090F0003A4E8 /* STNextViewController.h */,
 				6293652127BA090F0003A4E8 /* STNextViewController.m */,
+				629365F327BA3B2F0003A4E8 /* STBaseViewController.h */,
+				629365F427BA3B2F0003A4E8 /* STBaseViewController.m */,
 				6293655327BA090F0003A4E8 /* main.m */,
 			);
 			path = AppDelegate;
@@ -427,6 +432,10 @@
 				6293655927BA090F0003A4E8 /* STPerson.m */,
 				6293656A27BA090F0003A4E8 /* STStudent.h */,
 				6293653027BA090F0003A4E8 /* STStudent.m */,
+				629365F027BA36050003A4E8 /* STEntryData.h */,
+				629365F127BA36050003A4E8 /* STEntryData.m */,
+				6293651527BA090F0003A4E8 /* STBaseAnimation.h */,
+				6293655027BA090F0003A4E8 /* STBaseAnimation.m */,
 			);
 			path = BaseModel;
 			sourceTree = "<group>";
@@ -460,6 +469,34 @@
 				629365E327BA2EE50003A4E8 /* STLRUCache.h */,
 			);
 			path = STLRUCache;
+			sourceTree = "<group>";
+		};
+		629365F627BA3BB90003A4E8 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				629365F727BA3BD20003A4E8 /* STObjectEssenceViewController.h */,
+				629365F827BA3BD20003A4E8 /* STObjectEssenceViewController.m */,
+				629365F927BA3BD20003A4E8 /* STObjectEssenceViewController.xib */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		629365FC27BA3BD60003A4E8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6293655F27BA090F0003A4E8 /* MJClassInfo.h */,
+				6293651727BA090F0003A4E8 /* NSObject+STRuntime.h */,
+				6293654C27BA090F0003A4E8 /* NSObject+STRuntime.m */,
+				6293651327BA090F0003A4E8 /* NSObject+Test.h */,
+				6293654F27BA090F0003A4E8 /* NSObject+Test.m */,
+				6293653E27BA090F0003A4E8 /* STAnimation.h */,
+				6293657827BA090F0003A4E8 /* STAnimation.m */,
+				6293653527BA090F0003A4E8 /* STAnimation+STDog.h */,
+				6293656327BA090F0003A4E8 /* STAnimation+STDog.m */,
+				6293651C27BA090F0003A4E8 /* STAnimation+STPerson.h */,
+				6293654A27BA090F0003A4E8 /* STAnimation+STPerson.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		E48EF5A924EE287E0018D0FD = {
@@ -546,8 +583,9 @@
 		E48EF5AA24EE287E0018D0FD /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = ST;
 				LastUpgradeCheck = 1320;
-				ORGANIZATIONNAME = Knowin;
+				ORGANIZATIONNAME = qcraft;
 				TargetAttributes = {
 					629365CA27BA2E7A0003A4E8 = {
 						CreatedOnToolsVersion = 13.2.1;
@@ -589,6 +627,8 @@
 				629365AA27BA090F0003A4E8 /* STRunloopTableViewCell.xib in Resources */,
 				6293659527BA090F0003A4E8 /* Assets.xcassets in Resources */,
 				629365A127BA090F0003A4E8 /* Main.storyboard in Resources */,
+				629365EF27BA32A60003A4E8 /* STEntryViewController.xib in Resources */,
+				629365FB27BA3BD20003A4E8 /* STObjectEssenceViewController.xib in Resources */,
 				6293658227BA090F0003A4E8 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -664,6 +704,7 @@
 				6293657E27BA090F0003A4E8 /* STBlock.m in Sources */,
 				6293659927BA090F0003A4E8 /* SceneDelegate.m in Sources */,
 				6293659A27BA090F0003A4E8 /* STBinaryTreeNode.m in Sources */,
+				629365F227BA36050003A4E8 /* STEntryData.m in Sources */,
 				6293658727BA090F0003A4E8 /* STView.m in Sources */,
 				629365A327BA090F0003A4E8 /* STAnimation+STPerson.m in Sources */,
 				6293658027BA090F0003A4E8 /* STButton.m in Sources */,
@@ -675,6 +716,7 @@
 				629365A927BA090F0003A4E8 /* main.m in Sources */,
 				6293659C27BA090F0003A4E8 /* STKVOTest.m in Sources */,
 				6293659027BA090F0003A4E8 /* STRunloopViewController.m in Sources */,
+				629365F527BA3B2F0003A4E8 /* STBaseViewController.m in Sources */,
 				6293658827BA090F0003A4E8 /* STRunloopTableViewCell.m in Sources */,
 				6293659F27BA090F0003A4E8 /* STWeakTest.m in Sources */,
 				6293659127BA090F0003A4E8 /* STMRCTest.m in Sources */,
@@ -694,10 +736,11 @@
 				629365B327BA090F0003A4E8 /* STGCD.m in Sources */,
 				6293658627BA090F0003A4E8 /* STOSSpinLock.m in Sources */,
 				629365AC27BA090F0003A4E8 /* STTimerTest.m in Sources */,
+				629365FA27BA3BD20003A4E8 /* STObjectEssenceViewController.m in Sources */,
 				629365B827BA090F0003A4E8 /* STKVOModel.m in Sources */,
 				6293658E27BA090F0003A4E8 /* STFileManager.m in Sources */,
 				629365A827BA090F0003A4E8 /* STKVCTest.m in Sources */,
-				6293659827BA090F0003A4E8 /* ViewController.m in Sources */,
+				6293659827BA090F0003A4E8 /* STEntryViewController.m in Sources */,
 				6293659427BA090F0003A4E8 /* STBinaryTreeTest.m in Sources */,
 				6293658527BA090F0003A4E8 /* STNextViewController.m in Sources */,
 				6293658B27BA090F0003A4E8 /* STWeakModel.m in Sources */,

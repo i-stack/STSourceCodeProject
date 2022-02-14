@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  STEntryViewController.h
 //  STPrincipleProject
 //
 //  Created by song on 2020/8/20.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface STEntryViewController : UIViewController
 
 
 @end
