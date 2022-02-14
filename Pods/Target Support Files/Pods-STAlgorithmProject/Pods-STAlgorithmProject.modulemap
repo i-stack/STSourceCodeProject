@@ -1,6 +1,0 @@
-framework module Pods_STAlgorithmProject {
-  umbrella header "Pods-STAlgorithmProject-umbrella.h"
-
-  export *
-  module * { export * }
-}

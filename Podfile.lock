@@ -1,38 +1,22 @@
 PODS:
-  - Alamofire (5.4.3)
-  - IQKeyboardManager (6.5.6)
-  - MJRefresh (3.7.2)
-  - SDWebImage (5.11.1):
-    - SDWebImage/Core (= 5.11.1)
-  - SDWebImage/Core (5.11.1)
+  - SDWebImage (5.12.3):
+    - SDWebImage/Core (= 5.12.3)
+  - SDWebImage/Core (5.12.3)
   - SnapKit (5.0.1)
-  - SocketRocket (0.6.0)
 
 DEPENDENCIES:
-  - Alamofire
-  - IQKeyboardManager
-  - MJRefresh
   - SDWebImage
   - SnapKit
-  - SocketRocket
 
 SPEC REPOS:
   trunk:
-    - Alamofire
-    - IQKeyboardManager
-    - MJRefresh
     - SDWebImage
     - SnapKit
-    - SocketRocket
 
 SPEC CHECKSUMS:
-  Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
-  IQKeyboardManager: 2a6e97afdafc7becf0cb17a9a8d795e3a980717f
-  MJRefresh: 30997d30b347c8e9508a4db11e3a690da0c9b85a
-  SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
+  SDWebImage: 53179a2dba77246efa8a9b85f5c5b21f8f43e38f
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
-  SocketRocket: fccef3f9c5cedea1353a9ef6ada904fde10d6608
 
-PODFILE CHECKSUM: 5bed6f2dacd83703f8a8a5558bf48a0d1bc44f66
+PODFILE CHECKSUM: b13072a17ee7c882e40bdedfd636e3db3f42f1eb
 
-COCOAPODS: 1.10.1
+COCOAPODS: 1.11.2
