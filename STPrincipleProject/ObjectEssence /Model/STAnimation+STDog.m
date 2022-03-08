@@ -20,9 +20,9 @@
 //    NSLog(@"%s", __func__);
 //}
 
-- (void)printName
-{
-    NSLog(@"%s", __func__);
-}
+//- (void)printName
+//{
+//    NSLog(@"%s", __func__);
+//}
 
 @end

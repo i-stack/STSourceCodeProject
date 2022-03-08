@@ -14,4 +14,9 @@
     NSLog(@"%s", __func__);
     return self;
 }
+
+- (void)printName {
+    NSLog(@"%s", __func__);
+}
+
 @end

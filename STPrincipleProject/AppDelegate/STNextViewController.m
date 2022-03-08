@@ -100,8 +100,8 @@
 }
 
 - (void)testCategory {
-    STAnimation *animation = [[STAnimation alloc]init];
-    [animation printName];
+//    STAnimation *animation = [[STAnimation alloc]init];
+//    [animation printName];
 }
 
 /// 重写setter方法

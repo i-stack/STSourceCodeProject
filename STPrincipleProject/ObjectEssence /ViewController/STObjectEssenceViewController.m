@@ -7,8 +7,12 @@
 //
 
 #import "STObjectEssenceViewController.h"
+#import "STAnimation.h"
+#import <objc/message.h>
 
 @interface STObjectEssenceViewController ()
+
+@property (nonatomic,strong)STAnimation *animation;
 
 @end
 
@@ -16,17 +20,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.animation = [[STAnimation alloc]init];
     // Do any additional setup after loading the view from its nib.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self testMethod];
 }
-*/
+
+- (void)testMethod {
+//    [self.animation printName];
+//    objc_msgSend(self.animation, @selector(printName));
+    ((void (*)(id, SEL))objc_msgSend)(self.animation, @selector(printName));
+}
 
 @end

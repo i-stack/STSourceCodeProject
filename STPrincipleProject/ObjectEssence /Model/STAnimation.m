@@ -20,19 +20,19 @@
     return self;
 }
 
-+ (void)load
-{
-    NSLog(@"%s", __func__);
-}
+//+ (void)load
+//{
+//    NSLog(@"%s", __func__);
+//}
 
 //+ (void)initialize
 //{
 //    NSLog(@"%s", __func__);
 //}
 
-- (void)printName
-{
-    NSLog(@"%s", __func__);
-}
+//- (void)printName
+//{
+//    NSLog(@"%s", __func__);
+//}
 
 @end

@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface STBaseAnimation : NSObject
 
 + (id)printBaseAnimation;
+- (void)printName;
 
 @end
 
