@@ -1,0 +1,1013 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3701EF7A89B8F44776F29B88 /* Pods_STSourceCodeProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DA106113BCD54A5646995B4 /* Pods_STSourceCodeProject.framework */; };
+		6293657E27BA090F0003A4E8 /* STBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 6293651227BA090F0003A4E8 /* STBlock.m */; };
+		6293657F27BA090F0003A4E8 /* STSaleTickets.m in Sources */ = {isa = PBXBuildFile; fileRef = 6293651627BA090F0003A4E8 /* STSaleTickets.m */; };
+		6293658027BA090F0003A4E8 /* STButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6293651827BA090F0003A4E8 /* STButton.m */; };
+		6293658227BA090F0003A4E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6293651A27BA090F0003A4E8 /* LaunchScreen.storyboard */; };
+		6293658427BA090F0003A4E8 /* STProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6293651E27BA090F0003A4E8 /* STProxy.m */; };
+		6293658527BA090F0003A4E8 /* STNextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6293652127BA090F0003A4E8 /* STNextViewController.m */; };
+		6293658627BA090F0003A4E8 /* STOSSpinLock.m in Sources */ = {isa = PBXBuildFile; fileRef = 6293652427BA090F0003A4E8 /* STOSSpinLock.m */; };
+		6293658727BA090F0003A4E8 /* STView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6293652527BA090F0003A4E8 /* STView.m */; };
+		6293658827BA090F0003A4E8 /* STRunloopTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6293652627BA090F0003A4E8 /* STRunloopTableViewCell.m */; };
+		6293658927BA090F0003A4E8 /* STTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6293652727BA090F0003A4E8 /* STTimer.m */; };
+		6293658B27BA090F0003A4E8 /* STWeakModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6293652B27BA090F0003A4E8 /* STWeakModel.m */; };
+		6293658C27BA090F0003A4E8 /* STMRCModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6293652C27BA090F0003A4E8 /* STMRCModel.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		6293658D27BA090F0003A4E8 /* STMultiThreadTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6293652D27BA090F0003A4E8 /* STMultiThreadTest.m */; };
+		6293658E27BA090F0003A4E8 /* STFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6293652E27BA090F0003A4E8 /* STFileManager.m */; };
+		6293658F27BA090F0003A4E8 /* STStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = 6293653027BA090F0003A4E8 /* STStudent.m */; };
+		6293659027BA090F0003A4E8 /* STRunloopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6293653127BA090F0003A4E8 /* STRunloopViewController.m */; };
+		6293659127BA090F0003A4E8 /* STMRCTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6293653327BA090F0003A4E8 /* STMRCTest.m */; };
+		6293659327BA090F0003A4E8 /* STMRCArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 6293653727BA090F0003A4E8 /* STMRCArray.m */; };
+		6293659427BA090F0003A4E8 /* STBinaryTreeTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6293653827BA090F0003A4E8 /* STBinaryTreeTest.m */; };
+		6293659527BA090F0003A4E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6293653927BA090F0003A4E8 /* Assets.xcassets */; };
+		6293659827BA090F0003A4E8 /* STEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6293653C27BA090F0003A4E8 /* STEntryViewController.m */; };
+		6293659927BA090F0003A4E8 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6293653D27BA090F0003A4E8 /* SceneDelegate.m */; };
+		6293659A27BA090F0003A4E8 /* STBinaryTreeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 6293653F27BA090F0003A4E8 /* STBinaryTreeNode.m */; };
+		6293659B27BA090F0003A4E8 /* STMRCBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6293654027BA090F0003A4E8 /* STMRCBaseModel.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		6293659C27BA090F0003A4E8 /* STKVOTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6293654127BA090F0003A4E8 /* STKVOTest.m */; };
+		6293659F27BA090F0003A4E8 /* STWeakTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6293654527BA090F0003A4E8 /* STWeakTest.m */; };
+		629365A027BA090F0003A4E8 /* STKVOBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6293654727BA090F0003A4E8 /* STKVOBaseModel.m */; };
+		629365A127BA090F0003A4E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6293654827BA090F0003A4E8 /* Main.storyboard */; };
+		629365A327BA090F0003A4E8 /* STAnimation+STPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 6293654A27BA090F0003A4E8 /* STAnimation+STPerson.m */; };
+		629365A527BA090F0003A4E8 /* NSObject+STRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = 6293654C27BA090F0003A4E8 /* NSObject+STRuntime.m */; };
+		629365A627BA090F0003A4E8 /* NSObject+Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 6293654F27BA090F0003A4E8 /* NSObject+Test.m */; };
+		629365A727BA090F0003A4E8 /* STBaseAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6293655027BA090F0003A4E8 /* STBaseAnimation.m */; };
+		629365A827BA090F0003A4E8 /* STKVCTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6293655127BA090F0003A4E8 /* STKVCTest.m */; };
+		629365A927BA090F0003A4E8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6293655327BA090F0003A4E8 /* main.m */; };
+		629365AA27BA090F0003A4E8 /* STRunloopTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6293655427BA090F0003A4E8 /* STRunloopTableViewCell.xib */; };
+		629365AB27BA090F0003A4E8 /* STPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 6293655927BA090F0003A4E8 /* STPerson.m */; };
+		629365AC27BA090F0003A4E8 /* STTimerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6293655A27BA090F0003A4E8 /* STTimerTest.m */; };
+		629365AD27BA090F0003A4E8 /* STRunloopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6293655B27BA090F0003A4E8 /* STRunloopViewController.xib */; };
+		629365AE27BA090F0003A4E8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6293655D27BA090F0003A4E8 /* AppDelegate.m */; };
+		629365B027BA090F0003A4E8 /* STAnimation+STDog.m in Sources */ = {isa = PBXBuildFile; fileRef = 6293656327BA090F0003A4E8 /* STAnimation+STDog.m */; };
+		629365B227BA090F0003A4E8 /* STRootView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6293656527BA090F0003A4E8 /* STRootView.m */; };
+		629365B327BA090F0003A4E8 /* STGCD.m in Sources */ = {isa = PBXBuildFile; fileRef = 6293656927BA090F0003A4E8 /* STGCD.m */; };
+		629365B627BA090F0003A4E8 /* STKVCModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6293657327BA090F0003A4E8 /* STKVCModel.m */; };
+		629365B827BA090F0003A4E8 /* STKVOModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6293657527BA090F0003A4E8 /* STKVOModel.m */; };
+		629365BA27BA090F0003A4E8 /* STAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6293657827BA090F0003A4E8 /* STAnimation.m */; };
+		629365D627BA2EB00003A4E8 /* STUtls.c in Sources */ = {isa = PBXBuildFile; fileRef = 629365D327BA2EAF0003A4E8 /* STUtls.c */; };
+		629365D727BA2EB00003A4E8 /* STSortUtls.c in Sources */ = {isa = PBXBuildFile; fileRef = 629365D527BA2EB00003A4E8 /* STSortUtls.c */; };
+		629365E527BA2EE50003A4E8 /* STLRUCache.c in Sources */ = {isa = PBXBuildFile; fileRef = 629365E427BA2EE50003A4E8 /* STLRUCache.c */; };
+		629365EB27BA2F5C0003A4E8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 629365EA27BA2F5C0003A4E8 /* main.m */; };
+		629365ED27BA2F8C0003A4E8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 629365EC27BA2F8C0003A4E8 /* main.m */; };
+		629365EF27BA32A60003A4E8 /* STEntryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 629365EE27BA32A60003A4E8 /* STEntryViewController.xib */; };
+		629365F227BA36050003A4E8 /* STEntryData.m in Sources */ = {isa = PBXBuildFile; fileRef = 629365F127BA36050003A4E8 /* STEntryData.m */; };
+		629365F527BA3B2F0003A4E8 /* STBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 629365F427BA3B2F0003A4E8 /* STBaseViewController.m */; };
+		629365FA27BA3BD20003A4E8 /* STObjectEssenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 629365F827BA3BD20003A4E8 /* STObjectEssenceViewController.m */; };
+		629365FB27BA3BD20003A4E8 /* STObjectEssenceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 629365F927BA3BD20003A4E8 /* STObjectEssenceViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		629365C927BA2E7A0003A4E8 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		629365DA27BA2ED20003A4E8 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		5066A12E47B48EED415195B9 /* Pods-STSourceCodeProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STSourceCodeProject.debug.xcconfig"; path = "Target Support Files/Pods-STSourceCodeProject/Pods-STSourceCodeProject.debug.xcconfig"; sourceTree = "<group>"; };
+		6293651227BA090F0003A4E8 /* STBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STBlock.m; sourceTree = "<group>"; };
+		6293651327BA090F0003A4E8 /* NSObject+Test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Test.h"; sourceTree = "<group>"; };
+		6293651427BA090F0003A4E8 /* STKVCTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STKVCTest.h; sourceTree = "<group>"; };
+		6293651527BA090F0003A4E8 /* STBaseAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STBaseAnimation.h; sourceTree = "<group>"; };
+		6293651627BA090F0003A4E8 /* STSaleTickets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STSaleTickets.m; sourceTree = "<group>"; };
+		6293651727BA090F0003A4E8 /* NSObject+STRuntime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+STRuntime.h"; sourceTree = "<group>"; };
+		6293651827BA090F0003A4E8 /* STButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STButton.m; sourceTree = "<group>"; };
+		6293651A27BA090F0003A4E8 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6293651C27BA090F0003A4E8 /* STAnimation+STPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "STAnimation+STPerson.h"; sourceTree = "<group>"; };
+		6293651E27BA090F0003A4E8 /* STProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STProxy.m; sourceTree = "<group>"; };
+		6293652027BA090F0003A4E8 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		6293652127BA090F0003A4E8 /* STNextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STNextViewController.m; sourceTree = "<group>"; };
+		6293652227BA090F0003A4E8 /* STTimerTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STTimerTest.h; sourceTree = "<group>"; };
+		6293652327BA090F0003A4E8 /* STPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPerson.h; sourceTree = "<group>"; };
+		6293652427BA090F0003A4E8 /* STOSSpinLock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STOSSpinLock.m; sourceTree = "<group>"; };
+		6293652527BA090F0003A4E8 /* STView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STView.m; sourceTree = "<group>"; };
+		6293652627BA090F0003A4E8 /* STRunloopTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRunloopTableViewCell.m; sourceTree = "<group>"; };
+		6293652727BA090F0003A4E8 /* STTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STTimer.m; sourceTree = "<group>"; };
+		6293652827BA090F0003A4E8 /* STMRCModel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = STMRCModel.cpp; sourceTree = "<group>"; };
+		6293652B27BA090F0003A4E8 /* STWeakModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STWeakModel.m; sourceTree = "<group>"; };
+		6293652C27BA090F0003A4E8 /* STMRCModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STMRCModel.m; sourceTree = "<group>"; };
+		6293652D27BA090F0003A4E8 /* STMultiThreadTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STMultiThreadTest.m; sourceTree = "<group>"; };
+		6293652E27BA090F0003A4E8 /* STFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STFileManager.m; sourceTree = "<group>"; };
+		6293653027BA090F0003A4E8 /* STStudent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STStudent.m; sourceTree = "<group>"; };
+		6293653127BA090F0003A4E8 /* STRunloopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRunloopViewController.m; sourceTree = "<group>"; };
+		6293653227BA090F0003A4E8 /* STGCD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STGCD.h; sourceTree = "<group>"; };
+		6293653327BA090F0003A4E8 /* STMRCTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STMRCTest.m; sourceTree = "<group>"; };
+		6293653427BA090F0003A4E8 /* STRootView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRootView.h; sourceTree = "<group>"; };
+		6293653527BA090F0003A4E8 /* STAnimation+STDog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "STAnimation+STDog.h"; sourceTree = "<group>"; };
+		6293653727BA090F0003A4E8 /* STMRCArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STMRCArray.m; sourceTree = "<group>"; };
+		6293653827BA090F0003A4E8 /* STBinaryTreeTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STBinaryTreeTest.m; sourceTree = "<group>"; };
+		6293653927BA090F0003A4E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6293653B27BA090F0003A4E8 /* STBlock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = STBlock.cpp; sourceTree = "<group>"; };
+		6293653C27BA090F0003A4E8 /* STEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STEntryViewController.m; sourceTree = "<group>"; };
+		6293653D27BA090F0003A4E8 /* SceneDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		6293653E27BA090F0003A4E8 /* STAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STAnimation.h; sourceTree = "<group>"; };
+		6293653F27BA090F0003A4E8 /* STBinaryTreeNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STBinaryTreeNode.m; sourceTree = "<group>"; };
+		6293654027BA090F0003A4E8 /* STMRCBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STMRCBaseModel.m; sourceTree = "<group>"; };
+		6293654127BA090F0003A4E8 /* STKVOTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STKVOTest.m; sourceTree = "<group>"; };
+		6293654227BA090F0003A4E8 /* STTimer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = STTimer.cpp; sourceTree = "<group>"; };
+		6293654427BA090F0003A4E8 /* STKVOModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STKVOModel.h; sourceTree = "<group>"; };
+		6293654527BA090F0003A4E8 /* STWeakTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STWeakTest.m; sourceTree = "<group>"; };
+		6293654627BA090F0003A4E8 /* STKVCModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STKVCModel.h; sourceTree = "<group>"; };
+		6293654727BA090F0003A4E8 /* STKVOBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STKVOBaseModel.m; sourceTree = "<group>"; };
+		6293654827BA090F0003A4E8 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		6293654A27BA090F0003A4E8 /* STAnimation+STPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "STAnimation+STPerson.m"; sourceTree = "<group>"; };
+		6293654C27BA090F0003A4E8 /* NSObject+STRuntime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+STRuntime.m"; sourceTree = "<group>"; };
+		6293654D27BA090F0003A4E8 /* STButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STButton.h; sourceTree = "<group>"; };
+		6293654E27BA090F0003A4E8 /* STSaleTickets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STSaleTickets.h; sourceTree = "<group>"; };
+		6293654F27BA090F0003A4E8 /* NSObject+Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Test.m"; sourceTree = "<group>"; };
+		6293655027BA090F0003A4E8 /* STBaseAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STBaseAnimation.m; sourceTree = "<group>"; };
+		6293655127BA090F0003A4E8 /* STKVCTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STKVCTest.m; sourceTree = "<group>"; };
+		6293655227BA090F0003A4E8 /* STBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STBlock.h; sourceTree = "<group>"; };
+		6293655327BA090F0003A4E8 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6293655427BA090F0003A4E8 /* STRunloopTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = STRunloopTableViewCell.xib; sourceTree = "<group>"; };
+		6293655527BA090F0003A4E8 /* STTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STTimer.h; sourceTree = "<group>"; };
+		6293655627BA090F0003A4E8 /* STRunloopTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRunloopTableViewCell.h; sourceTree = "<group>"; };
+		6293655727BA090F0003A4E8 /* STOSSpinLock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STOSSpinLock.h; sourceTree = "<group>"; };
+		6293655827BA090F0003A4E8 /* STView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STView.h; sourceTree = "<group>"; };
+		6293655927BA090F0003A4E8 /* STPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPerson.m; sourceTree = "<group>"; };
+		6293655A27BA090F0003A4E8 /* STTimerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STTimerTest.m; sourceTree = "<group>"; };
+		6293655B27BA090F0003A4E8 /* STRunloopViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = STRunloopViewController.xib; sourceTree = "<group>"; };
+		6293655C27BA090F0003A4E8 /* STNextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STNextViewController.h; sourceTree = "<group>"; };
+		6293655D27BA090F0003A4E8 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		6293655E27BA090F0003A4E8 /* STProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STProxy.h; sourceTree = "<group>"; };
+		6293655F27BA090F0003A4E8 /* MJClassInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJClassInfo.h; sourceTree = "<group>"; };
+		6293656027BA090F0003A4E8 /* STMRCArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STMRCArray.h; sourceTree = "<group>"; };
+		6293656227BA090F0003A4E8 /* STBinaryTreeTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STBinaryTreeTest.h; sourceTree = "<group>"; };
+		6293656327BA090F0003A4E8 /* STAnimation+STDog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "STAnimation+STDog.m"; sourceTree = "<group>"; };
+		6293656427BA090F0003A4E8 /* STMRCTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = STMRCTest.cpp; sourceTree = "<group>"; };
+		6293656527BA090F0003A4E8 /* STRootView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRootView.m; sourceTree = "<group>"; };
+		6293656627BA090F0003A4E8 /* STMRCTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STMRCTest.h; sourceTree = "<group>"; };
+		6293656827BA090F0003A4E8 /* STRunloopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRunloopViewController.h; sourceTree = "<group>"; };
+		6293656927BA090F0003A4E8 /* STGCD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STGCD.m; sourceTree = "<group>"; };
+		6293656A27BA090F0003A4E8 /* STStudent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STStudent.h; sourceTree = "<group>"; };
+		6293656E27BA090F0003A4E8 /* STFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STFileManager.h; sourceTree = "<group>"; };
+		6293656F27BA090F0003A4E8 /* STMultiThreadTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STMultiThreadTest.h; sourceTree = "<group>"; };
+		6293657027BA090F0003A4E8 /* STWeakModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STWeakModel.h; sourceTree = "<group>"; };
+		6293657127BA090F0003A4E8 /* STMRCModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STMRCModel.h; sourceTree = "<group>"; };
+		6293657227BA090F0003A4E8 /* STKVOBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STKVOBaseModel.h; sourceTree = "<group>"; };
+		6293657327BA090F0003A4E8 /* STKVCModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STKVCModel.m; sourceTree = "<group>"; };
+		6293657527BA090F0003A4E8 /* STKVOModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STKVOModel.m; sourceTree = "<group>"; };
+		6293657627BA090F0003A4E8 /* STWeakTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STWeakTest.h; sourceTree = "<group>"; };
+		6293657727BA090F0003A4E8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6293657827BA090F0003A4E8 /* STAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STAnimation.m; sourceTree = "<group>"; };
+		6293657927BA090F0003A4E8 /* STMRCBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STMRCBaseModel.h; sourceTree = "<group>"; };
+		6293657A27BA090F0003A4E8 /* STBinaryTreeNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STBinaryTreeNode.h; sourceTree = "<group>"; };
+		6293657B27BA090F0003A4E8 /* STKVOTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STKVOTest.h; sourceTree = "<group>"; };
+		6293657C27BA090F0003A4E8 /* STEntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STEntryViewController.h; sourceTree = "<group>"; };
+		6293657D27BA090F0003A4E8 /* SceneDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		629365CB27BA2E7A0003A4E8 /* STArithmetic */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = STArithmetic; sourceTree = BUILT_PRODUCTS_DIR; };
+		629365D227BA2EAF0003A4E8 /* STSortUtls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STSortUtls.h; sourceTree = "<group>"; };
+		629365D327BA2EAF0003A4E8 /* STUtls.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = STUtls.c; sourceTree = "<group>"; };
+		629365D427BA2EB00003A4E8 /* STUtls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STUtls.h; sourceTree = "<group>"; };
+		629365D527BA2EB00003A4E8 /* STSortUtls.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = STSortUtls.c; sourceTree = "<group>"; };
+		629365DC27BA2ED20003A4E8 /* STLRUCache */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = STLRUCache; sourceTree = BUILT_PRODUCTS_DIR; };
+		629365E327BA2EE50003A4E8 /* STLRUCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STLRUCache.h; sourceTree = "<group>"; };
+		629365E427BA2EE50003A4E8 /* STLRUCache.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = STLRUCache.c; sourceTree = "<group>"; };
+		629365EA27BA2F5C0003A4E8 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		629365EC27BA2F8C0003A4E8 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		629365EE27BA32A60003A4E8 /* STEntryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = STEntryViewController.xib; sourceTree = "<group>"; };
+		629365F027BA36050003A4E8 /* STEntryData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STEntryData.h; sourceTree = "<group>"; };
+		629365F127BA36050003A4E8 /* STEntryData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STEntryData.m; sourceTree = "<group>"; };
+		629365F327BA3B2F0003A4E8 /* STBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STBaseViewController.h; sourceTree = "<group>"; };
+		629365F427BA3B2F0003A4E8 /* STBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STBaseViewController.m; sourceTree = "<group>"; };
+		629365F727BA3BD20003A4E8 /* STObjectEssenceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STObjectEssenceViewController.h; sourceTree = "<group>"; };
+		629365F827BA3BD20003A4E8 /* STObjectEssenceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STObjectEssenceViewController.m; sourceTree = "<group>"; };
+		629365F927BA3BD20003A4E8 /* STObjectEssenceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = STObjectEssenceViewController.xib; sourceTree = "<group>"; };
+		9DA106113BCD54A5646995B4 /* Pods_STSourceCodeProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_STSourceCodeProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEBD9619FA56F0EE4AE92784 /* Pods-STSourceCodeProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STSourceCodeProject.release.xcconfig"; path = "Target Support Files/Pods-STSourceCodeProject/Pods-STSourceCodeProject.release.xcconfig"; sourceTree = "<group>"; };
+		E48EF5B224EE287E0018D0FD /* STSourceCodeProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = STSourceCodeProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		629365C827BA2E7A0003A4E8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		629365D927BA2ED20003A4E8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E48EF5AF24EE287E0018D0FD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3701EF7A89B8F44776F29B88 /* Pods_STSourceCodeProject.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1B021CEA00537FB9191D7724 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9DA106113BCD54A5646995B4 /* Pods_STSourceCodeProject.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3A2FB3E4190D74B9A742D6F3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5066A12E47B48EED415195B9 /* Pods-STSourceCodeProject.debug.xcconfig */,
+				AEBD9619FA56F0EE4AE92784 /* Pods-STSourceCodeProject.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		6293651127BA090F0003A4E8 /* STSourceCodeProject */ = {
+			isa = PBXGroup;
+			children = (
+				6293656727BA090F0003A4E8 /* AppDelegate */,
+				6293653927BA090F0003A4E8 /* Assets.xcassets */,
+				6293657727BA090F0003A4E8 /* Info.plist */,
+				629365C527BA0B6C0003A4E8 /* BaseModel */,
+				629365C227BA0AF20003A4E8 /* BaseView */,
+				629365BE27BA0A660003A4E8 /* BinaryTreeNode */,
+				629365BB27BA09D00003A4E8 /* Block */,
+				629365C627BA0B7A0003A4E8 /* FileManager */,
+				629365BC27BA09E90003A4E8 /* KVO_KVC */,
+				629365BF27BA0A8C0003A4E8 /* Lock */,
+				629365BD27BA0A1B0003A4E8 /* MemoryManager */,
+				6293652F27BA090F0003A4E8 /* MultiThreading */,
+				6293652A27BA090F0003A4E8 /* ObjectEssence  */,
+				629365C427BA0B4A0003A4E8 /* Runloop */,
+				629365C127BA0ACB0003A4E8 /* Timer */,
+				629365C027BA0AA80003A4E8 /* Weak */,
+			);
+			path = STSourceCodeProject;
+			sourceTree = "<group>";
+		};
+		6293652A27BA090F0003A4E8 /* ObjectEssence  */ = {
+			isa = PBXGroup;
+			children = (
+				629365FC27BA3BD60003A4E8 /* Model */,
+				629365F627BA3BB90003A4E8 /* ViewController */,
+			);
+			path = "ObjectEssence ";
+			sourceTree = "<group>";
+		};
+		6293652F27BA090F0003A4E8 /* MultiThreading */ = {
+			isa = PBXGroup;
+			children = (
+				6293653227BA090F0003A4E8 /* STGCD.h */,
+				6293656927BA090F0003A4E8 /* STGCD.m */,
+				6293656F27BA090F0003A4E8 /* STMultiThreadTest.h */,
+				6293652D27BA090F0003A4E8 /* STMultiThreadTest.m */,
+			);
+			path = MultiThreading;
+			sourceTree = "<group>";
+		};
+		6293656727BA090F0003A4E8 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				6293652027BA090F0003A4E8 /* AppDelegate.h */,
+				6293655D27BA090F0003A4E8 /* AppDelegate.m */,
+				6293651A27BA090F0003A4E8 /* LaunchScreen.storyboard */,
+				6293654827BA090F0003A4E8 /* Main.storyboard */,
+				6293657D27BA090F0003A4E8 /* SceneDelegate.h */,
+				6293653D27BA090F0003A4E8 /* SceneDelegate.m */,
+				6293657C27BA090F0003A4E8 /* STEntryViewController.h */,
+				6293653C27BA090F0003A4E8 /* STEntryViewController.m */,
+				629365EE27BA32A60003A4E8 /* STEntryViewController.xib */,
+				6293655C27BA090F0003A4E8 /* STNextViewController.h */,
+				6293652127BA090F0003A4E8 /* STNextViewController.m */,
+				629365F327BA3B2F0003A4E8 /* STBaseViewController.h */,
+				629365F427BA3B2F0003A4E8 /* STBaseViewController.m */,
+				6293655327BA090F0003A4E8 /* main.m */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		629365BB27BA09D00003A4E8 /* Block */ = {
+			isa = PBXGroup;
+			children = (
+				6293653B27BA090F0003A4E8 /* STBlock.cpp */,
+				6293655227BA090F0003A4E8 /* STBlock.h */,
+				6293651227BA090F0003A4E8 /* STBlock.m */,
+			);
+			path = Block;
+			sourceTree = "<group>";
+		};
+		629365BC27BA09E90003A4E8 /* KVO_KVC */ = {
+			isa = PBXGroup;
+			children = (
+				6293654627BA090F0003A4E8 /* STKVCModel.h */,
+				6293657327BA090F0003A4E8 /* STKVCModel.m */,
+				6293651427BA090F0003A4E8 /* STKVCTest.h */,
+				6293655127BA090F0003A4E8 /* STKVCTest.m */,
+				6293657227BA090F0003A4E8 /* STKVOBaseModel.h */,
+				6293654727BA090F0003A4E8 /* STKVOBaseModel.m */,
+				6293654427BA090F0003A4E8 /* STKVOModel.h */,
+				6293657527BA090F0003A4E8 /* STKVOModel.m */,
+				6293657B27BA090F0003A4E8 /* STKVOTest.h */,
+				6293654127BA090F0003A4E8 /* STKVOTest.m */,
+			);
+			path = KVO_KVC;
+			sourceTree = "<group>";
+		};
+		629365BD27BA0A1B0003A4E8 /* MemoryManager */ = {
+			isa = PBXGroup;
+			children = (
+				6293656027BA090F0003A4E8 /* STMRCArray.h */,
+				6293653727BA090F0003A4E8 /* STMRCArray.m */,
+				6293657927BA090F0003A4E8 /* STMRCBaseModel.h */,
+				6293654027BA090F0003A4E8 /* STMRCBaseModel.m */,
+				6293652827BA090F0003A4E8 /* STMRCModel.cpp */,
+				6293657127BA090F0003A4E8 /* STMRCModel.h */,
+				6293652C27BA090F0003A4E8 /* STMRCModel.m */,
+				6293656427BA090F0003A4E8 /* STMRCTest.cpp */,
+				6293656627BA090F0003A4E8 /* STMRCTest.h */,
+				6293653327BA090F0003A4E8 /* STMRCTest.m */,
+			);
+			path = MemoryManager;
+			sourceTree = "<group>";
+		};
+		629365BE27BA0A660003A4E8 /* BinaryTreeNode */ = {
+			isa = PBXGroup;
+			children = (
+				6293657A27BA090F0003A4E8 /* STBinaryTreeNode.h */,
+				6293653F27BA090F0003A4E8 /* STBinaryTreeNode.m */,
+				6293656227BA090F0003A4E8 /* STBinaryTreeTest.h */,
+				6293653827BA090F0003A4E8 /* STBinaryTreeTest.m */,
+			);
+			path = BinaryTreeNode;
+			sourceTree = "<group>";
+		};
+		629365BF27BA0A8C0003A4E8 /* Lock */ = {
+			isa = PBXGroup;
+			children = (
+				6293655727BA090F0003A4E8 /* STOSSpinLock.h */,
+				6293652427BA090F0003A4E8 /* STOSSpinLock.m */,
+				6293654E27BA090F0003A4E8 /* STSaleTickets.h */,
+				6293651627BA090F0003A4E8 /* STSaleTickets.m */,
+			);
+			path = Lock;
+			sourceTree = "<group>";
+		};
+		629365C027BA0AA80003A4E8 /* Weak */ = {
+			isa = PBXGroup;
+			children = (
+				6293657027BA090F0003A4E8 /* STWeakModel.h */,
+				6293652B27BA090F0003A4E8 /* STWeakModel.m */,
+				6293657627BA090F0003A4E8 /* STWeakTest.h */,
+				6293654527BA090F0003A4E8 /* STWeakTest.m */,
+			);
+			path = Weak;
+			sourceTree = "<group>";
+		};
+		629365C127BA0ACB0003A4E8 /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				6293655E27BA090F0003A4E8 /* STProxy.h */,
+				6293651E27BA090F0003A4E8 /* STProxy.m */,
+				6293654227BA090F0003A4E8 /* STTimer.cpp */,
+				6293655527BA090F0003A4E8 /* STTimer.h */,
+				6293652727BA090F0003A4E8 /* STTimer.m */,
+				6293652227BA090F0003A4E8 /* STTimerTest.h */,
+				6293655A27BA090F0003A4E8 /* STTimerTest.m */,
+			);
+			path = Timer;
+			sourceTree = "<group>";
+		};
+		629365C227BA0AF20003A4E8 /* BaseView */ = {
+			isa = PBXGroup;
+			children = (
+				6293654D27BA090F0003A4E8 /* STButton.h */,
+				6293651827BA090F0003A4E8 /* STButton.m */,
+				6293653427BA090F0003A4E8 /* STRootView.h */,
+				6293656527BA090F0003A4E8 /* STRootView.m */,
+				6293655827BA090F0003A4E8 /* STView.h */,
+				6293652527BA090F0003A4E8 /* STView.m */,
+			);
+			path = BaseView;
+			sourceTree = "<group>";
+		};
+		629365C427BA0B4A0003A4E8 /* Runloop */ = {
+			isa = PBXGroup;
+			children = (
+				6293655627BA090F0003A4E8 /* STRunloopTableViewCell.h */,
+				6293652627BA090F0003A4E8 /* STRunloopTableViewCell.m */,
+				6293655427BA090F0003A4E8 /* STRunloopTableViewCell.xib */,
+				6293656827BA090F0003A4E8 /* STRunloopViewController.h */,
+				6293653127BA090F0003A4E8 /* STRunloopViewController.m */,
+				6293655B27BA090F0003A4E8 /* STRunloopViewController.xib */,
+			);
+			path = Runloop;
+			sourceTree = "<group>";
+		};
+		629365C527BA0B6C0003A4E8 /* BaseModel */ = {
+			isa = PBXGroup;
+			children = (
+				6293652327BA090F0003A4E8 /* STPerson.h */,
+				6293655927BA090F0003A4E8 /* STPerson.m */,
+				6293656A27BA090F0003A4E8 /* STStudent.h */,
+				6293653027BA090F0003A4E8 /* STStudent.m */,
+				629365F027BA36050003A4E8 /* STEntryData.h */,
+				629365F127BA36050003A4E8 /* STEntryData.m */,
+				6293651527BA090F0003A4E8 /* STBaseAnimation.h */,
+				6293655027BA090F0003A4E8 /* STBaseAnimation.m */,
+			);
+			path = BaseModel;
+			sourceTree = "<group>";
+		};
+		629365C627BA0B7A0003A4E8 /* FileManager */ = {
+			isa = PBXGroup;
+			children = (
+				6293656E27BA090F0003A4E8 /* STFileManager.h */,
+				6293652E27BA090F0003A4E8 /* STFileManager.m */,
+			);
+			path = FileManager;
+			sourceTree = "<group>";
+		};
+		629365CC27BA2E7A0003A4E8 /* STArithmetic */ = {
+			isa = PBXGroup;
+			children = (
+				629365EC27BA2F8C0003A4E8 /* main.m */,
+				629365D527BA2EB00003A4E8 /* STSortUtls.c */,
+				629365D227BA2EAF0003A4E8 /* STSortUtls.h */,
+				629365D327BA2EAF0003A4E8 /* STUtls.c */,
+				629365D427BA2EB00003A4E8 /* STUtls.h */,
+			);
+			path = STArithmetic;
+			sourceTree = "<group>";
+		};
+		629365DD27BA2ED20003A4E8 /* STLRUCache */ = {
+			isa = PBXGroup;
+			children = (
+				629365EA27BA2F5C0003A4E8 /* main.m */,
+				629365E427BA2EE50003A4E8 /* STLRUCache.c */,
+				629365E327BA2EE50003A4E8 /* STLRUCache.h */,
+			);
+			path = STLRUCache;
+			sourceTree = "<group>";
+		};
+		629365F627BA3BB90003A4E8 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				629365F727BA3BD20003A4E8 /* STObjectEssenceViewController.h */,
+				629365F827BA3BD20003A4E8 /* STObjectEssenceViewController.m */,
+				629365F927BA3BD20003A4E8 /* STObjectEssenceViewController.xib */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		629365FC27BA3BD60003A4E8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6293655F27BA090F0003A4E8 /* MJClassInfo.h */,
+				6293651727BA090F0003A4E8 /* NSObject+STRuntime.h */,
+				6293654C27BA090F0003A4E8 /* NSObject+STRuntime.m */,
+				6293651327BA090F0003A4E8 /* NSObject+Test.h */,
+				6293654F27BA090F0003A4E8 /* NSObject+Test.m */,
+				6293653E27BA090F0003A4E8 /* STAnimation.h */,
+				6293657827BA090F0003A4E8 /* STAnimation.m */,
+				6293653527BA090F0003A4E8 /* STAnimation+STDog.h */,
+				6293656327BA090F0003A4E8 /* STAnimation+STDog.m */,
+				6293651C27BA090F0003A4E8 /* STAnimation+STPerson.h */,
+				6293654A27BA090F0003A4E8 /* STAnimation+STPerson.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E48EF5A924EE287E0018D0FD = {
+			isa = PBXGroup;
+			children = (
+				6293651127BA090F0003A4E8 /* STSourceCodeProject */,
+				629365CC27BA2E7A0003A4E8 /* STArithmetic */,
+				629365DD27BA2ED20003A4E8 /* STLRUCache */,
+				1B021CEA00537FB9191D7724 /* Frameworks */,
+				3A2FB3E4190D74B9A742D6F3 /* Pods */,
+				E48EF5B324EE287E0018D0FD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E48EF5B324EE287E0018D0FD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E48EF5B224EE287E0018D0FD /* STSourceCodeProject.app */,
+				629365CB27BA2E7A0003A4E8 /* STArithmetic */,
+				629365DC27BA2ED20003A4E8 /* STLRUCache */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		629365CA27BA2E7A0003A4E8 /* STArithmetic */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 629365CF27BA2E7A0003A4E8 /* Build configuration list for PBXNativeTarget "STArithmetic" */;
+			buildPhases = (
+				629365C727BA2E7A0003A4E8 /* Sources */,
+				629365C827BA2E7A0003A4E8 /* Frameworks */,
+				629365C927BA2E7A0003A4E8 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = STArithmetic;
+			productName = STArithmetic;
+			productReference = 629365CB27BA2E7A0003A4E8 /* STArithmetic */;
+			productType = "com.apple.product-type.tool";
+		};
+		629365DB27BA2ED20003A4E8 /* STLRUCache */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 629365E027BA2ED20003A4E8 /* Build configuration list for PBXNativeTarget "STLRUCache" */;
+			buildPhases = (
+				629365D827BA2ED20003A4E8 /* Sources */,
+				629365D927BA2ED20003A4E8 /* Frameworks */,
+				629365DA27BA2ED20003A4E8 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = STLRUCache;
+			productName = STLRUCache;
+			productReference = 629365DC27BA2ED20003A4E8 /* STLRUCache */;
+			productType = "com.apple.product-type.tool";
+		};
+		E48EF5B124EE287E0018D0FD /* STSourceCodeProject */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E48EF5E124EE28840018D0FD /* Build configuration list for PBXNativeTarget "STSourceCodeProject" */;
+			buildPhases = (
+				D9DF4E7A4936BCE1E856B4F8 /* [CP] Check Pods Manifest.lock */,
+				E48EF5AE24EE287E0018D0FD /* Sources */,
+				E48EF5AF24EE287E0018D0FD /* Frameworks */,
+				E48EF5B024EE287E0018D0FD /* Resources */,
+				231C88FF9D47FD2139CC0A5B /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = STSourceCodeProject;
+			productName = Category;
+			productReference = E48EF5B224EE287E0018D0FD /* STSourceCodeProject.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E48EF5AA24EE287E0018D0FD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = ST;
+				LastUpgradeCheck = 1320;
+				ORGANIZATIONNAME = qcraft;
+				TargetAttributes = {
+					629365CA27BA2E7A0003A4E8 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					629365DB27BA2ED20003A4E8 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					E48EF5B124EE287E0018D0FD = {
+						CreatedOnToolsVersion = 11.6;
+					};
+				};
+			};
+			buildConfigurationList = E48EF5AD24EE287E0018D0FD /* Build configuration list for PBXProject "STSourceCodeProject" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E48EF5A924EE287E0018D0FD;
+			productRefGroup = E48EF5B324EE287E0018D0FD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E48EF5B124EE287E0018D0FD /* STSourceCodeProject */,
+				629365CA27BA2E7A0003A4E8 /* STArithmetic */,
+				629365DB27BA2ED20003A4E8 /* STLRUCache */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E48EF5B024EE287E0018D0FD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				629365AD27BA090F0003A4E8 /* STRunloopViewController.xib in Resources */,
+				629365AA27BA090F0003A4E8 /* STRunloopTableViewCell.xib in Resources */,
+				6293659527BA090F0003A4E8 /* Assets.xcassets in Resources */,
+				629365A127BA090F0003A4E8 /* Main.storyboard in Resources */,
+				629365EF27BA32A60003A4E8 /* STEntryViewController.xib in Resources */,
+				629365FB27BA3BD20003A4E8 /* STObjectEssenceViewController.xib in Resources */,
+				6293658227BA090F0003A4E8 /* LaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		231C88FF9D47FD2139CC0A5B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-STSourceCodeProject/Pods-STSourceCodeProject-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-STSourceCodeProject/Pods-STSourceCodeProject-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-STSourceCodeProject/Pods-STSourceCodeProject-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D9DF4E7A4936BCE1E856B4F8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-STSourceCodeProject-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		629365C727BA2E7A0003A4E8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				629365D727BA2EB00003A4E8 /* STSortUtls.c in Sources */,
+				629365ED27BA2F8C0003A4E8 /* main.m in Sources */,
+				629365D627BA2EB00003A4E8 /* STUtls.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		629365D827BA2ED20003A4E8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				629365EB27BA2F5C0003A4E8 /* main.m in Sources */,
+				629365E527BA2EE50003A4E8 /* STLRUCache.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E48EF5AE24EE287E0018D0FD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6293657E27BA090F0003A4E8 /* STBlock.m in Sources */,
+				6293659927BA090F0003A4E8 /* SceneDelegate.m in Sources */,
+				6293659A27BA090F0003A4E8 /* STBinaryTreeNode.m in Sources */,
+				629365F227BA36050003A4E8 /* STEntryData.m in Sources */,
+				6293658727BA090F0003A4E8 /* STView.m in Sources */,
+				629365A327BA090F0003A4E8 /* STAnimation+STPerson.m in Sources */,
+				6293658027BA090F0003A4E8 /* STButton.m in Sources */,
+				629365B027BA090F0003A4E8 /* STAnimation+STDog.m in Sources */,
+				6293658D27BA090F0003A4E8 /* STMultiThreadTest.m in Sources */,
+				6293658927BA090F0003A4E8 /* STTimer.m in Sources */,
+				629365A727BA090F0003A4E8 /* STBaseAnimation.m in Sources */,
+				6293659327BA090F0003A4E8 /* STMRCArray.m in Sources */,
+				629365A927BA090F0003A4E8 /* main.m in Sources */,
+				6293659C27BA090F0003A4E8 /* STKVOTest.m in Sources */,
+				6293659027BA090F0003A4E8 /* STRunloopViewController.m in Sources */,
+				629365F527BA3B2F0003A4E8 /* STBaseViewController.m in Sources */,
+				6293658827BA090F0003A4E8 /* STRunloopTableViewCell.m in Sources */,
+				6293659F27BA090F0003A4E8 /* STWeakTest.m in Sources */,
+				6293659127BA090F0003A4E8 /* STMRCTest.m in Sources */,
+				629365AE27BA090F0003A4E8 /* AppDelegate.m in Sources */,
+				6293658F27BA090F0003A4E8 /* STStudent.m in Sources */,
+				6293659B27BA090F0003A4E8 /* STMRCBaseModel.m in Sources */,
+				629365A027BA090F0003A4E8 /* STKVOBaseModel.m in Sources */,
+				6293658C27BA090F0003A4E8 /* STMRCModel.m in Sources */,
+				629365A527BA090F0003A4E8 /* NSObject+STRuntime.m in Sources */,
+				629365BA27BA090F0003A4E8 /* STAnimation.m in Sources */,
+				629365AB27BA090F0003A4E8 /* STPerson.m in Sources */,
+				629365A627BA090F0003A4E8 /* NSObject+Test.m in Sources */,
+				629365B627BA090F0003A4E8 /* STKVCModel.m in Sources */,
+				6293658427BA090F0003A4E8 /* STProxy.m in Sources */,
+				6293657F27BA090F0003A4E8 /* STSaleTickets.m in Sources */,
+				629365B227BA090F0003A4E8 /* STRootView.m in Sources */,
+				629365B327BA090F0003A4E8 /* STGCD.m in Sources */,
+				6293658627BA090F0003A4E8 /* STOSSpinLock.m in Sources */,
+				629365AC27BA090F0003A4E8 /* STTimerTest.m in Sources */,
+				629365FA27BA3BD20003A4E8 /* STObjectEssenceViewController.m in Sources */,
+				629365B827BA090F0003A4E8 /* STKVOModel.m in Sources */,
+				6293658E27BA090F0003A4E8 /* STFileManager.m in Sources */,
+				629365A827BA090F0003A4E8 /* STKVCTest.m in Sources */,
+				6293659827BA090F0003A4E8 /* STEntryViewController.m in Sources */,
+				6293659427BA090F0003A4E8 /* STBinaryTreeTest.m in Sources */,
+				6293658527BA090F0003A4E8 /* STNextViewController.m in Sources */,
+				6293658B27BA090F0003A4E8 /* STWeakModel.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		629365D027BA2E7A0003A4E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8D4LL3H2G7;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		629365D127BA2E7A0003A4E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8D4LL3H2G7;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		629365E127BA2ED20003A4E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8D4LL3H2G7;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		629365E227BA2ED20003A4E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8D4LL3H2G7;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		E48EF5DF24EE28840018D0FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		E48EF5E024EE28840018D0FD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E48EF5E224EE28840018D0FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5066A12E47B48EED415195B9 /* Pods-STSourceCodeProject.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6JKG74Q9YS;
+				ENABLE_BITCODE = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/Tencent-MapSDK/sdk",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/STSourceCodeProject/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sourcecode.project;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E48EF5E324EE28840018D0FD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AEBD9619FA56F0EE4AE92784 /* Pods-STSourceCodeProject.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6JKG74Q9YS;
+				ENABLE_BITCODE = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/Tencent-MapSDK/sdk",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/STSourceCodeProject/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sourcecode.project;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		629365CF27BA2E7A0003A4E8 /* Build configuration list for PBXNativeTarget "STArithmetic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				629365D027BA2E7A0003A4E8 /* Debug */,
+				629365D127BA2E7A0003A4E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		629365E027BA2ED20003A4E8 /* Build configuration list for PBXNativeTarget "STLRUCache" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				629365E127BA2ED20003A4E8 /* Debug */,
+				629365E227BA2ED20003A4E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E48EF5AD24EE287E0018D0FD /* Build configuration list for PBXProject "STSourceCodeProject" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E48EF5DF24EE28840018D0FD /* Debug */,
+				E48EF5E024EE28840018D0FD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E48EF5E124EE28840018D0FD /* Build configuration list for PBXNativeTarget "STSourceCodeProject" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E48EF5E224EE28840018D0FD /* Debug */,
+				E48EF5E324EE28840018D0FD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E48EF5AA24EE287E0018D0FD /* Project object */;
+}
