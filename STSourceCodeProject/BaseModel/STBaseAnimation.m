@@ -15,8 +15,28 @@
     return self;
 }
 
-- (void)printName {
-    NSLog(@"%s", __func__);
+//- (void)printName {
+//    NSLog(@"%s", __func__);
+//}
+
++ (BOOL)resolveClassMethod:(SEL)sel {
+    return [super resolveClassMethod:sel];
+}
+
++ (BOOL)resolveInstanceMethod:(SEL)sel {
+    return [super resolveInstanceMethod:sel];
+}
+
+- (id)forwardingTargetForSelector:(SEL)aSelector {
+    return [super forwardingTargetForSelector:aSelector];
+}
+
+- (void)forwardInvocation:(NSInvocation *)anInvocation {
+    
+}
+
+- (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector {
+    return [super methodSignatureForSelector:aSelector];
 }
 
 @end

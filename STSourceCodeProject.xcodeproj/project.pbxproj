@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3701EF7A89B8F44776F29B88 /* Pods_STSourceCodeProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DA106113BCD54A5646995B4 /* Pods_STSourceCodeProject.framework */; };
+		62033BC827D846C3009C7E09 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 62033BC727D846C3009C7E09 /* main.m */; };
 		6293657E27BA090F0003A4E8 /* STBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 6293651227BA090F0003A4E8 /* STBlock.m */; };
 		6293657F27BA090F0003A4E8 /* STSaleTickets.m in Sources */ = {isa = PBXBuildFile; fileRef = 6293651627BA090F0003A4E8 /* STSaleTickets.m */; };
 		6293658027BA090F0003A4E8 /* STButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6293651827BA090F0003A4E8 /* STButton.m */; };
@@ -66,6 +67,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		62033BC327D846C3009C7E09 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		629365C927BA2E7A0003A4E8 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -88,6 +98,8 @@
 
 /* Begin PBXFileReference section */
 		5066A12E47B48EED415195B9 /* Pods-STSourceCodeProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STSourceCodeProject.debug.xcconfig"; path = "Target Support Files/Pods-STSourceCodeProject/Pods-STSourceCodeProject.debug.xcconfig"; sourceTree = "<group>"; };
+		62033BC527D846C3009C7E09 /* STObjcBuild */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = STObjcBuild; sourceTree = BUILT_PRODUCTS_DIR; };
+		62033BC727D846C3009C7E09 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6293651227BA090F0003A4E8 /* STBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STBlock.m; sourceTree = "<group>"; };
 		6293651327BA090F0003A4E8 /* NSObject+Test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Test.h"; sourceTree = "<group>"; };
 		6293651427BA090F0003A4E8 /* STKVCTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STKVCTest.h; sourceTree = "<group>"; };
@@ -202,6 +214,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		62033BC227D846C3009C7E09 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		629365C827BA2E7A0003A4E8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -242,6 +261,14 @@
 				AEBD9619FA56F0EE4AE92784 /* Pods-STSourceCodeProject.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		62033BC627D846C3009C7E09 /* STObjcBuild */ = {
+			isa = PBXGroup;
+			children = (
+				62033BC727D846C3009C7E09 /* main.m */,
+			);
+			path = STObjcBuild;
 			sourceTree = "<group>";
 		};
 		6293651127BA090F0003A4E8 /* STSourceCodeProject */ = {
@@ -505,6 +532,7 @@
 				6293651127BA090F0003A4E8 /* STSourceCodeProject */,
 				629365CC27BA2E7A0003A4E8 /* STArithmetic */,
 				629365DD27BA2ED20003A4E8 /* STLRUCache */,
+				62033BC627D846C3009C7E09 /* STObjcBuild */,
 				1B021CEA00537FB9191D7724 /* Frameworks */,
 				3A2FB3E4190D74B9A742D6F3 /* Pods */,
 				E48EF5B324EE287E0018D0FD /* Products */,
@@ -517,6 +545,7 @@
 				E48EF5B224EE287E0018D0FD /* STSourceCodeProject.app */,
 				629365CB27BA2E7A0003A4E8 /* STArithmetic */,
 				629365DC27BA2ED20003A4E8 /* STLRUCache */,
+				62033BC527D846C3009C7E09 /* STObjcBuild */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -524,6 +553,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		62033BC427D846C3009C7E09 /* STObjcBuild */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 62033BCB27D846C3009C7E09 /* Build configuration list for PBXNativeTarget "STObjcBuild" */;
+			buildPhases = (
+				62033BC127D846C3009C7E09 /* Sources */,
+				62033BC227D846C3009C7E09 /* Frameworks */,
+				62033BC327D846C3009C7E09 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = STObjcBuild;
+			productName = STObjcBuild;
+			productReference = 62033BC527D846C3009C7E09 /* STObjcBuild */;
+			productType = "com.apple.product-type.tool";
+		};
 		629365CA27BA2E7A0003A4E8 /* STArithmetic */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 629365CF27BA2E7A0003A4E8 /* Build configuration list for PBXNativeTarget "STArithmetic" */;
@@ -587,6 +633,9 @@
 				LastUpgradeCheck = 1320;
 				ORGANIZATIONNAME = qcraft;
 				TargetAttributes = {
+					62033BC427D846C3009C7E09 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
 					629365CA27BA2E7A0003A4E8 = {
 						CreatedOnToolsVersion = 13.2.1;
 					};
@@ -614,6 +663,7 @@
 				E48EF5B124EE287E0018D0FD /* STSourceCodeProject */,
 				629365CA27BA2E7A0003A4E8 /* STArithmetic */,
 				629365DB27BA2ED20003A4E8 /* STLRUCache */,
+				62033BC427D846C3009C7E09 /* STObjcBuild */,
 			);
 		};
 /* End PBXProject section */
@@ -678,6 +728,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		62033BC127D846C3009C7E09 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				62033BC827D846C3009C7E09 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		629365C727BA2E7A0003A4E8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -750,6 +808,34 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		62033BC927D846C3009C7E09 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6JKG74Q9YS;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		62033BCA27D846C3009C7E09 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6JKG74Q9YS;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
 		629365D027BA2E7A0003A4E8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -971,6 +1057,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		62033BCB27D846C3009C7E09 /* Build configuration list for PBXNativeTarget "STObjcBuild" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				62033BC927D846C3009C7E09 /* Debug */,
+				62033BCA27D846C3009C7E09 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		629365CF27BA2E7A0003A4E8 /* Build configuration list for PBXNativeTarget "STArithmetic" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
