@@ -32,7 +32,13 @@
 - (void)testMethod {
 //    [self.animation printName];
 //    objc_msgSend(self.animation, @selector(printName));
-    ((void (*)(id, SEL))objc_msgSend)(self.animation, @selector(printName));
+//    ((void (*)(id, SEL))objc_msgSend)(self.animation, @selector(printName));
+//    NSString *name = @"21";
+//    NSString *age = @"23";
+//    id cls = [STAnimation class];
+//    void *obj = &cls;
+//    [(__bridge id)obj printName];
+//    NSLog(@"");
 }
 
 @end

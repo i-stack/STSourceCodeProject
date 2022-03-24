@@ -13,7 +13,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface STAnimation : STBaseAnimation
 
+@property (nonatomic,strong)NSString *name;
+
 - (void)printName;
+
+- (void)setAddress:(NSString *)address isAtomic:(BOOL)isAtomic;
+- (NSString *)getAddressIsAtomic:(BOOL)isAtomic;
 
 @end
 

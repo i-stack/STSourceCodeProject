@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3701EF7A89B8F44776F29B88 /* Pods_STSourceCodeProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DA106113BCD54A5646995B4 /* Pods_STSourceCodeProject.framework */; };
 		62033BC827D846C3009C7E09 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 62033BC727D846C3009C7E09 /* main.m */; };
+		624BB3AD27E892F00003E906 /* Helloworld.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 624BB3AA27E892F00003E906 /* Helloworld.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		6293657E27BA090F0003A4E8 /* STBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 6293651227BA090F0003A4E8 /* STBlock.m */; };
 		6293657F27BA090F0003A4E8 /* STSaleTickets.m in Sources */ = {isa = PBXBuildFile; fileRef = 6293651627BA090F0003A4E8 /* STSaleTickets.m */; };
 		6293658027BA090F0003A4E8 /* STButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6293651827BA090F0003A4E8 /* STButton.m */; };
@@ -53,7 +54,7 @@
 		629365B327BA090F0003A4E8 /* STGCD.m in Sources */ = {isa = PBXBuildFile; fileRef = 6293656927BA090F0003A4E8 /* STGCD.m */; };
 		629365B627BA090F0003A4E8 /* STKVCModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6293657327BA090F0003A4E8 /* STKVCModel.m */; };
 		629365B827BA090F0003A4E8 /* STKVOModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6293657527BA090F0003A4E8 /* STKVOModel.m */; };
-		629365BA27BA090F0003A4E8 /* STAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6293657827BA090F0003A4E8 /* STAnimation.m */; };
+		629365BA27BA090F0003A4E8 /* STAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6293657827BA090F0003A4E8 /* STAnimation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		629365D627BA2EB00003A4E8 /* STUtls.c in Sources */ = {isa = PBXBuildFile; fileRef = 629365D327BA2EAF0003A4E8 /* STUtls.c */; };
 		629365D727BA2EB00003A4E8 /* STSortUtls.c in Sources */ = {isa = PBXBuildFile; fileRef = 629365D527BA2EB00003A4E8 /* STSortUtls.c */; };
 		629365E527BA2EE50003A4E8 /* STLRUCache.c in Sources */ = {isa = PBXBuildFile; fileRef = 629365E427BA2EE50003A4E8 /* STLRUCache.c */; };
@@ -100,6 +101,9 @@
 		5066A12E47B48EED415195B9 /* Pods-STSourceCodeProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STSourceCodeProject.debug.xcconfig"; path = "Target Support Files/Pods-STSourceCodeProject/Pods-STSourceCodeProject.debug.xcconfig"; sourceTree = "<group>"; };
 		62033BC527D846C3009C7E09 /* STObjcBuild */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = STObjcBuild; sourceTree = BUILT_PRODUCTS_DIR; };
 		62033BC727D846C3009C7E09 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		624BB3AA27E892F00003E906 /* Helloworld.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Helloworld.pbobjc.m; sourceTree = "<group>"; };
+		624BB3AB27E892F00003E906 /* Helloworld.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Helloworld.pbobjc.h; sourceTree = "<group>"; };
+		624BB3AC27E892F00003E906 /* helloworld.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.protobuf; path = helloworld.proto; sourceTree = "<group>"; };
 		6293651227BA090F0003A4E8 /* STBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STBlock.m; sourceTree = "<group>"; };
 		6293651327BA090F0003A4E8 /* NSObject+Test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Test.h"; sourceTree = "<group>"; };
 		6293651427BA090F0003A4E8 /* STKVCTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STKVCTest.h; sourceTree = "<group>"; };
@@ -271,9 +275,28 @@
 			path = STObjcBuild;
 			sourceTree = "<group>";
 		};
+		624BB3A827E892830003E906 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		624BB3A927E892A60003E906 /* GRPC */ = {
+			isa = PBXGroup;
+			children = (
+				624BB3AB27E892F00003E906 /* Helloworld.pbobjc.h */,
+				624BB3AA27E892F00003E906 /* Helloworld.pbobjc.m */,
+				624BB3AC27E892F00003E906 /* helloworld.proto */,
+			);
+			path = GRPC;
+			sourceTree = "<group>";
+		};
 		6293651127BA090F0003A4E8 /* STSourceCodeProject */ = {
 			isa = PBXGroup;
 			children = (
+				624BB3A927E892A60003E906 /* GRPC */,
+				624BB3A827E892830003E906 /* Sources */,
 				6293656727BA090F0003A4E8 /* AppDelegate */,
 				6293653927BA090F0003A4E8 /* Assets.xcassets */,
 				6293657727BA090F0003A4E8 /* Info.plist */,
@@ -783,6 +806,7 @@
 				6293659B27BA090F0003A4E8 /* STMRCBaseModel.m in Sources */,
 				629365A027BA090F0003A4E8 /* STKVOBaseModel.m in Sources */,
 				6293658C27BA090F0003A4E8 /* STMRCModel.m in Sources */,
+				624BB3AD27E892F00003E906 /* Helloworld.pbobjc.m in Sources */,
 				629365A527BA090F0003A4E8 /* NSObject+STRuntime.m in Sources */,
 				629365BA27BA090F0003A4E8 /* STAnimation.m in Sources */,
 				629365AB27BA090F0003A4E8 /* STPerson.m in Sources */,

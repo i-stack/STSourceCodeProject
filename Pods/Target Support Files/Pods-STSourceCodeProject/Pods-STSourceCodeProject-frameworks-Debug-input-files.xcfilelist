@@ -1,3 +1,4 @@
 ${PODS_ROOT}/Target Support Files/Pods-STSourceCodeProject/Pods-STSourceCodeProject-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework
 ${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework
 ${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework
