@@ -168,3 +168,19 @@ struct weak_entry_t {
 
 <img width="768" alt="oparam location Address of weak ptr" src="https://user-images.githubusercontent.com/4375433/160075075-2fa35d07-ac42-4833-b3b9-43496403f610.png">
 
+* ****storeWeak****
+
+<img width="1112" alt="(have0id)" src="https://user-images.githubusercontent.com/4375433/160075265-8e2a7262-02ee-4959-8db6-dbe230d6f384.png">
+
+* ****weak_unregister_no_lock****
+
+<img width="749" alt="Gparam weak table The qloba1 weak table" src="https://user-images.githubusercontent.com/4375433/160075388-1da4fc2c-00e2-4bee-8f7b-8678be7c2490.png">
+
+* ****weak_register_no_lock****
+
+<img width="1029" alt="Reoisters a nen (obJeoty weak pointer) oair  Creates a new weak" src="https://user-images.githubusercontent.com/4375433/160075462-7863f00c-335e-4c61-8ade-bd3e963c694a.png">
+
+* ***weak销毁流程***
+
+![dealloc](https://user-images.githubusercontent.com/4375433/160075549-b0e9e431-b341-42e7-8b3d-4c7bae98c1ba.png)
+
