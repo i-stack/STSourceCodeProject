@@ -159,3 +159,12 @@ struct weak_entry_t {
 > 定长数组到动态数组的切换，首先会将原来定长数组中的内容转移到动态数组中，然后再在动态数组中插入新的元素。
 > 
 > 而对于动态数组中元素个数大于或等于总空间的 3/4 时，会对动态数组进行总空间 * 2 的扩容。
+
+* ***weak调用流程***
+
+<img width="728" alt="weak_entry foe referent" src="https://user-images.githubusercontent.com/4375433/160074921-798f5921-234b-48eb-b8e7-38155bbb5a00.png">
+
+* ****objc_initWeak****
+
+<img width="768" alt="oparam location Address of weak ptr" src="https://user-images.githubusercontent.com/4375433/160075075-2fa35d07-ac42-4833-b3b9-43496403f610.png">
+
