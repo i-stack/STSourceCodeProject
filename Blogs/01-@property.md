@@ -14,7 +14,7 @@
 
 ### 关键词
 
-#### **存取器方法**
+* #### **存取器方法**
 > 1. getter=getterName
 > 2. setter=setterName
 
@@ -30,10 +30,10 @@
 
 // 指定setter方法名为`setNickName:`
 @property (nonatomic, copy, setter=setNickName:) NSString *name;
-
 ```
 ---
-#### **读写权限**
+
+* #### **读写权限**
 > 1. readonly: 表示只生成 `getter` ，不生成 `setter` ，即只可读，不可以修改。
 > 2. readwrite: 表示自动生成对应的 `getter` 和 `setter` 方法，即可读可写权限， `readwrite`是编译器的默认选项。
 ---
