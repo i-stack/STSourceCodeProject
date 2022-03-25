@@ -27,7 +27,6 @@
 // 指定setter方法名为`setNickName:`
 @property (nonatomic, copy, setter=setNickName:) NSString *name;
 ```
-
 ### 读写权限
 
 > readonly: 表示只生成 `getter` ，不生成 `setter` ，即只可读，不可以修改。
