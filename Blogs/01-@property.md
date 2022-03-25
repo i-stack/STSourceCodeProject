@@ -196,7 +196,6 @@ void objc_setProperty_atomic(id self, SEL _cmd, id newValue, ptrdiff_t offset) {
 void objc_setProperty_nonatomic(id self, SEL _cmd, id newValue, ptrdiff_t offset) {
     reallySetProperty(self, _cmd, newValue, offset, false, false, false);
 }
-
 ```
 
 * ***reallySetProperty***
