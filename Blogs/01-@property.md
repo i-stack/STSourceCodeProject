@@ -101,6 +101,14 @@ ARC 使用 `strong` 代替。
 > 
 > 最后weak_entry_insert 把entry加⼊到我们的weak_table。
 
-* ****weak_table_t底层结构
+* ***weak_table_t底层结构***
 
 <img width="718" alt="The qlobal weak references table  Stores obiect ids as keys," src="https://user-images.githubusercontent.com/4375433/160064307-a73bcbae-b936-4253-adac-62e81303c9e0.png">
+
+> weak_entry_t *weak_entries; // 存储 weak 对象信息的 hash 数组
+> 
+> size_t num_entries; // 数组中元素的个数
+> 
+> uintptr_t mask; 
+> 
+> uintptr_t max_hash_displacement; // hash 元素最大偏移值
