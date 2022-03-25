@@ -53,35 +53,34 @@ ARC 使用 `strong` 代替。
 
 * **copy**
 
-* 拷贝的目的: 产生一个副本对象，与源对象互不影响。
+拷贝的目的: 产生一个副本对象，与源对象互不影响。
 
 > 浅拷贝：指针拷贝，不产生新的对象，源对象的引用计数器+1；
-
+> 
 > 深拷贝：对象拷贝，会产生新的对象，源对象的引用计数器不变；
 
-```
-// 对可变对象进行copy和mutableCopy都是深拷贝；
+- 对可变对象进行copy和mutableCopy都是深拷贝；
 
-// 对不可变对象进行copy是浅拷贝，mutableCopy是深拷贝；
+- 对不可变对象进行copy是浅拷贝，mutableCopy是深拷贝；
 
-// copy方法返回的对象都是不可变对象；
+- copy方法返回的对象都是不可变对象；
 
-// mutableCopy返回的对象都是可变对象；
+- mutableCopy返回的对象都是可变对象；
 
-// 集合中的元素不管是copy还是mutableCopy，其内部元素地址都是浅拷贝。
-```
-* 自定义对象实现拷贝
+- 集合中的元素不管是copy还是mutableCopy，其内部元素地址都是浅拷贝。
+
+* **自定义对象实现拷贝**
 
 > 自定义类遵守 `<NSCopying, NSMutableCopying>`协议；
-
+> 
 > 重写 copyWithZone: 和 mutableCopyWithZone: 两个方法；
-
+> 
 > 自定义对象实现copy和mutableCopy都是深拷贝。
 
-* 完全深拷贝
+* **完全深拷贝**
 
 > initWithArray:copyItems:YES;
-
+> 
 > 使用归档和解档来实现对象的完全深拷贝;
 
 * **weak**
