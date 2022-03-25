@@ -94,14 +94,13 @@ ARC 使用 `strong` 代替。
 **weak的底层实现原理**
 
 > Runtime维护了一个弱引用表，将所有弱引用obj的指针地址都保存在obj对应的weak_entry_t中;
-
+> 
 > 创建时，先从找到全局散列表SideTables中对应的弱引用表weak_table;
-
+> 
 > 在weak_table中被弱引用对象的referent,并创建或者插入对应的weak_entry_t;
-
+> 
 > 然后append_referrer(entry, referrer)将我的新弱引⽤的对象加进去entry;
-
+> 
 > 最后weak_entry_insert 把entry加⼊到我们的weak_table。
 
-
-![Uploading The qlobal weak references table. Stores obiect ids as keys,.png…]()
+<img width="718" alt="The qlobal weak references table  Stores obiect ids as keys," src="https://user-images.githubusercontent.com/4375433/160064307-a73bcbae-b936-4253-adac-62e81303c9e0.png">
