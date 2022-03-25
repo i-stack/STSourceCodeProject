@@ -203,6 +203,8 @@ void objc_setProperty_nonatomic(id self, SEL _cmd, id newValue, ptrdiff_t offset
  
 ![Pasted Graphic 1](https://user-images.githubusercontent.com/4375433/160110248-00879939-2ba1-4716-97a1-d2443721d8eb.png)
 
+> spinlock_t 定义：typedef mutex_t spinlock_t;
+
 * ***getter方法***
 
 ![1d cbjc_getProperty(id self SEL cnd, ptrdifft offset, Bo0L atonic)](https://user-images.githubusercontent.com/4375433/160108832-b4e96354-253d-4f37-a17a-df67fc7c2871.png)
