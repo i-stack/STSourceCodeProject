@@ -12,9 +12,8 @@
 
 `@property` 的本质是：`ivar` (实例变量) + `getter` + `setter` ；
 
-### 关键词
+### **存取器方法**
 
-* #### **存取器方法**
 > 1. getter=getterName
 > 2. setter=setterName
 
