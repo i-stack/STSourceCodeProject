@@ -85,9 +85,7 @@ ARC 使用 `strong` 代替。
 
 * **weak**
 
-> 表示弱引用关系，所引用对象的计数器不会加1，并在引用对象被释放的时候自动被设置为 nil.
-> 
-> `weak` 也用来修饰 `delegate` ，避免循环引用。
+> 表示弱引用关系，所引用对象的计数器不会加1，并在引用对象被释放的时候自动被设置为 nil。
 > 
 > `weak` 只能用来修饰对象类型，且是在 `ARC` 下新引入的修饰词，`MRC` 下相当于使用 `assign`。
 
@@ -102,5 +100,7 @@ ARC 使用 `strong` 代替。
 > 然后append_referrer(entry, referrer)将我的新弱引⽤的对象加进去entry;
 > 
 > 最后weak_entry_insert 把entry加⼊到我们的weak_table。
+
+* ****weak_entry_t底层结构****
 
 <img width="718" alt="The qlobal weak references table  Stores obiect ids as keys," src="https://user-images.githubusercontent.com/4375433/160064307-a73bcbae-b936-4253-adac-62e81303c9e0.png">
