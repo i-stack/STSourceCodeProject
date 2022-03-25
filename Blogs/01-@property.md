@@ -7,7 +7,7 @@
 > @property (nonatomic, copy) NSString *name;
 
 * ### 本质
-`@property` 的本质其实是：`ivar` (实例变量) + `getter` + `setter` ；
+`@property` 的本质是：`ivar` (实例变量) + `getter` + `setter` ；
 
 * ### 关键词
 
