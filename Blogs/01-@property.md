@@ -200,8 +200,8 @@ void objc_setProperty_nonatomic(id self, SEL _cmd, id newValue, ptrdiff_t offset
 ```
 
 * ***reallySetProperty***
-
-![tle Inline veid reallysatProserty(ld self  stu-cad  1d mewvalue  ptralrf-t efrset, tool atoele, boal caev  tool](https://user-images.githubusercontent.com/4375433/160108697-dcafadcc-7399-4a83-ae84-bcd84de72c88.png)
+ 
+![Pasted Graphic 1](https://user-images.githubusercontent.com/4375433/160110248-00879939-2ba1-4716-97a1-d2443721d8eb.png)
 
 * ***getter方法***
 
