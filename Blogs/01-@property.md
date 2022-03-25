@@ -58,7 +58,7 @@ ARC 使用 `strong` 代替。
 > 浅拷贝：指针拷贝，不产生新的对象，源对象的引用计数器+1；
 > 
 > 深拷贝：对象拷贝，会产生新的对象，源对象的引用计数器不变；
-
+```
 - 对可变对象进行copy和mutableCopy都是深拷贝；
 
 - 对不可变对象进行copy是浅拷贝，mutableCopy是深拷贝；
@@ -68,7 +68,7 @@ ARC 使用 `strong` 代替。
 - mutableCopy返回的对象都是可变对象；
 
 - 集合中的元素不管是copy还是mutableCopy，其内部元素地址都是浅拷贝。
-
+```
 * **自定义对象实现拷贝**
 
 > 自定义类遵守 `<NSCopying, NSMutableCopying>`协议；
