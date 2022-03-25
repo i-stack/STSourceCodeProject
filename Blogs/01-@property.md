@@ -112,3 +112,50 @@ ARC 使用 `strong` 代替。
 > uintptr_t mask; 
 > 
 > uintptr_t max_hash_displacement; // hash 元素最大偏移值
+
+* ***weak_entry_t底层结构***
+
+```
+#define WEAK_INLINE_COUNT 4
+#define REFERRERS_OUT_OF_LINE 2
+
+struct weak_entry_t {
+    DisguisedPtr<objc_object> referent;
+    union {
+        struct {
+            weak_referrer_t *referrers; // 弱引用该对象的对象指针的hash数组
+            uintptr_t        out_of_line_ness : 2;
+            uintptr_t        num_refs : PTR_MINUS_2;
+            uintptr_t        mask;
+            uintptr_t        max_hash_displacement;
+        };
+        // 定长数组，最大值为4，苹果考虑到一半弱引用的指针个数不会超过这个数，因此为了提升运行效率，一次分配一整块的连续内存空间
+        struct {
+            // out_of_line_ness field is low bits of inline_referrers[1]
+            weak_referrer_t  inline_referrers[WEAK_INLINE_COUNT];
+        };
+    };
+
+    // 判断当前是动态数组，还是定长数组
+    bool out_of_line() {
+        return (out_of_line_ness == REFERRERS_OUT_OF_LINE);
+    }
+
+    weak_entry_t& operator=(const weak_entry_t& other) {
+        memcpy(this, &other, sizeof(other));
+        return *this;
+    }
+
+    weak_entry_t(objc_object *newReferent, objc_object **newReferrer)
+        : referent(newReferent)
+    {
+        inline_referrers[0] = newReferrer;
+        for (int i = 1; i < WEAK_INLINE_COUNT; i++) {
+            inline_referrers[i] = nil;
+        }
+    }
+};
+```
+> 定长数组到动态数组的切换，首先会将原来定长数组中的内容转移到动态数组中，然后再在动态数组中插入新的元素。
+> 
+> 而对于动态数组中元素个数大于或等于总空间的 3/4 时，会对动态数组进行总空间 * 2 的扩容。
