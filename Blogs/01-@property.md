@@ -1,14 +1,17 @@
 # iOS 属性 @property 探究
 
-* ### 代码规范
+## 代码规范
 
 声明 `@property` 时，注意关键词及字符间的空格。
 
 > @property (nonatomic, copy) NSString *name;
+> 
+> @property (nonatomic, copy, readonly) NSString *name;
 
-* ### 本质
+## 本质
+
 `@property` 的本质是：`ivar` (实例变量) + `getter` + `setter` ；
----
+
 * ### 关键词
 
 #### **存取器方法**
