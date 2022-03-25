@@ -184,3 +184,25 @@ struct weak_entry_t {
 
 ![dealloc](https://user-images.githubusercontent.com/4375433/160075549-b0e9e431-b341-42e7-8b3d-4c7bae98c1ba.png)
 
+* **nonatomic、atomic**
+
+****setter方法****
+
+```
+void objc_setProperty_atomic(id self, SEL _cmd, id newValue, ptrdiff_t offset) {
+    reallySetProperty(self, _cmd, newValue, offset, true, false, false);
+}
+
+void objc_setProperty_nonatomic(id self, SEL _cmd, id newValue, ptrdiff_t offset) {
+    reallySetProperty(self, _cmd, newValue, offset, false, false, false);
+}
+
+```
+
+****reallySetProperty****
+
+![tle Inline veid reallysatProserty(ld self  stu-cad  1d mewvalue  ptralrf-t efrset, tool atoele, boal caev  tool](https://user-images.githubusercontent.com/4375433/160108697-dcafadcc-7399-4a83-ae84-bcd84de72c88.png)
+
+****getter方法****
+
+![1d cbjc_getProperty(id self SEL cnd, ptrdifft offset, Bo0L atonic)](https://user-images.githubusercontent.com/4375433/160108832-b4e96354-253d-4f37-a17a-df67fc7c2871.png)
