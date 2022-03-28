@@ -184,3 +184,36 @@ struct weak_entry_t {
 
 ![dealloc](https://user-images.githubusercontent.com/4375433/160075549-b0e9e431-b341-42e7-8b3d-4c7bae98c1ba.png)
 
+### nonatomic、atomic
+
+* ***setter方法***
+
+```
+void objc_setProperty_atomic(id self, SEL _cmd, id newValue, ptrdiff_t offset) {
+    reallySetProperty(self, _cmd, newValue, offset, true, false, false);
+}
+
+void objc_setProperty_nonatomic(id self, SEL _cmd, id newValue, ptrdiff_t offset) {
+    reallySetProperty(self, _cmd, newValue, offset, false, false, false);
+}
+```
+
+* ***reallySetProperty***
+ 
+![Pasted Graphic 1](https://user-images.githubusercontent.com/4375433/160110248-00879939-2ba1-4716-97a1-d2443721d8eb.png)
+
+> spinlock_t 定义：typedef mutex_t spinlock_t;
+
+* ***getter方法***
+
+![1d cbjc_getProperty(id self SEL cnd, ptrdifft offset, Bo0L atonic)](https://user-images.githubusercontent.com/4375433/160108832-b4e96354-253d-4f37-a17a-df67fc7c2871.png)
+
+> atomic只能保证setter、getter方法中线程安全；
+
+* ***例子：***
+
+![thread](https://user-images.githubusercontent.com/4375433/160111161-cdc53154-a56f-467e-853c-c89d1f6a414e.png)
+
+> 该段代码中线程B容易crash，因为在前一刻读取length的时候self.stringA = @"a very long string"，下一刻读取substring的时候线程A已经将self.stringA赋值为@"string"，此时调用substringWithRang:NSMakeRange(0, 10)方法会出现***out of bounds的Exception***。
+> 
+> atomic在外界的多线程中并不安全。
