@@ -1,8 +1,72 @@
-# iOS 内存管理 探究
+# iOS @synchronized 探究
 
-### 内存管理
+#### 在多个线程访问同一块资源的时候，我们会添加@synchronized来避免引发数据错乱和数据安全的问题。
 
-* **iOS下内存管理的基本思想就是引用计数，通过对象的引用计数来对对象的生命周期进行管理，主要有两种方式：**
+### 知识储备
+
+```
+typedef struct alignas(CacheLineSize) SyncData {
+    struct SyncData* nextData;
+    DisguisedPtr<objc_object> object;
+    int32_t threadCount;  // number of THREADS using this block
+    recursive_mutex_t mutex;
+} SyncData;
+
+typedef struct {
+    SyncData *data;
+    unsigned int lockCount;  // number of times THIS THREAD locked this block
+} SyncCacheItem;
+
+typedef struct SyncCache {
+    unsigned int allocated;
+    unsigned int used;
+    SyncCacheItem list[0];
+} SyncCache;
+
+/*
+  Fast cache: two fixed pthread keys store a single SyncCacheItem. 
+  This avoids malloc of the SyncCache for threads that only synchronize 
+  a single object at a time.
+  SYNC_DATA_DIRECT_KEY  == SyncCacheItem.data
+  SYNC_COUNT_DIRECT_KEY == SyncCacheItem.lockCount
+ */
+
+struct SyncList {
+    SyncData *data;
+    spinlock_t lock;
+
+    constexpr SyncList() : data(nil), lock(fork_unsafe_lock) { }
+};
+
+// Use multiple parallel lists to decrease contention among unrelated objects.
+#define LOCK_FOR_OBJ(obj) sDataLists[obj].lock
+#define LIST_FOR_OBJ(obj) sDataLists[obj].data
+static StripedMap<SyncList> sDataLists;
+```
+
+* **objc_sync_enter(id obj)**
+
+```
+// Begin synchronizing on 'obj'. 
+// Allocates recursive mutex associated with 'obj' if needed.
+// Returns OBJC_SYNC_SUCCESS once lock is acquired.  
+int objc_sync_enter(id obj) {
+    int result = OBJC_SYNC_SUCCESS;
+    if (obj) {
+        SyncData* data = id2data(obj, ACQUIRE);
+        ASSERT(data);
+        data->mutex.lock();
+    } else {
+        // @synchronized(nil) does nothing
+        if (DebugNilSync) {
+            _objc_inform("NIL SYNC DEBUG: @synchronized(nil); set a breakpoint on objc_sync_nil to debug");
+        }
+        objc_sync_nil();
+    }
+    return result;
+}
+
+```
 
 > MRR(manual retail-relesae)，手动管理对象的生命周期；
 > 
