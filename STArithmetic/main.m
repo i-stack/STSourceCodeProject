@@ -284,19 +284,47 @@ int lengthOfLongestSubstring(char * s){
     return maxLength;
 }
 
+bool containsDuplicate(int* nums, int numsSize) {
+    bool result = false;
+    if (numsSize < 1) return false;
+    int minValue = nums[0];
+    int maxValue = nums[0];
+    for (int i = 1; i < numsSize; i++) {
+        if (nums[i] < minValue) minValue = nums[i];
+        if (nums[i] > maxValue) maxValue = nums[i];
+    }
+    int mapCount = maxValue - minValue + 1;
+    int *map = (int *)malloc(sizeof(int) * mapCount);
+    for (int i = 0; i < mapCount; i++) {
+        map[i] = 0;
+    }
+    for (int i = 0; i < numsSize; i++) {
+        int value = nums[i] - minValue;
+        map[value]++;
+        if (map[value] > 1) {
+            result = true;
+            break;
+        }
+    }
+    return result;
+}
+
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        /* 排序测试 */
-        enum SortType type;
-        type = InsertSort;
-        testSort(type);
         
-        /* 二分查找 */
-        STRandomArrayInfo *info = generateRandomArray(0, 100);
-        testBinarySearch(info);
-        testBinarySearchRange(info);
-       
-        lengthOfLongestSubstring("abcabcccb");
+//        enum SortType type;
+//        type = InsertSort;
+//        testSort(type);
+//
+//        STRandomArrayInfo *info = generateRandomArray(0, 100);
+//        testBinarySearch(info);
+//        testBinarySearchRange(info);
+//
+//        lengthOfLongestSubstring("abcabcccb");
+        
+        int nums[4] = {1,2,4,3};
+        int *p = nums;
+        containsDuplicate(p, 4);
 
     }
     return 0;

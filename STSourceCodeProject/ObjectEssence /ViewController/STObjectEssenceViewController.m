@@ -9,6 +9,8 @@
 #import "STObjectEssenceViewController.h"
 #import "STAnimation.h"
 #import <objc/message.h>
+#import "STOSSpinLock.h"
+#import "STMultipleReadSingleWrite.h"
 
 @interface STObjectEssenceViewController ()
 
@@ -26,7 +28,7 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    [self testMethod];
+    [self testMultipleReadSingleWrite];
 }
 
 - (void)testMethod {
@@ -39,6 +41,16 @@
 //    void *obj = &cls;
 //    [(__bridge id)obj printName];
 //    NSLog(@"");
+}
+
+- (void)testTickets {
+    STOSSpinLock *lock = [[STOSSpinLock alloc]init];
+    [lock saleTickets];
+}
+
+- (void)testMultipleReadSingleWrite {
+    STMultipleReadSingleWrite *lock = [[STMultipleReadSingleWrite alloc]init];
+    [lock testMultipleReadSingleWrite];
 }
 
 @end

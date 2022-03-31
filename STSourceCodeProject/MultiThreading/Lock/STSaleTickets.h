@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+multipleReadSingleWrite
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface STSaleTickets : NSObject

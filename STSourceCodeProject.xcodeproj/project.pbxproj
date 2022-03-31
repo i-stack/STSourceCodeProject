@@ -10,8 +10,9 @@
 		3701EF7A89B8F44776F29B88 /* Pods_STSourceCodeProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DA106113BCD54A5646995B4 /* Pods_STSourceCodeProject.framework */; };
 		62033BC827D846C3009C7E09 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 62033BC727D846C3009C7E09 /* main.m */; };
 		624BB3AD27E892F00003E906 /* Helloworld.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 624BB3AA27E892F00003E906 /* Helloworld.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		624CE2DA27F43A7C00320636 /* STSourceCodeProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 624CE2D927F43A7C00320636 /* STSourceCodeProjectTests.m */; };
 		6293657E27BA090F0003A4E8 /* STBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 6293651227BA090F0003A4E8 /* STBlock.m */; };
-		6293657F27BA090F0003A4E8 /* STSaleTickets.m in Sources */ = {isa = PBXBuildFile; fileRef = 6293651627BA090F0003A4E8 /* STSaleTickets.m */; };
+		6293657F27BA090F0003A4E8 /* STMultipleReadSingleWrite.m in Sources */ = {isa = PBXBuildFile; fileRef = 6293651627BA090F0003A4E8 /* STMultipleReadSingleWrite.m */; };
 		6293658027BA090F0003A4E8 /* STButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6293651827BA090F0003A4E8 /* STButton.m */; };
 		6293658227BA090F0003A4E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6293651A27BA090F0003A4E8 /* LaunchScreen.storyboard */; };
 		6293658427BA090F0003A4E8 /* STProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6293651E27BA090F0003A4E8 /* STProxy.m */; };
@@ -67,6 +68,16 @@
 		629365FB27BA3BD20003A4E8 /* STObjectEssenceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 629365F927BA3BD20003A4E8 /* STObjectEssenceViewController.xib */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		624CE2D327F4394300320636 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E48EF5AA24EE287E0018D0FD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E48EF5B124EE287E0018D0FD;
+			remoteInfo = STSourceCodeProject;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		62033BC327D846C3009C7E09 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -104,11 +115,13 @@
 		624BB3AA27E892F00003E906 /* Helloworld.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Helloworld.pbobjc.m; sourceTree = "<group>"; };
 		624BB3AB27E892F00003E906 /* Helloworld.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Helloworld.pbobjc.h; sourceTree = "<group>"; };
 		624BB3AC27E892F00003E906 /* helloworld.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.protobuf; path = helloworld.proto; sourceTree = "<group>"; };
+		624CE2CF27F4394300320636 /* STSourceCodeProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = STSourceCodeProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		624CE2D927F43A7C00320636 /* STSourceCodeProjectTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STSourceCodeProjectTests.m; sourceTree = "<group>"; };
 		6293651227BA090F0003A4E8 /* STBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STBlock.m; sourceTree = "<group>"; };
 		6293651327BA090F0003A4E8 /* NSObject+Test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Test.h"; sourceTree = "<group>"; };
 		6293651427BA090F0003A4E8 /* STKVCTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STKVCTest.h; sourceTree = "<group>"; };
 		6293651527BA090F0003A4E8 /* STBaseAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STBaseAnimation.h; sourceTree = "<group>"; };
-		6293651627BA090F0003A4E8 /* STSaleTickets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STSaleTickets.m; sourceTree = "<group>"; };
+		6293651627BA090F0003A4E8 /* STMultipleReadSingleWrite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STMultipleReadSingleWrite.m; sourceTree = "<group>"; };
 		6293651727BA090F0003A4E8 /* NSObject+STRuntime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+STRuntime.h"; sourceTree = "<group>"; };
 		6293651827BA090F0003A4E8 /* STButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STButton.m; sourceTree = "<group>"; };
 		6293651A27BA090F0003A4E8 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -152,7 +165,7 @@
 		6293654A27BA090F0003A4E8 /* STAnimation+STPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "STAnimation+STPerson.m"; sourceTree = "<group>"; };
 		6293654C27BA090F0003A4E8 /* NSObject+STRuntime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+STRuntime.m"; sourceTree = "<group>"; };
 		6293654D27BA090F0003A4E8 /* STButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STButton.h; sourceTree = "<group>"; };
-		6293654E27BA090F0003A4E8 /* STSaleTickets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STSaleTickets.h; sourceTree = "<group>"; };
+		6293654E27BA090F0003A4E8 /* STMultipleReadSingleWrite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STMultipleReadSingleWrite.h; sourceTree = "<group>"; };
 		6293654F27BA090F0003A4E8 /* NSObject+Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Test.m"; sourceTree = "<group>"; };
 		6293655027BA090F0003A4E8 /* STBaseAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STBaseAnimation.m; sourceTree = "<group>"; };
 		6293655127BA090F0003A4E8 /* STKVCTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STKVCTest.m; sourceTree = "<group>"; };
@@ -219,6 +232,13 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		62033BC227D846C3009C7E09 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		624CE2CC27F4394300320636 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -292,6 +312,14 @@
 			path = GRPC;
 			sourceTree = "<group>";
 		};
+		624CE2D027F4394300320636 /* STSourceCodeProjectTests */ = {
+			isa = PBXGroup;
+			children = (
+				624CE2D927F43A7C00320636 /* STSourceCodeProjectTests.m */,
+			);
+			path = STSourceCodeProjectTests;
+			sourceTree = "<group>";
+		};
 		6293651127BA090F0003A4E8 /* STSourceCodeProject */ = {
 			isa = PBXGroup;
 			children = (
@@ -306,7 +334,6 @@
 				629365BB27BA09D00003A4E8 /* Block */,
 				629365C627BA0B7A0003A4E8 /* FileManager */,
 				629365BC27BA09E90003A4E8 /* KVO_KVC */,
-				629365BF27BA0A8C0003A4E8 /* Lock */,
 				629365BD27BA0A1B0003A4E8 /* MemoryManager */,
 				6293652F27BA090F0003A4E8 /* MultiThreading */,
 				6293652A27BA090F0003A4E8 /* ObjectEssence  */,
@@ -329,6 +356,7 @@
 		6293652F27BA090F0003A4E8 /* MultiThreading */ = {
 			isa = PBXGroup;
 			children = (
+				629365BF27BA0A8C0003A4E8 /* Lock */,
 				6293653227BA090F0003A4E8 /* STGCD.h */,
 				6293656927BA090F0003A4E8 /* STGCD.m */,
 				6293656F27BA090F0003A4E8 /* STMultiThreadTest.h */,
@@ -418,8 +446,8 @@
 			children = (
 				6293655727BA090F0003A4E8 /* STOSSpinLock.h */,
 				6293652427BA090F0003A4E8 /* STOSSpinLock.m */,
-				6293654E27BA090F0003A4E8 /* STSaleTickets.h */,
-				6293651627BA090F0003A4E8 /* STSaleTickets.m */,
+				6293654E27BA090F0003A4E8 /* STMultipleReadSingleWrite.h */,
+				6293651627BA090F0003A4E8 /* STMultipleReadSingleWrite.m */,
 			);
 			path = Lock;
 			sourceTree = "<group>";
@@ -556,6 +584,7 @@
 				629365CC27BA2E7A0003A4E8 /* STArithmetic */,
 				629365DD27BA2ED20003A4E8 /* STLRUCache */,
 				62033BC627D846C3009C7E09 /* STObjcBuild */,
+				624CE2D027F4394300320636 /* STSourceCodeProjectTests */,
 				1B021CEA00537FB9191D7724 /* Frameworks */,
 				3A2FB3E4190D74B9A742D6F3 /* Pods */,
 				E48EF5B324EE287E0018D0FD /* Products */,
@@ -569,6 +598,7 @@
 				629365CB27BA2E7A0003A4E8 /* STArithmetic */,
 				629365DC27BA2ED20003A4E8 /* STLRUCache */,
 				62033BC527D846C3009C7E09 /* STObjcBuild */,
+				624CE2CF27F4394300320636 /* STSourceCodeProjectTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -592,6 +622,24 @@
 			productName = STObjcBuild;
 			productReference = 62033BC527D846C3009C7E09 /* STObjcBuild */;
 			productType = "com.apple.product-type.tool";
+		};
+		624CE2CE27F4394300320636 /* STSourceCodeProjectTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 624CE2D727F4394300320636 /* Build configuration list for PBXNativeTarget "STSourceCodeProjectTests" */;
+			buildPhases = (
+				624CE2CB27F4394300320636 /* Sources */,
+				624CE2CC27F4394300320636 /* Frameworks */,
+				624CE2CD27F4394300320636 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				624CE2D427F4394300320636 /* PBXTargetDependency */,
+			);
+			name = STSourceCodeProjectTests;
+			productName = STSourceCodeProjectTests;
+			productReference = 624CE2CF27F4394300320636 /* STSourceCodeProjectTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		629365CA27BA2E7A0003A4E8 /* STArithmetic */ = {
 			isa = PBXNativeTarget;
@@ -653,11 +701,16 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = ST;
+				LastSwiftUpdateCheck = 1330;
 				LastUpgradeCheck = 1320;
 				ORGANIZATIONNAME = qcraft;
 				TargetAttributes = {
 					62033BC427D846C3009C7E09 = {
 						CreatedOnToolsVersion = 13.2.1;
+					};
+					624CE2CE27F4394300320636 = {
+						CreatedOnToolsVersion = 13.3;
+						TestTargetID = E48EF5B124EE287E0018D0FD;
 					};
 					629365CA27BA2E7A0003A4E8 = {
 						CreatedOnToolsVersion = 13.2.1;
@@ -687,11 +740,19 @@
 				629365CA27BA2E7A0003A4E8 /* STArithmetic */,
 				629365DB27BA2ED20003A4E8 /* STLRUCache */,
 				62033BC427D846C3009C7E09 /* STObjcBuild */,
+				624CE2CE27F4394300320636 /* STSourceCodeProjectTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		624CE2CD27F4394300320636 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E48EF5B024EE287E0018D0FD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -759,6 +820,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		624CE2CB27F4394300320636 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				624CE2DA27F43A7C00320636 /* STSourceCodeProjectTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		629365C727BA2E7A0003A4E8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -813,7 +882,7 @@
 				629365A627BA090F0003A4E8 /* NSObject+Test.m in Sources */,
 				629365B627BA090F0003A4E8 /* STKVCModel.m in Sources */,
 				6293658427BA090F0003A4E8 /* STProxy.m in Sources */,
-				6293657F27BA090F0003A4E8 /* STSaleTickets.m in Sources */,
+				6293657F27BA090F0003A4E8 /* STMultipleReadSingleWrite.m in Sources */,
 				629365B227BA090F0003A4E8 /* STRootView.m in Sources */,
 				629365B327BA090F0003A4E8 /* STGCD.m in Sources */,
 				6293658627BA090F0003A4E8 /* STOSSpinLock.m in Sources */,
@@ -830,6 +899,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		624CE2D427F4394300320636 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E48EF5B124EE287E0018D0FD /* STSourceCodeProject */;
+			targetProxy = 624CE2D327F4394300320636 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		62033BC927D846C3009C7E09 /* Debug */ = {
@@ -857,6 +934,50 @@
 				MACOSX_DEPLOYMENT_TARGET = 12.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		624CE2D527F4394300320636 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6JKG74Q9YS;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.qcraft.ai.STSourceCodeProjectTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/STSourceCodeProject.app/STSourceCodeProject";
+			};
+			name = Debug;
+		};
+		624CE2D627F4394300320636 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6JKG74Q9YS;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.qcraft.ai.STSourceCodeProjectTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/STSourceCodeProject.app/STSourceCodeProject";
 			};
 			name = Release;
 		};
@@ -1086,6 +1207,15 @@
 			buildConfigurations = (
 				62033BC927D846C3009C7E09 /* Debug */,
 				62033BCA27D846C3009C7E09 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		624CE2D727F4394300320636 /* Build configuration list for PBXNativeTarget "STSourceCodeProjectTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				624CE2D527F4394300320636 /* Debug */,
+				624CE2D627F4394300320636 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface STOSSpinLock : NSObject
 
+- (void)saleTickets;
+
 @end
 
 NS_ASSUME_NONNULL_END

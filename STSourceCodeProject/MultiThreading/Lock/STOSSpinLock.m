@@ -26,7 +26,6 @@
     if (self) {
         _lock = OS_SPINLOCK_INIT;
         self.tickets = 100;
-        [self saleTickets];
     }
     return self;
 }
@@ -40,8 +39,8 @@
     });
     
     dispatch_async(queue, ^{
-        for (int i = 0; i < 20; i++) {
-            [self saleTicket];
+        for (int i = 0; i < 2; i++) {
+            [self refundTicket];
         }
     });
     
@@ -58,8 +57,32 @@
     });
     
     dispatch_async(queue, ^{
+        for (int i = 0; i < 10; i++) {
+            [self refundTicket];
+        }
+    });
+    
+    dispatch_async(queue, ^{
         for (int i = 0; i < 20; i++) {
             [self saleTicket];
+        }
+    });
+    
+    dispatch_async(queue, ^{
+        for (int i = 0; i < 5; i++) {
+            [self refundTicket];
+        }
+    });
+    
+    dispatch_async(queue, ^{
+        for (int i = 0; i < 20; i++) {
+            [self saleTicket];
+        }
+    });
+    
+    dispatch_async(queue, ^{
+        for (int i = 0; i < 1; i++) {
+            [self refundTicket];
         }
     });
 }
@@ -70,7 +93,17 @@
     sleep(.2);
     oldTicktes--;
     self.tickets = oldTicktes;
-    NSLog(@"还剩下：%d--%@", self.tickets, [NSThread currentThread]);
+    NSLog(@"余票：%d张", self.tickets);
+    OSSpinLockUnlock(&_lock);
+}
+
+- (void)refundTicket {
+    OSSpinLockLock(&_lock);
+    int oldTicktes = self.tickets;
+    sleep(.2);
+    oldTicktes++;
+    NSLog(@"退票:%d张，余票：%d张", oldTicktes - self.tickets, oldTicktes);
+    self.tickets = oldTicktes;
     OSSpinLockUnlock(&_lock);
 }
 
