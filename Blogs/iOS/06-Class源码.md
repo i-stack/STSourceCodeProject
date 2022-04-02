@@ -2,6 +2,14 @@
 
 > typedef struct objc_class *Class;
 
+* **objc_object**
+
+```
+struct objc_object {
+    void *isa;
+};
+```
+
 * **objc_class**
 
 ```
@@ -16,6 +24,6 @@ public:
     
     objc_class *metaClass() {
         return (objc_class *)((long long)isa & ISA_MASK);
-    
+    }
 }
 ```
