@@ -45,7 +45,7 @@ public:
     }
 }
 ```
-> class_data_bits主要功能是得到calss_rw_t。
+> class_data_bits主要功能是得到class_rw_t。
 
 * **class_rw_t**
 ```
@@ -79,3 +79,72 @@ struct class_ro_t {
     property_list_t *baseProperties;
 };
 ```
+* **method_list_t**
+```
+#if __LP64__
+typedef uint32_t mask_t;
+#else
+typedef uint16_t mask_t;
+#endif
+typedef uintptr_t cache_key_t;
+
+struct bucket_t {
+    cache_key_t _key;
+    IMP _imp;
+};
+
+struct cache_t {
+    bucket_t *_buckets;
+    mask_t _mask;
+    mask_t _occupied;
+};
+
+struct entsize_list_tt {
+    uint32_t entsizeAndFlags;
+    uint32_t count;
+};
+
+struct method_t {
+    SEL name;
+    const char *types;
+    IMP imp;
+};
+
+struct method_list_t : entsize_list_tt {
+    method_t first;
+};
+```
+* **ivar_list_t**
+```
+struct ivar_t {
+    int32_t *offset;
+    const char *name;
+    const char *type;
+    uint32_t alignment_raw;
+    uint32_t size;
+};
+
+struct ivar_list_t : entsize_list_tt {
+    ivar_t first;
+};
+```
+* **property_list_t** 
+```
+struct property_t {
+    const char *name;
+    const char *attributes;
+};
+
+struct property_list_t : entsize_list_tt {
+    property_t first;
+};
+```
+* **protocol_list_t**
+```
+typedef uintptr_t protocol_ref_t;
+struct protocol_list_t {
+    uintptr_t count;
+    protocol_ref_t list[0];
+};
+```
+* **上面是Class底层源码的信息，下面开始验证**
