@@ -15,6 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic,strong)NSString *name;
 
++ (void)testClassMethod;
+
 - (void)printName;
 
 - (void)setAddress:(NSString *)address isAtomic:(BOOL)isAtomic;

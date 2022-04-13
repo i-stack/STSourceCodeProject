@@ -64,7 +64,7 @@
 		629365EF27BA32A60003A4E8 /* STEntryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 629365EE27BA32A60003A4E8 /* STEntryViewController.xib */; };
 		629365F227BA36050003A4E8 /* STEntryData.m in Sources */ = {isa = PBXBuildFile; fileRef = 629365F127BA36050003A4E8 /* STEntryData.m */; };
 		629365F527BA3B2F0003A4E8 /* STBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 629365F427BA3B2F0003A4E8 /* STBaseViewController.m */; };
-		629365FA27BA3BD20003A4E8 /* STObjectEssenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 629365F827BA3BD20003A4E8 /* STObjectEssenceViewController.m */; };
+		629365FA27BA3BD20003A4E8 /* STObjectEssenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 629365F827BA3BD20003A4E8 /* STObjectEssenceViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		629365FB27BA3BD20003A4E8 /* STObjectEssenceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 629365F927BA3BD20003A4E8 /* STObjectEssenceViewController.xib */; };
 /* End PBXBuildFile section */
 

@@ -14,6 +14,7 @@
 
 @interface STObjectEssenceViewController ()
 
+@property (nonatomic,strong)NSMutableArray *array;
 @property (nonatomic,strong)STAnimation *animation;
 
 @end
@@ -24,6 +25,14 @@
     [super viewDidLoad];
     self.animation = [[STAnimation alloc]init];
     // Do any additional setup after loading the view from its nib.
+//    [STAnimation testClassMethod];
+    ((void (*)(id, SEL))objc_msgSend)(self.animation, @selector(testClassMethod));
+    self.array = [NSMutableArray array];
+    for (int i = 0; i < 10; i++) {
+        STAnimation *a = [[STAnimation alloc]init];
+        [self.array addObject:a];
+//        [a release];
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -51,6 +60,10 @@
 - (void)testMultipleReadSingleWrite {
     STMultipleReadSingleWrite *lock = [[STMultipleReadSingleWrite alloc]init];
     [lock testMultipleReadSingleWrite];
+}
+
+- (void)dealloc {
+    [super dealloc];
 }
 
 @end
