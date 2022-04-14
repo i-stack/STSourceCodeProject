@@ -147,4 +147,3 @@ struct protocol_list_t {
     protocol_ref_t list[0];
 };
 ```
-* **上面是Class底层源码的信息，下面开始验证**
