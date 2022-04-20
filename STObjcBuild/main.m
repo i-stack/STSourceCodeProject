@@ -9,20 +9,24 @@
 #import <Foundation/Foundation.h>
 #import <objc/runtime.h>
 
-struct NSObject_IMP {
-    Class isa;
-};
+//struct NSObject_IMP {
+//    Class isa;
+//};
+//
+//struct STAnimation_IMP {
+//    struct NSObject_IMP imp;
+//    NSString *_name;
+//};
 
-struct STAnimation_IMP {
-    struct NSObject_IMP imp;
-    NSString *_name;
-};
+#define _ISA_MASK 0x0000000ffffffff8
 
 @interface STAnimation : NSObject
 
 @property (nonatomic,strong)NSString *name;
+@property (nonatomic,strong)NSString *address;
 
 - (void)printName;
+- (void)printAddress;
 
 @end
 
@@ -32,28 +36,71 @@ struct STAnimation_IMP {
     NSLog(@"%s", __func__);
 }
 
+- (void)printAddress {
+    
+}
+
+@end
+
+@interface STPerson : STAnimation
+
+@property (nonatomic,strong)NSString *age;
+
+- (void)printAge;
+
+@end
+
+@implementation STPerson
+
+- (void)printAge {
+    NSLog(@"%s", __func__);
+}
+
 @end
 
 extern void _objc_autoreleasePoolPrint(void);
 
-int main(int argc, const char * argv[]) {
-    @autoreleasepool {
-        for (int i = 0; i < 5; i++) {
-             NSObject *objc = [[[NSObject alloc] init]autorelease];
-        }
-        _objc_autoreleasePoolPrint();
+struct st_objc_class {
+    Class isa;
+    Class superClass;
+};
 
-        dispatch_async(dispatch_get_global_queue(0, 0), ^{
-            @autoreleasepool {
-                for (int i = 0; i < 10; i++) {
-                     NSObject *objc = [[[NSObject alloc] init]autorelease];
-                }
-                _objc_autoreleasePoolPrint();
-            }
-        });
-        
+int main(int argc, const char * argv[]) {
+    NSMutableArray *array = [NSMutableArray new];
+    @autoreleasepool {
+//        for (int i = 0; i < 1000; i++) {
+//            STPerson *person = [[[STPerson alloc]init]autorelease];
+////            [array addObject:person];
+////            _objc_autoreleasePoolPrint();
+//        }
+//        _objc_autoreleasePoolPrint();
+//
+//        @autoreleasepool {
+//            for (int i = 0; i < 15; i++) {
+//                STPerson *person = [[[STPerson alloc]init]autorelease];
+//                _objc_autoreleasePoolPrint();
+//            }
+//            _objc_autoreleasePoolPrint();
+//
+//            @autoreleasepool {
+//                for (int i = 0; i < 20; i++) {
+//                    STPerson *person = [[[STPerson alloc]init]autorelease];
+//                    _objc_autoreleasePoolPrint();
+//                }
+//                _objc_autoreleasePoolPrint();
+//            }
+//            _objc_autoreleasePoolPrint();
+//        }
 //        _objc_autoreleasePoolPrint();
     }
+    _objc_autoreleasePoolPrint();
+    
+    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc]init];
+    for (int i = 0; i < 1000; i++) {
+        STPerson *person = [[[STPerson alloc]init]autorelease];
+    }
+    _objc_autoreleasePoolPrint();
+    [pool drain];
     _objc_autoreleasePoolPrint();
     return 0;
 }

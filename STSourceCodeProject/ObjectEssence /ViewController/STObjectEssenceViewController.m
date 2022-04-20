@@ -11,7 +11,6 @@
 #import <objc/message.h>
 #import "STOSSpinLock.h"
 #import "STMultipleReadSingleWrite.h"
-#import "MJClassInfo.h"
 
 @interface STObjectEssenceViewController ()
 
@@ -24,12 +23,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.animation = [[STAnimation alloc]init];
+//    self.animation = [[STAnimation alloc]init];
     // Do any additional setup after loading the view from its nib.
 //    [STAnimation testClassMethod];
 //    ((void (*)(id, SEL))objc_msgSend)(self.animation, @selector(testClassMethod));
-    struct mj_objc_class *class = (__bridge struct mj_objc_class *)self.animation;
-    NSLog(@"%@", class);
 }
 
 - (void)viewDidAppear:(BOOL)animated {

@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3701EF7A89B8F44776F29B88 /* Pods_STSourceCodeProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DA106113BCD54A5646995B4 /* Pods_STSourceCodeProject.framework */; };
-		62033BC827D846C3009C7E09 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 62033BC727D846C3009C7E09 /* main.m */; };
+		62033BC827D846C3009C7E09 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 62033BC727D846C3009C7E09 /* main.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		624BB3AD27E892F00003E906 /* Helloworld.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 624BB3AA27E892F00003E906 /* Helloworld.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		624CE2DA27F43A7C00320636 /* STSourceCodeProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 624CE2D927F43A7C00320636 /* STSourceCodeProjectTests.m */; };
 		6293657E27BA090F0003A4E8 /* STBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 6293651227BA090F0003A4E8 /* STBlock.m */; };
@@ -290,6 +290,7 @@
 		62033BC627D846C3009C7E09 /* STObjcBuild */ = {
 			isa = PBXGroup;
 			children = (
+				6293655F27BA090F0003A4E8 /* MJClassInfo.h */,
 				62033BC727D846C3009C7E09 /* main.m */,
 			);
 			path = STObjcBuild;
@@ -562,7 +563,6 @@
 		629365FC27BA3BD60003A4E8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				6293655F27BA090F0003A4E8 /* MJClassInfo.h */,
 				6293651727BA090F0003A4E8 /* NSObject+STRuntime.h */,
 				6293654C27BA090F0003A4E8 /* NSObject+STRuntime.m */,
 				6293651327BA090F0003A4E8 /* NSObject+Test.h */,
