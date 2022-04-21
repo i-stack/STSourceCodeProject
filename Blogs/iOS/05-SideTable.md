@@ -2,11 +2,9 @@
 
 ### SideTable
 
-* **SideTable就是一个哈希表**
+> 哈希表（hash table）又叫散列表，是一种数据结构，用来存放数据。
 
-> 哈希表（hash table）又叫散列表，是一种数据结构，用来存放数据
-
-* **SideTable**
+* **SideTable源码**
 
 ```
 struct SideTable {
@@ -54,7 +52,6 @@ static void SideTableInit() {
     new (SideTableBuf) StripedMap<SideTable>();
 }
 
-
 // 获取SideTable数组
 static StripedMap<SideTable>& SideTables() {
     return *reinterpret_cast<StripedMap<SideTable>*>(SideTableBuf);
@@ -74,5 +71,4 @@ struct weak_table_t {
     uintptr_t mask;
     uintptr_t max_hash_displacement;
 };
-
 ```
