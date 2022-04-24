@@ -113,9 +113,9 @@ isFastPath-->|否|object_dispose-->objc_destructInstance-->objcIsValid
 objcIsValid-->|否|返回obj
 objcIsValid-->|是|条件判断
 
-条件判断-->如果有自定义C++析构函数-->object_cxxDestruct["object_cxxDestruct(obj)"]
-条件判断-->如果有关联对象-->_object_remove_assocations["_object_remove_assocations(obj, /*deallocating*/true)"]
-条件判断-->clearDeallocating["obj->clearDeallocating()"]-->isNonpointer
+条件判断-->先判断是否有自定义C++析构函数-->object_cxxDestruct["object_cxxDestruct(obj)"]
+条件判断-->然后判断是否有关联对象-->_object_remove_assocations["_object_remove_assocations(obj, /*deallocating*/true)"]
+条件判断-->clearDeallocating["最后执行obj->clearDeallocating()"]-->isNonpointer
 isNonpointer-->|是|如果对象使用SideTable进行引用计数或者被weak引用-->clearDeallocating_slow
 isNonpointer-->|否|sidetable_clearDeallocating
 ```
