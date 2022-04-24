@@ -106,8 +106,8 @@ objcIsValid(obj是否存在)
 isNonpointer(对象是否采用了优化的isa计数方式)
 
 dealloc-->_objc_rootDealloc-->objc_rootDealloc-->isTaggedPointer
-isTaggedPointer-->|否|return
-isTaggedPointer-->|是|isFastPath
+isTaggedPointer-->|是|return
+isTaggedPointer-->|否|isFastPath
 isFastPath-->|是|fastPath-->free["free(obj)"]
 isFastPath-->|否|object_dispose-->objc_destructInstance-->objcIsValid
 objcIsValid-->|否|返回obj
@@ -118,14 +118,4 @@ objcIsValid-->|是|条件判断
 条件判断-->clearDeallocating["obj->clearDeallocating()"]-->isNonpointer
 isNonpointer-->|是|如果对象使用SideTable进行引用计数或者被weak引用-->clearDeallocating_slow
 isNonpointer-->|否|sidetable_clearDeallocating
-
-
-
-
-
-
-
-
-
-
 ```
