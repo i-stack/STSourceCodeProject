@@ -63,3 +63,35 @@
 明白了App启动阶段需要完成的工作后，我们就可以有的放矢地进行启动速度的优化了。
 
 这些优化，包括了功能级别和方法级别的启动优化。接下来，我们就从这两个角度展开看看。
+
+# Objc 运行时的初始处理
+
+* **void _objc_init(void)**
+
+`_objc_init(void)`主要做了下面几件事：
+
+> 1、这个函数只会调用一次
+>> ```
+>> static bool initialized = false;
+>> if (initialized) return;
+>> initialized = true;
+>> ```
+> 2、`environ_init()`，读取影响运行时的环境变量，如果需要的话，也可以打印环境变量
+> 
+> 3、`tls_init()`，线程key的绑定
+> 
+> 4、`static_init()`，主要是运行系统级别的C++静态构造函数
+> 
+> 5、`runtime_init()`，运行时的初始化，主要分为两个操作：
+> 
+  >> 1、开辟存储分类的表：objc::unattachedCategories.init(32);
+  >> 
+  >> 2、开辟存储类的表：objc::allocatedClasses.init();
+>
+> 6、`exception_init()`，初始化libobjc的异常处理系统
+> 
+> 7、`cache_t::init()`，全局缓存初始化
+> 
+> 8、`_imp_implementationWithBlock_init()`，启动回调机制
+> 
+> 9、`_dyld_objc_notify_register(&map_images, load_images, unmap_image)`，注册在映射、取消映射和初始化`dyld`的镜像时要调用的处理程序
