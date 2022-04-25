@@ -75,12 +75,12 @@ accessInstanceVariables-->|没有找到成员变量|undefineKey
 重写下面两个方法可以防止crash。
 
 ```
-- (id)valueForUndefinedKey:(NSString *)key{
+- (id)valueForUndefinedKey:(NSString *)key {
     NSLog(@"出现异常，该key不存在%@",key);
     return nil;
 }
 
-- (void)setValue:(id)value forUndefinedKey:(NSString *)key{
+- (void)setValue:(id)value forUndefinedKey:(NSString *)key {
      NSLog(@"出现异常，该key不存在%@",key);
 }
 ```
