@@ -68,3 +68,19 @@ accessInstanceVariablesDirectly-->|NO|undefineKey
 accessInstanceVariables-->|找到成员变量|直接取值
 accessInstanceVariables-->|没有找到成员变量|undefineKey
 ```
+* **异常处理**
+
+没有搜索到对应的key或者keyPath，则会调用对应的异常方法并抛出异常`NSUnknownKeyException`。
+
+重写下面两个方法可以防止crash。
+
+```
+- (id)valueForUndefinedKey:(NSString *)key{
+    NSLog(@"出现异常，该key不存在%@",key);
+    return nil;
+}
+
+- (void)setValue:(id)value forUndefinedKey:(NSString *)key{
+     NSLog(@"出现异常，该key不存在%@",key);
+}
+```
