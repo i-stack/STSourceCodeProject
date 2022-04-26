@@ -8,7 +8,7 @@
 
 > `self` 指向当前调用方法的类的实例，根据类的 `isa` 指针找到当前对象所在类
 > 
-> 消息转发流程
+> 开始[消息转发流程](https://github.com/i-stack/STSourceCodeProject/blob/master/Blogs/iOS/04-%E6%B6%88%E6%81%AF%E8%BD%AC%E5%8F%91%E6%B5%81%E7%A8%8B.md)
 
 # super
 
@@ -29,6 +29,6 @@ struct objc_super {
 
 > 从 `superClass` 类中开始查找
 > 
-> 消息转发流程
+> 开始[消息转发流程](https://github.com/i-stack/STSourceCodeProject/blob/master/Blogs/iOS/04-%E6%B6%88%E6%81%AF%E8%BD%AC%E5%8F%91%E6%B5%81%E7%A8%8B.md)
 > 
 > 如果找到，使用 `receiver` 调用
