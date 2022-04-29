@@ -1,5 +1,17 @@
 # iOS 属性 @property 探究
 
+## 目录
+
+1、[代码规范](#代码规范)
+
+2、[本质](#本质)
+
+3、[存取器方法](#存取器方法)
+
+4、[读写权限](#读写权限)
+
+5、[内存管理](#内存管理)
+
 ### 代码规范
 
 声明 `@property` 时，注意关键词及字符间的空格。
@@ -8,7 +20,7 @@
 > 
 > @property (nonatomic, copy, readonly) NSString *name;
 
-### @property 本质
+### 本质
 
 `@property` 的本质是：`ivar` (实例变量) + `getter` + `setter` ；
 
