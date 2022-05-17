@@ -11,6 +11,7 @@
 #import <objc/message.h>
 #import "STOSSpinLock.h"
 #import "STMultipleReadSingleWrite.h"
+#import "STPlayer.h"
 
 @interface STObjectEssenceViewController ()
 
@@ -27,6 +28,7 @@
     // Do any additional setup after loading the view from its nib.
 //    [STAnimation testClassMethod];
 //    ((void (*)(id, SEL))objc_msgSend)(self.animation, @selector(testClassMethod));
+    [self playMusic];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -54,6 +56,12 @@
 - (void)testMultipleReadSingleWrite {
     STMultipleReadSingleWrite *lock = [[STMultipleReadSingleWrite alloc]init];
     [lock testMultipleReadSingleWrite];
+}
+
+- (void)playMusic {
+    NSString *localPath = [[NSBundle mainBundle]pathForResource:@"a189ff05e4c7b2ea1a243d9e13bcbee6" ofType:@"mp4"];
+    NSURL *fileUrl = [NSURL fileURLWithPath:localPath];
+    STPlayer *player = [[STPlayer alloc]initWithURL:fileUrl contentView:self.view];
 }
 
 - (void)dealloc {

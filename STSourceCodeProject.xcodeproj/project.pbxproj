@@ -11,6 +11,8 @@
 		62033BC827D846C3009C7E09 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 62033BC727D846C3009C7E09 /* main.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		624BB3AD27E892F00003E906 /* Helloworld.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 624BB3AA27E892F00003E906 /* Helloworld.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		624CE2DA27F43A7C00320636 /* STSourceCodeProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 624CE2D927F43A7C00320636 /* STSourceCodeProjectTests.m */; };
+		62787A4E28323F6E0080AB60 /* STPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 62787A4D28323F6E0080AB60 /* STPlayer.m */; };
+		62787A50283242960080AB60 /* a189ff05e4c7b2ea1a243d9e13bcbee6.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 62787A4F283242960080AB60 /* a189ff05e4c7b2ea1a243d9e13bcbee6.mp4 */; };
 		6293657E27BA090F0003A4E8 /* STBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 6293651227BA090F0003A4E8 /* STBlock.m */; };
 		6293657F27BA090F0003A4E8 /* STMultipleReadSingleWrite.m in Sources */ = {isa = PBXBuildFile; fileRef = 6293651627BA090F0003A4E8 /* STMultipleReadSingleWrite.m */; };
 		6293658027BA090F0003A4E8 /* STButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6293651827BA090F0003A4E8 /* STButton.m */; };
@@ -117,6 +119,9 @@
 		624BB3AC27E892F00003E906 /* helloworld.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.protobuf; path = helloworld.proto; sourceTree = "<group>"; };
 		624CE2CF27F4394300320636 /* STSourceCodeProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = STSourceCodeProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		624CE2D927F43A7C00320636 /* STSourceCodeProjectTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STSourceCodeProjectTests.m; sourceTree = "<group>"; };
+		62787A4C28323F6E0080AB60 /* STPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STPlayer.h; sourceTree = "<group>"; };
+		62787A4D28323F6E0080AB60 /* STPlayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STPlayer.m; sourceTree = "<group>"; };
+		62787A4F283242960080AB60 /* a189ff05e4c7b2ea1a243d9e13bcbee6.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = a189ff05e4c7b2ea1a243d9e13bcbee6.mp4; sourceTree = "<group>"; };
 		6293651227BA090F0003A4E8 /* STBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STBlock.m; sourceTree = "<group>"; };
 		6293651327BA090F0003A4E8 /* NSObject+Test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Test.h"; sourceTree = "<group>"; };
 		6293651427BA090F0003A4E8 /* STKVCTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STKVCTest.h; sourceTree = "<group>"; };
@@ -299,6 +304,7 @@
 		624BB3A827E892830003E906 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				62787A4F283242960080AB60 /* a189ff05e4c7b2ea1a243d9e13bcbee6.mp4 */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -321,9 +327,19 @@
 			path = STSourceCodeProjectTests;
 			sourceTree = "<group>";
 		};
+		62787A4B28323F4A0080AB60 /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				62787A4C28323F6E0080AB60 /* STPlayer.h */,
+				62787A4D28323F6E0080AB60 /* STPlayer.m */,
+			);
+			path = Player;
+			sourceTree = "<group>";
+		};
 		6293651127BA090F0003A4E8 /* STSourceCodeProject */ = {
 			isa = PBXGroup;
 			children = (
+				62787A4B28323F4A0080AB60 /* Player */,
 				624BB3A927E892A60003E906 /* GRPC */,
 				624BB3A827E892830003E906 /* Sources */,
 				6293656727BA090F0003A4E8 /* AppDelegate */,
@@ -761,6 +777,7 @@
 				629365AA27BA090F0003A4E8 /* STRunloopTableViewCell.xib in Resources */,
 				6293659527BA090F0003A4E8 /* Assets.xcassets in Resources */,
 				629365A127BA090F0003A4E8 /* Main.storyboard in Resources */,
+				62787A50283242960080AB60 /* a189ff05e4c7b2ea1a243d9e13bcbee6.mp4 in Resources */,
 				629365EF27BA32A60003A4E8 /* STEntryViewController.xib in Resources */,
 				629365FB27BA3BD20003A4E8 /* STObjectEssenceViewController.xib in Resources */,
 				6293658227BA090F0003A4E8 /* LaunchScreen.storyboard in Resources */,
@@ -873,6 +890,7 @@
 				629365AE27BA090F0003A4E8 /* AppDelegate.m in Sources */,
 				6293658F27BA090F0003A4E8 /* STStudent.m in Sources */,
 				6293659B27BA090F0003A4E8 /* STMRCBaseModel.m in Sources */,
+				62787A4E28323F6E0080AB60 /* STPlayer.m in Sources */,
 				629365A027BA090F0003A4E8 /* STKVOBaseModel.m in Sources */,
 				6293658C27BA090F0003A4E8 /* STMRCModel.m in Sources */,
 				624BB3AD27E892F00003E906 /* Helloworld.pbobjc.m in Sources */,
