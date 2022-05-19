@@ -4,8 +4,12 @@
 ## NSNotificationCenter_OC版本
 
 ### 1、[Observation](#Observation)
-
 ### 2、[NCTable](#NCTable)
+### 3、[GSIMapTable](#GSIMapTable)
+### 4、[GSIMapBucket](#GSIMapBucket)
+### 5、[GSIMapNode](#GSIMapNode)
+
+### 6、[NAMED结构](#NAMED结构)
 
 ## NSNotificationCenter_Swift版本
 
@@ -20,7 +24,6 @@ typedef	struct Obs {
   struct NCTbl *link;	/* Pointer back to chunk table	*/
 } Observation;
 ```
-
 ## NCTable
 ```
 #define	CHUNKSIZE	128
@@ -45,7 +48,69 @@ typedef struct NCTbl {
 #define	NAMED		(TABLE->named)
 #define	LOCKCOUNT	(TABLE->lockCount)
 ```
+### GSIMapTable
 
+> typedef struct _GSIMapTable GSIMapTable_t;
+> 
+> typedef GSIMapTable_t *GSIMapTable;
+
+```
+struct	_GSIMapTable {
+  NSZone	*zone;
+  uintptr_t	nodeCount;	/* Number of used nodes in map.	*/
+  uintptr_t	bucketCount;	/* Number of buckets in map.	*/
+  GSIMapBucket	buckets;	/* Array of buckets.		*/
+  GSIMapNode	freeNodes;	/* List of unused nodes.	*/
+  uintptr_t	chunkCount;	/* Number of chunks in array.	*/
+  GSIMapNode	*nodeChunks;	/* Chunks of allocated memory.	*/
+  uintptr_t	increment;
+#ifdef	GSI_MAP_EXTRA
+  GSI_MAP_EXTRA	extra;
+#endif
+};
+```
+### GSIMapBucket
+
+> typedef GSIMapBucket_t *GSIMapBucket;
+
+```
+struct	_GSIMapBucket {
+  uintptr_t	nodeCount;	/* Number of nodes in bucket.	*/
+  GSIMapNode	firstNode;	/* The linked list of nodes.	*/
+};
+```
+### GSIMapNode
+
+> typedef struct _GSIMapNode GSIMapNode_t;
+> 
+> typedef GSIMapNode_t *GSIMapNode;
+
+```
+struct	_GSIMapNode {
+  GSIMapNode	nextInBucket;	/* Linked list of bucket.	*/
+  GSIMapKey	key;
+#if	GSI_MAP_HAS_VALUE
+  GSIMapVal	value;
+#endif
+};
+```
+### NAMED结构
+
+```mermaid
+graph LR
+
+named["named表(mapTabel)"]
+keyName["key(name)"]
+valueMapTable["value(mapTable)"]
+keyObject["key(object)"]
+valueObservation["value(Observation对象)"]
+
+named-->keyName
+named-->valueMapTable
+
+valueMapTable-->keyObject
+valueMapTable-->valueObservation
+```
 
 ## addObserver:selector:name:object
 
@@ -100,24 +165,7 @@ static Observation *obsNew(NCTable *t, SEL s, id o) {
 }
 ```
 
-### NAMED结构
 
-```mermaid
-graph LR
-
-named["named表(mapTabel)"]
-keyName["key(name)"]
-valueMapTable["value(mapTable)"]
-keyObject["key(object)"]
-valueObservation["value(Observation对象)"]
-
-named-->keyName
-named-->valueMapTable
-
-valueMapTable-->keyObject
-valueMapTable-->valueObservation
-
-```
 
 
 ```
