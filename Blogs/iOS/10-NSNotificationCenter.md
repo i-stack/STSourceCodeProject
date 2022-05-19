@@ -1,11 +1,13 @@
 # NSNotificationCenter
 
-
-## [NSNotificationCenter_OC版本](#NSNotificationCenter_OC版本)
-
-
-
+## 目录
 ## NSNotificationCenter_OC版本
+
+### 1、[Observation](#Observation)
+
+## NSNotificationCenter_Swift版本
+
+## Observation
 
 ```
 typedef	struct Obs {
@@ -90,28 +92,21 @@ static Observation *obsNew(NCTable *t, SEL s, id o) {
     return obs;
 }
 ```
-### NAMED表结构
+创建流程图
 
 ```mermaid
 graph LR
 
-named["named(mapTable)"]
-keyName["key(name)"]
-valueMapTable["value(mapTable)"]
-keyObject["key(object)"]
-
-named-->keyName
-named-->valueMapTable
-
-valueMapTable-->keyObject
-valueMapTable-->value["value(Observation对象)"]
 
 ```
 
 
 ```
 - (void)addObserver: (id)observer selector: (SEL)selector name: (NSString*)name object: (id)object {
-   
+    Observation	*list;
+    GSIMapTable	m;
+    GSIMapNode	n;
+    
     // 异常处理判断
     if (observer == nil) 
         [NSException raise: NSInvalidArgumentException
@@ -129,29 +124,22 @@ valueMapTable-->value["value(Observation对象)"]
     }
 
     lockNCTable(TABLE);
-    
-    Observation	*list;
-    GSIMapTable	m;
-    GSIMapNode n;
 
     // 创建Obs
     Observation *o = obsNew(TABLE, selector, observer);
 
     if (name) { // 如果name存在
        
-        // 根据 name 从 NAMED 表中查找 mapNode
+        // 根据 na
+     
         n = GSIMapNodeForKey(NAMED, (GSIMapKey)(id)name);
-        
-	if (n == 0) { // map->nodeCount == 0, 说明当前NAMED表为空
-            // 在 TABLE 表中新创建一个 MapTable	
-	    m = mapNew(TABLE); 
+        if (n == 0) {
+            m = mapNew(TABLE);
             /*
             * As this is the first observation for the given name, we take a
             * copy of the name so it cannot be mutated while in the map.
             */
             name = [name copyWithZone: NSDefaultMallocZone()];
-	    
-	    // 以name为key, 新创建的MapTable为value，添加到NAMED表中
             GSIMapAddPair(NAMED, (GSIMapKey)(id)name, (GSIMapVal)(void*)m);
             GS_CONSUMED(name);
         } else {
