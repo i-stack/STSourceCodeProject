@@ -234,15 +234,28 @@ exception(参数异常处理判断)
 hasNoException(参数无异常)
 return(return)
 lockTable["lockNCTable(TABLE)"]
-newObs(创建obs)
+unlockTable["unlockNCTable(TABLE)"]
 
+newObs(创建obs)
+name(name是否存在)
+object(object是否存在)
+
+NAMED["以`name`为`key` <br/>`mapTable`为`value` <br/> 保存到`NAMED`表中，采用头插法"]
+NEMELESS["以`object`为`key`<br/>`obs`为`value`<br/>保存到`NAMELESS`表中，采用头插法"]
+WILDCARD["将新创建的`obs`添加到`WILDCARD`表中，采用尾插法"]
 
 addObserver-->exception
 
 exception-->a(observer==nil)-->aa["抛出异常: Nil observer passed to addObserver ..."]-->return
 exception-->b(selector==0)-->bb["抛出异常: Null selector passed to addObserver ..."]-->return
 exception-->c["observer respondsToSelector: selector==NO"]-->cc["抛出异常: does not respond to selector"]-->return
-exception-->hasNoException-->lockTable-->newObs
+exception-->hasNoException-->lockTable-->newObs-->name
+
+name-->|是|NAMED-->unlockTable
+name-->|否|object
+
+object-->|是|NEMELESS-->unlockTable
+object-->|否|WILDCARD-->unlockTable
 ```
 
 ### obs创建流程
