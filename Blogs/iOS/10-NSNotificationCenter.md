@@ -8,8 +8,10 @@
 ### 3、[GSIMapTable](#GSIMapTable)
 ### 4、[GSIMapBucket](#GSIMapBucket)
 ### 5、[GSIMapNode](#GSIMapNode)
-
 ### 6、[NAMED结构](#NAMED结构)
+### 7、[NAMELESS结构](#NAMELESS结构)
+### 8、[addObserver](#NAMELESS结构)
+### 9、[obs创建流程](#obs创建流程)
 
 ## NSNotificationCenter_Swift版本
 
@@ -24,6 +26,7 @@ typedef	struct Obs {
     struct NCTbl *link;	/* Pointer back to chunk table	*/
 } Observation;
 ```
+
 ## NCTable
 ```
 #define	CHUNKSIZE	128
@@ -48,6 +51,7 @@ typedef struct NCTbl {
 #define	NAMED		(TABLE->named)
 #define	LOCKCOUNT	(TABLE->lockCount)
 ```
+
 ### GSIMapTable
 
 > typedef struct _GSIMapTable GSIMapTable_t;
@@ -69,6 +73,7 @@ struct	_GSIMapTable {
 #endif
 };
 ```
+
 ### GSIMapBucket
 
 > typedef GSIMapBucket_t *GSIMapBucket;
@@ -79,6 +84,7 @@ struct	_GSIMapBucket {
     GSIMapNode	firstNode;	/* The linked list of nodes.	*/
 };
 ```
+
 ### GSIMapNode
 
 > typedef struct _GSIMapNode GSIMapNode_t;
@@ -94,6 +100,7 @@ struct	_GSIMapNode {
 #endif
 };
 ```
+
 ### NAMED结构
 
 ```mermaid
@@ -111,28 +118,134 @@ named-->valueMapTable
 valueMapTable-->keyObject
 valueMapTable-->valueObservation
 ```
-## addObserver:selector:name:object
 
+### NAMELESS结构
+```mermaid
+graph LR
+
+nameless["nameless表(mapTabel)"]
+key["key(object)"]
+value["value(Observation对象)"]
+
+nameless-->key
+nameless-->value
+```
+
+## addObserver
+```
+- (void)addObserver: (id)observer selector: (SEL)selector name: (NSString*)name object: (id)object {
+    
+    // 异常处理判断
+    if (observer == nil) 
+        [NSException raise: NSInvalidArgumentException
+                    format: @"Nil observer passed to addObserver ..."];
+
+    if (selector == 0)
+        [NSException raise: NSInvalidArgumentException
+                     format: @"Null selector passed to addObserver ..."];
+
+    if ([observer respondsToSelector: selector] == NO) {
+        [NSException raise: NSInvalidArgumentException
+                    format: @"[%@-%@] Observer '%@' does not respond to selector '%@'",
+                    NSStringFromClass([self class]), NSStringFromSelector(_cmd),
+                    observer, NSStringFromSelector(selector)];
+    }
+
+    // 加锁 TABLE
+    lockNCTable(TABLE);
+
+    // 创建Obs
+    Observation *o = obsNew(TABLE, selector, observer);
+    
+    Observation	*list;
+    GSIMapTable	m;
+    GSIMapNode	n;
+
+    if (name) { // 如果name存在
+    
+        // 根据 `name` 从 `NAMED` 表中取出 `MapNode`
+        n = GSIMapNodeForKey(NAMED, (GSIMapKey)(id)name);
+	
+	// map->nodeCount == 0，NAMED表中没有node
+        if (n == 0) {
+	
+	    // 如果`table->cacheIndex` > 0, 从`table->cache[--table->cacheIndex]`取出mapTable
+	    // 否则新创建一个mapTable
+            m = mapNew(TABLE);
+            
+            name = [name copyWithZone: NSDefaultMallocZone()];
+	    
+	    // 以`name`为`key`，`mapTable`为`value`，保存到`NAMED`表中
+            GSIMapAddPair(NAMED, (GSIMapKey)(id)name, (GSIMapVal)(void*)m);
+            GS_CONSUMED(name);
+        } else {
+	    // 在NAMED表中找到以name为key的mapTable
+            m = (GSIMapTable)n->value.ptr;
+        }
+
+       	// 判断参数`object`是否为空
+	// 以`object`为`key`，从`mapTable`中取出`mapNode`
+        n = GSIMapNodeForSimpleKey(m, (GSIMapKey)object);
+	
+	// `map->nodeCount` == 0，`mapTable`表中没有`node`
+        if (n == 0) { 
+            o->next = ENDOBS; // 当前插入的`obs`是链表的最后一个节点
+	    // 以`object`为`key`, `obs`为`value`，保存在`mapTable`中
+            GSIMapAddPair(m, (GSIMapKey)object, (GSIMapVal)o);
+        } else { // `mapTable`中存在以`object`为`key`的`obs`
+            list = (Observation *)n->value.ptr;
+	    
+	    // 采用头插法，将新创建的`obs`添加到头部
+            o->next = list->next;
+            list->next = o;
+        }
+    } else if (object) { // name不存在，object存在
+    
+    	// 根据 `object` 从 `NAMELESS` 表中取出 `MapNode`
+        n = GSIMapNodeForSimpleKey(NAMELESS, (GSIMapKey)object);
+	
+	// map->nodeCount == 0，NAMELESS表中没有node
+        if (n == 0) {
+            o->next = ENDOBS;
+	    // 以`object`为`key`，`obs`为`value`，保存到`NAMELESS`表中
+            GSIMapAddPair(NAMELESS, (GSIMapKey)object, (GSIMapVal)o);
+        } else {
+            list = (Observation*)n->value.ptr;
+	    // 采用头插法，将新创建的`obs`添加到头部
+            o->next = list->next;
+            list->next = o;
+        }
+    } else {// 没有 name、object
+    	// 采用尾插法，将新创建的`obs`添加到尾部
+        o->next = WILDCARD;
+        WILDCARD = o;
+    }
+    // 解锁 TABLE
+    unlockNCTable(TABLE);
+}
+```
+
+* **addObserver流程图**
 ```mermaid
 graph LR
 
 addObserver(addObserver内部实现)
-exception(异常处理判断)
+exception(参数异常处理判断)
+hasNoException(参数无异常)
 return(return)
 lockTable["lockNCTable(TABLE)"]
 newObs(创建obs)
 
-addObserver-->|参数有异常|exception
+
+addObserver-->exception
 
 exception-->a(observer==nil)-->aa["抛出异常: Nil observer passed to addObserver ..."]-->return
 exception-->b(selector==0)-->bb["抛出异常: Null selector passed to addObserver ..."]-->return
 exception-->c["observer respondsToSelector: selector==NO"]-->cc["抛出异常: does not respond to selector"]-->return
-
-addObserver-->|参数无异常|lockTable-->newObs
+exception-->hasNoException-->lockTable-->newObs
 ```
 
 ### obs创建流程
-
 ```
 static Observation *obsNew(NCTable *t, SEL s, id o) {
     if (t->freeList == 0) {
@@ -164,77 +277,4 @@ static Observation *obsNew(NCTable *t, SEL s, id o) {
 ```
 
 
-```
-- (void)addObserver: (id)observer selector: (SEL)selector name: (NSString*)name object: (id)object {
-    Observation	*list;
-    GSIMapTable	m;
-    GSIMapNode	n;
-    
-    // 异常处理判断
-    if (observer == nil) 
-        [NSException raise: NSInvalidArgumentException
-                    format: @"Nil observer passed to addObserver ..."];
 
-    if (selector == 0)
-        [NSException raise: NSInvalidArgumentException
-                     format: @"Null selector passed to addObserver ..."];
-
-    if ([observer respondsToSelector: selector] == NO) {
-        [NSException raise: NSInvalidArgumentException
-                    format: @"[%@-%@] Observer '%@' does not respond to selector '%@'",
-                    NSStringFromClass([self class]), NSStringFromSelector(_cmd),
-                    observer, NSStringFromSelector(selector)];
-    }
-
-    lockNCTable(TABLE);
-
-    // 创建Obs
-    Observation *o = obsNew(TABLE, selector, observer);
-
-    if (name) { // 如果name存在
-       
-        // 根据 na
-     
-        n = GSIMapNodeForKey(NAMED, (GSIMapKey)(id)name);
-        if (n == 0) {
-            m = mapNew(TABLE);
-            /*
-            * As this is the first observation for the given name, we take a
-            * copy of the name so it cannot be mutated while in the map.
-            */
-            name = [name copyWithZone: NSDefaultMallocZone()];
-            GSIMapAddPair(NAMED, (GSIMapKey)(id)name, (GSIMapVal)(void*)m);
-            GS_CONSUMED(name);
-        } else {
-            m = (GSIMapTable)n->value.ptr;
-        }
-
-        /*
-        * Add the observation to the list for the correct object.
-        */
-        n = GSIMapNodeForSimpleKey(m, (GSIMapKey)object);
-        if (n == 0) {
-            o->next = ENDOBS;
-            GSIMapAddPair(m, (GSIMapKey)object, (GSIMapVal)o);
-        } else {
-            list = (Observation*)n->value.ptr;
-            o->next = list->next;
-            list->next = o;
-        }
-    } else if (object) {
-        n = GSIMapNodeForSimpleKey(NAMELESS, (GSIMapKey)object);
-        if (n == 0) {
-            o->next = ENDOBS;
-            GSIMapAddPair(NAMELESS, (GSIMapKey)object, (GSIMapVal)o);
-        } else {
-            list = (Observation*)n->value.ptr;
-            o->next = list->next;
-            list->next = o;
-        }
-    } else {
-        o->next = WILDCARD;
-        WILDCARD = o;
-    }
-    unlockNCTable(TABLE);
-}
-```
