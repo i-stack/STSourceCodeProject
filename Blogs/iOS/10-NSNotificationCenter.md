@@ -111,7 +111,6 @@ named-->valueMapTable
 valueMapTable-->keyObject
 valueMapTable-->valueObservation
 ```
-
 ## addObserver:selector:name:object
 
 ```mermaid
