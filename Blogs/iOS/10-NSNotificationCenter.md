@@ -5,9 +5,11 @@
 
 ### 1、[Observation](#Observation)
 
+### 2、[NCTable](#NCTable)
+
 ## NSNotificationCenter_Swift版本
 
-## Observation
+### Observation
 
 ```
 typedef	struct Obs {
@@ -17,7 +19,10 @@ typedef	struct Obs {
   int	retained;	/* Retain count for structure.	*/
   struct NCTbl *link;	/* Pointer back to chunk table	*/
 } Observation;
+```
 
+## NCTable
+```
 #define	CHUNKSIZE	128
 #define	CACHESIZE	16
 typedef struct NCTbl {
@@ -40,6 +45,8 @@ typedef struct NCTbl {
 #define	NAMED		(TABLE->named)
 #define	LOCKCOUNT	(TABLE->lockCount)
 ```
+
+
 ## addObserver:selector:name:object
 
 ```mermaid
@@ -92,11 +99,23 @@ static Observation *obsNew(NCTable *t, SEL s, id o) {
     return obs;
 }
 ```
-创建流程图
+
+### NAMED结构
 
 ```mermaid
 graph LR
 
+named["named表(mapTabel)"]
+keyName["key(name)"]
+valueMapTable["value(mapTable)"]
+keyObject["key(object)"]
+valueObservation["value(Observation对象)"]
+
+named-->keyName
+named-->valueMapTable
+
+valueMapTable-->keyObject
+valueMapTable-->valueObservation
 
 ```
 
