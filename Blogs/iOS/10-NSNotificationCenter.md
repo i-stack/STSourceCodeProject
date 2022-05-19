@@ -17,11 +17,11 @@
 
 ```
 typedef	struct Obs {
-	id observer;	/* Object to receive message.	*/
-	SEL selector;	/* Method selector.	*/
-	struct Obs *next; /* Next item in linked list.	*/
-	int retained; /* Retain count for structure.	*/
-	struct NCTbl *link;	/* Pointer back to chunk table	*/
+    id  observer;	/* Object to receive message.	*/
+    SEL selector;	/* Method selector.	*/
+    struct Obs *next; /* Next item in linked list.	*/
+    int retained; /* Retain count for structure.	*/
+    struct NCTbl *link;	/* Pointer back to chunk table	*/
 } Observation;
 ```
 ## NCTable
@@ -29,17 +29,17 @@ typedef	struct Obs {
 #define	CHUNKSIZE	128
 #define	CACHESIZE	16
 typedef struct NCTbl {
-	Observation		*wildcard;	/* Get ALL messages.		*/
-	GSIMapTable		nameless;	/* Get messages for any name.	*/
-	GSIMapTable		named;		/* Getting named messages only.	*/
-	unsigned		lockCount;	/* Count recursive operations.	*/
-	NSRecursiveLock	*_lock;		/* Lock out other threads.	*/
-	Observation		*freeList;
-	Observation		**chunks;
-	unsigned		numChunks;
-	GSIMapTable		cache[CACHESIZE];
-	unsigned short	chunkIndex;
-	unsigned short	cacheIndex;
+    Observation		*wildcard;	/* Get ALL messages.		*/
+    GSIMapTable		nameless;	/* Get messages for any name.	*/
+    GSIMapTable		named;		/* Getting named messages only.	*/
+    unsigned		lockCount;	/* Count recursive operations.	*/
+    NSRecursiveLock	*_lock;		/* Lock out other threads.	*/
+    Observation		*freeList;
+    Observation		**chunks;
+    unsigned		numChunks;
+    GSIMapTable		cache[CACHESIZE];
+    unsigned short	chunkIndex;
+    unsigned short	cacheIndex;
 } NCTable;
 
 #define	TABLE		((NCTable*)_table)
@@ -56,16 +56,16 @@ typedef struct NCTbl {
 
 ```
 struct	_GSIMapTable {
-	NSZone	*zone;
-	uintptr_t	nodeCount;	/* Number of used nodes in map.	*/
-	uintptr_t	bucketCount;	/* Number of buckets in map.	*/
-	GSIMapBucket	buckets;	/* Array of buckets.		*/
-	GSIMapNode	freeNodes;	/* List of unused nodes.	*/
-	uintptr_t	chunkCount;	/* Number of chunks in array.	*/
-	GSIMapNode	*nodeChunks;	/* Chunks of allocated memory.	*/
-	uintptr_t	increment;
+    NSZone	*zone;
+    uintptr_t	nodeCount;	/* Number of used nodes in map.	*/
+    uintptr_t	bucketCount;	/* Number of buckets in map.	*/
+    GSIMapBucket	buckets;	/* Array of buckets.		*/
+    GSIMapNode	freeNodes;	/* List of unused nodes.	*/
+    uintptr_t	chunkCount;	/* Number of chunks in array.	*/
+    GSIMapNode	*nodeChunks;	/* Chunks of allocated memory.	*/
+    uintptr_t	increment;
 #ifdef	GSI_MAP_EXTRA
-	GSI_MAP_EXTRA	extra;
+    GSI_MAP_EXTRA	extra;
 #endif
 };
 ```
@@ -75,8 +75,8 @@ struct	_GSIMapTable {
 
 ```
 struct	_GSIMapBucket {
-	uintptr_t	nodeCount;	/* Number of nodes in bucket.	*/
-	GSIMapNode	firstNode;	/* The linked list of nodes.	*/
+    uintptr_t	nodeCount;	/* Number of nodes in bucket.	*/
+    GSIMapNode	firstNode;	/* The linked list of nodes.	*/
 };
 ```
 ### GSIMapNode
@@ -87,10 +87,10 @@ struct	_GSIMapBucket {
 
 ```
 struct	_GSIMapNode {
-	GSIMapNode	nextInBucket;	/* Linked list of bucket.	*/
-	GSIMapKey	key;
+    GSIMapNode	nextInBucket;	/* Linked list of bucket.	*/
+    GSIMapKey	key;
 #if	GSI_MAP_HAS_VALUE
-	GSIMapVal	value;
+    GSIMapVal	value;
 #endif
 };
 ```
