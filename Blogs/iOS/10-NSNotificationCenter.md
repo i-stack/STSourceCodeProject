@@ -90,21 +90,28 @@ static Observation *obsNew(NCTable *t, SEL s, id o) {
     return obs;
 }
 ```
-创建流程图
+### NAMED表结构
 
 ```mermaid
 graph LR
 
+named["named(mapTable)"]
+keyName["key(name)"]
+valueMapTable["value(mapTable)"]
+keyObject["key(object)"]
+
+named-->keyName
+named-->valueMapTable
+
+valueMapTable-->keyObject
+valueMapTable-->value["value(Observation对象)"]
 
 ```
 
 
 ```
 - (void)addObserver: (id)observer selector: (SEL)selector name: (NSString*)name object: (id)object {
-    Observation	*list;
-    GSIMapTable	m;
-    GSIMapNode	n;
-    
+   
     // 异常处理判断
     if (observer == nil) 
         [NSException raise: NSInvalidArgumentException
@@ -122,22 +129,29 @@ graph LR
     }
 
     lockNCTable(TABLE);
+    
+    Observation	*list;
+    GSIMapTable	m;
+    GSIMapNode n;
 
     // 创建Obs
     Observation *o = obsNew(TABLE, selector, observer);
 
     if (name) { // 如果name存在
        
-        // 根据 na
-     
+        // 根据 name 从 NAMED 表中查找 mapNode
         n = GSIMapNodeForKey(NAMED, (GSIMapKey)(id)name);
-        if (n == 0) {
-            m = mapNew(TABLE);
+        
+	if (n == 0) { // map->nodeCount == 0, 说明当前NAMED表为空
+            // 在 TABLE 表中新创建一个 MapTable	
+	    m = mapNew(TABLE); 
             /*
             * As this is the first observation for the given name, we take a
             * copy of the name so it cannot be mutated while in the map.
             */
             name = [name copyWithZone: NSDefaultMallocZone()];
+	    
+	    // 以name为key, 新创建的MapTable为value，添加到NAMED表中
             GSIMapAddPair(NAMED, (GSIMapKey)(id)name, (GSIMapVal)(void*)m);
             GS_CONSUMED(name);
         } else {
