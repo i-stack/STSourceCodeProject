@@ -17,10 +17,10 @@
 
 ```
 typedef	struct Obs {
-	id	observer;	/* Object to receive message.	*/
-	SEL	selector;	/* Method selector.	*/
+	id observer;	/* Object to receive message.	*/
+	SEL selector;	/* Method selector.	*/
 	struct Obs *next; /* Next item in linked list.	*/
-	int	retained; /* Retain count for structure.	*/
+	int retained; /* Retain count for structure.	*/
 	struct NCTbl *link;	/* Pointer back to chunk table	*/
 } Observation;
 ```
