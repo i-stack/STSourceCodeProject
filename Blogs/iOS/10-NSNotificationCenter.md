@@ -164,8 +164,6 @@ static Observation *obsNew(NCTable *t, SEL s, id o) {
 ```
 
 
-
-
 ```
 - (void)addObserver: (id)observer selector: (SEL)selector name: (NSString*)name object: (id)object {
     Observation	*list;
