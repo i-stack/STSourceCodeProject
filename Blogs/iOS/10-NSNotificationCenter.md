@@ -63,7 +63,7 @@ struct	_GSIMapTable {
     NSZone	*zone;
     uintptr_t	nodeCount;	/* Number of used nodes in map.	*/
     uintptr_t	bucketCount;	/* Number of buckets in map.	*/
-    GSIMapBucket	buckets;	/* Array of buckets.		*/
+    GSIMapBucket buckets;	/* Array of buckets.		*/
     GSIMapNode	freeNodes;	/* List of unused nodes.	*/
     uintptr_t	chunkCount;	/* Number of chunks in array.	*/
     GSIMapNode	*nodeChunks;	/* Chunks of allocated memory.	*/
@@ -330,22 +330,18 @@ static Observation *obsNew(NCTable *t, SEL s, id o) {
   	GSIArrayItem i[64];
 	GSIArrayInitWithZoneAndStaticCapacity(a, _zone, 64, i);
 	
-	
 	lockNCTable(TABLE);
 
-   	// 先从 WILDCARD 表中查找所有 observers，并将observers保存到数组中
+   	// 先从`WILDCARD`表中查找所有`observers`，并将`observers`保存到数组中
 	for (o = WILDCARD = purgeCollected(WILDCARD); o != ENDOBS; o = o->next) {
 		GSIArrayAddItem(a, (GSIArrayItem)o);
 	}
 
-  /*
-   * Find the observers that specified OBJECT, but didn't specify NAME.
-   */
-   	// 然后
-  
+   	// 如果`object`存在
 	if (object) {
+		// 根据`object`为`key`，从`NEMELESS`表中查找`mapNode`
 		n = GSIMapNodeForSimpleKey(NAMELESS, (GSIMapKey)object);
-		if (n != 0) {
+		if (n != 0) { //
 			o = purgeCollectedFromMapNode(NAMELESS, n);
 			while (o != ENDOBS) {
 	  			GSIArrayAddItem(a, (GSIArrayItem)o);
@@ -354,59 +350,45 @@ static Observation *obsNew(NCTable *t, SEL s, id o) {
 		}
 	}
 
-  /*
-   * Find the observers of NAME, except those observers with a non-nil OBJECT
-   * that doesn't match the notification's OBJECT).
-   */
-  if (name)
-    {
-      n = GSIMapNodeForKey(NAMED, (GSIMapKey)((id)name));
-      if (n)
-	{
-	  m = (GSIMapTable)n->value.ptr;
-	}
-      else
-	{
-	  m = 0;
-	}
-      if (m != 0)
-	{
-	  /*
-	   * First, observers with a matching object.
-	   */
-	  n = GSIMapNodeForSimpleKey(m, (GSIMapKey)object);
-	  if (n != 0)
-	    {
-	      o = purgeCollectedFromMapNode(m, n);
-	      while (o != ENDOBS)
-		{
-		  GSIArrayAddItem(a, (GSIArrayItem)o);
-		  o = o->next;
+	if (name) {
+		n = GSIMapNodeForKey(NAMED, (GSIMapKey)((id)name));
+		if (n) {
+			m = (GSIMapTable)n->value.ptr;
+		} else {
+			m = 0;
 		}
-	    }
+		if (m != 0) {
+	/*
+	* First, observers with a matching object.
+	*/
+			n = GSIMapNodeForSimpleKey(m, (GSIMapKey)object);
+			if (n != 0) {
+				o = purgeCollectedFromMapNode(m, n);
+				while (o != ENDOBS) {
+					GSIArrayAddItem(a, (GSIArrayItem)o);
+					o = o->next;
+				}
+			}
 
-	  if (object != nil)
-	    {
-	      /*
-	       * Now observers with a nil object.
-	       */
-	      n = GSIMapNodeForSimpleKey(m, (GSIMapKey)(id)nil);
-	      if (n != 0)
-		{
-	          o = purgeCollectedFromMapNode(m, n);
-		  while (o != ENDOBS)
-		    {
-		      GSIArrayAddItem(a, (GSIArrayItem)o);
-		      o = o->next;
-		    }
+			if (object != nil) {
+				/*
+				* Now observers with a nil object.
+				*/
+				n = GSIMapNodeForSimpleKey(m, (GSIMapKey)(id)nil);
+				if (n != 0) {
+					o = purgeCollectedFromMapNode(m, n);
+					while (o != ENDOBS) {
+						GSIArrayAddItem(a, (GSIArrayItem)o);
+						o = o->next;
+					}
+				}
+			}
 		}
-	    }
 	}
-    }
 
-  /* Finished with the table ... we can unlock it,
-   */
-  unlockNCTable(TABLE);
+	/* Finished with the table ... we can unlock it,
+	*/
+	unlockNCTable(TABLE);
 
   /*
    * Now send all the notifications.
