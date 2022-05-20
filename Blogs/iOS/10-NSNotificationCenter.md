@@ -8,9 +8,9 @@
 ### 3、[GSIMapTable](#GSIMapTable)
 ### 4、[GSIMapBucket](#GSIMapBucket)
 ### 5、[GSIMapNode](#GSIMapNode)
-### 6、[NAMED结构](#NAMED结构)
-### 7、[NAMELESS结构](#NAMELESS结构)
-### 8、[addObserver](#NAMELESS结构)
+### 6、[NAMED表结构](#NAMED表结构)
+### 7、[NAMELESS表结构](#NAMELESS表结构)
+### 8、[addObserver](#addObserver)
 ### 9、[obs创建流程](#obs创建流程)
 
 ## NSNotificationCenter_Swift版本
@@ -101,7 +101,7 @@ struct	_GSIMapNode {
 };
 ```
 
-### NAMED结构
+### NAMED表结构
 
 ```mermaid
 graph LR
@@ -119,7 +119,8 @@ valueMapTable-->keyObject
 valueMapTable-->valueObservation
 ```
 
-### NAMELESS结构
+### NAMELESS表结构
+
 ```mermaid
 graph LR
 
@@ -289,5 +290,166 @@ static Observation *obsNew(NCTable *t, SEL s, id o) {
 }
 ```
 
+## postNotification
 
+```
+- (void) postNotificationName: (NSString *)name object: (id)object
+{
+	[self postNotificationName: name object: object userInfo: nil];
+}
+
+- (void) postNotificationName: (NSString *)name object: (id)object userInfo: (NSDictionary *)info
+{
+	GSNotification *notification = (id)NSAllocateObject(concrete, 0, NSDefaultMallocZone());
+	notification->_name = [name copyWithZone: [self zone]];
+	notification->_object = [object retain];
+	notification->_info = [info retain];
+	[self _postAndRelease: notification];
+}
+
+- (void) _postAndRelease: (NSNotification *)notification
+{
+	Observation	*o;
+	unsigned	count;
+	NSString	*name = [notification name];
+	GSIMapNode	n;
+	GSIMapTable	m;
+	
+
+	// name 为nil，抛出异常
+	if (name == nil) {
+		RELEASE(notification);
+		[NSException raise: NSInvalidArgumentException
+		  			format: @"Tried to post a notification with no name."];
+	}
+	
+  	id object = [notification object];
+
+	GSIArray_t	b;
+	GSIArray a = &b;
+  	GSIArrayItem i[64];
+	GSIArrayInitWithZoneAndStaticCapacity(a, _zone, 64, i);
+	
+	
+	lockNCTable(TABLE);
+
+   	// 先从 WILDCARD 表中查找所有 observers，并将observers保存到数组中
+	for (o = WILDCARD = purgeCollected(WILDCARD); o != ENDOBS; o = o->next) {
+		GSIArrayAddItem(a, (GSIArrayItem)o);
+	}
+
+  /*
+   * Find the observers that specified OBJECT, but didn't specify NAME.
+   */
+   	// 然后
+  
+	if (object) {
+		n = GSIMapNodeForSimpleKey(NAMELESS, (GSIMapKey)object);
+		if (n != 0) {
+			o = purgeCollectedFromMapNode(NAMELESS, n);
+			while (o != ENDOBS) {
+	  			GSIArrayAddItem(a, (GSIArrayItem)o);
+	  			o = o->next;
+			}
+		}
+	}
+
+  /*
+   * Find the observers of NAME, except those observers with a non-nil OBJECT
+   * that doesn't match the notification's OBJECT).
+   */
+  if (name)
+    {
+      n = GSIMapNodeForKey(NAMED, (GSIMapKey)((id)name));
+      if (n)
+	{
+	  m = (GSIMapTable)n->value.ptr;
+	}
+      else
+	{
+	  m = 0;
+	}
+      if (m != 0)
+	{
+	  /*
+	   * First, observers with a matching object.
+	   */
+	  n = GSIMapNodeForSimpleKey(m, (GSIMapKey)object);
+	  if (n != 0)
+	    {
+	      o = purgeCollectedFromMapNode(m, n);
+	      while (o != ENDOBS)
+		{
+		  GSIArrayAddItem(a, (GSIArrayItem)o);
+		  o = o->next;
+		}
+	    }
+
+	  if (object != nil)
+	    {
+	      /*
+	       * Now observers with a nil object.
+	       */
+	      n = GSIMapNodeForSimpleKey(m, (GSIMapKey)(id)nil);
+	      if (n != 0)
+		{
+	          o = purgeCollectedFromMapNode(m, n);
+		  while (o != ENDOBS)
+		    {
+		      GSIArrayAddItem(a, (GSIArrayItem)o);
+		      o = o->next;
+		    }
+		}
+	    }
+	}
+    }
+
+  /* Finished with the table ... we can unlock it,
+   */
+  unlockNCTable(TABLE);
+
+  /*
+   * Now send all the notifications.
+   */
+  count = GSIArrayCount(a);
+  while (count-- > 0)
+    {
+      o = GSIArrayItemAtIndex(a, count).ext;
+      if (o->next != 0)
+	{
+          NS_DURING
+            {
+              [o->observer performSelector: o->selector
+                                withObject: notification];
+            }
+          NS_HANDLER
+            {
+	      BOOL	logged;
+
+	      /* Try to report the notification along with the exception,
+	       * but if there's a problem with the notification itself,
+	       * we just log the exception.
+	       */
+	      NS_DURING
+		NSLog(@"Problem posting %@: %@", notification, localException);
+		logged = YES;
+	      NS_HANDLER
+		logged = NO;
+	      NS_ENDHANDLER
+  	      if (NO == logged)
+		{ 
+		  NSLog(@"Problem posting notification: %@", localException);
+		}  
+            }
+          NS_ENDHANDLER
+	}
+    }
+  lockNCTable(TABLE);
+  GSIArrayEmpty(a);
+  unlockNCTable(TABLE);
+
+  RELEASE(notification);
+}
+
+```
 
