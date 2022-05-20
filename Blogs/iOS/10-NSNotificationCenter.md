@@ -296,16 +296,16 @@ static Observation *obsNew(NCTable *t, SEL s, id o) {
 ```
 - (void) postNotificationName: (NSString *)name object: (id)object
 {
-	[self postNotificationName: name object: object userInfo: nil];
+    [self postNotificationName: name object: object userInfo: nil];
 }
 
 - (void) postNotificationName: (NSString *)name object: (id)object userInfo: (NSDictionary *)info
 {
-	GSNotification *notification = (id)NSAllocateObject(concrete, 0, NSDefaultMallocZone());
-	notification->_name = [name copyWithZone: [self zone]];
-	notification->_object = [object retain];
-	notification->_info = [info retain];
-	[self _postAndRelease: notification];
+    GSNotification *notification = (id)NSAllocateObject(concrete, 0, NSDefaultMallocZone());
+    notification->_name = [name copyWithZone: [self zone]];
+    notification->_object = [object retain];
+    notification->_info = [info retain];
+    [self _postAndRelease: notification];
 }
 
 - (void) _postAndRelease: (NSNotification *)notification
@@ -415,6 +415,4 @@ static Observation *obsNew(NCTable *t, SEL s, id o) {
 
     RELEASE(notification);
 }
-
-
 ```
