@@ -326,7 +326,7 @@ static Observation *obsNew(NCTable *t, SEL s, id o) {
 
     GSIArray_t b;
     GSIArray a = &b;
-      GSIArrayItem i[64];
+    GSIArrayItem i[64];
     GSIArrayInitWithZoneAndStaticCapacity(a, _zone, 64, i);
 
     lockNCTable(TABLE);
