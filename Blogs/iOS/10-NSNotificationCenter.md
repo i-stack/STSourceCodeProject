@@ -18,12 +18,12 @@
 ### Observation
 
 ```
-typedef	struct Obs {
-	id  observer;	/* Object to receive message.	*/
-	SEL selector;	/* Method selector.	*/
-	struct Obs *next; /* Next item in linked list.	*/
-	int retained; /* Retain count for structure.	*/
-	struct NCTbl *link;	/* Pointer back to chunk table	*/
+typedef struct Obs {
+    id  observer;       /* Object to receive message.   */
+    SEL selector;       /* Method selector.             */
+    int retained;       /* Retain count for structure.  */
+    struct Obs *next;   /* Next item in linked list.    */
+    struct NCTbl *link; /* Pointer back to chunk table. */
 } Observation;
 ```
 
@@ -79,9 +79,9 @@ struct	_GSIMapTable {
 > typedef GSIMapBucket_t *GSIMapBucket;
 
 ```
-struct	_GSIMapBucket {
-    uintptr_t	nodeCount;	/* Number of nodes in bucket.	*/
-    GSIMapNode	firstNode;	/* The linked list of nodes.	*/
+struct _GSIMapBucket {
+    uintptr_t nodeCount; /* Number of nodes in bucket.    */
+    GSIMapNode firstNode;/* The linked list of nodes.    */
 };
 ```
 
@@ -92,11 +92,11 @@ struct	_GSIMapBucket {
 > typedef GSIMapNode_t *GSIMapNode;
 
 ```
-struct	_GSIMapNode {
-	GSIMapNode	nextInBucket;	/* Linked list of bucket.	*/
-	GSIMapKey	key;
-#if	GSI_MAP_HAS_VALUE
-	GSIMapVal	value;
+struct  _GSIMapNode {
+    GSIMapNode nextInBucket; /* Linked list of bucket. */
+    GSIMapKey key;
+#if    GSI_MAP_HAS_VALUE
+    GSIMapVal value;
 #endif
 };
 ```
