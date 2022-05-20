@@ -19,11 +19,11 @@
 
 ```
 typedef	struct Obs {
-    id  observer;	/* Object to receive message.	*/
-    SEL selector;	/* Method selector.	*/
-    struct Obs *next; /* Next item in linked list.	*/
-    int retained; /* Retain count for structure.	*/
-    struct NCTbl *link;	/* Pointer back to chunk table	*/
+	id  observer;	/* Object to receive message.	*/
+	SEL selector;	/* Method selector.	*/
+	struct Obs *next; /* Next item in linked list.	*/
+	int retained; /* Retain count for structure.	*/
+	struct NCTbl *link;	/* Pointer back to chunk table	*/
 } Observation;
 ```
 
@@ -309,109 +309,111 @@ static Observation *obsNew(NCTable *t, SEL s, id o) {
 
 - (void) _postAndRelease: (NSNotification *)notification
 {
-	Observation	*o;
-	unsigned	count;
-	NSString	*name = [notification name];
-	GSIMapNode	n;
-	GSIMapTable	m;
-	
-	// name 为nil，抛出异常
-	if (name == nil) {
-		RELEASE(notification);
-		[NSException raise: NSInvalidArgumentException
-		  			format: @"Tried to post a notification with no name."];
-	}
-	
-  	id object = [notification object];
+    Observation *o;
+    unsigned count;
+    GSIMapNode n;
+    GSIMapTable m;
+    NSString *name = [notification name];
 
-	GSIArray_t	b;
-	GSIArray a = &b;
-  	GSIArrayItem i[64];
-	GSIArrayInitWithZoneAndStaticCapacity(a, _zone, 64, i);
-	
-	lockNCTable(TABLE);
+    // name 为nil，抛出异常
+    if (name == nil) {
+        RELEASE(notification);
+        [NSException raise: NSInvalidArgumentException
+                    format: @"Tried to post a notification with no name."];
+    }
 
-   	// 先从`WILDCARD`表中查找所有`observers`，并将`observers`保存到数组中
-	for (o = WILDCARD = purgeCollected(WILDCARD); o != ENDOBS; o = o->next) {
-		GSIArrayAddItem(a, (GSIArrayItem)o);
-	}
+    id object = [notification object];
 
-   	// 如果`object`存在
-	if (object) {
-		// 根据`object`为`key`，从`NEMELESS`表中查找`mapNode`
-		n = GSIMapNodeForSimpleKey(NAMELESS, (GSIMapKey)object);
-		if (n != 0) { //
-			o = purgeCollectedFromMapNode(NAMELESS, n);
-			while (o != ENDOBS) {
-	  			GSIArrayAddItem(a, (GSIArrayItem)o);
-	  			o = o->next;
-			}
-		}
-	}
+    GSIArray_t b;
+    GSIArray a = &b;
+      GSIArrayItem i[64];
+    GSIArrayInitWithZoneAndStaticCapacity(a, _zone, 64, i);
 
-	if (name) {
-		n = GSIMapNodeForKey(NAMED, (GSIMapKey)((id)name));
-		if (n) {
-			m = (GSIMapTable)n->value.ptr;
-		} else {
-			m = 0;
-		}
-		if (m != 0) {
-			n = GSIMapNodeForSimpleKey(m, (GSIMapKey)object);
-			if (n != 0) {
-				o = purgeCollectedFromMapNode(m, n);
-				while (o != ENDOBS) {
-					GSIArrayAddItem(a, (GSIArrayItem)o);
-					o = o->next;
-				}
-			}
+    lockNCTable(TABLE);
 
-			if (object != nil) {
-				n = GSIMapNodeForSimpleKey(m, (GSIMapKey)(id)nil);
-				if (n != 0) {
-					o = purgeCollectedFromMapNode(m, n);
-					while (o != ENDOBS) {
-						GSIArrayAddItem(a, (GSIArrayItem)o);
-						o = o->next;
-					}
-				}
-			}
-		}
-	}
+    // 先从`WILDCARD`表中查找所有`observers`，并将`observers`保存到数组中
+    for (o = WILDCARD = purgeCollected(WILDCARD); o != ENDOBS; o = o->next) {
+        GSIArrayAddItem(a, (GSIArrayItem)o);
+    }
 
-	unlockNCTable(TABLE);
+    // 如果`object`存在
+    if (object) {
+        // 根据`object`为`key`，从`NEMELESS`表中查找`mapNode`
+        n = GSIMapNodeForSimpleKey(NAMELESS, (GSIMapKey)object);
+        if (n != 0) { //
+            o = purgeCollectedFromMapNode(NAMELESS, n);
+            while (o != ENDOBS) {
+                  GSIArrayAddItem(a, (GSIArrayItem)o);
+                  o = o->next;
+            }
+        }
+    }
 
-	/*
-	* Now send all the notifications.
-	*/
-	count = GSIArrayCount(a);
-	while (count-- > 0) {
-		o = GSIArrayItemAtIndex(a, count).ext;
-		if (o->next != 0) {
-			NS_DURING 
-			{
-				[o->observer performSelector: o->selector withObject: notification];
-			}
-			NS_HANDLER
-			{
-				BOOL logged;
-				NS_DURING
-					NSLog(@"Problem posting %@: %@", notification, localException);
-					logged = YES;
-				NS_HANDLER
-					logged = NO;
-				NS_ENDHANDLER
-				if (NO == logged) { 
-					NSLog(@"Problem posting notification: %@", localException);
-				}  
-			}
-			NS_ENDHANDLER
-		}
-	}
-	lockNCTable(TABLE);
-	GSIArrayEmpty(a);
-	unlockNCTable(TABLE);
+    if (name) {
+        n = GSIMapNodeForKey(NAMED, (GSIMapKey)((id)name));
+        if (n) {
+            m = (GSIMapTable)n->value.ptr;
+        } else {
+            m = 0;
+        }
+        if (m != 0) {
+            n = GSIMapNodeForSimpleKey(m, (GSIMapKey)object);
+            if (n != 0) {
+                o = purgeCollectedFromMapNode(m, n);
+                while (o != ENDOBS) {
+                    GSIArrayAddItem(a, (GSIArrayItem)o);
+                    o = o->next;
+                }
+            }
 
-	RELEASE(notification);
+            if (object != nil) {
+                n = GSIMapNodeForSimpleKey(m, (GSIMapKey)(id)nil);
+                if (n != 0) {
+                    o = purgeCollectedFromMapNode(m, n);
+                    while (o != ENDOBS) {
+                        GSIArrayAddItem(a, (GSIArrayItem)o);
+                        o = o->next;
+                    }
+                }
+            }
+        }
+    }
+
+    unlockNCTable(TABLE);
+
+    /*
+    * Now send all the notifications.
+    */
+    count = GSIArrayCount(a);
+    while (count-- > 0) {
+        o = GSIArrayItemAtIndex(a, count).ext;
+        if (o->next != 0) {
+            NS_DURING
+            {
+                [o->observer performSelector: o->selector withObject: notification];
+            }
+            NS_HANDLER
+            {
+                BOOL logged;
+                NS_DURING
+                    NSLog(@"Problem posting %@: %@", notification, localException);
+                    logged = YES;
+                NS_HANDLER
+                    logged = NO;
+                NS_ENDHANDLER
+                if (NO == logged) {
+                    NSLog(@"Problem posting notification: %@", localException);
+                }
+            }
+            NS_ENDHANDLER
+        }
+    }
+    lockNCTable(TABLE);
+    GSIArrayEmpty(a);
+    unlockNCTable(TABLE);
+
+    RELEASE(notification);
 }
+
+
 ```
