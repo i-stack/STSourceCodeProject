@@ -60,16 +60,16 @@ typedef struct NCTbl {
 
 ```
 struct	_GSIMapTable {
-    NSZone	*zone;
-    uintptr_t	nodeCount;	/* Number of used nodes in map.	*/
-    uintptr_t	bucketCount;	/* Number of buckets in map.	*/
-    GSIMapBucket buckets;	/* Array of buckets.		*/
-    GSIMapNode	freeNodes;	/* List of unused nodes.	*/
-    uintptr_t	chunkCount;	/* Number of chunks in array.	*/
-    GSIMapNode	*nodeChunks;	/* Chunks of allocated memory.	*/
-    uintptr_t	increment;
+	NSZone	*zone;
+	uintptr_t	nodeCount;	/* Number of used nodes in map.	*/
+	uintptr_t	bucketCount;/* Number of buckets in map.	*/
+	GSIMapBucket buckets;	/* Array of buckets.		*/
+	GSIMapNode	freeNodes;	/* List of unused nodes.	*/
+	uintptr_t	chunkCount;	/* Number of chunks in array.	*/
+	GSIMapNode	*nodeChunks;/* Chunks of allocated memory.	*/
+	uintptr_t	increment;
 #ifdef	GSI_MAP_EXTRA
-    GSI_MAP_EXTRA	extra;
+	GSI_MAP_EXTRA	extra;
 #endif
 };
 ```
@@ -93,10 +93,10 @@ struct	_GSIMapBucket {
 
 ```
 struct	_GSIMapNode {
-    GSIMapNode	nextInBucket;	/* Linked list of bucket.	*/
-    GSIMapKey	key;
+	GSIMapNode	nextInBucket;	/* Linked list of bucket.	*/
+	GSIMapKey	key;
 #if	GSI_MAP_HAS_VALUE
-    GSIMapVal	value;
+	GSIMapVal	value;
 #endif
 };
 ```
@@ -167,7 +167,7 @@ nameless-->value
         // 根据 `name` 从 `NAMED` 表中取出 `MapNode`
         n = GSIMapNodeForKey(NAMED, (GSIMapKey)(id)name);
 	
-	// map->nodeCount == 0，NAMED表中没有node
+		// map->nodeCount == 0，NAMED表中没有node
         if (n == 0) {
 	
 	    // 如果`table->cacheIndex` > 0, 从`table->cache[--table->cacheIndex]`取出mapTable
@@ -185,10 +185,10 @@ nameless-->value
         }
 
        	// 判断参数`object`是否为空
-	// 以`object`为`key`，从`mapTable`中取出`mapNode`
+		// 以`object`为`key`，从`mapTable`中取出`mapNode`
         n = GSIMapNodeForSimpleKey(m, (GSIMapKey)object);
 	
-	// `map->nodeCount` == 0，`mapTable`表中没有`node`
+		// `map->nodeCount` == 0，`mapTable`表中没有`node`
         if (n == 0) { 
             o->next = ENDOBS; // 当前插入的`obs`是链表的最后一个节点
 	    // 以`object`为`key`, `obs`为`value`，保存在`mapTable`中
@@ -205,7 +205,7 @@ nameless-->value
     	// 根据 `object` 从 `NAMELESS` 表中取出 `MapNode`
         n = GSIMapNodeForSimpleKey(NAMELESS, (GSIMapKey)object);
 	
-	// map->nodeCount == 0，NAMELESS表中没有node
+		// map->nodeCount == 0，NAMELESS表中没有node
         if (n == 0) {
             o->next = ENDOBS;
 	    // 以`object`为`key`，`obs`为`value`，保存到`NAMELESS`表中
@@ -315,7 +315,6 @@ static Observation *obsNew(NCTable *t, SEL s, id o) {
 	GSIMapNode	n;
 	GSIMapTable	m;
 	
-
 	// name 为nil，抛出异常
 	if (name == nil) {
 		RELEASE(notification);
@@ -358,9 +357,6 @@ static Observation *obsNew(NCTable *t, SEL s, id o) {
 			m = 0;
 		}
 		if (m != 0) {
-	/*
-	* First, observers with a matching object.
-	*/
 			n = GSIMapNodeForSimpleKey(m, (GSIMapKey)object);
 			if (n != 0) {
 				o = purgeCollectedFromMapNode(m, n);
@@ -371,9 +367,6 @@ static Observation *obsNew(NCTable *t, SEL s, id o) {
 			}
 
 			if (object != nil) {
-				/*
-				* Now observers with a nil object.
-				*/
 				n = GSIMapNodeForSimpleKey(m, (GSIMapKey)(id)nil);
 				if (n != 0) {
 					o = purgeCollectedFromMapNode(m, n);
@@ -386,52 +379,39 @@ static Observation *obsNew(NCTable *t, SEL s, id o) {
 		}
 	}
 
-	/* Finished with the table ... we can unlock it,
-	*/
 	unlockNCTable(TABLE);
 
-  /*
-   * Now send all the notifications.
-   */
-  count = GSIArrayCount(a);
-  while (count-- > 0)
-    {
-      o = GSIArrayItemAtIndex(a, count).ext;
-      if (o->next != 0)
-	{
-          NS_DURING
-            {
-              [o->observer performSelector: o->selector
-                                withObject: notification];
-            }
-          NS_HANDLER
-            {
-	      BOOL	logged;
-
-	      /* Try to report the notification along with the exception,
-	       * but if there's a problem with the notification itself,
-	       * we just log the exception.
-	       */
-	      NS_DURING
-		NSLog(@"Problem posting %@: %@", notification, localException);
-		logged = YES;
-	      NS_HANDLER
-		logged = NO;
-	      NS_ENDHANDLER
-  	      if (NO == logged)
-		{ 
-		  NSLog(@"Problem posting notification: %@", localException);
-		}  
-            }
-          NS_ENDHANDLER
+	/*
+	* Now send all the notifications.
+	*/
+	count = GSIArrayCount(a);
+	while (count-- > 0) {
+		o = GSIArrayItemAtIndex(a, count).ext;
+		if (o->next != 0) {
+			NS_DURING 
+			{
+				[o->observer performSelector: o->selector withObject: notification];
+			}
+			NS_HANDLER
+			{
+				BOOL logged;
+				NS_DURING
+					NSLog(@"Problem posting %@: %@", notification, localException);
+					logged = YES;
+				NS_HANDLER
+					logged = NO;
+				NS_ENDHANDLER
+				if (NO == logged) { 
+					NSLog(@"Problem posting notification: %@", localException);
+				}  
+			}
+			NS_ENDHANDLER
+		}
 	}
-    }
-  lockNCTable(TABLE);
-  GSIArrayEmpty(a);
-  unlockNCTable(TABLE);
+	lockNCTable(TABLE);
+	GSIArrayEmpty(a);
+	unlockNCTable(TABLE);
 
-  RELEASE(notification);
+	RELEASE(notification);
 }
-
 ```
-
