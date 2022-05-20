@@ -168,8 +168,7 @@ nameless-->value
         // 根据 `name` 从 `NAMED` 表中取出 `MapNode`
         n = GSIMapNodeForKey(NAMED, (GSIMapKey)(id)name);
 	
-		// map->nodeCount == 0，NAMED表中没有node
-        if (n == 0) {
+        if (n == 0) {// map->nodeCount == 0，NAMED表中没有node
 	
 	    // 如果`table->cacheIndex` > 0, 从`table->cache[--table->cacheIndex]`取出mapTable
 	    // 否则新创建一个mapTable
@@ -186,11 +185,10 @@ nameless-->value
         }
 
        	// 判断参数`object`是否为空
-		// 以`object`为`key`，从`mapTable`中取出`mapNode`
+	// 以`object`为`key`，从`mapTable`中取出`mapNode`
         n = GSIMapNodeForSimpleKey(m, (GSIMapKey)object);
 	
-		// `map->nodeCount` == 0，`mapTable`表中没有`node`
-        if (n == 0) { 
+        if (n == 0) { // `map->nodeCount` == 0，`mapTable`表中没有`node`
             o->next = ENDOBS; // 当前插入的`obs`是链表的最后一个节点
 	    // 以`object`为`key`, `obs`为`value`，保存在`mapTable`中
             GSIMapAddPair(m, (GSIMapKey)object, (GSIMapVal)o);
@@ -206,8 +204,7 @@ nameless-->value
     	// 根据 `object` 从 `NAMELESS` 表中取出 `MapNode`
         n = GSIMapNodeForSimpleKey(NAMELESS, (GSIMapKey)object);
 	
-		// map->nodeCount == 0，NAMELESS表中没有node
-        if (n == 0) {
+        if (n == 0) { // map->nodeCount == 0，NAMELESS表中没有node
             o->next = ENDOBS;
 	    // 以`object`为`key`，`obs`为`value`，保存到`NAMELESS`表中
             GSIMapAddPair(NAMELESS, (GSIMapKey)object, (GSIMapVal)o);
