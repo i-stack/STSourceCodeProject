@@ -59,17 +59,18 @@ typedef struct NCTbl {
 > typedef GSIMapTable_t *GSIMapTable;
 
 ```
-struct	_GSIMapTable {
-	NSZone	*zone;
-	uintptr_t	nodeCount;	/* Number of used nodes in map.	*/
-	uintptr_t	bucketCount;/* Number of buckets in map.	*/
-	GSIMapBucket buckets;	/* Array of buckets.		*/
-	GSIMapNode	freeNodes;	/* List of unused nodes.	*/
-	uintptr_t	chunkCount;	/* Number of chunks in array.	*/
-	GSIMapNode	*nodeChunks;/* Chunks of allocated memory.	*/
-	uintptr_t	increment;
-#ifdef	GSI_MAP_EXTRA
-	GSI_MAP_EXTRA	extra;
+struct  _GSIMapTable {
+    NSZone    *zone;
+    uintptr_t    increment;
+    uintptr_t    nodeCount;     /* Number of used nodes in map. */
+    uintptr_t    chunkCount;    /* Number of chunks in array.   */
+    uintptr_t    bucketCount;   /* Number of buckets in map.    */
+
+    GSIMapBucket buckets;       /* Array of buckets.            */
+    GSIMapNode    freeNodes;    /* List of unused nodes.        */
+    GSIMapNode    *nodeChunks;  /* Chunks of allocated memory.  */
+#ifdef    GSI_MAP_EXTRA
+    GSI_MAP_EXTRA    extra;
 #endif
 };
 ```
