@@ -263,15 +263,15 @@ object-->|否|WILDCARD-->unlockTable
 ```
 static Observation *obsNew(NCTable *t, SEL s, id o) {
     if (t->freeList == 0) {
-        if (t->chunkIndex == CHUNKSIZE) {
-	        t->numChunks++;
-	        unsigned size = t->numChunks * sizeof(Observation *);
-	        t->chunks = (Observation**)NSReallocateCollectable(t->chunks, size, NSScannedOption);
+		if (t->chunkIndex == CHUNKSIZE) {
+			t->numChunks++;
+			unsigned size = t->numChunks * sizeof(Observation *);
+			t->chunks = (Observation**)NSReallocateCollectable(t->chunks, size, NSScannedOption);
 
-	        size = CHUNKSIZE * sizeof(Observation);
-	        t->chunks[t->numChunks - 1] = (Observation *)NSAllocateCollectable(size, 0);
-	        t->chunkIndex = 0;
-	    }
+			size = CHUNKSIZE * sizeof(Observation);
+			t->chunks[t->numChunks - 1] = (Observation *)NSAllocateCollectable(size, 0);
+			t->chunkIndex = 0;
+		}
         Observation	*block = t->chunks[t->numChunks - 1];
         t->freeList = &block[t->chunkIndex];
         t->chunkIndex++;
