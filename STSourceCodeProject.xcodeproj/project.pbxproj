@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		3701EF7A89B8F44776F29B88 /* Pods_STSourceCodeProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DA106113BCD54A5646995B4 /* Pods_STSourceCodeProject.framework */; };
 		62033BC827D846C3009C7E09 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 62033BC727D846C3009C7E09 /* main.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		623FFF7F28695D850050C24B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 623FFF7E28695D850050C24B /* main.m */; };
+		623FFF8528695DA30050C24B /* STLinkNode.c in Sources */ = {isa = PBXBuildFile; fileRef = 623FFF8428695DA30050C24B /* STLinkNode.c */; };
 		624BB3AD27E892F00003E906 /* Helloworld.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 624BB3AA27E892F00003E906 /* Helloworld.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		624CE2DA27F43A7C00320636 /* STSourceCodeProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 624CE2D927F43A7C00320636 /* STSourceCodeProjectTests.m */; };
 		62787A4E28323F6E0080AB60 /* STPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 62787A4D28323F6E0080AB60 /* STPlayer.m */; };
@@ -90,6 +92,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		623FFF7A28695D850050C24B /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		629365C927BA2E7A0003A4E8 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -114,6 +125,10 @@
 		5066A12E47B48EED415195B9 /* Pods-STSourceCodeProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STSourceCodeProject.debug.xcconfig"; path = "Target Support Files/Pods-STSourceCodeProject/Pods-STSourceCodeProject.debug.xcconfig"; sourceTree = "<group>"; };
 		62033BC527D846C3009C7E09 /* STObjcBuild */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = STObjcBuild; sourceTree = BUILT_PRODUCTS_DIR; };
 		62033BC727D846C3009C7E09 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		623FFF7C28695D850050C24B /* LeetCode */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LeetCode; sourceTree = BUILT_PRODUCTS_DIR; };
+		623FFF7E28695D850050C24B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		623FFF8328695DA30050C24B /* STLinkNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STLinkNode.h; sourceTree = "<group>"; };
+		623FFF8428695DA30050C24B /* STLinkNode.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = STLinkNode.c; sourceTree = "<group>"; };
 		624BB3AA27E892F00003E906 /* Helloworld.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Helloworld.pbobjc.m; sourceTree = "<group>"; };
 		624BB3AB27E892F00003E906 /* Helloworld.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Helloworld.pbobjc.h; sourceTree = "<group>"; };
 		624BB3AC27E892F00003E906 /* helloworld.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.protobuf; path = helloworld.proto; sourceTree = "<group>"; };
@@ -243,6 +258,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		623FFF7928695D850050C24B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		624CE2CC27F4394300320636 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -299,6 +321,16 @@
 				62033BC727D846C3009C7E09 /* main.m */,
 			);
 			path = STObjcBuild;
+			sourceTree = "<group>";
+		};
+		623FFF7D28695D850050C24B /* LeetCode */ = {
+			isa = PBXGroup;
+			children = (
+				623FFF7E28695D850050C24B /* main.m */,
+				623FFF8328695DA30050C24B /* STLinkNode.h */,
+				623FFF8428695DA30050C24B /* STLinkNode.c */,
+			);
+			path = LeetCode;
 			sourceTree = "<group>";
 		};
 		624BB3A827E892830003E906 /* Sources */ = {
@@ -601,6 +633,7 @@
 				629365DD27BA2ED20003A4E8 /* STLRUCache */,
 				62033BC627D846C3009C7E09 /* STObjcBuild */,
 				624CE2D027F4394300320636 /* STSourceCodeProjectTests */,
+				623FFF7D28695D850050C24B /* LeetCode */,
 				1B021CEA00537FB9191D7724 /* Frameworks */,
 				3A2FB3E4190D74B9A742D6F3 /* Pods */,
 				E48EF5B324EE287E0018D0FD /* Products */,
@@ -615,6 +648,7 @@
 				629365DC27BA2ED20003A4E8 /* STLRUCache */,
 				62033BC527D846C3009C7E09 /* STObjcBuild */,
 				624CE2CF27F4394300320636 /* STSourceCodeProjectTests.xctest */,
+				623FFF7C28695D850050C24B /* LeetCode */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -637,6 +671,23 @@
 			name = STObjcBuild;
 			productName = STObjcBuild;
 			productReference = 62033BC527D846C3009C7E09 /* STObjcBuild */;
+			productType = "com.apple.product-type.tool";
+		};
+		623FFF7B28695D850050C24B /* LeetCode */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 623FFF8028695D850050C24B /* Build configuration list for PBXNativeTarget "LeetCode" */;
+			buildPhases = (
+				623FFF7828695D850050C24B /* Sources */,
+				623FFF7928695D850050C24B /* Frameworks */,
+				623FFF7A28695D850050C24B /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LeetCode;
+			productName = LeetCode;
+			productReference = 623FFF7C28695D850050C24B /* LeetCode */;
 			productType = "com.apple.product-type.tool";
 		};
 		624CE2CE27F4394300320636 /* STSourceCodeProjectTests */ = {
@@ -717,12 +768,15 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = ST;
-				LastSwiftUpdateCheck = 1330;
+				LastSwiftUpdateCheck = 1340;
 				LastUpgradeCheck = 1320;
 				ORGANIZATIONNAME = qcraft;
 				TargetAttributes = {
 					62033BC427D846C3009C7E09 = {
 						CreatedOnToolsVersion = 13.2.1;
+					};
+					623FFF7B28695D850050C24B = {
+						CreatedOnToolsVersion = 13.4.1;
 					};
 					624CE2CE27F4394300320636 = {
 						CreatedOnToolsVersion = 13.3;
@@ -757,6 +811,7 @@
 				629365DB27BA2ED20003A4E8 /* STLRUCache */,
 				62033BC427D846C3009C7E09 /* STObjcBuild */,
 				624CE2CE27F4394300320636 /* STSourceCodeProjectTests */,
+				623FFF7B28695D850050C24B /* LeetCode */,
 			);
 		};
 /* End PBXProject section */
@@ -834,6 +889,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				62033BC827D846C3009C7E09 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		623FFF7828695D850050C24B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				623FFF8528695DA30050C24B /* STLinkNode.c in Sources */,
+				623FFF7F28695D850050C24B /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -950,6 +1014,32 @@
 				DEVELOPMENT_TEAM = 6JKG74Q9YS;
 				ENABLE_HARDENED_RUNTIME = YES;
 				MACOSX_DEPLOYMENT_TARGET = 12.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		623FFF8128695D850050C24B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6JKG74Q9YS;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		623FFF8228695D850050C24B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6JKG74Q9YS;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 			};
@@ -1225,6 +1315,15 @@
 			buildConfigurations = (
 				62033BC927D846C3009C7E09 /* Debug */,
 				62033BCA27D846C3009C7E09 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		623FFF8028695D850050C24B /* Build configuration list for PBXNativeTarget "LeetCode" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				623FFF8128695D850050C24B /* Debug */,
+				623FFF8228695D850050C24B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
