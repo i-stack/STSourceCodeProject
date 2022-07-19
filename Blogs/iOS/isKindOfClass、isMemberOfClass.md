@@ -7,9 +7,9 @@
 ```
 - (BOOL)isKindOfClass:(Class)aClass {
     for (Class tcls = [self class]; tcls; tcls = tcls->getSuperClass()) {
-        if (tcls == aClass) rerturn YES:
+        if (tcls == aClass) rerturn YES;
     }
-    return NO:
+    return NO;
 }
 ```
 
@@ -44,9 +44,9 @@ NSLog(@"%d", [stu isKindOfClass: [NSObject class]]);
 ```
 + (BOOL)isKindOfClass:(Class)aClass {
     for (Class tcls = self->ISA(); tcls; tcls = tcls->getSuperClass()) {
-        if (tcls == aClass) rerturn YES:
+        if (tcls == aClass) rerturn YES;
     }
-    return NO:
+    return NO;
 }
 ```
 
