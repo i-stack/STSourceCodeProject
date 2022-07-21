@@ -1,17 +1,33 @@
-# iOS Class 源码探究
+# Runtime简介
+
+> 1、Runtime 又叫运行时，是一套底层的 C 语言 API，是 iOS 系统的核心之一。
+>
+> 2、在编码过程中，可以给任意一个对象发送消息，在 **编译阶段只是确定了要向接收者发送这条消息，而接受者将要如何响应和处理这条消息，那就要看运行时来决定了**。
+>
+> 3、C语言中，在编译期，函数的调用就会决定调用哪个函数。而OC的函数，属于动态调用过程，在编译期并不能决定真正调用哪个函数，只有在真正运行时才会根据函数的名称找到对应的函数来调用。
+>
+> 4、Objective-C 是一个动态语言，这意味着它不仅需要一个编译器，也需要一个运行时系统来动态创建类和对象、进行消息传递和转发。
+
+# Class
 
 > typedef struct objc_class *Class;
-
-* **objc_object**
+> 
+> typedef struct objc_object *id;
 
 ```
 struct objc_object {
-    void *isa;
+private:
+    isa_t isa;
+public:
+    // initIsa() should be used to init the isa of new objects only.
+    // If this object already has an isa, use changeIsa() for correctness.
+    // initInstanceIsa(): objects with no custom RR/AWZ
+    void initIsa(Class cls /*indexed=false*/);
+    void initInstanceIsa(Class cls, bool hasCxxDtor);
+private:
+    void initIsa(Class newCls, bool indexed, bool hasCxxDtor);
 };
-```
-* **objc_class**
 
-```
 struct objc_class: objc_object {
     Class superClass;
     cache_t cache;
@@ -25,6 +41,14 @@ public:
         return (objc_class *)((long long)isa & ISA_MASK);
     }
 }
+
+union isa_t {
+    isa_t() {}
+    isa_t(uintptr_t value) : bits(value) {}
+    Class cls;
+    uintptr_t bits;
+}
+
 ```
 > superClass, 当前class的父类
 > 
