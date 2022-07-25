@@ -26,7 +26,7 @@
 
 ### 存取器方法
 
-```
+```objectivec
 - (void)setName:(NSString *)name;
 - (NSString *)name;
 
@@ -127,7 +127,7 @@ ARC 使用 `strong` 代替。
 
 * ***weak_entry_t底层结构***
 
-```
+```objectivec
 #define WEAK_INLINE_COUNT 4
 #define REFERRERS_OUT_OF_LINE 2
 
