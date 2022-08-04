@@ -33,7 +33,6 @@ NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1 repeats:YES block:^(N
     NSLog(@"handleHideTimer");
 }];
 self.delayTimer = timer;
-
 ```
 ### swift版本
 
@@ -60,6 +59,9 @@ let timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
 }
 self.delayTimer = timer
 ```
+> 1、使用方式二创建的定时器会自动添加到当前的 `runloop` 中去，使用方式一创建的定时器需要手动添加到` runloop` 中并指定 `mode `。
+> 
+> 2、使用block方式创建的定时器不会有 `timer` 强引用问题，但需要主要 `block` 的循环引用问题。
 
 ## NSTimer常见问题
 
@@ -81,3 +83,40 @@ The object to which to send the message specified by aSelector when the timer fi
 > 2、当没有指定 `RunloopMode` 时，`Runloop` 默认会添加到 `RunLoopDefaultMode` 中，当页面有 `tableview` 滑动时，主线程的 `Runloop` 会切换到 `TrackingRunLoopMode`，此时`NSTimer` 不会被触发，导致计时不准确。将 `timer` 的 `mode` 设置为 `NSRunLoopCommonModes`可以解决`tableview` 滑动造成计时器不触发问题。
 
 ## NSTimer解决方案
+
+### 方式一
+
+在页面将要销毁之前调用 `timer invalidated`，可避免因为 `timer` 与 `self` 之间的强引用导致内存泄露。
+
+### 方式二
+
+使用带 `block` 的 `API` 创建定时器，没有`timer` 与 `self` 之间的强引用问题，但需要注意 `block` 引起的循环引用问题。
+
+### 方式三
+
+使用中间件方式，进行消息转发，这里有两种：一种继承 NSObject，一种继承 NSProxy。
+
+```swift
+
+public class STTimer: NSObject {
+
+    private weak var target: AnyObject?
+
+    public init(aTarget: AnyObject) {
+        super.init()
+        self.target = aTarget
+    }
+
+    public override func forwardingTarget(for aSelector: Selector!) -> Any? {
+        return self.target
+    }
+}
+```
+
+在使用定时器的地方：
+
+```swift
+self.aTarget = STTimer.init(aTarget: self)
+let timer = Timer.scheduledTimer(timeInterval: 1, target: self.aTarget ?? nil, selector: #selector(handleHideTimer), userInfo: nil, repeats: true)
+self.delayTimer = timer
+```
