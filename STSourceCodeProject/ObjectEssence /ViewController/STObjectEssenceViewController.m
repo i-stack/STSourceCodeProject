@@ -15,6 +15,7 @@
 
 @interface STObjectEssenceViewController ()
 
+@property (nonatomic,strong)NSTimer *delayTimer;
 @property (nonatomic,strong)NSMutableArray *array;
 @property (nonatomic,strong)STAnimation *animation;
 
@@ -24,16 +25,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    self.animation = [[STAnimation alloc]init];
-    // Do any additional setup after loading the view from its nib.
-//    [STAnimation testClassMethod];
-//    ((void (*)(id, SEL))objc_msgSend)(self.animation, @selector(testClassMethod));
     [self playMusic];
+    [self testTimer];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     /// [self testMultipleReadSingleWrite];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+//    [self.delayTimer invalidate];
 }
 
 - (void)testMethod {
@@ -48,14 +51,32 @@
 //    NSLog(@"");
 }
 
-- (void)testTickets {
-    STOSSpinLock *lock = [[STOSSpinLock alloc]init];
-    [lock saleTickets];
+- (void)testTimer {
+    // invalidate 有效
+//    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(handleHideTimer) userInfo:nil repeats:YES];
+//    self.delayTimer = timer;
+//
+    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1 repeats:YES block:^(NSTimer * _Nonnull timer) {
+        NSLog(@"handleHideTimer");
+    }];
+    self.delayTimer = timer;
+
+    // invalidate 有效
+//    NSTimer *timer = [NSTimer timerWithTimeInterval:1 target:self selector:@selector(handleHideTimer) userInfo:nil repeats:YES];
+//    [[NSRunLoop currentRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
+//    self.delayTimer = timer;
+    
+//    self.delayTimer = [NSTimer timerWithTimeInterval:1 target:self selector:@selector(handleHideTimer) userInfo:nil repeats:YES];
+//    [[NSRunLoop currentRunLoop] addTimer:self.delayTimer forMode:NSRunLoopCommonModes];
+    
+    self.delayTimer = [NSTimer timerWithTimeInterval:1 repeats:YES block:^(NSTimer * _Nonnull timer) {
+        NSLog(@"handleHideTimer");
+    }];
+    [[NSRunLoop currentRunLoop] addTimer:self.delayTimer forMode:NSRunLoopCommonModes];
 }
 
-- (void)testMultipleReadSingleWrite {
-    STMultipleReadSingleWrite *lock = [[STMultipleReadSingleWrite alloc]init];
-    [lock testMultipleReadSingleWrite];
+- (void)handleHideTimer {
+    NSLog(@"handleHideTimer");
 }
 
 - (void)playMusic {
@@ -66,6 +87,8 @@
 
 - (void)dealloc {
     [super dealloc];
+    [self.delayTimer invalidate];
+    NSLog(@"STObjectEssenceViewController dealloc");
 }
 
 @end

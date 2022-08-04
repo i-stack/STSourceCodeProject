@@ -70,6 +70,7 @@
 		629365F527BA3B2F0003A4E8 /* STBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 629365F427BA3B2F0003A4E8 /* STBaseViewController.m */; };
 		629365FA27BA3BD20003A4E8 /* STObjectEssenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 629365F827BA3BD20003A4E8 /* STObjectEssenceViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		629365FB27BA3BD20003A4E8 /* STObjectEssenceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 629365F927BA3BD20003A4E8 /* STObjectEssenceViewController.xib */; };
+		62C35D56288E30C500C449DF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 62C35D55288E30C500C449DF /* main.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +112,15 @@
 			runOnlyForDeploymentPostprocessing = 1;
 		};
 		629365DA27BA2ED20003A4E8 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		62C35D51288E30C500C449DF /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -245,6 +255,8 @@
 		629365F727BA3BD20003A4E8 /* STObjectEssenceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STObjectEssenceViewController.h; sourceTree = "<group>"; };
 		629365F827BA3BD20003A4E8 /* STObjectEssenceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STObjectEssenceViewController.m; sourceTree = "<group>"; };
 		629365F927BA3BD20003A4E8 /* STObjectEssenceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = STObjectEssenceViewController.xib; sourceTree = "<group>"; };
+		62C35D53288E30C500C449DF /* BinarySearch */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BinarySearch; sourceTree = BUILT_PRODUCTS_DIR; };
+		62C35D55288E30C500C449DF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9DA106113BCD54A5646995B4 /* Pods_STSourceCodeProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_STSourceCodeProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEBD9619FA56F0EE4AE92784 /* Pods-STSourceCodeProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STSourceCodeProject.release.xcconfig"; path = "Target Support Files/Pods-STSourceCodeProject/Pods-STSourceCodeProject.release.xcconfig"; sourceTree = "<group>"; };
 		E48EF5B224EE287E0018D0FD /* STSourceCodeProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = STSourceCodeProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -280,6 +292,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		629365D927BA2ED20003A4E8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		62C35D50288E30C500C449DF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -420,17 +439,17 @@
 				6293652027BA090F0003A4E8 /* AppDelegate.h */,
 				6293655D27BA090F0003A4E8 /* AppDelegate.m */,
 				6293651A27BA090F0003A4E8 /* LaunchScreen.storyboard */,
+				6293655327BA090F0003A4E8 /* main.m */,
 				6293654827BA090F0003A4E8 /* Main.storyboard */,
 				6293657D27BA090F0003A4E8 /* SceneDelegate.h */,
 				6293653D27BA090F0003A4E8 /* SceneDelegate.m */,
+				629365F327BA3B2F0003A4E8 /* STBaseViewController.h */,
+				629365F427BA3B2F0003A4E8 /* STBaseViewController.m */,
 				6293657C27BA090F0003A4E8 /* STEntryViewController.h */,
 				6293653C27BA090F0003A4E8 /* STEntryViewController.m */,
 				629365EE27BA32A60003A4E8 /* STEntryViewController.xib */,
 				6293655C27BA090F0003A4E8 /* STNextViewController.h */,
 				6293652127BA090F0003A4E8 /* STNextViewController.m */,
-				629365F327BA3B2F0003A4E8 /* STBaseViewController.h */,
-				629365F427BA3B2F0003A4E8 /* STBaseViewController.m */,
-				6293655327BA090F0003A4E8 /* main.m */,
 			);
 			path = AppDelegate;
 			sourceTree = "<group>";
@@ -625,6 +644,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		62C35D54288E30C500C449DF /* BinarySearch */ = {
+			isa = PBXGroup;
+			children = (
+				62C35D55288E30C500C449DF /* main.m */,
+			);
+			path = BinarySearch;
+			sourceTree = "<group>";
+		};
 		E48EF5A924EE287E0018D0FD = {
 			isa = PBXGroup;
 			children = (
@@ -634,6 +661,7 @@
 				62033BC627D846C3009C7E09 /* STObjcBuild */,
 				624CE2D027F4394300320636 /* STSourceCodeProjectTests */,
 				623FFF7D28695D850050C24B /* LeetCode */,
+				62C35D54288E30C500C449DF /* BinarySearch */,
 				1B021CEA00537FB9191D7724 /* Frameworks */,
 				3A2FB3E4190D74B9A742D6F3 /* Pods */,
 				E48EF5B324EE287E0018D0FD /* Products */,
@@ -649,6 +677,7 @@
 				62033BC527D846C3009C7E09 /* STObjcBuild */,
 				624CE2CF27F4394300320636 /* STSourceCodeProjectTests.xctest */,
 				623FFF7C28695D850050C24B /* LeetCode */,
+				62C35D53288E30C500C449DF /* BinarySearch */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -742,6 +771,23 @@
 			productReference = 629365DC27BA2ED20003A4E8 /* STLRUCache */;
 			productType = "com.apple.product-type.tool";
 		};
+		62C35D52288E30C500C449DF /* BinarySearch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 62C35D59288E30C500C449DF /* Build configuration list for PBXNativeTarget "BinarySearch" */;
+			buildPhases = (
+				62C35D4F288E30C500C449DF /* Sources */,
+				62C35D50288E30C500C449DF /* Frameworks */,
+				62C35D51288E30C500C449DF /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BinarySearch;
+			productName = BinarySearch;
+			productReference = 62C35D53288E30C500C449DF /* BinarySearch */;
+			productType = "com.apple.product-type.tool";
+		};
 		E48EF5B124EE287E0018D0FD /* STSourceCodeProject */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E48EF5E124EE28840018D0FD /* Build configuration list for PBXNativeTarget "STSourceCodeProject" */;
@@ -788,6 +834,9 @@
 					629365DB27BA2ED20003A4E8 = {
 						CreatedOnToolsVersion = 13.2.1;
 					};
+					62C35D52288E30C500C449DF = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
 					E48EF5B124EE287E0018D0FD = {
 						CreatedOnToolsVersion = 11.6;
 					};
@@ -812,6 +861,7 @@
 				62033BC427D846C3009C7E09 /* STObjcBuild */,
 				624CE2CE27F4394300320636 /* STSourceCodeProjectTests */,
 				623FFF7B28695D850050C24B /* LeetCode */,
+				62C35D52288E30C500C449DF /* BinarySearch */,
 			);
 		};
 /* End PBXProject section */
@@ -925,6 +975,14 @@
 			files = (
 				629365EB27BA2F5C0003A4E8 /* main.m in Sources */,
 				629365E527BA2EE50003A4E8 /* STLRUCache.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		62C35D4F288E30C500C449DF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				62C35D56288E30C500C449DF /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1141,6 +1199,32 @@
 			};
 			name = Release;
 		};
+		62C35D57288E30C500C449DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6JKG74Q9YS;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		62C35D58288E30C500C449DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6JKG74Q9YS;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
 		E48EF5DF24EE28840018D0FD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1351,6 +1435,15 @@
 			buildConfigurations = (
 				629365E127BA2ED20003A4E8 /* Debug */,
 				629365E227BA2ED20003A4E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		62C35D59288E30C500C449DF /* Build configuration list for PBXNativeTarget "BinarySearch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				62C35D57288E30C500C449DF /* Debug */,
+				62C35D58288E30C500C449DF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
