@@ -96,6 +96,8 @@ The object to which to send the message specified by aSelector when the timer fi
 
 使用中间件方式，进行消息转发，这里有两种：一种继承 NSObject，一种继承 NSProxy。
 
+NSObject 方式：oc、swift
+
 ```swift
 
 public class STTimer: NSObject {
@@ -119,4 +121,94 @@ public class STTimer: NSObject {
 self.aTarget = STTimer.init(aTarget: self)
 let timer = Timer.scheduledTimer(timeInterval: 1, target: self.aTarget ?? nil, selector: #selector(handleHideTimer), userInfo: nil, repeats: true)
 self.delayTimer = timer
+```
+NSProxy 方式：oc
+
+```objectivec
+@interface STProxy : NSProxy
+
++ (instancetype)proxyWithTarget:(id)target;
+
+@end
+
+#import "STProxy.h"
+
+@interface STProxy ()
+
+@property (nonatomic, weak)id target;
+
+@end
+
+@implementation STProxy
+
++ (instancetype)proxyWithTarget:(id)target {
+    STProxy *proxy = [STProxy alloc];
+    proxy.target = target;
+    return proxy;
+}
+
+- (NSMethodSignature *)methodSignatureForSelector:(SEL)sel {
+    return [self.target methodSignatureForSelector:sel];
+}
+
+- (void)forwardInvocation:(NSInvocation *)invocation {
+    [invocation invokeWithTarget:self.target];
+}
+
+@end
+```
+> 1、swift 不能使用 NSProxy 进行转发，NS_SWIFT_UNAVAILABLE("NSInvocation and related APIs not available")
+> 
+> 2、NSProxy 转发比进行消息转发快，因为消息转发流程先进行快速查找，然后进行慢查找，最后进入消息转发流程；而 NSProxy 直接进入消息转发流程的第三阶段。
+
+### 方式四
+
+使用GCD方式
+
+```swift
+public class STTimerGCD {
+    
+    private static var timerDict: [String: DispatchSourceTimer] = [String: DispatchSourceTimer]()
+    private static let semaphore = DispatchSemaphore.init(value: 1)
+
+    @discardableResult
+    public class func st_scheduledTimer(withTimeInterval interval: Int, repeats: Bool, async: Bool, block: @escaping (String) -> Void) -> String {
+        self.st_scheduledTimer(afterDelay: 0, withTimeInterval: interval, repeats: repeats, async: async, block: block)
+    }
+    
+    @discardableResult
+    public class func st_scheduledTimer(afterDelay: Int, withTimeInterval interval: Int, repeats: Bool, async: Bool, block: @escaping (String) -> Void) -> String {
+        if interval <= 0, repeats == true { return "" }
+       
+        let queue = async ? DispatchQueue.global() : DispatchQueue.main
+        let timer = DispatchSource.makeTimerSource(flags: DispatchSource.TimerFlags(rawValue: 0), queue: queue)
+        
+        self.semaphore.wait()
+        let name = timer.description
+        self.timerDict[name] = timer
+        self.semaphore.signal()
+        timer.schedule(deadline: .now() + Double(afterDelay), repeating: .seconds(interval))
+        timer.setEventHandler {
+            DispatchQueue.main.async {
+                block(name)
+                if !repeats {
+                    self.st_cancelTask(name: name)
+                }
+            }
+        }
+        timer.resume()
+        return name
+    }
+    
+    public class func st_cancelTask(name: String) {
+        if name.count > 0 {
+            self.semaphore.wait()
+            if let timer = self.timerDict[name] {
+                timer.cancel()
+                self.timerDict.removeValue(forKey: name)
+            }
+            self.semaphore.signal()
+        }
+    }
+}
 ```
